@@ -26,7 +26,6 @@
 
 ## What I Do
 
-I build backend and platform projects that feel like real internal products, not tutorial exercises.
 I build integrated growth systems.
 
 That means connecting:
