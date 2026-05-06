@@ -42,13 +42,7 @@ My work is centered on making organizations move faster with fewer silos and bet
 
 ## Positioning
 
-I’m not selling isolated development.
-
 I’m building and advising around **integrated growth systems**: the technical, operational, and analytical layer that helps companies move faster, reduce coordination drag, and turn strategy into execution.
-I do not sell disconnected execution.
-
-That includes:
-I build **integrated growth systems**: the backend, platform, AI, analytics, and operating workflows that help companies move faster, reduce drag, and turn strategy into execution.
 
 - backend and platform architecture
 - AI integration and workflow automation
@@ -81,14 +75,9 @@ Source: [Kinetic Gain](https://kineticgain.com/)
 
 ---
 
-## What This GitHub Actually Represents
 ## What This GitHub Represents
 
-This is not a random collection of repos.
-This is a portfolio of systems, not code fragments.
-
 It is a portfolio of systems that show how I think about:
-It shows how I think about:
 
 - business problems as operating-system problems
 - technical delivery as a cross-functional growth lever
@@ -96,9 +85,6 @@ It shows how I think about:
 - technical delivery as a business lever
 - AI as a useful layer inside real workflows
 - platform quality, visibility, and decision support
-
-The goal is to make it obvious that I can help build the infrastructure behind growth, not just ship disconnected code.
-- governance, visibility, and decision support as core infrastructure
 
 ---
 
@@ -157,7 +143,7 @@ They have a coordination problem:
 - execution slowed down by handoffs
 They have a coordination problem.
 
-My pitch, and the work behind Kinetic Gain, is that **technology, marketing, creative, and data should move as one system**.
+The work behind Kinetic Gain, is that **technology, marketing, creative, and data should move as one system**.
 Tech, marketing, data, and execution are split across functions, vendors, and workflows that do not move as one system.
 
 That’s the lens behind everything on this profile.
