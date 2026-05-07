@@ -15,7 +15,6 @@
   <a href="https://kineticgain.com/">Kinetic Gain</a> •
   <a href="https://www.linkedin.com/in/mirzacausevic">LinkedIn</a> •
   <a href="https://medium.com/@mizcausevic">Medium</a> •
-  <a href="https://huggingface.co/mizcausevic-dev">Hugging Face</a>
 </p>
 
 <p align="center">
