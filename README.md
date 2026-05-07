@@ -1,129 +1,115 @@
-<h1 align="center">Miz Causevic</h1>
+# Mirza Causevic — `// kineticgain`
 
-<p align="center">
-  Founder of <a href="https://kineticgain.com/">Kinetic Gain</a>.<br />
-  I build integrated growth systems across <strong>frontend</strong>, <strong>backend</strong>, <strong>platform engineering</strong>, <strong>AI workflows</strong>, and <strong>operational decision support</strong>.
-</p>
+```
+[ Director of Web Engineering & Platform Architecture ]
+[ Boston, MA · 30 yrs of platform & web engineering ]
+[ IBM · CyberArk · Alteryx · Digital.ai · Gryphon.ai ]
+```
 
-<p align="center">
-  Enterprise rigor from <strong>IBM</strong>, <strong>CyberArk</strong>, and <strong>Alteryx</strong>.<br />
-  Applied to companies that want better systems, faster execution, and fewer silos.
-</p>
-
-<p align="center">
-  <a href="https://mizcausevic.com/skills/">Portfolio</a> •
-  <a href="https://kineticgain.com/">Kinetic Gain</a> •
-  <a href="https://www.linkedin.com/in/mirzacausevic">LinkedIn</a> •
-  <a href="https://medium.com/@mizcausevic">Medium</a> •
-</p>
-
-<p align="center">
-  <a href="https://github.com/mizcausevic-dev/executive_operations_dashboard">
-    <img src="https://img.shields.io/badge/Frontend-React%20%7C%20TypeScript-0f172a?style=for-the-badge" alt="Frontend badge" />
-  </a>
-  <a href="https://github.com/mizcausevic-dev/revenue-ops-ai-assistant">
-    <img src="https://img.shields.io/badge/Backend-Node.js%20%7C%20TypeScript-0f172a?style=for-the-badge" alt="Backend badge" />
-  </a>
-  <a href="https://kineticgain.com/">
-    <img src="https://img.shields.io/badge/Focus-Platform%20%7C%20Revenue%20%7C%20AI-1d4ed8?style=for-the-badge" alt="Focus badge" />
-  </a>
-  <a href="https://mizcausevic.com/skills/">
-    <img src="https://img.shields.io/badge/Strength-Enterprise%20Systems%20%7C%20Growth%20Ops-1d4ed8?style=for-the-badge" alt="Strength badge" />
-  </a>
-  <a href="https://kineticgain.com/">
-    <img src="https://img.shields.io/badge/Approach-Integrated%20Execution-065f46?style=for-the-badge" alt="Approach badge" />
-  </a>
-</p>
+I build **AI Platform Engineering** infrastructure — the layer that sits between agents/models and the SRE, SecOps, and platform teams who have to keep them running in production.
 
 ---
 
-## What I Do
+## The Doctrine
 
-I design and build systems that connect:
+Most enterprises ship AI features by stitching together notebooks, vendor consoles, and Slack channels. That works at demo scale. It does not work when you have 8 MCP servers, 12 agent fleets, 6 RAG collections, three model providers, and a CISO asking "are we OK right now?"
 
-- frontend and backend product execution
-- revenue operations and customer lifecycle workflows
-- AI automation and operator-facing decision support
-- cloud, security, and platform governance
-- SEO, analytics, content operations, and digital execution
-
-The throughline is simple: most companies do not have a tooling problem. They have a coordination problem.
-
-My work is about fixing that with systems that make strategy executable.
+This portfolio is a **deliberate platform**, not a pile of side projects. Six repos. Six layers. One doctrine: **every surface in the AI stack needs the same governance discipline that database, network, and identity surfaces already have.**
 
 ---
 
-## Positioning
+## The Six Repos
 
-Through **Kinetic Gain**, I’m building and advising around **integrated growth systems**:
-
-- the technical layer
-- the operational layer
-- the analytical layer
-- the interface layer leaders and operators actually use
-
-That shows up here as portfolio projects that feel like internal products, not tutorial exercises.
-
----
-
-## Who I Work With
-
-Source: [Kinetic Gain](https://kineticgain.com/)
-
-- CEOs, CMOs, CTOs, and founders who need one operating system instead of five disconnected functions
-- growth-stage and mid-market teams that care about speed, leverage, and operating clarity
-- organizations where revenue, retention, content, platform quality, analytics, and AI execution all matter at the same time
+| # | Repo | Surface | Question it answers | CI |
+|---|---|---|---|---|
+| 1 | [`mcp-sentinel`](https://github.com/mizcausevic-dev/mcp-sentinel) | Tool calls | What MCP tools are exposed and how risky? | ![CI](https://github.com/mizcausevic-dev/mcp-sentinel/actions/workflows/ci.yml/badge.svg) |
+| 2 | [`rag-sentinel`](https://github.com/mizcausevic-dev/rag-sentinel) | Retrieval | What's in the vector store and how trustworthy? | ![CI](https://github.com/mizcausevic-dev/rag-sentinel/actions/workflows/ci.yml/badge.svg) |
+| 3 | [`agent-codex`](https://github.com/mizcausevic-dev/agent-codex) | Decisions | Under what policies are decisions allowed? | ![CI](https://github.com/mizcausevic-dev/agent-codex/actions/workflows/ci.yml/badge.svg) |
+| 4 | [`agent-eval-arena`](https://github.com/mizcausevic-dev/agent-eval-arena) | Pre-prod | Should this model promotion ship? | ![CI](https://github.com/mizcausevic-dev/agent-eval-arena/actions/workflows/ci.yml/badge.svg) |
+| 5 | [`agentobserve`](https://github.com/mizcausevic-dev/agentobserve) | Runtime | What did agents actually do? | ![CI](https://github.com/mizcausevic-dev/agentobserve/actions/workflows/ci.yml/badge.svg) |
+| 6 | [`kinetic-flightdeck`](https://github.com/mizcausevic-dev/kinetic-flightdeck) | Operator | Are we OK right now? Who do I call? | ![CI](https://github.com/mizcausevic-dev/kinetic-flightdeck/actions/workflows/ci.yml/badge.svg) |
 
 ---
 
-## What This GitHub Represents
+## Architectural View
 
-This profile is a portfolio of systems that show how I think about:
-
-- business problems as operating-system problems
-- technical delivery as a growth and execution lever
-- frontend and backend as one coordinated product surface
-- AI as a useful layer inside real workflows
-- leadership visibility as a design problem, not just a reporting problem
-
----
-
-## Featured Systems
-
-### [Executive Operations Dashboard](https://github.com/mizcausevic-dev/executive_operations_dashboard)
-Flagship frontend command layer for revenue, platform, content, cost, security, and growth visibility.
-
-### [Revenue Ops AI Assistant](https://github.com/mizcausevic-dev/revenue-ops-ai-assistant)
-AI-assisted revenue analysis, account briefs, and pipeline decisioning for GTM and RevOps workflows.
-
-### [Cloud Cost Intelligence Dashboard](https://github.com/mizcausevic-dev/cloud-cost-intelligence-dashboard)
-FinOps-oriented cloud cost visibility, anomaly scoring, and optimization prioritization.
-
-### [SEO Governance Platform](https://github.com/mizcausevic-dev/seo-governance-platform)
-Metadata QA, schema validation, redirect governance, and publishing-readiness control for enterprise web systems.
-
-### [Customer Health & Churn API](https://github.com/mizcausevic-dev/customer-health-churn-api)
-Customer health scoring, churn-risk detection, renewal pressure analysis, and success playbook routing.
-
-### [Partner Lead Distribution Engine](https://github.com/mizcausevic-dev/partner-lead-distribution-engine)
-Partner routing, territory governance, SLA-aware distribution, and attribution-conscious channel operations.
-
-### [Observability Incident Command API](https://github.com/mizcausevic-dev/observability-incident-command-api)
-Incident severity analysis, escalation routing, responder visibility, and command-path decision support.
+```
+                     +-------------------------------------------------+
+                     |           kinetic-flightdeck                    |
+                     |   (operator surface - single pane of glass)     |
+                     +-------------------------------------------------+
+                                          ^
+                +-------------------------+--------------------------+
+                |                         |                          |
+                v                         v                          v
+   +------------------+    +------------------+         +-------------------+
+   |   GOVERNANCE     |    |   PRE-PROD       |         |   RUNTIME         |
+   |                  |    |                  |         |                   |
+   | mcp-sentinel     |    | agent-eval-arena |         | agentobserve      |
+   | rag-sentinel     |    | (gates, reg)     |         | (runs, traces,    |
+   | agent-codex      |    |                  |         |  cost, SLA)       |
+   +------------------+    +------------------+         +-------------------+
+                                          |
+                                          v
+                     +-------------------------------------------------+
+                     |         AGENTS - LLMs - MCP SERVERS             |
+                     +-------------------------------------------------+
+```
 
 ---
 
-| Area | Focus |
+## Common Patterns Across All Six
+
+Every repo in this portfolio follows the same engineering discipline:
+
+| Pattern | Why |
 |---|---|
-| **Frontend Systems** | executive dashboards, operator interfaces, business-readable product surfaces |
-| **Backend Systems** | APIs, decision engines, workflow services, operational automation |
-| **Revenue Infrastructure** | RevOps, lifecycle systems, partner routing, GTM decision support |
-| **Platform & Governance** | cloud cost, incidents, identity, web governance, operational visibility |
-| **AI-Enhanced Execution** | practical AI workflows, summaries, decision support, automation layers |
-| **Search & Content Systems** | technical SEO, metadata governance, content operations, analytics |
+| **TypeScript strict mode + Node.js 20+** | Type safety + LTS runtime; same as enterprise platform teams |
+| **Express 5 + Zod schema validation** | Versioned, validated, swagger-able APIs |
+| **Composite scoring with override logic** | A 90 composite + one critical signal still blocks. "Platform thinking." |
+| **Heuristic-first analysis, LLM-judges optional** | Deterministic, testable, cheap - no judge LLM in the hot path |
+| **CI on Node 20 + 22 matrix** | Forward-compatibility before LTS deprecation |
+| **Local validation before push (the doctrine)** | Sandbox build, npm test green, push only when green. Zero broken pushes since adopted. |
+| **BERT dark theme + JetBrains Mono / Space Grotesk** | Operator dashboards that do not look like SaaS demos |
+| **Composite + per-signal + recommended-action output shape** | What an SRE pager-rotation actually needs to read at 3am |
 
 ---
 
-If you want a cleaner signal than “developer who ships code,” that’s what this profile is built to show:
+## What This Portfolio Demonstrates
 
-**enterprise-grade thinking, product execution, and integrated systems that move the business forward.**
+For platform-engineering / director-level hiring managers:
+
+- **Range across the AI stack** - tool surface, retrieval surface, decision surface, eval surface, runtime surface, operator surface. Six perspectives, one doctrine.
+- **Production-minded backend design** - strict TypeScript, schema validation, full test coverage, CI matrix, dashboards as deliverables.
+- **Enterprise-ready domain modeling** - auth posture, OAuth scopes, SOC 2 / EU AI Act mapping, PII patterns, compliance frameworks, accountability rollups.
+- **Refusal of demo-quality engineering** - none of these projects has placeholder logic. Every aggregator is testable, every override rule is justified, every composite score has weights chosen for a reason.
+- **Platform-thinking doctrine** - no project ships without a governance loop, an operator output, and override logic that respects single-signal escalation. The same discipline applied across six different problem domains.
+
+---
+
+## Selected Background
+
+| | |
+|---|---|
+| **IBM** | Web engineering & platform architecture |
+| **CyberArk** | Cybersecurity platform; identity & access |
+| **Alteryx** | Web platform optimization; documented **1,712x network performance improvement** as flagship technical proof point |
+| **Digital.ai** | Application security & DevOps |
+| **Gryphon.ai** | Conversational AI platform engineering |
+
+30 years of platform & web engineering · Sarajevo roots · Boston-based · ~30 hardware synthesizers and a music project running since 1999 (because the work does not stop at 5pm).
+
+---
+
+## Connect
+
+- [LinkedIn](https://www.linkedin.com/in/mizcausevic/)
+- [Skills Page](https://mizcausevic.com/skills)
+- [Medium](https://medium.com/@mizcausevic)
+- [Email](mailto:miz@kineticgain.dev)
+
+```
+"The pessimist complains about the wind. The optimist expects it to change.
+ The realist adjusts the sails."
+                                                    -- William Arthur Ward
+```
