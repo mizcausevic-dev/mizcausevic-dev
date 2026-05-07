@@ -7,7 +7,6 @@
 <p align="center">
   <a href="https://mizcausevic.com/skills/">Portfolio</a> •
   <a href="https://kineticgain.com/">Kinetic Gain</a> •
-  <a href="https://mizcausevic.com/skills/">Skills / Portfolio</a> •
   <a href="https://www.linkedin.com/in/mirzacausevic">LinkedIn</a> •
   <a href="https://medium.com/@mizcausevic">Medium</a> •
   <a href="https://huggingface.co/mizcausevic-dev">Hugging Face</a>
@@ -30,7 +29,7 @@ I build integrated growth systems.
 
 That means connecting:
 
-- backend and platform engineering
+- backend and frontend and platform engineering
 - AI and workflow automation
 - revenue operations and customer lifecycle systems
 - SEO, analytics, and web governance
