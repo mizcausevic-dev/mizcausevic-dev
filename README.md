@@ -111,7 +111,6 @@ For platform-engineering / director-level hiring managers:
 - [LinkedIn](https://www.linkedin.com/in/mizcausevic/)
 - [Skills Page](https://mizcausevic.com/skills)
 - [Medium](https://medium.com/@mizcausevic)
-- [Email](mailto:miz@kineticgain.dev)
 
 ```
 "The pessimist complains about the wind. The optimist expects it to change.
