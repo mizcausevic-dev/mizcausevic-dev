@@ -1,4 +1,4 @@
-# Mirza Causevic — `// kineticgain`
+# Miz Causevic — `// kineticgain`
 
 ```
 [ Director of Web Engineering & Platform Architecture ]
