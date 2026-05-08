@@ -3,7 +3,7 @@
 ```
 [ Director of Web Engineering & Platform Architecture ]
 [ Boston, MA · 30 yrs of platform & web engineering ]
-[ IBM · CyberArk · Alteryx · ]
+[ IBM · CyberArk · Alteryx ]
 ```
 
 I build **AI Platform Engineering** infrastructure — the layer that sits between agents/models and the SRE, SecOps, FinOps, and platform teams who have to keep them running in production.
