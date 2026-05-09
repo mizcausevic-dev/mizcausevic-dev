@@ -1,11 +1,9 @@
-# Hey, I'm Miz Causevic 👋
+# Miz Causevic
 
 > **Director of Web Engineering · Platform Architecture · B2B SaaS Technologist**
 > Boston, MA · ~30 years across IBM, CyberArk, Alteryx, Digital.ai, Gryphon.ai
 
-I ship platform infrastructure for production AI — the boring, critical layer between agent fleets and the people who run them. Reliability, identity, governance, decision intelligence. I work end-to-end: Python reliability primitives → FastAPI intelligence engines → React operator surfaces, with audit trails on everything.
-
-> *"Premature optimization is the root of all evil. But premature retry storms are the root of all incidents."*
+I ship platform infrastructure for production AI: the layer between agent fleets and the people who run them. Reliability, identity, governance, decision intelligence. Python reliability primitives, FastAPI intelligence engines, React operator surfaces. Audit trails on everything.
 
 ---
 
@@ -75,7 +73,7 @@ Executive dashboards, control planes, decision studios:
 
 ## 🔌 Backend APIs · TypeScript + Node
 
-Spec-first OpenAPI services, production-shaped:
+Spec-first OpenAPI services:
 
 [`Identity-Access-Audit-API`](https://github.com/mizcausevic-dev/Identity-Access-Audit-API) · [`observability-incident-command-api`](https://github.com/mizcausevic-dev/observability-incident-command-api) · [`customer-health-churn-api`](https://github.com/mizcausevic-dev/customer-health-churn-api) · [`partner-lead-distribution-engine`](https://github.com/mizcausevic-dev/partner-lead-distribution-engine) · [`content-workflow-intelligence-platform`](https://github.com/mizcausevic-dev/content-workflow-intelligence-platform) · [`experimentation_insights_kpi`](https://github.com/mizcausevic-dev/experimentation_insights_kpi) · [`seo-governance-platform`](https://github.com/mizcausevic-dev/seo-governance-platform) · [`webhook-ingestion-pipeline`](https://github.com/mizcausevic-dev/webhook-ingestion-pipeline) · [`kinetic-api-gateway`](https://github.com/mizcausevic-dev/kinetic-api-gateway) · [`revenue-ops-ai-assistant`](https://github.com/mizcausevic-dev/revenue-ops-ai-assistant)
 
@@ -85,7 +83,7 @@ Spec-first OpenAPI services, production-shaped:
 
 [`revops-database-lab`](https://github.com/mizcausevic-dev/revops-database-lab) · [`revenue-intelligence-db`](https://github.com/mizcausevic-dev/revenue-intelligence-db) · [`cloud-cost-intelligence-dashboard`](https://github.com/mizcausevic-dev/cloud-cost-intelligence-dashboard)
 
-PostgreSQL revenue modeling · attribution analysis · forecast & renewal risk reporting · cloud cost intelligence.
+PostgreSQL revenue modeling, attribution analysis, forecast and renewal risk reporting, cloud cost intelligence.
 
 ---
 
@@ -102,20 +100,10 @@ PostgreSQL revenue modeling · attribution analysis · forecast & renewal risk r
 
 ---
 
-## 📍 Boston-based, Sarajevo-rooted
-
-Born in Sarajevo. Came up through the siege. Refugee path that ended in Boston in '95. Three decades of building enterprise tech since. The operating mindset: **pragmatism, dark humor, ship-it discipline, allergy to cargo-culted complexity.** *Polahko, ali sigurno.*
-
----
-
 ## 🤝 Working Interest
 
 Open to **Director / Principal-level Platform Engineering, Web Engineering, or AI Platform** roles at enterprise B2B SaaS companies. East Coast time zone. Remote-friendly.
 
-> *"Long-lived credentials are tomorrow's incident reports.
-> Long-lived processes are tomorrow's burnout.
-> Build it short-lived, audit it always, document it once."*
-
 ---
 
-<sub>Built across an obnoxious number of weekends. ☕ · [Repository archive](https://github.com/mizcausevic-dev?tab=repositories)</sub>
+<sub>[All repositories](https://github.com/mizcausevic-dev?tab=repositories)</sub>
