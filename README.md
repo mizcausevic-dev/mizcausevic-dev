@@ -5,8 +5,6 @@
 
 I ship platform infrastructure for production AI — the boring, critical layer between agent fleets and the people who run them. Reliability, identity, governance, decision intelligence. I work end-to-end: Python reliability primitives → FastAPI intelligence engines → React operator surfaces, with audit trails on everything.
 
-> *"Premature optimization is the root of all evil. But premature retry storms are the root of all incidents."*
-
 ---
 
 ## 🚦 Platform Reliability Stack for AI Agents · Python
