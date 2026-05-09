@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miz Causevic — Director of Web Engineering · Platform Architecture</title>
+<meta name="description" content="Platform engineering for production AI: reliability, identity, governance, decision intelligence. Director-level B2B SaaS technologist with 30 years across IBM, CyberArk, Alteryx, Digital.ai, Gryphon.ai.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg:        #0B0C10;
+    --surface:   #14161C;
+    --surface-2: #1F2833;
+    --rule:      #2A2F38;
+    --text:      #C5C6C7;
+    --text-dim:  #8A8F99;
+    --text-mute: #5C6270;
+    --accent:    #66FCF1;
+    --accent-2:  #45A29E;
+    --warm:      #FBBF24;
+    --good:      #34D399;
+    --bad:       #F87171;
+    --violet:    #A78BFA;
+
+    --serif:  'IBM Plex Serif', Georgia, serif;
+    --sans:   'IBM Plex Sans', -apple-system, sans-serif;
+    --mono:   'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 16px;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 15% 8%, rgba(102, 252, 241, 0.04) 0%, transparent 38%),
+      radial-gradient(circle at 88% 92%, rgba(69, 162, 158, 0.05) 0%, transparent 42%);
+  }
+
+  /* Container */
+  .page {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 80px 48px 120px;
+  }
+
+  /* ===== HEADER ===== */
+  header.masthead {
+    border-top: 2px solid var(--accent);
+    padding-top: 24px;
+    margin-bottom: 72px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: end;
+  }
+
+  .masthead-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--text-mute);
+    margin-bottom: 18px;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .masthead-meta span:not(:last-child)::after {
+    content: '·';
+    margin-left: 18px;
+    color: var(--rule);
+  }
+
+  h1.name {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(48px, 7vw, 84px);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+
+  h1.name em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  .role {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    line-height: 1.7;
+  }
+
+  .role .sep { color: var(--accent-2); margin: 0 6px; }
+
+  .header-stats {
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    line-height: 1.9;
+  }
+
+  .header-stats .num {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 28px;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    text-transform: none;
+    display: block;
+  }
+
+  /* ===== THESIS ===== */
+  section.thesis {
+    margin-bottom: 88px;
+    border-left: 2px solid var(--accent);
+    padding-left: 32px;
+  }
+
+  .thesis p {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2.4vw, 26px);
+    line-height: 1.45;
+    color: var(--text);
+    font-weight: 400;
+    max-width: 680px;
+  }
+
+  .thesis p strong {
+    font-weight: 600;
+    color: #E8E9EB;
+  }
+
+  /* ===== SECTION HEADERS ===== */
+  section { margin-bottom: 80px; }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 24px;
+    max-width: 760px;
+  }
+
+  h2 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  .section-intro {
+    font-size: 16px;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 36px;
+  }
+
+  /* ===== STACK DIAGRAM ===== */
+  .stack-diagram {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: 32px 24px 24px;
+    margin-bottom: 28px;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+
+  .stack-diagram svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ===== STACK TABLE ===== */
+  .stack-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 0;
+  }
+
+  .stack-table thead th {
+    text-align: left;
+    font-family: var(--mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--text-mute);
+    padding: 12px 16px 12px 0;
+    border-bottom: 1px solid var(--rule);
+    font-weight: 500;
+  }
+
+  .stack-table tbody td {
+    padding: 18px 16px 18px 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    line-height: 1.55;
+  }
+
+  .stack-table tbody tr:last-child td { border-bottom: none; }
+
+  .repo-name {
+    font-family: var(--mono);
+    font-weight: 500;
+    color: var(--accent);
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .surface-cell { color: var(--text); font-size: 14.5px; }
+
+  .buyer-tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    border: 1px solid currentColor;
+  }
+  .buyer-tag.sre { color: var(--good); }
+  .buyer-tag.ciso { color: var(--bad); }
+  .buyer-tag.platform { color: var(--accent); }
+  .buyer-tag.mlops { color: var(--violet); }
+
+  .stack-caption {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    line-height: 1.7;
+  }
+
+  .stack-caption strong {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* ===== PILLARS ===== */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .pillar {
+    background: var(--surface);
+    padding: 24px 24px 28px;
+  }
+
+  .pillar-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .pillar h3 {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .pillar p {
+    font-size: 13.5px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* ===== PROOF ===== */
+  .proof-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .proof-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 32px;
+    padding: 24px 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .proof-item:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .proof-num {
+    font-family: var(--serif);
+    font-size: 36px;
+    line-height: 1;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .proof-num small {
+    display: block;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-top: 8px;
+    font-weight: 400;
+  }
+
+  .proof-body h3 {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--text);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .proof-body p {
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.65;
+  }
+
+  .proof-body .where {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent-2);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-top: 10px;
+  }
+
+  /* ===== CAREER LINE ===== */
+  .career-line {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 32px;
+    padding: 18px 24px;
+    background: var(--surface);
+    border-left: 2px solid var(--accent-2);
+    line-height: 1.9;
+  }
+
+  .career-line strong { color: var(--text); font-weight: 500; }
+  .career-line .arrow { color: var(--accent); margin: 0 8px; }
+
+  /* ===== FOOTER / CTA ===== */
+  section.cta {
+    margin-top: 96px;
+    padding-top: 48px;
+    border-top: 2px solid var(--accent);
+  }
+
+  .cta-headline {
+    font-family: var(--serif);
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .cta-headline em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  .cta-detail {
+    font-size: 15px;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 600px;
+  }
+
+  .cta-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    color: var(--text);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 13px;
+    border-radius: 2px;
+    transition: all 180ms ease;
+  }
+
+  .cta-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .cta-link.primary {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+    font-weight: 600;
+  }
+  .cta-link.primary:hover {
+    background: transparent;
+    color: var(--accent);
+  }
+
+  /* ===== COLOPHON ===== */
+  .colophon {
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+
+  /* ===== INLINE EMPHASIS ===== */
+  a.inline {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(102, 252, 241, 0.3);
+    transition: border-color 150ms;
+  }
+  a.inline:hover { border-color: var(--accent); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 720px) {
+    .page { padding: 48px 24px 80px; }
+    header.masthead { grid-template-columns: 1fr; gap: 24px; }
+    .header-stats { text-align: left; }
+    .stack-table { font-size: 13px; }
+    .stack-table tbody td { padding: 14px 12px 14px 0; }
+    .repo-name { font-size: 12.5px; white-space: normal; }
+    .proof-item { grid-template-columns: 1fr; gap: 12px; }
+    .proof-num { font-size: 30px; }
+    section.thesis { padding-left: 20px; }
+  }
+
+  /* ===== PRINT ===== */
+  @media print {
+    body {
+      background: white !important;
+      color: black !important;
+      background-image: none !important;
+    }
+    .page { padding: 24px; max-width: 100%; }
+    h1.name, h2, h3, .thesis p, .pillar h3, .proof-body h3 { color: black !important; }
+    .surface, .surface-2, .stack-diagram, .pillar, .career-line {
+      background: white !important;
+      border-color: #ccc !important;
+    }
+    .accent, .repo-name, .proof-num, .pillar-num, h1.name em, h2 em,
+    .cta-headline em, .section-label, .stack-caption strong { color: #007a76 !important; }
+    .text-dim, .text-mute, .role, .stack-caption, .career-line, .pillar p, .proof-body p, .cta-detail { color: #444 !important; }
+    .cta-link { background: white !important; color: black !important; border-color: #999 !important; }
+    .cta-link.primary { background: #007a76 !important; color: white !important; }
+    section { page-break-inside: avoid; }
+    a { color: #007a76 !important; }
+  }
+
+  /* ===== ENTRY ANIMATION ===== */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  header.masthead, section { animation: rise 600ms ease-out backwards; }
+  header.masthead { animation-delay: 0ms; }
+  section.thesis { animation-delay: 80ms; }
+  section:nth-of-type(2) { animation-delay: 140ms; }
+  section:nth-of-type(3) { animation-delay: 180ms; }
+  section:nth-of-type(4) { animation-delay: 220ms; }
+  section:nth-of-type(5) { animation-delay: 260ms; }
+  section:nth-of-type(6) { animation-delay: 300ms; }
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- ============== HEADER ============== -->
+  <header class="masthead">
+    <div>
+      <div class="masthead-meta">
+        <span>Boston, MA</span>
+        <span>~30 years in enterprise tech</span>
+        <span>Available now</span>
+      </div>
+      <h1 class="name">Miz <em>Causevic</em></h1>
+      <div class="role">
+        Director of Web Engineering
+        <span class="sep">·</span> Platform Architecture
+        <span class="sep">·</span> B2B SaaS Technologist
+      </div>
+    </div>
+    <div class="header-stats">
+      <span class="num">60+</span>
+      Open-source repos
+    </div>
+  </header>
+
+  <!-- ============== THESIS ============== -->
+  <section class="thesis">
+    <p>I ship <strong>platform infrastructure for production AI</strong> &mdash; the layer between agent fleets and the people who run them. Reliability, identity, governance, decision intelligence. Python primitives, FastAPI engines, React operator surfaces. Audit trails on everything.</p>
+  </section>
+
+  <!-- ============== PLATFORM STACK ============== -->
+  <section>
+    <div class="section-label">Recent Work</div>
+    <h2>A four-piece <em>Platform Reliability Stack</em> for AI agents.</h2>
+    <p class="section-intro">Each repo independent. All designed to compose. Defense-in-depth from identity at the edge to the model registry as source of truth.</p>
+
+    <div class="stack-diagram" aria-label="Platform stack architecture">
+      <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" font-family="'IBM Plex Mono', ui-monospace, monospace">
+        <defs>
+          <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+            <polygon points="0 0, 10 3, 0 6" fill="#66FCF1"/>
+          </marker>
+        </defs>
+
+        <!-- Top label -->
+        <text x="440" y="28" text-anchor="middle" fill="#5C6270" font-size="10" letter-spacing="2">REQUEST FLOW</text>
+
+        <!-- Identity layer -->
+        <g>
+          <rect x="40" y="60" width="180" height="100" rx="3" fill="#1F2833" stroke="#F87171" stroke-width="1.2"/>
+          <text x="130" y="92" text-anchor="middle" fill="#F87171" font-size="11" font-weight="600" letter-spacing="1.5">CISO</text>
+          <text x="130" y="120" text-anchor="middle" fill="#66FCF1" font-size="14" font-weight="500">identity-mesh</text>
+          <text x="130" y="140" text-anchor="middle" fill="#8A8F99" font-size="11">SPIFFE JWT-SVID broker</text>
+        </g>
+
+        <!-- Rate limit layer -->
+        <g>
+          <rect x="240" y="60" width="180" height="100" rx="3" fill="#1F2833" stroke="#34D399" stroke-width="1.2"/>
+          <text x="330" y="92" text-anchor="middle" fill="#34D399" font-size="11" font-weight="600" letter-spacing="1.5">SRE</text>
+          <text x="330" y="120" text-anchor="middle" fill="#66FCF1" font-size="14" font-weight="500">rate-limit-shield</text>
+          <text x="330" y="140" text-anchor="middle" fill="#8A8F99" font-size="11">Bucket + breaker + retry</text>
+        </g>
+
+        <!-- Canary layer -->
+        <g>
+          <rect x="440" y="60" width="180" height="100" rx="3" fill="#1F2833" stroke="#66FCF1" stroke-width="1.2"/>
+          <text x="530" y="92" text-anchor="middle" fill="#66FCF1" font-size="11" font-weight="600" letter-spacing="1.5">PLATFORM / SRE</text>
+          <text x="530" y="120" text-anchor="middle" fill="#66FCF1" font-size="14" font-weight="500">agent-canary</text>
+          <text x="530" y="140" text-anchor="middle" fill="#8A8F99" font-size="11">Progressive rollout FSM</text>
+        </g>
+
+        <!-- Registry layer -->
+        <g>
+          <rect x="640" y="60" width="180" height="100" rx="3" fill="#1F2833" stroke="#A78BFA" stroke-width="1.2"/>
+          <text x="730" y="92" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="600" letter-spacing="1.5">PLATFORM / MLOps</text>
+          <text x="730" y="120" text-anchor="middle" fill="#66FCF1" font-size="14" font-weight="500">model-registry-pro</text>
+          <text x="730" y="140" text-anchor="middle" fill="#8A8F99" font-size="11">Lineage + approval gates</text>
+        </g>
+
+        <!-- Connecting arrows -->
+        <line x1="220" y1="110" x2="240" y2="110" stroke="#66FCF1" stroke-width="1.2" marker-end="url(#arr)"/>
+        <line x1="420" y1="110" x2="440" y2="110" stroke="#66FCF1" stroke-width="1.2" marker-end="url(#arr)"/>
+        <line x1="620" y1="110" x2="640" y2="110" stroke="#66FCF1" stroke-width="1.2" marker-end="url(#arr)"/>
+
+        <!-- Bottom annotation -->
+        <line x1="40" y1="200" x2="820" y2="200" stroke="#2A2F38" stroke-width="1"/>
+        <text x="40" y="226" fill="#5C6270" font-size="10" letter-spacing="2">FOUNDATION</text>
+        <text x="40" y="248" fill="#C5C6C7" font-size="13">Zero runtime deps in core (rate-limit-shield, agent-canary)</text>
+        <text x="40" y="266" fill="#C5C6C7" font-size="13">Standard libraries only where security matters (identity-mesh: pyjwt + cryptography)</text>
+      </svg>
+    </div>
+
+    <table class="stack-table">
+      <thead>
+        <tr>
+          <th style="width: 200px;">Repository</th>
+          <th>Surface</th>
+          <th style="width: 140px;">Buyer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a class="repo-name" href="https://github.com/mizcausevic-dev/rate-limit-shield">rate-limit-shield</a></td>
+          <td class="surface-cell">Token bucket + circuit breaker + jittered retry, HTTP&nbsp;429&nbsp;/&nbsp;Retry-After awareness for LLM APIs.</td>
+          <td><span class="buyer-tag sre">SRE</span></td>
+        </tr>
+        <tr>
+          <td><a class="repo-name" href="https://github.com/mizcausevic-dev/identity-mesh">identity-mesh</a></td>
+          <td class="surface-cell">SPIFFE-style JWT-SVID broker for AI agents. Short-lived, audience-bound, zero long-lived API keys.</td>
+          <td><span class="buyer-tag ciso">CISO</span></td>
+        </tr>
+        <tr>
+          <td><a class="repo-name" href="https://github.com/mizcausevic-dev/agent-canary">agent-canary</a></td>
+          <td class="surface-cell">Progressive rollout, shadow mode, sticky-percent routing, auto-rollback driven by real metrics.</td>
+          <td><span class="buyer-tag platform">PLATFORM</span></td>
+        </tr>
+        <tr>
+          <td><a class="repo-name" href="https://github.com/mizcausevic-dev/model-registry-pro">model-registry-pro</a></td>
+          <td class="surface-cell">Model lifecycle catalog with lineage, stage promotion, audit-trailed approval gates.</td>
+          <td><span class="buyer-tag mlops">PLATFORM&nbsp;/&nbsp;MLOps</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="stack-caption">All four repos: <strong>MIT-licensed</strong> · <strong>CI green on Python 3.10/3.11/3.12</strong> · <strong>architecture diagrams committed</strong> · <strong>doctrine-led READMEs</strong>.</div>
+  </section>
+
+  <!-- ============== WHAT I BUILD ============== -->
+  <section>
+    <div class="section-label">How I Operate</div>
+    <h2>End-to-end across <em>four planes</em>.</h2>
+    <p class="section-intro">I work the full stack of platform engineering. Not abstractions on a slide &mdash; real shipping code with tests, CI, and documentation, organized by who consumes it.</p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <span class="pillar-num">i.</span>
+        <h3>Reliability primitives</h3>
+        <p>Token buckets, circuit breakers, retry policies, canary FSMs. The fail-fast layer between agents and the upstream services that occasionally betray them.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">ii.</span>
+        <h3>Identity &amp; governance</h3>
+        <p>SPIFFE-style workload identity, audit-trailed approval workflows, governance-as-code with compliance mappings. SOC&nbsp;2, EU&nbsp;AI Act, ISO&nbsp;27001, NIST.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">iii.</span>
+        <h3>Decision intelligence</h3>
+        <p>FastAPI engines for executive briefing, signal orchestration, risk scoring, action sequencing. Python on the data plane, OpenAPI on the wire.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">iv.</span>
+        <h3>Operator surfaces</h3>
+        <p>React + TypeScript control planes, executive dashboards, decision studios. The front-of-house layer where humans actually make calls.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== PROOF ============== -->
+  <section>
+    <div class="section-label">Proof</div>
+    <h2>Track record at <em>scale</em>.</h2>
+
+    <div class="proof-grid">
+      <div class="proof-item">
+        <div class="proof-num">
+          1,712&times;
+          <small>Network performance</small>
+        </div>
+        <div class="proof-body">
+          <h3>Sitecore &rarr; WordPress migration</h3>
+          <p>Architected and led an enterprise web platform migration that delivered 1,712x network performance improvement with 38% YoY operational cost savings. Migration patterns now reusable across the platform org.</p>
+          <div class="where">@ Alteryx</div>
+        </div>
+      </div>
+
+      <div class="proof-item">
+        <div class="proof-num">
+          37+
+          <small>Platforms shipped</small>
+        </div>
+        <div class="proof-body">
+          <h3>Enterprise platforms across IBM, CyberArk, Alteryx, Digital.ai</h3>
+          <p>Three decades of shipping at scale. Web platforms, brand systems, performance engineering, SEO governance, internal tooling. Built the muscle for what to keep simple and what to instrument deeply.</p>
+          <div class="where">5 Companies, 30 years</div>
+        </div>
+      </div>
+
+      <div class="proof-item">
+        <div class="proof-num">
+          60+
+          <small>Open-source repos</small>
+        </div>
+        <div class="proof-body">
+          <h3>Public portfolio of platform engineering work</h3>
+          <p>Every recent engineering pattern is documented, tested, and published under MIT. Platform reliability stack for AI agents, governance-as-code, decision intelligence engines, operator surfaces. Architecture diagrams and doctrine-led READMEs throughout.</p>
+          <div class="where">github.com/mizcausevic-dev</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="career-line">
+      <strong>Career timeline:</strong> IBM <span class="arrow">&rarr;</span> CyberArk <span class="arrow">&rarr;</span> Alteryx <span class="arrow">&rarr;</span> Digital.ai <span class="arrow">&rarr;</span> Gryphon.ai <span class="arrow">&rarr;</span> Open
+    </div>
+  </section>
+
+  <!-- ============== STACK ============== -->
+  <section>
+    <div class="section-label">Stack</div>
+    <h2>Tools, <em>opinionated</em>.</h2>
+    <p class="section-intro">Optimized for clarity over cleverness. Spec-first APIs, TDD where it matters, audit-ready by default.</p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <span class="pillar-num">Languages</span>
+        <h3>Python · TypeScript · SQL · Bash</h3>
+        <p>Polyglot fluency. Python for reliability primitives and data planes. TypeScript for control planes, APIs, operator UIs. PostgreSQL for everything that needs to survive a deploy.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">Backend</span>
+        <h3>FastAPI · Express · Hatchling · GitHub Actions</h3>
+        <p>Spec-first OpenAPI, Pydantic validation, packaging-aware deploys. CI as a feature, not an afterthought.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">Frontend</span>
+        <h3>React · TypeScript · Vite · Tailwind · Recharts</h3>
+        <p>Fast iteration loops, component-driven design systems, type-safe data plumbing. Built for operators, not designers.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-num">Reliability</span>
+        <h3>SRE primitives · Zero-trust identity · Governance-as-code</h3>
+        <p>Buckets, breakers, retries, canaries, SPIFFE, policy engines, compliance mappings. The boring stuff that keeps things up at 3 AM.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CTA ============== -->
+  <section class="cta">
+    <div class="section-label">Working interest</div>
+    <div class="cta-headline">Open to <em>Director / Principal-level</em> Platform Engineering, Web Engineering, or AI Platform roles.</div>
+    <p class="cta-detail">Enterprise B2B SaaS. East Coast time zone. Remote-friendly. Fastest path to a conversation is a direct message; the portfolio is public if you want to scout the work first.</p>
+
+    <div class="cta-links">
+      <a href="mailto:miz@kineticgain.com" class="cta-link primary">
+        miz@kineticgain.com
+      </a>
+      <a href="https://github.com/mizcausevic-dev" class="cta-link">
+        github.com/mizcausevic-dev
+      </a>
+      <a href="https://www.linkedin.com/in/mirzacausevic/" class="cta-link">
+        LinkedIn
+      </a>
+    </div>
+  </section>
+
+  <!-- ============== COLOPHON ============== -->
+  <div class="colophon">
+    <span>Set in IBM Plex</span>
+    <span>Updated 2026 &middot; v1</span>
+  </div>
+
+</div>
+
+</body>
+</html>
