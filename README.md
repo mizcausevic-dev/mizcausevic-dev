@@ -1,119 +1,121 @@
-# Miz Causevic — `// kineticgain`
+# Hey, I'm Miz Causevic 👋
 
-```
-[ Director of Web Engineering & Platform Architecture ]
-[ Boston, MA · 30 yrs of platform & web engineering ]
-[ IBM · CyberArk · Alteryx ]
-```
+> **Director of Web Engineering · Platform Architecture · B2B SaaS Technologist**
+> Boston, MA · ~30 years across IBM, CyberArk, Alteryx, Digital.ai, Gryphon.ai
 
-I build **AI Platform Engineering** infrastructure — the layer that sits between agents/models and the SRE, SecOps, FinOps, and platform teams who have to keep them running in production.
+I ship platform infrastructure for production AI — the boring, critical layer between agent fleets and the people who run them. Reliability, identity, governance, decision intelligence. I work end-to-end: Python reliability primitives → FastAPI intelligence engines → React operator surfaces, with audit trails on everything.
 
----
-
-## The Doctrine
-
-Most enterprises ship AI features by stitching together notebooks, vendor consoles, and Slack channels. That works at demo scale. It does not work when you have 8 MCP servers, 12 agent fleets, 6 RAG collections, three model providers, a $50K monthly LLM bill, a CISO asking "are we OK right now," and a CFO asking "are we on budget."
-
-This portfolio is a **deliberate platform**, not a pile of side projects. Nine repos. Nine surfaces. One doctrine: **every layer of the AI stack needs the same governance discipline that database, network, and identity surfaces already have.**
+> *"Premature optimization is the root of all evil. But premature retry storms are the root of all incidents."*
 
 ---
 
-## The Nine Repos
+## 🚦 Platform Reliability Stack for AI Agents · Python
 
-| # | Repo | Surface | Question it answers | CI |
-|---|---|---|---|---|
-| 1 | [`mcp-sentinel`](https://github.com/mizcausevic-dev/mcp-sentinel) | Tool calls | What MCP tools are exposed and how risky? | ![CI](https://github.com/mizcausevic-dev/mcp-sentinel/actions/workflows/ci.yml/badge.svg) |
-| 2 | [`rag-sentinel`](https://github.com/mizcausevic-dev/rag-sentinel) | Retrieval | What is in the vector store and how trustworthy? | ![CI](https://github.com/mizcausevic-dev/rag-sentinel/actions/workflows/ci.yml/badge.svg) |
-| 3 | [`agent-codex`](https://github.com/mizcausevic-dev/agent-codex) | Decisions | Under what policies are decisions allowed? | ![CI](https://github.com/mizcausevic-dev/agent-codex/actions/workflows/ci.yml/badge.svg) |
-| 4 | [`agent-eval-arena`](https://github.com/mizcausevic-dev/agent-eval-arena) | Pre-prod | Should this model promotion ship? | ![CI](https://github.com/mizcausevic-dev/agent-eval-arena/actions/workflows/ci.yml/badge.svg) |
-| 5 | [`agent-router`](https://github.com/mizcausevic-dev/agent-router) | Runtime routing | Which model does this request actually hit? | ![CI](https://github.com/mizcausevic-dev/agent-router/actions/workflows/ci.yml/badge.svg) |
-| 6 | [`agentobserve`](https://github.com/mizcausevic-dev/agentobserve) | Runtime telemetry | What did agents actually do? | ![CI](https://github.com/mizcausevic-dev/agentobserve/actions/workflows/ci.yml/badge.svg) |
-| 7 | [`shadow-ai-detector`](https://github.com/mizcausevic-dev/shadow-ai-detector) | Egress | Who is leaking what to whom? | ![CI](https://github.com/mizcausevic-dev/shadow-ai-detector/actions/workflows/ci.yml/badge.svg) |
-| 8 | [`ai-finops-radar`](https://github.com/mizcausevic-dev/ai-finops-radar) | Finance | Are we on budget — and why not? | ![CI](https://github.com/mizcausevic-dev/ai-finops-radar/actions/workflows/ci.yml/badge.svg) |
-| 9 | [`kinetic-flightdeck`](https://github.com/mizcausevic-dev/kinetic-flightdeck) | Operator | Are we OK right now? Who do I call? | ![CI](https://github.com/mizcausevic-dev/kinetic-flightdeck/actions/workflows/ci.yml/badge.svg) |
+A four-piece set. Each independent. All designed to compose:
 
----
+| Repo | Surface | Buyer |
+|---|---|---|
+| [`rate-limit-shield`](https://github.com/mizcausevic-dev/rate-limit-shield) | Token bucket + circuit breaker + jittered retry, HTTP 429 / Retry-After awareness | **SRE** |
+| [`identity-mesh`](https://github.com/mizcausevic-dev/identity-mesh) | SPIFFE-style JWT-SVID broker — short-lived tokens, audience binding, zero long-lived API keys | **CISO** |
+| [`agent-canary`](https://github.com/mizcausevic-dev/agent-canary) | Progressive rollout, shadow mode, sticky-percent routing, auto-rollback | **Platform / SRE** |
+| [`model-registry-pro`](https://github.com/mizcausevic-dev/model-registry-pro) | Model lifecycle catalog with lineage, stage promotion, approval gates | **Platform / MLOps** |
 
-## Architectural View
-
-```
-                       +-------------------------------------------------+
-                       |             kinetic-flightdeck                  |
-                       |    (operator surface - single pane of glass)    |
-                       +-------------------------------------------------+
-                                            ^
-        +---------------+--------------+----+----+----------------+----------------+
-        |               |              |         |                |                |
-        v               v              v         v                v                v
-+--------------+ +--------------+ +--------+ +--------+ +-------------+ +-----------------+
-| GOVERNANCE    | | PRE-PROD    | |RUNTIME | |EGRESS  | | FINANCE     | | RUNTIME OBS     |
-|               | |             | |        | |        | |             | |                 |
-| mcp-sentinel  | | agent-eval- | | agent- | | shadow-| | ai-finops-  | | agentobserve    |
-| rag-sentinel  | | arena       | | router | | ai-    | | radar       | | (runs, traces,  |
-| agent-codex   | | (gates,     | | (live  | | detect | | (cost,      | |  cost, SLA)     |
-|               | |  reg)       | | route) | | egress)| |  forecast)  | |                 |
-+--------------+  +--------------+ +--------+ +--------+ +-------------+ +-----------------+
-                                          |
-                                          v
-                       +-------------------------------------------------+
-                       |          AGENTS - LLMs - MCP SERVERS            |
-                       +-------------------------------------------------+
-```
+Identity at the edge → rate limits at the model → canary at deploy → registry as source of truth. **Defense-in-depth for the agent era.**
 
 ---
 
-## Common Patterns Across All Nine
+## 🧠 Decision Intelligence Engines · Python + FastAPI
 
-Every repo in this portfolio follows the same engineering discipline:
-
-| Pattern | Why |
+| Repo | What it does |
 |---|---|
-| **TypeScript strict mode + Node.js 20+** | Type safety + LTS runtime; same as enterprise platform teams |
-| **Express 5 + Zod schema validation** | Versioned, validated, swagger-able APIs |
-| **Composite scoring with override logic** | A 90 composite + one critical signal still blocks. "Platform thinking." |
-| **Heuristic-first analysis, LLM-judges optional** | Deterministic, testable, cheap - no judge LLM in the hot path |
-| **CI on Node 20 + 22 matrix** | Forward-compatibility before LTS deprecation |
-| **Local validation before push** | Sandbox build, npm test green, push only when green. Zero broken pushes since adopted. |
-| **BERT dark theme + JetBrains Mono / Space Grotesk** | Operator dashboards that do not look like SaaS demos |
-| **Composite + per-signal + recommended-action output shape** | What an SRE pager-rotation actually needs to read at 3am |
+| [`briefing-intelligence-engine`](https://github.com/mizcausevic-dev/briefing-intelligence-engine) | Executive briefing scoring, narrative generation, risk ranking, action sequencing |
+| [`signal-orchestration-lab`](https://github.com/mizcausevic-dev/signal-orchestration-lab) | Dependency-aware signal routing, escalation sequencing, cross-functional response planning |
+
+These pair with the React + TypeScript executive surfaces below into full-stack decision products.
 
 ---
 
-## What This Portfolio Demonstrates
+## 🧰 AI Platform & Governance · TypeScript
 
-For platform-engineering / director-level hiring managers:
+Production-shaped governance and observability for AI / LLM workloads:
 
-- **Range across the AI stack** - tool calls, retrieval, decisions, eval, routing, runtime observability, egress, finance, operator surface. **Nine perspectives, one doctrine.**
-- **Three buyer profiles** - CTO/Platform (mcp-sentinel, agent-codex, agent-router, agentobserve, kinetic-flightdeck), CISO (shadow-ai-detector, mcp-sentinel), CFO (ai-finops-radar). One coherent platform thesis.
-- **Production-minded backend design** - strict TypeScript, schema validation, full test coverage, CI matrix, dashboards as deliverables.
-- **Enterprise-ready domain modeling** - auth posture, OAuth scopes, SOC 2 / EU AI Act mapping, PII patterns, compliance frameworks, accountability rollups, anomaly detection, forecasting with confidence intervals.
-- **Refusal of demo-quality engineering** - none of these projects has placeholder logic. Every aggregator is testable, every override rule is justified, every composite score has weights chosen for a reason. Circuit breakers have correct half-open semantics.
-- **Platform-thinking doctrine** - no project ships without a governance loop, an operator output, and override logic that respects single-signal escalation. The same discipline applied across nine different problem domains.
+- [`mcp-sentinel`](https://github.com/mizcausevic-dev/mcp-sentinel) — MCP server observability + security audit
+- [`rag-sentinel`](https://github.com/mizcausevic-dev/rag-sentinel) — RAG quality / drift / hallucination signals
+- [`agent-codex`](https://github.com/mizcausevic-dev/agent-codex) — governance-as-code with SOC 2 / EU AI Act / ISO 27001 / NIST mappings
+- [`agent-eval-arena`](https://github.com/mizcausevic-dev/agent-eval-arena) — eval harness with regression detection + CI gates
+- [`agent-router`](https://github.com/mizcausevic-dev/agent-router) — LLM router with provider-aware routing and breakers
+- [`agentobserve`](https://github.com/mizcausevic-dev/agentobserve) — Datadog-shaped operator surface for agent fleets
+- [`llm-redaction-gateway`](https://github.com/mizcausevic-dev/llm-redaction-gateway) — PII + secret redaction for LLM API calls
+- [`shadow-ai-detector`](https://github.com/mizcausevic-dev/shadow-ai-detector) — unauthorized LLM usage detection across enterprise networks
+- [`ai-finops-radar`](https://github.com/mizcausevic-dev/ai-finops-radar) — token-level cost attribution + anomaly detection
+- [`kinetic-flightdeck`](https://github.com/mizcausevic-dev/kinetic-flightdeck) — unified AI Platform Engineering ops console
 
 ---
 
-## Selected Background
+## 📊 Operator Surfaces · React + TypeScript
 
-| | |
+Executive dashboards, control planes, decision studios:
+
+**Executive & Portfolio**
+[`executive-briefing-studio`](https://github.com/mizcausevic-dev/executive-briefing-studio) · [`portfolio-command-center`](https://github.com/mizcausevic-dev/portfolio-command-center) · [`executive_operations_dashboard`](https://github.com/mizcausevic-dev/executive_operations_dashboard)
+
+**Revenue & Growth**
+[`customer-intelligence-graph`](https://github.com/mizcausevic-dev/customer-intelligence-graph) · [`growth-systems-control-room`](https://github.com/mizcausevic-dev/growth-systems-control-room) · [`revenue-forecasting-workbench`](https://github.com/mizcausevic-dev/revenue-forecasting-workbench) · [`attribution-intelligence-studio`](https://github.com/mizcausevic-dev/attribution-intelligence-studio) · [`pricing-experiment-studio`](https://github.com/mizcausevic-dev/pricing-experiment-studio) · [`conversion-funnel-intelligence-hub`](https://github.com/mizcausevic-dev/conversion-funnel-intelligence-hub) · [`deal-desk-workspace`](https://github.com/mizcausevic-dev/deal-desk-workspace)
+
+**AI Governance & Risk**
+[`ai-governance-review-studio`](https://github.com/mizcausevic-dev/ai-governance-review-studio) · [`model-risk-oversight-hub`](https://github.com/mizcausevic-dev/model-risk-oversight-hub) · [`vendor-risk-operations-center`](https://github.com/mizcausevic-dev/vendor-risk-operations-center) · [`compliance-workflow-hub`](https://github.com/mizcausevic-dev/compliance-workflow-hub) · [`ai-operations-console`](https://github.com/mizcausevic-dev/ai-operations-console)
+
+**Identity & Security**
+[`identity-command-center`](https://github.com/mizcausevic-dev/identity-command-center) · [`identity-lifecycle-workbench`](https://github.com/mizcausevic-dev/identity-lifecycle-workbench) · [`security-posture-control-room`](https://github.com/mizcausevic-dev/security-posture-control-room)
+
+**Workflow & Operations**
+[`workflow-orchestration-studio`](https://github.com/mizcausevic-dev/workflow-orchestration-studio) · [`feature-flag-rollout-studio`](https://github.com/mizcausevic-dev/feature-flag-rollout-studio) · [`ab-testing-command-center`](https://github.com/mizcausevic-dev/ab-testing-command-center) · [`customer-journey-control-plane`](https://github.com/mizcausevic-dev/customer-journey-control-plane)
+
+---
+
+## 🔌 Backend APIs · TypeScript + Node
+
+Spec-first OpenAPI services, production-shaped:
+
+[`Identity-Access-Audit-API`](https://github.com/mizcausevic-dev/Identity-Access-Audit-API) · [`observability-incident-command-api`](https://github.com/mizcausevic-dev/observability-incident-command-api) · [`customer-health-churn-api`](https://github.com/mizcausevic-dev/customer-health-churn-api) · [`partner-lead-distribution-engine`](https://github.com/mizcausevic-dev/partner-lead-distribution-engine) · [`content-workflow-intelligence-platform`](https://github.com/mizcausevic-dev/content-workflow-intelligence-platform) · [`experimentation_insights_kpi`](https://github.com/mizcausevic-dev/experimentation_insights_kpi) · [`seo-governance-platform`](https://github.com/mizcausevic-dev/seo-governance-platform) · [`webhook-ingestion-pipeline`](https://github.com/mizcausevic-dev/webhook-ingestion-pipeline) · [`kinetic-api-gateway`](https://github.com/mizcausevic-dev/kinetic-api-gateway) · [`revenue-ops-ai-assistant`](https://github.com/mizcausevic-dev/revenue-ops-ai-assistant)
+
+---
+
+## 🗃️ Data & Analytics
+
+[`revops-database-lab`](https://github.com/mizcausevic-dev/revops-database-lab) · [`revenue-intelligence-db`](https://github.com/mizcausevic-dev/revenue-intelligence-db) · [`cloud-cost-intelligence-dashboard`](https://github.com/mizcausevic-dev/cloud-cost-intelligence-dashboard)
+
+PostgreSQL revenue modeling · attribution analysis · forecast & renewal risk reporting · cloud cost intelligence.
+
+---
+
+## 🛠️ Stack
+
+| Layer | Tools |
 |---|---|
-| **IBM** | Web engineering & platform architecture |
-| **CyberArk** | Cybersecurity platform; identity & access |
-| **Alteryx** | Web platform optimization; documented **1,712x network performance improvement** as flagship technical proof point |
-| **Digital.ai** | Application security & DevOps |
-| **Gryphon.ai** | Conversational AI platform engineering |
-
-30 years of platform & web engineering · Sarajevo roots · Boston-based · ~30 hardware synthesizers and a music project running since 1999 (because the work does not stop at 5pm).
+| **Languages** | Python · TypeScript · SQL (PostgreSQL) · Bash |
+| **Backend** | FastAPI · Express · Hatchling packaging · GitHub Actions CI |
+| **Frontend** | React · TypeScript · Vite · Tailwind · Recharts |
+| **Data** | PostgreSQL · Pandas · OpenAPI / Swagger / Pydantic |
+| **Reliability** | SRE primitives (buckets · breakers · retries · canaries) · SPIFFE zero-trust identity · governance-as-code |
+| **Process** | Spec-first APIs · TDD · MIT-licensed · documented architectures · audit-ready |
 
 ---
 
-## Connect
+## 📍 Boston-based, Sarajevo-rooted
 
-- [LinkedIn](https://www.linkedin.com/in/mizcausevic/)
-- [Skills Page](https://mizcausevic.com/skills)
-- [Medium](https://medium.com/@mizcausevic)
+Born in Sarajevo. Came up through the siege. Refugee path that ended in Boston in '95. Three decades of building enterprise tech since. The operating mindset: **pragmatism, dark humor, ship-it discipline, allergy to cargo-culted complexity.** *Polahko, ali sigurno.*
 
-```
-"The pessimist complains about the wind. The optimist expects it to change.
- The realist adjusts the sails."
-                                                    -- William Arthur Ward
-```
+---
+
+## 🤝 Working Interest
+
+Open to **Director / Principal-level Platform Engineering, Web Engineering, or AI Platform** roles at enterprise B2B SaaS companies. East Coast time zone. Remote-friendly.
+
+> *"Long-lived credentials are tomorrow's incident reports.
+> Long-lived processes are tomorrow's burnout.
+> Build it short-lived, audit it always, document it once."*
+
+---
+
+<sub>Built across an obnoxious number of weekends. ☕ · [Repository archive](https://github.com/mizcausevic-dev?tab=repositories)</sub>
