@@ -7,6 +7,12 @@ I ship platform infrastructure for production AI: the layer between agent fleets
 
 ---
 
+## 🚀 Currently Live
+
+[**gv.kineticgain.com**](https://gv.kineticgain.com) — **GitVisualizer**. Type any GitHub username, get a recruiter-grade visual portfolio in 30 seconds. React + TypeScript, AGPL-3.0. [Source](https://github.com/mizcausevic-dev/gitvisualizer).
+
+---
+
 ## Ã°Å¸Å¡Â¦ Platform Reliability Stack for AI Agents Ã‚Â· Python
 
 A four-piece set. Each independent. All designed to compose:
