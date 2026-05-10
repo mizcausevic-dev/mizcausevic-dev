@@ -85,9 +85,6 @@ if ($current -match "Ã.Â") {
     Write-Host "Current file looks clean (maybe display-only issue?)" -ForegroundColor Yellow
 }
 
-# Write the README fresh, in pure UTF-8 no BOM
-$readme = @'
-# Miz Causevic
 
 > **Director of Web Engineering · Platform Architecture · B2B SaaS Technologist**
 > Boston, MA · ~30 years across IBM, CyberArk, Alteryx, Digital.ai, Gryphon.ai
