@@ -73,20 +73,8 @@ Executive dashboards, control planes, decision studios:
 [`executive-briefing-studio`](https://github.com/mizcausevic-dev/executive-briefing-studio) · [`portfolio-command-center`](
 cd $env:USERPROFILE\Downloads
 
-Remove-Item -Recurse -Force .\profile-repo -ErrorAction SilentlyContinue
-git clone https://github.com/mizcausevic-dev/mizcausevic-dev.git profile-repo
-cd .\profile-repo
 
-# Diagnostic: confirm mojibake is in the current file
-$current = Get-Content .\README.md -Raw
-if ($current -match "Ã.Â") {
-    Write-Host "✗ Mojibake confirmed in current README" -ForegroundColor Red
-} else {
-    Write-Host "Current file looks clean (maybe display-only issue?)" -ForegroundColor Yellow
-}
-
-
-> **Director of Web Engineering · Platform Architecture · B2B SaaS Technologist**
+> **Web Engineering · Platform Architecture · B2B SaaS Technologist**
 > Boston, MA · ~30 years across IBM, CyberArk, Alteryx, Digital.ai, Gryphon.ai
 
 I ship platform infrastructure for production AI: the layer between agent fleets and the people who run them. Reliability, identity, governance, decision intelligence. Python reliability primitives, FastAPI intelligence engines, React operator surfaces. Audit trails on everything.
