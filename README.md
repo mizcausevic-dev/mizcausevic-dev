@@ -11,22 +11,44 @@ I ship platform infrastructure for production AI: the layer between agent fleets
 
 ## 🚀 Currently Live
 
-**Ten** productized open-source properties live at `kineticgain.com` subdomains. **All push-to-deploy via GitHub Actions FTP CI/CD.** Front door: **[suite.kineticgain.com](https://suite.kineticgain.com)**.
+**Twenty** productized open-source properties live at `kineticgain.com` subdomains. **All push-to-deploy via GitHub Actions FTP CI/CD.** Front door: **[suite.kineticgain.com](https://suite.kineticgain.com)** · Quickstart hub: **[docs.kineticgain.com](https://docs.kineticgain.com)**.
 
-| Product | What it does | Buyer |
+### Hubs + tools
+
+| Property | What it does | Buyer |
 |---|---|---|
 | [**suite.kineticgain.com**](https://suite.kineticgain.com) | **Kinetic Gain Protocol Suite** — canonical front door for all 10 open AI governance specs | Recruiters / investors / generalist |
+| [**docs.kineticgain.com**](https://docs.kineticgain.com) | **Quickstart hub** — per-role guides (CISO / district / healthcare vendor / answer engine) + canonical `/.well-known/` path map | New visitors / implementers |
+| [**directory.kineticgain.com**](https://directory.kineticgain.com) | **Vendor directory** — curated list of domains publishing Kinetic Gain documents | Procurement reviewers |
+| [**examples.kineticgain.com**](https://examples.kineticgain.com) | **Examples gallery** — pick a spec, see its canonical example with JSON highlight | Developers / spec authors |
+| [**walker.kineticgain.com**](https://walker.kineticgain.com) | **well-known-walker** — paste any domain, see every Kinetic Gain disclosure it publishes | Procurement / Risk reviewers |
+| [**bench.kineticgain.com**](https://bench.kineticgain.com) | **prompt-injection-bench** — visual harness, paste a JSONL transcript, see pass rates | CISO / Red-team / Trust & Safety |
+
+### Per-spec landing pages (one per spec in the Suite)
+
+| Property | Spec | Buyer |
+|---|---|---|
+| [**aeo.kineticgain.com**](https://aeo.kineticgain.com) | AEO Protocol — interactive visualizer | Platform Eng / AEO |
+| [**prompts.kineticgain.com**](https://prompts.kineticgain.com) | Prompt Provenance | LLM Platform / SRE |
+| [**agents.kineticgain.com**](https://agents.kineticgain.com) | Agent Cards | Platform Eng / Procurement |
+| [**evidence.kineticgain.com**](https://evidence.kineticgain.com) | AI Evidence Format | RAG / Search / Answer engines |
+| [**toolcards.kineticgain.com**](https://toolcards.kineticgain.com) | MCP Tool Cards | MCP authors / Platform Sec |
+| [**tutor.kineticgain.com**](https://tutor.kineticgain.com) | AI Tutor Cards | EdTech / District Procurement |
+| [**student.kineticgain.com**](https://student.kineticgain.com) | Student AI Disclosure | Academic integrity / LMS |
+| [**aup.kineticgain.com**](https://aup.kineticgain.com) | Classroom AI AUP | District / school / instructor |
+| [**clinical.kineticgain.com**](https://clinical.kineticgain.com) | Clinical AI Disclosure (HIPAA / FDA / SaMD) | Hospital CMIO / Compliance |
+| [**incidents.kineticgain.com**](https://incidents.kineticgain.com) | AI Incident Card — "CVE for AI agents" | CISO / Trust & Safety |
+
+### Earlier product surfaces
+
+| Property | What it does | Buyer |
+|---|---|---|
 | [**gv.kineticgain.com**](https://gv.kineticgain.com) | **GitVisualizer** — visual portfolio intelligence for any GitHub user | Engineering / Hiring |
 | [**mcp.kineticgain.com**](https://mcp.kineticgain.com) | **MCP Sentinel** — governance dashboard for Model Context Protocol servers | CISO / Platform Security |
 | [**rag.kineticgain.com**](https://rag.kineticgain.com) | **RAG Sentinel** — hallucination, drift, and citation quality monitoring | ML / AI Ops |
 | [**observe.kineticgain.com**](https://observe.kineticgain.com) | **AgentObserve** — operator console for AI agent fleets | SRE / Platform |
-| [**aeo.kineticgain.com**](https://aeo.kineticgain.com) | **AEO Visualizer** — interactive renderer for AEO Protocol declarations | Platform Eng / AEO |
-| [**tutor.kineticgain.com**](https://tutor.kineticgain.com) | **AI Tutor Cards** — EdTech disclosure spec landing site | EdTech / District Procurement |
-| [**clinical.kineticgain.com**](https://clinical.kineticgain.com) | **Clinical AI Disclosure** — HealthTech disclosure spec landing (HIPAA / FDA / SaMD) | Hospital CMIO / Compliance |
-| [**bench.kineticgain.com**](https://bench.kineticgain.com) | **prompt-injection-bench** — visual harness; paste a JSONL transcript, see pass rates by category and severity | CISO / Red-team / Trust & Safety |
-| [**walker.kineticgain.com**](https://walker.kineticgain.com) | **well-known-walker** — paste any domain, see every Kinetic Gain disclosure it publishes; client-side parallel `/.well-known/` probe | Procurement / Risk reviewers |
 
-All ten: mix of AGPL-3.0 and Apache-2.0, CI green, push-to-deploy via FTP Action. (Seven React 19 + TypeScript; three hand-written static HTML — tutor, clinical, suite.)
+All twenty: mix of AGPL-3.0 and Apache-2.0, CI green, push-to-deploy via FTP Action. **8 React 19 + TypeScript apps · 12 hand-written static HTML landings.**
 
 ---
 
@@ -66,15 +88,17 @@ The canonical depth example — every layer needed to consume the spec, across f
 | [`mcp-aeo-server`](https://github.com/mizcausevic-dev/mcp-aeo-server) | AEO-only MCP server — 4 tools, one Claude Desktop config entry |
 | [`mcp-kinetic-gain`](https://github.com/mizcausevic-dev/mcp-kinetic-gain) | **Unified MCP server** — **34 tools across 8 specs** (v0.4.0, git-tagged), one Claude Desktop config entry, 61 tests passing. Headline tool: `aup_check_compliance` joins an AUP + Student AI Disclosure into a single allow/deny call. |
 
-### 🖼️ Visualizers
+### 🖼️ Visualizers + galleries
 
 | Live | Repo | What it does |
 |---|---|---|
 | [`aeo.kineticgain.com`](https://aeo.kineticgain.com) | [`aeo-visualizer`](https://github.com/mizcausevic-dev/aeo-visualizer) | Dedicated AEO Protocol web visualizer |
-| [`tutor.kineticgain.com`](https://tutor.kineticgain.com) | [`ai-tutor-cards-landing`](https://github.com/mizcausevic-dev/ai-tutor-cards-landing) | AI Tutor Card spec landing site — procurement-grade pitch + canonical example |
-| [`kinetic-gain-visualizer`](https://mizcausevic-dev.github.io/kinetic-gain-visualizer/) | [`kinetic-gain-visualizer`](https://github.com/mizcausevic-dev/kinetic-gain-visualizer) | **Unified visualizer** — auto-detects the spec from the top-level `*_version` field and renders the appropriate view. Now **eight specs auto-detected**; five views: Visualize / Editor / Architecture / Tools / About |
+| [`kinetic-gain-visualizer`](https://mizcausevic-dev.github.io/kinetic-gain-visualizer/) | [`kinetic-gain-visualizer`](https://github.com/mizcausevic-dev/kinetic-gain-visualizer) | **Unified visualizer** — auto-detects the spec from the top-level `*_version` field and renders the appropriate view. **Eight specs auto-detected**; five views: Visualize / Editor / Architecture / Tools / About |
+| [`examples.kineticgain.com`](https://examples.kineticgain.com) | [`kinetic-gain-examples-gallery`](https://github.com/mizcausevic-dev/kinetic-gain-examples-gallery) | **Examples gallery** — sidebar of 10 specs, click any to see its canonical example rendered with JSON syntax highlighting |
+| [`walker.kineticgain.com`](https://walker.kineticgain.com) | [`well-known-walker-web`](https://github.com/mizcausevic-dev/well-known-walker-web) | **well-known-walker** — paste any domain, see every Kinetic Gain disclosure document it publishes |
+| [`bench.kineticgain.com`](https://bench.kineticgain.com) | [`prompt-injection-bench-web`](https://github.com/mizcausevic-dev/prompt-injection-bench-web) | **prompt-injection-bench** visual harness |
 
-The unified visualizer + unified MCP server give the Suite a complete read-side (human) and tool-side (agent) entry point. Nine specs, two front doors.
+The unified visualizer + unified MCP server give the Suite a complete read-side (human) and tool-side (agent) entry point. **Ten specs, two front doors, twenty live properties.**
 
 ### 🛡️ Testing companion
 
