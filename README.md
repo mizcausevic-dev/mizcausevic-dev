@@ -26,7 +26,7 @@ All six: AGPL-3.0, CI green, push-to-deploy via FTP Action. (Five React 19 + Typ
 
 ## 🧬 Kinetic Gain Protocol Suite
 
-A family of **eight open JSON specifications** for the answer-engine and agent era — five core (AEO, Prompt Provenance, Agent Cards, AI Evidence Format, MCP Tool Cards) plus a three-spec **EdTech trio** that closes the vendor / district / student loop. All AGPL-3.0, all v0.1 draft, all `kinetic-gain-protocol-suite` tagged. Single landing: [`kinetic-gain-protocol-suite`](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite).
+A family of **nine open JSON specifications** for the answer-engine and agent era — five core (AEO, Prompt Provenance, Agent Cards, AI Evidence Format, MCP Tool Cards), a three-spec **EdTech trio** that closes the vendor / district / student loop, and a cross-cutting **AI Incident Card** that ties everything together post-hoc. All AGPL-3.0, all v0.1 draft, all `kinetic-gain-protocol-suite` tagged. Single landing: [`kinetic-gain-protocol-suite`](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite).
 
 ### 📐 Specifications
 
@@ -40,6 +40,7 @@ A family of **eight open JSON specifications** for the answer-engine and agent e
 | [`ai-tutor-card-spec`](https://github.com/mizcausevic-dev/ai-tutor-card-spec) | **AI Tutor Cards** — EdTech vendor-side: pedagogy, FERPA/COPPA/GDPR posture | `tutor_card_version` |
 | [`student-ai-disclosure-spec`](https://github.com/mizcausevic-dev/student-ai-disclosure-spec) | **Student AI Disclosure** — student-side: roles, prompt evidence (full/hashed/omitted), artifact-hash binding | `disclosure_version` |
 | [`classroom-ai-aup-spec`](https://github.com/mizcausevic-dev/classroom-ai-aup-spec) | **Classroom AI AUP** — district / school / course-side policy (closes the EdTech trio) | `aup_version` |
+| [`ai-incident-card-spec`](https://github.com/mizcausevic-dev/ai-incident-card-spec) | **AI Incident Card** — "CVE for AI agents," cross-references every other affected document in the Suite | `incident_card_version` |
 
 ### 🛠️ AEO Reference Stack
 
@@ -56,7 +57,7 @@ The canonical depth example — every layer needed to consume the spec, across f
 | Repo | What it does |
 |---|---|
 | [`mcp-aeo-server`](https://github.com/mizcausevic-dev/mcp-aeo-server) | AEO-only MCP server — 4 tools, one Claude Desktop config entry |
-| [`mcp-kinetic-gain`](https://github.com/mizcausevic-dev/mcp-kinetic-gain) | **Unified MCP server** — **29 tools across 7 specs** (v0.3.0, git-tagged), one Claude Desktop config entry, 48 tests passing |
+| [`mcp-kinetic-gain`](https://github.com/mizcausevic-dev/mcp-kinetic-gain) | **Unified MCP server** — **34 tools across 8 specs** (v0.4.0, git-tagged), one Claude Desktop config entry, 61 tests passing. Headline tool: `aup_check_compliance` joins an AUP + Student AI Disclosure into a single allow/deny call. |
 
 ### 🖼️ Visualizers
 
@@ -64,9 +65,9 @@ The canonical depth example — every layer needed to consume the spec, across f
 |---|---|---|
 | [`aeo.kineticgain.com`](https://aeo.kineticgain.com) | [`aeo-visualizer`](https://github.com/mizcausevic-dev/aeo-visualizer) | Dedicated AEO Protocol web visualizer |
 | [`tutor.kineticgain.com`](https://tutor.kineticgain.com) | [`ai-tutor-cards-landing`](https://github.com/mizcausevic-dev/ai-tutor-cards-landing) | AI Tutor Card spec landing site — procurement-grade pitch + canonical example |
-| [`kinetic-gain-visualizer`](https://mizcausevic-dev.github.io/kinetic-gain-visualizer/) | [`kinetic-gain-visualizer`](https://github.com/mizcausevic-dev/kinetic-gain-visualizer) | **Unified visualizer** — auto-detects the spec from the top-level `*_version` field and renders the appropriate view. Now **seven specs auto-detected**; five views: Visualize / Editor / Architecture / Tools / About |
+| [`kinetic-gain-visualizer`](https://mizcausevic-dev.github.io/kinetic-gain-visualizer/) | [`kinetic-gain-visualizer`](https://github.com/mizcausevic-dev/kinetic-gain-visualizer) | **Unified visualizer** — auto-detects the spec from the top-level `*_version` field and renders the appropriate view. Now **eight specs auto-detected**; five views: Visualize / Editor / Architecture / Tools / About |
 
-The unified visualizer + unified MCP server give the Suite a complete read-side (human) and tool-side (agent) entry point. Eight specs, two front doors.
+The unified visualizer + unified MCP server give the Suite a complete read-side (human) and tool-side (agent) entry point. Nine specs, two front doors.
 
 ---
 
