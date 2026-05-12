@@ -9,7 +9,7 @@ I ship platform infrastructure for production AI: the layer between agent fleets
 
 ## 🚀 Currently Live
 
-**Six** productized open-source properties live at `kineticgain.com` subdomains. **All push-to-deploy via GitHub Actions FTP CI/CD.**
+**Seven** productized open-source properties live at `kineticgain.com` subdomains. **All push-to-deploy via GitHub Actions FTP CI/CD.**
 
 | Product | What it does | Buyer |
 |---|---|---|
@@ -19,8 +19,9 @@ I ship platform infrastructure for production AI: the layer between agent fleets
 | [**observe.kineticgain.com**](https://observe.kineticgain.com) | **AgentObserve** — operator console for AI agent fleets | SRE / Platform |
 | [**aeo.kineticgain.com**](https://aeo.kineticgain.com) | **AEO Visualizer** — interactive renderer for AEO Protocol declarations | Platform Eng / AEO |
 | [**tutor.kineticgain.com**](https://tutor.kineticgain.com) | **AI Tutor Cards** — EdTech disclosure spec landing site | EdTech / District Procurement |
+| [**bench.kineticgain.com**](https://bench.kineticgain.com) | **prompt-injection-bench** — visual harness; paste a JSONL transcript, see pass rates by category and severity | CISO / Red-team / Trust & Safety |
 
-All six: AGPL-3.0, CI green, push-to-deploy via FTP Action. (Five React 19 + TypeScript; the tutor landing is hand-written static HTML.)
+All seven: mix of AGPL-3.0 and Apache-2.0, CI green, push-to-deploy via FTP Action. (Six React 19 + TypeScript; the tutor landing is hand-written static HTML.)
 
 ---
 
