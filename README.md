@@ -9,7 +9,7 @@ I ship platform infrastructure for production AI: the layer between agent fleets
 
 ## 🚀 Currently Live
 
-**Five** productized open-source products live at `kineticgain.com` subdomains. **All push-to-deploy via GitHub Actions FTP CI/CD.**
+**Six** productized open-source properties live at `kineticgain.com` subdomains. **All push-to-deploy via GitHub Actions FTP CI/CD.**
 
 | Product | What it does | Buyer |
 |---|---|---|
@@ -18,14 +18,15 @@ I ship platform infrastructure for production AI: the layer between agent fleets
 | [**rag.kineticgain.com**](https://rag.kineticgain.com) | **RAG Sentinel** — hallucination, drift, and citation quality monitoring | ML / AI Ops |
 | [**observe.kineticgain.com**](https://observe.kineticgain.com) | **AgentObserve** — operator console for AI agent fleets | SRE / Platform |
 | [**aeo.kineticgain.com**](https://aeo.kineticgain.com) | **AEO Visualizer** — interactive renderer for AEO Protocol declarations | Platform Eng / AEO |
+| [**tutor.kineticgain.com**](https://tutor.kineticgain.com) | **AI Tutor Cards** — EdTech disclosure spec landing site | EdTech / District Procurement |
 
-All five: React 19 + TypeScript, AGPL-3.0, CI green, push-to-deploy via FTP Action.
+All six: AGPL-3.0, CI green, push-to-deploy via FTP Action. (Five React 19 + TypeScript; the tutor landing is hand-written static HTML.)
 
 ---
 
 ## 🧬 Kinetic Gain Protocol Suite
 
-A family of **five open JSON specifications** for the answer-engine era, with full reference implementations and unified tooling. All AGPL-3.0, all v0.1 draft, all `kinetic-gain-protocol-suite` tagged.
+A family of **eight open JSON specifications** for the answer-engine and agent era — five core (AEO, Prompt Provenance, Agent Cards, AI Evidence Format, MCP Tool Cards) plus a three-spec **EdTech trio** that closes the vendor / district / student loop. All AGPL-3.0, all v0.1 draft, all `kinetic-gain-protocol-suite` tagged. Single landing: [`kinetic-gain-protocol-suite`](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite).
 
 ### 📐 Specifications
 
@@ -36,6 +37,9 @@ A family of **five open JSON specifications** for the answer-engine era, with fu
 | [`agent-cards-spec`](https://github.com/mizcausevic-dev/agent-cards-spec) | **Agent Cards** — declarative agent capability + refusal disclosure | `agent_card_version` |
 | [`ai-evidence-format-spec`](https://github.com/mizcausevic-dev/ai-evidence-format-spec) | **AI Evidence Format** — structured citations for LLM-generated claims | `evidence_version` |
 | [`mcp-tool-card-spec`](https://github.com/mizcausevic-dev/mcp-tool-card-spec) | **MCP Tool Cards** — per-tool disclosure for Model Context Protocol servers | `tool_card_version` |
+| [`ai-tutor-card-spec`](https://github.com/mizcausevic-dev/ai-tutor-card-spec) | **AI Tutor Cards** — EdTech vendor-side: pedagogy, FERPA/COPPA/GDPR posture | `tutor_card_version` |
+| [`student-ai-disclosure-spec`](https://github.com/mizcausevic-dev/student-ai-disclosure-spec) | **Student AI Disclosure** — student-side: roles, prompt evidence (full/hashed/omitted), artifact-hash binding | `disclosure_version` |
+| [`classroom-ai-aup-spec`](https://github.com/mizcausevic-dev/classroom-ai-aup-spec) | **Classroom AI AUP** — district / school / course-side policy (closes the EdTech trio) | `aup_version` |
 
 ### 🛠️ AEO Reference Stack
 
@@ -52,16 +56,17 @@ The canonical depth example — every layer needed to consume the spec, across f
 | Repo | What it does |
 |---|---|
 | [`mcp-aeo-server`](https://github.com/mizcausevic-dev/mcp-aeo-server) | AEO-only MCP server — 4 tools, one Claude Desktop config entry |
-| [`mcp-kinetic-gain`](https://github.com/mizcausevic-dev/mcp-kinetic-gain) | **Unified MCP server** — 18 tools across all five specs, one config entry, 27 tests |
+| [`mcp-kinetic-gain`](https://github.com/mizcausevic-dev/mcp-kinetic-gain) | **Unified MCP server** — **29 tools across 7 specs** (v0.3.0, git-tagged), one Claude Desktop config entry, 48 tests passing |
 
 ### 🖼️ Visualizers
 
 | Live | Repo | What it does |
 |---|---|---|
 | [`aeo.kineticgain.com`](https://aeo.kineticgain.com) | [`aeo-visualizer`](https://github.com/mizcausevic-dev/aeo-visualizer) | Dedicated AEO Protocol web visualizer |
-| [`kinetic-gain-visualizer`](https://mizcausevic-dev.github.io/kinetic-gain-visualizer/) | [`kinetic-gain-visualizer`](https://github.com/mizcausevic-dev/kinetic-gain-visualizer) | **Unified visualizer** — auto-detects the spec from the top-level `*_version` field and renders the appropriate view. Five views: Visualize / Editor / Architecture / Tools / About |
+| [`tutor.kineticgain.com`](https://tutor.kineticgain.com) | [`ai-tutor-cards-landing`](https://github.com/mizcausevic-dev/ai-tutor-cards-landing) | AI Tutor Card spec landing site — procurement-grade pitch + canonical example |
+| [`kinetic-gain-visualizer`](https://mizcausevic-dev.github.io/kinetic-gain-visualizer/) | [`kinetic-gain-visualizer`](https://github.com/mizcausevic-dev/kinetic-gain-visualizer) | **Unified visualizer** — auto-detects the spec from the top-level `*_version` field and renders the appropriate view. Now **seven specs auto-detected**; five views: Visualize / Editor / Architecture / Tools / About |
 
-The unified visualizer + unified MCP server give the Suite a complete read-side (human) and tool-side (agent) entry point. Five specs, two front doors.
+The unified visualizer + unified MCP server give the Suite a complete read-side (human) and tool-side (agent) entry point. Eight specs, two front doors.
 
 ---
 
