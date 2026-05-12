@@ -1,6 +1,6 @@
 # Miz Causevic
 
-> **Director of Web Engineering · Platform Architecture · B2B SaaS Technologist**
+> **Engineering · Platform Architecture · B2B SaaS Technologist**
 > Boston, MA · ~30 years across IBM, CyberArk, Alteryx, Digital.ai, Gryphon.ai
 
 I ship platform infrastructure for production AI: the layer between agent fleets and the people who run them. Reliability primitives, identity governance, AI observability, decision intelligence. **I also author open specifications for the answer-engine era** — see the [Kinetic Gain Protocol Suite](#-kinetic-gain-protocol-suite) below. Polyglot by choice: the language fits the problem, not the resume.
