@@ -29,7 +29,7 @@ All seven: mix of AGPL-3.0 and Apache-2.0, CI green, push-to-deploy via FTP Acti
 
 ## 🧬 Kinetic Gain Protocol Suite
 
-A family of **nine open JSON specifications** for the answer-engine and agent era — five core (AEO, Prompt Provenance, Agent Cards, AI Evidence Format, MCP Tool Cards), a three-spec **EdTech trio** that closes the vendor / district / student loop, and a cross-cutting **AI Incident Card** that ties everything together post-hoc. All AGPL-3.0, all v0.1 draft, all `kinetic-gain-protocol-suite` tagged. Single landing: [`kinetic-gain-protocol-suite`](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite).
+A family of **ten open JSON specifications** for the answer-engine and agent era — five core (AEO, Prompt Provenance, Agent Cards, AI Evidence Format, MCP Tool Cards), a three-spec **EdTech trio** (vendor / district / student), a **HealthTech vertical extension** (Clinical AI Disclosure — HIPAA / FDA / SaMD posture), and a cross-cutting **AI Incident Card** that ties everything together post-hoc. **Two regulated verticals covered.** All AGPL-3.0, all v0.1 draft, all `kinetic-gain-protocol-suite` tagged. Single landing: [`kinetic-gain-protocol-suite`](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite).
 
 ### 📐 Specifications
 
@@ -43,6 +43,7 @@ A family of **nine open JSON specifications** for the answer-engine and agent er
 | [`ai-tutor-card-spec`](https://github.com/mizcausevic-dev/ai-tutor-card-spec) | **AI Tutor Cards** — EdTech vendor-side: pedagogy, FERPA/COPPA/GDPR posture | `tutor_card_version` |
 | [`student-ai-disclosure-spec`](https://github.com/mizcausevic-dev/student-ai-disclosure-spec) | **Student AI Disclosure** — student-side: roles, prompt evidence (full/hashed/omitted), artifact-hash binding | `disclosure_version` |
 | [`classroom-ai-aup-spec`](https://github.com/mizcausevic-dev/classroom-ai-aup-spec) | **Classroom AI AUP** — district / school / course-side policy (closes the EdTech trio) | `aup_version` |
+| [`clinical-ai-disclosure-spec`](https://github.com/mizcausevic-dev/clinical-ai-disclosure-spec) | **Clinical AI Disclosure** — HealthTech vendor-side: HIPAA / FDA / SaMD posture, bias audits, EHR (FHIR / CDS Hooks) | `clinical_ai_card_version` |
 | [`ai-incident-card-spec`](https://github.com/mizcausevic-dev/ai-incident-card-spec) | **AI Incident Card** — "CVE for AI agents," cross-references every other affected document in the Suite | `incident_card_version` |
 
 ### 🛠️ AEO Reference Stack
