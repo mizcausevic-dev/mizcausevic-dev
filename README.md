@@ -3,13 +3,13 @@
 > **Director of Web Engineering · Platform Architecture · B2B SaaS Technologist**
 > Boston, MA · ~30 years across IBM, CyberArk, Alteryx, Digital.ai, Gryphon.ai
 
-I ship platform infrastructure for production AI: the layer between agent fleets and the people who run them. Reliability primitives, identity governance, AI observability, decision intelligence. Polyglot by choice — the language fits the problem, not the resume.
+I ship platform infrastructure for production AI: the layer between agent fleets and the people who run them. Reliability primitives, identity governance, AI observability, decision intelligence. **I also author open specifications for the answer-engine era** — see the [Kinetic Gain Protocol Suite](#-kinetic-gain-protocol-suite) below. Polyglot by choice: the language fits the problem, not the resume.
 
 ---
 
 ## 🚀 Currently Live
 
-Four productized open-source dashboards live at `kineticgain.com` subdomains. **All push-to-deploy via GitHub Actions FTP CI/CD.**
+**Five** productized open-source products live at `kineticgain.com` subdomains. **All push-to-deploy via GitHub Actions FTP CI/CD.**
 
 | Product | What it does | Buyer |
 |---|---|---|
@@ -17,8 +17,51 @@ Four productized open-source dashboards live at `kineticgain.com` subdomains. **
 | [**mcp.kineticgain.com**](https://mcp.kineticgain.com) | **MCP Sentinel** — governance dashboard for Model Context Protocol servers | CISO / Platform Security |
 | [**rag.kineticgain.com**](https://rag.kineticgain.com) | **RAG Sentinel** — hallucination, drift, and citation quality monitoring | ML / AI Ops |
 | [**observe.kineticgain.com**](https://observe.kineticgain.com) | **AgentObserve** — operator console for AI agent fleets | SRE / Platform |
+| [**aeo.kineticgain.com**](https://aeo.kineticgain.com) | **AEO Visualizer** — interactive renderer for AEO Protocol declarations | Platform Eng / AEO |
 
-All four: React 19 + TypeScript, AGPL-3.0, CI green, push-to-deploy via FTP Action.
+All five: React 19 + TypeScript, AGPL-3.0, CI green, push-to-deploy via FTP Action.
+
+---
+
+## 🧬 Kinetic Gain Protocol Suite
+
+A family of **five open JSON specifications** for the answer-engine era, with full reference implementations and unified tooling. All AGPL-3.0, all v0.1 draft, all `kinetic-gain-protocol-suite` tagged.
+
+### 📐 Specifications
+
+| Spec | What it declares | Detect via |
+|---|---|---|
+| [`aeo-protocol-spec`](https://github.com/mizcausevic-dev/aeo-protocol-spec) | **AEO Protocol** — entity declaration at `/.well-known/aeo.json` | `aeo_version` |
+| [`prompt-provenance-spec`](https://github.com/mizcausevic-dev/prompt-provenance-spec) | **Prompt Provenance** — versioned, lineaged, reviewable LLM prompt records | `provenance_version` |
+| [`agent-cards-spec`](https://github.com/mizcausevic-dev/agent-cards-spec) | **Agent Cards** — declarative agent capability + refusal disclosure | `agent_card_version` |
+| [`ai-evidence-format-spec`](https://github.com/mizcausevic-dev/ai-evidence-format-spec) | **AI Evidence Format** — structured citations for LLM-generated claims | `evidence_version` |
+| [`mcp-tool-card-spec`](https://github.com/mizcausevic-dev/mcp-tool-card-spec) | **MCP Tool Cards** — per-tool disclosure for Model Context Protocol servers | `tool_card_version` |
+
+### 🛠️ AEO Reference Stack
+
+The canonical depth example — every layer needed to consume the spec, across five languages:
+
+| Layer | Repos |
+|---|---|
+| **SDKs** | [`aeo-sdk-python`](https://github.com/mizcausevic-dev/aeo-sdk-python) (live on [PyPI](https://pypi.org/project/aeo-protocol/)) · [`aeo-sdk-typescript`](https://github.com/mizcausevic-dev/aeo-sdk-typescript) · [`aeo-sdk-rust`](https://github.com/mizcausevic-dev/aeo-sdk-rust) · [`aeo-sdk-go`](https://github.com/mizcausevic-dev/aeo-sdk-go) · [`aeo-sdk-swift`](https://github.com/mizcausevic-dev/aeo-sdk-swift) |
+| **CLI** | [`aeo-cli`](https://github.com/mizcausevic-dev/aeo-cli) — `aeo validate / fetch / inspect / claim`, colored output, end-to-end against the live well-known URL |
+| **Crawler** | [`aeo-crawler`](https://github.com/mizcausevic-dev/aeo-crawler) — BFS over AEO graphs, JSON Lines output, configurable depth + concurrency |
+
+### 🔌 MCP Integration
+
+| Repo | What it does |
+|---|---|
+| [`mcp-aeo-server`](https://github.com/mizcausevic-dev/mcp-aeo-server) | AEO-only MCP server — 4 tools, one Claude Desktop config entry |
+| [`mcp-kinetic-gain`](https://github.com/mizcausevic-dev/mcp-kinetic-gain) | **Unified MCP server** — 18 tools across all five specs, one config entry, 27 tests |
+
+### 🖼️ Visualizers
+
+| Live | Repo | What it does |
+|---|---|---|
+| [`aeo.kineticgain.com`](https://aeo.kineticgain.com) | [`aeo-visualizer`](https://github.com/mizcausevic-dev/aeo-visualizer) | Dedicated AEO Protocol web visualizer |
+| [`kinetic-gain-visualizer`](https://mizcausevic-dev.github.io/kinetic-gain-visualizer/) | [`kinetic-gain-visualizer`](https://github.com/mizcausevic-dev/kinetic-gain-visualizer) | **Unified visualizer** — auto-detects the spec from the top-level `*_version` field and renders the appropriate view. Five views: Visualize / Editor / Architecture / Tools / About |
+
+The unified visualizer + unified MCP server give the Suite a complete read-side (human) and tool-side (agent) entry point. Five specs, two front doors.
 
 ---
 
@@ -58,6 +101,13 @@ Production-shaped backend services in the right language for the problem. **15+ 
 | **PHP** | [`entitlement-request-portal-api`](https://github.com/mizcausevic-dev/entitlement-request-portal-api) | Entitlement requests, approval routing, access review |
 | **Dart** | [`mobile-briefing-companion`](https://github.com/mizcausevic-dev/mobile-briefing-companion) | Flutter mobile app for executive briefings, signal summaries |
 | **Terraform** | [`platform-foundation-blueprint`](https://github.com/mizcausevic-dev/platform-foundation-blueprint) | Multi-environment networking, IAM blueprint |
+| **Go** | [`grpc-mesh-shadow`](https://github.com/mizcausevic-dev/grpc-mesh-shadow) | gRPC shadow traffic mirroring, divergence detection, sampling |
+| **Go** | [`miz-otel-pack`](https://github.com/mizcausevic-dev/miz-otel-pack) | OpenTelemetry SpanProcessor — GenAI spans → business cost/latency spans |
+| **Rust** | [`wasm-policy-gateway`](https://github.com/mizcausevic-dev/wasm-policy-gateway) | WASI policy engine — geo + rate-limit + A/B routing, ~128 KB module |
+| **Rust** | [`bls-attestation-broker`](https://github.com/mizcausevic-dev/bls-attestation-broker) | BLS12-381 aggregate signatures for multi-signer attestation |
+| **Zig** | [`zig-agent-graph-db`](https://github.com/mizcausevic-dev/zig-agent-graph-db) | In-memory directed graph for agent context, stdlib only |
+| **Haskell** | [`haskell-policy-engine`](https://github.com/mizcausevic-dev/haskell-policy-engine) | Type-safe policy DSL with Hspec + QuickCheck properties |
+| **Python** | [`embedding-drift-graph`](https://github.com/mizcausevic-dev/embedding-drift-graph) | Track cosine drift of entity embeddings across encoder versions, GraphQL API |
 | **Python** | [`audit-graph-explorer`](https://github.com/mizcausevic-dev/audit-graph-explorer) | Neo4j + Cypher relationship-driven audit analysis |
 | **Python** | [`secret-rotation-scheduler`](https://github.com/mizcausevic-dev/secret-rotation-scheduler) | Secret rotation windows, owner prompts, stale-secret detection |
 | **Python** | [`warehouse-reconciliation-engine`](https://github.com/mizcausevic-dev/warehouse-reconciliation-engine) | Source-to-warehouse drift detection, finance-grade reconciliation |
@@ -134,11 +184,11 @@ PostgreSQL revenue modeling, attribution analysis, forecast and renewal risk rep
 
 | Layer | Tools |
 |---|---|
-| **Languages** | Python · TypeScript · Go · Rust · Java · C# · Kotlin · Scala · Elixir · Ruby · PHP · Dart · SQL · HCL · dbt |
+| **Languages** | Python · TypeScript · Go · Rust · Java · C# · Kotlin · Scala · Elixir · Ruby · PHP · Dart · Swift · Zig · Haskell · SQL · HCL · dbt |
 | **Backend** | FastAPI · Express · Spring Boot · ASP.NET Core · Javalin · Cowboy/Plug · WEBrick |
 | **Frontend** | React 19 · Vue 3 · Flutter · TypeScript · Vite · Tailwind · Recharts · Motion |
 | **Data** | PostgreSQL · DuckDB · dbt · Neo4j · Pandas · Pydantic |
-| **AI / Platform** | SPIFFE zero-trust identity · governance-as-code · LLM routing · token-cost attribution · OpenAPI specs |
+| **AI / Platform** | SPIFFE zero-trust identity · governance-as-code · LLM routing · token-cost attribution · OpenAPI specs · MCP servers · OpenTelemetry GenAI · BLS aggregate signatures · WASI · spec authorship |
 | **CI/CD** | GitHub Actions · FTP auto-deploy · Hostinger · AGPL-3.0 licensing |
 
 ---
