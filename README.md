@@ -69,6 +69,12 @@ The canonical depth example — every layer needed to consume the spec, across f
 
 The unified visualizer + unified MCP server give the Suite a complete read-side (human) and tool-side (agent) entry point. Nine specs, two front doors.
 
+### 🛡️ Testing companion
+
+| Repo | What it does |
+|---|---|
+| [`prompt-injection-bench`](https://github.com/mizcausevic-dev/prompt-injection-bench) | **30-attack prompt-injection corpus + Python harness.** Every record back-references the Agent Card `refusal_taxonomy[].category` it tests, so a vendor can mechanically verify declared refusals hold under attack. Failed runs feed AI Incident Cards. Not a 10th spec — the *testing-counterpart* to the disclosure layer. |
+
 ---
 
 ## 🛡️ Platform Reliability Stack · Python
