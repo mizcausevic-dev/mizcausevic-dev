@@ -11,19 +11,22 @@ I ship platform infrastructure for production AI: the layer between agent fleets
 
 ## 🚀 Currently Live
 
-**Seven** productized open-source properties live at `kineticgain.com` subdomains. **All push-to-deploy via GitHub Actions FTP CI/CD.**
+**Ten** productized open-source properties live at `kineticgain.com` subdomains. **All push-to-deploy via GitHub Actions FTP CI/CD.** Front door: **[suite.kineticgain.com](https://suite.kineticgain.com)**.
 
 | Product | What it does | Buyer |
 |---|---|---|
+| [**suite.kineticgain.com**](https://suite.kineticgain.com) | **Kinetic Gain Protocol Suite** — canonical front door for all 10 open AI governance specs | Recruiters / investors / generalist |
 | [**gv.kineticgain.com**](https://gv.kineticgain.com) | **GitVisualizer** — visual portfolio intelligence for any GitHub user | Engineering / Hiring |
 | [**mcp.kineticgain.com**](https://mcp.kineticgain.com) | **MCP Sentinel** — governance dashboard for Model Context Protocol servers | CISO / Platform Security |
 | [**rag.kineticgain.com**](https://rag.kineticgain.com) | **RAG Sentinel** — hallucination, drift, and citation quality monitoring | ML / AI Ops |
 | [**observe.kineticgain.com**](https://observe.kineticgain.com) | **AgentObserve** — operator console for AI agent fleets | SRE / Platform |
 | [**aeo.kineticgain.com**](https://aeo.kineticgain.com) | **AEO Visualizer** — interactive renderer for AEO Protocol declarations | Platform Eng / AEO |
 | [**tutor.kineticgain.com**](https://tutor.kineticgain.com) | **AI Tutor Cards** — EdTech disclosure spec landing site | EdTech / District Procurement |
+| [**clinical.kineticgain.com**](https://clinical.kineticgain.com) | **Clinical AI Disclosure** — HealthTech disclosure spec landing (HIPAA / FDA / SaMD) | Hospital CMIO / Compliance |
 | [**bench.kineticgain.com**](https://bench.kineticgain.com) | **prompt-injection-bench** — visual harness; paste a JSONL transcript, see pass rates by category and severity | CISO / Red-team / Trust & Safety |
+| [**walker.kineticgain.com**](https://walker.kineticgain.com) | **well-known-walker** — paste any domain, see every Kinetic Gain disclosure it publishes; client-side parallel `/.well-known/` probe | Procurement / Risk reviewers |
 
-All seven: mix of AGPL-3.0 and Apache-2.0, CI green, push-to-deploy via FTP Action. (Six React 19 + TypeScript; the tutor landing is hand-written static HTML.)
+All ten: mix of AGPL-3.0 and Apache-2.0, CI green, push-to-deploy via FTP Action. (Seven React 19 + TypeScript; three hand-written static HTML — tutor, clinical, suite.)
 
 ---
 
