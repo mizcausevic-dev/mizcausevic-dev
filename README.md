@@ -88,6 +88,7 @@ The canonical depth example — every layer needed to consume the spec, across f
 |---|---|
 | [`mcp-aeo-server`](https://github.com/mizcausevic-dev/mcp-aeo-server) | AEO-only MCP server — 4 tools, one Claude Desktop config entry |
 | [`mcp-kinetic-gain`](https://github.com/mizcausevic-dev/mcp-kinetic-gain) | **Unified MCP server** — **47 tools across 11 specs** (v0.5.2, git-tagged), one Claude Desktop config entry, 96 tests passing. Headline tools: `aup_check_compliance` joins an AUP + Student AI Disclosure into a single allow/deny call; `decision_card_validate` enforces the full procurement Decision Card conditional ruleset. |
+| [`mcp-reliability-toolkit`](https://github.com/mizcausevic-dev/mcp-reliability-toolkit) | **Reliability MCP server** — 4 tools (`compute_slo_burn`, `design_rate_limiter`, `design_circuit_breaker`, `compose_reliability_pattern`). Same math as `slo-budget-tracker`; emits drop-in Python + Rust configs from a Claude conversation. |
 
 ### 🖼️ Visualizers + galleries
 
@@ -121,8 +122,9 @@ Reliability primitives. Each independent. All designed to compose:
 | [`model-registry-pro`](https://github.com/mizcausevic-dev/model-registry-pro) | Python | Model lifecycle catalog: lineage, stage promotion, approval gates | **Platform / MLOps** |
 | [`slo-budget-tracker`](https://github.com/mizcausevic-dev/slo-budget-tracker) | Python | SLO + error-budget library, FastAPI middleware, Prometheus exporter, multi-window burn-rate alerts | **SRE** |
 | [`reliability-toolkit-rs`](https://github.com/mizcausevic-dev/reliability-toolkit-rs) | **Rust** | Async Tokio primitives: token-bucket rate limiter · 3-state circuit breaker · exponential-backoff retry with jitter · bulkhead | **SRE / Platform** |
+| [`feature-flag-rs`](https://github.com/mizcausevic-dev/feature-flag-rs) | **Rust** | Server-side feature flag eval — targeting rules, sticky percentage rollouts (SHA-256 bucketing, no RNG), hot reload | **Platform / SRE** |
 
-Identity at the edge → rate limits at the model → canary at deploy → registry as source of truth → SLO budget at the API surface → Rust primitives for hot paths. **Defense-in-depth for the agent era.**
+Identity at the edge → rate limits at the model → canary at deploy → registry as source of truth → SLO budget at the API surface → Rust primitives for hot paths → feature flags for rollout control. **Defense-in-depth for the agent era.**
 
 ---
 
@@ -185,6 +187,7 @@ Production-shaped governance and observability for AI / LLM workloads:
 | Repo | What it does |
 |---|---|
 | [`procurement-decision-api`](https://github.com/mizcausevic-dev/procurement-decision-api) | **First cross-ecosystem bridge in the portfolio.** Drafts AI Procurement Decision Cards from a buyer rubric and vendor Suite documents (AEO + agent-card + tool-card + ai-evidence + …). Connects [Kinetic Gain Protocol Suite](#-kinetic-gain-protocol-suite) (spec #11) with Decision Intelligence. Pydantic v2, FastAPI, httpx async, NIST AI RMF crosswalk linked from the OpenAPI spec. |
+| [`policy-as-code-engine`](https://github.com/mizcausevic-dev/policy-as-code-engine) | **Companion to `procurement-decision-api`.** Declarative policy evaluator — JSON/YAML rules, first-match-wins, deny-trumps-allow. Headline: `POST /bundles/from-decision-card` turns a Decision Card's conditions into a runtime-enforceable PolicyBundle. Closes the loop from "buyer signed off" to "request gated." |
 | [`briefing-intelligence-engine`](https://github.com/mizcausevic-dev/briefing-intelligence-engine) | Executive briefing scoring, narrative generation, risk ranking |
 | [`signal-orchestration-lab`](https://github.com/mizcausevic-dev/signal-orchestration-lab) | Dependency-aware signal routing, escalation sequencing |
 
