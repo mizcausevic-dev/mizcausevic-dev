@@ -11,13 +11,13 @@ I ship platform infrastructure for production AI: the layer between agent fleets
 
 ## 🚀 Currently Live
 
-**Twenty** productized open-source properties live at `kineticgain.com` subdomains. **All push-to-deploy via GitHub Actions FTP CI/CD.** Front door: **[suite.kineticgain.com](https://suite.kineticgain.com)** · Quickstart hub: **[docs.kineticgain.com](https://docs.kineticgain.com)**.
+**Twenty-two** productized open-source properties live at `kineticgain.com` subdomains. **All push-to-deploy via GitHub Actions FTP CI/CD.** Front door: **[suite.kineticgain.com](https://suite.kineticgain.com)** · Quickstart hub: **[docs.kineticgain.com](https://docs.kineticgain.com)**.
 
 ### Hubs + tools
 
 | Property | What it does | Buyer |
 |---|---|---|
-| [**suite.kineticgain.com**](https://suite.kineticgain.com) | **Kinetic Gain Protocol Suite** — canonical front door for all 10 open AI governance specs | Recruiters / investors / generalist |
+| [**suite.kineticgain.com**](https://suite.kineticgain.com) | **Kinetic Gain Protocol Suite** — canonical front door for all 11 open AI governance specs + [NIST AI RMF crosswalk](https://suite.kineticgain.com/docs/nist-rmf-crosswalk.md) | Recruiters / investors / generalist |
 | [**docs.kineticgain.com**](https://docs.kineticgain.com) | **Quickstart hub** — per-role guides (CISO / district / healthcare vendor / answer engine) + canonical `/.well-known/` path map | New visitors / implementers |
 | [**directory.kineticgain.com**](https://directory.kineticgain.com) | **Vendor directory** — curated list of domains publishing Kinetic Gain documents | Procurement reviewers |
 | [**examples.kineticgain.com**](https://examples.kineticgain.com) | **Examples gallery** — pick a spec, see its canonical example with JSON highlight | Developers / spec authors |
@@ -48,13 +48,13 @@ I ship platform infrastructure for production AI: the layer between agent fleets
 | [**rag.kineticgain.com**](https://rag.kineticgain.com) | **RAG Sentinel** — hallucination, drift, and citation quality monitoring | ML / AI Ops |
 | [**observe.kineticgain.com**](https://observe.kineticgain.com) | **AgentObserve** — operator console for AI agent fleets | SRE / Platform |
 
-All twenty: mix of AGPL-3.0 and Apache-2.0, CI green, push-to-deploy via FTP Action. **8 React 19 + TypeScript apps · 12 hand-written static HTML landings.**
+All twenty-two: mix of AGPL-3.0 and Apache-2.0, CI green, push-to-deploy via FTP Action. **8 React 19 + TypeScript apps · 14 hand-written static HTML landings.**
 
 ---
 
 ## 🧬 Kinetic Gain Protocol Suite
 
-A family of **ten open JSON specifications** for the answer-engine and agent era — five core (AEO, Prompt Provenance, Agent Cards, AI Evidence Format, MCP Tool Cards), a three-spec **EdTech trio** (vendor / district / student), a **HealthTech vertical extension** (Clinical AI Disclosure — HIPAA / FDA / SaMD posture), and a cross-cutting **AI Incident Card** that ties everything together post-hoc. **Two regulated verticals covered.** All AGPL-3.0, all v0.1 draft, all `kinetic-gain-protocol-suite` tagged. Single landing: [`kinetic-gain-protocol-suite`](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite).
+A family of **eleven open JSON specifications** for the answer-engine and agent era — five core (AEO, Prompt Provenance, Agent Cards, AI Evidence Format, MCP Tool Cards), a three-spec **EdTech trio** (vendor / district / student), a **HealthTech vertical extension** (Clinical AI Disclosure — HIPAA / FDA / SaMD posture), a cross-cutting **AI Incident Card** that ties everything together post-hoc, and an **AI Procurement Decision Card** that signs off on a vendor's posture across the rest of the Suite. **Two regulated verticals covered. NIST AI RMF crosswalk shipped alongside.** All AGPL-3.0, all v0.1 draft, all `kinetic-gain-protocol-suite` tagged. Single landing: [`kinetic-gain-protocol-suite`](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite).
 
 ### 📐 Specifications
 
@@ -70,6 +70,7 @@ A family of **ten open JSON specifications** for the answer-engine and agent era
 | [`classroom-ai-aup-spec`](https://github.com/mizcausevic-dev/classroom-ai-aup-spec) | **Classroom AI AUP** — district / school / course-side policy (closes the EdTech trio) | `aup_version` |
 | [`clinical-ai-disclosure-spec`](https://github.com/mizcausevic-dev/clinical-ai-disclosure-spec) | **Clinical AI Disclosure** — HealthTech vendor-side: HIPAA / FDA / SaMD posture, bias audits, EHR (FHIR / CDS Hooks) | `clinical_ai_card_version` |
 | [`ai-incident-card-spec`](https://github.com/mizcausevic-dev/ai-incident-card-spec) | **AI Incident Card** — "CVE for AI agents," cross-references every other affected document in the Suite | `incident_card_version` |
+| [`ai-procurement-decision-spec`](https://github.com/mizcausevic-dev/ai-procurement-decision-spec) | **AI Procurement Decision Card** — buyer-side approval/rejection record that signs off on a vendor's posture across the rest of the Suite | `decision_card_version` |
 
 ### 🛠️ AEO Reference Stack
 
@@ -86,19 +87,19 @@ The canonical depth example — every layer needed to consume the spec, across f
 | Repo | What it does |
 |---|---|
 | [`mcp-aeo-server`](https://github.com/mizcausevic-dev/mcp-aeo-server) | AEO-only MCP server — 4 tools, one Claude Desktop config entry |
-| [`mcp-kinetic-gain`](https://github.com/mizcausevic-dev/mcp-kinetic-gain) | **Unified MCP server** — **34 tools across 8 specs** (v0.4.0, git-tagged), one Claude Desktop config entry, 61 tests passing. Headline tool: `aup_check_compliance` joins an AUP + Student AI Disclosure into a single allow/deny call. |
+| [`mcp-kinetic-gain`](https://github.com/mizcausevic-dev/mcp-kinetic-gain) | **Unified MCP server** — **47 tools across 11 specs** (v0.5.2, git-tagged), one Claude Desktop config entry, 96 tests passing. Headline tools: `aup_check_compliance` joins an AUP + Student AI Disclosure into a single allow/deny call; `decision_card_validate` enforces the full procurement Decision Card conditional ruleset. |
 
 ### 🖼️ Visualizers + galleries
 
 | Live | Repo | What it does |
 |---|---|---|
 | [`aeo.kineticgain.com`](https://aeo.kineticgain.com) | [`aeo-visualizer`](https://github.com/mizcausevic-dev/aeo-visualizer) | Dedicated AEO Protocol web visualizer |
-| [`kinetic-gain-visualizer`](https://mizcausevic-dev.github.io/kinetic-gain-visualizer/) | [`kinetic-gain-visualizer`](https://github.com/mizcausevic-dev/kinetic-gain-visualizer) | **Unified visualizer** — auto-detects the spec from the top-level `*_version` field and renders the appropriate view. **Eight specs auto-detected**; five views: Visualize / Editor / Architecture / Tools / About |
-| [`examples.kineticgain.com`](https://examples.kineticgain.com) | [`kinetic-gain-examples-gallery`](https://github.com/mizcausevic-dev/kinetic-gain-examples-gallery) | **Examples gallery** — sidebar of 10 specs, click any to see its canonical example rendered with JSON syntax highlighting |
+| [`kinetic-gain-visualizer`](https://mizcausevic-dev.github.io/kinetic-gain-visualizer/) | [`kinetic-gain-visualizer`](https://github.com/mizcausevic-dev/kinetic-gain-visualizer) | **Unified visualizer** — auto-detects the spec from the top-level `*_version` field and renders the appropriate view. **Eleven specs auto-detected**; five views: Visualize / Editor / Architecture / Tools / About |
+| [`examples.kineticgain.com`](https://examples.kineticgain.com) | [`kinetic-gain-examples-gallery`](https://github.com/mizcausevic-dev/kinetic-gain-examples-gallery) | **Examples gallery** — sidebar of 11 specs, click any to see its canonical example rendered with JSON syntax highlighting |
 | [`walker.kineticgain.com`](https://walker.kineticgain.com) | [`well-known-walker-web`](https://github.com/mizcausevic-dev/well-known-walker-web) | **well-known-walker** — paste any domain, see every Kinetic Gain disclosure document it publishes |
 | [`bench.kineticgain.com`](https://bench.kineticgain.com) | [`prompt-injection-bench-web`](https://github.com/mizcausevic-dev/prompt-injection-bench-web) | **prompt-injection-bench** visual harness |
 
-The unified visualizer + unified MCP server give the Suite a complete read-side (human) and tool-side (agent) entry point. **Ten specs, two front doors, twenty live properties.**
+The unified visualizer + unified MCP server give the Suite a complete read-side (human) and tool-side (agent) entry point. **Eleven specs, two front doors, twenty-two live properties.**
 
 ### 🛡️ Testing companion
 
@@ -108,18 +109,20 @@ The unified visualizer + unified MCP server give the Suite a complete read-side 
 
 ---
 
-## 🛡️ Platform Reliability Stack · Python
+## 🛡️ Platform Reliability Stack
 
-A four-piece set. Each independent. All designed to compose:
+Reliability primitives. Each independent. All designed to compose:
 
-| Repo | Surface | Buyer |
-|---|---|---|
-| [`rate-limit-shield`](https://github.com/mizcausevic-dev/rate-limit-shield) | Token bucket + circuit breaker + jittered retry, HTTP 429 / Retry-After awareness | **SRE** |
-| [`identity-mesh`](https://github.com/mizcausevic-dev/identity-mesh) | SPIFFE-style JWT-SVID broker — short-lived tokens, audience binding, zero long-lived keys | **CISO** |
-| [`agent-canary`](https://github.com/mizcausevic-dev/agent-canary) | Progressive rollout, shadow mode, sticky-percent routing, auto-rollback | **Platform / SRE** |
-| [`model-registry-pro`](https://github.com/mizcausevic-dev/model-registry-pro) | Model lifecycle catalog: lineage, stage promotion, approval gates | **Platform / MLOps** |
+| Repo | Lang | Surface | Buyer |
+|---|---|---|---|
+| [`rate-limit-shield`](https://github.com/mizcausevic-dev/rate-limit-shield) | Python | Token bucket + circuit breaker + jittered retry, HTTP 429 / Retry-After awareness | **SRE** |
+| [`identity-mesh`](https://github.com/mizcausevic-dev/identity-mesh) | Python | SPIFFE-style JWT-SVID broker — short-lived tokens, audience binding, zero long-lived keys | **CISO** |
+| [`agent-canary`](https://github.com/mizcausevic-dev/agent-canary) | Python | Progressive rollout, shadow mode, sticky-percent routing, auto-rollback | **Platform / SRE** |
+| [`model-registry-pro`](https://github.com/mizcausevic-dev/model-registry-pro) | Python | Model lifecycle catalog: lineage, stage promotion, approval gates | **Platform / MLOps** |
+| [`slo-budget-tracker`](https://github.com/mizcausevic-dev/slo-budget-tracker) | Python | SLO + error-budget library, FastAPI middleware, Prometheus exporter, multi-window burn-rate alerts | **SRE** |
+| [`reliability-toolkit-rs`](https://github.com/mizcausevic-dev/reliability-toolkit-rs) | **Rust** | Async Tokio primitives: token-bucket rate limiter · 3-state circuit breaker · exponential-backoff retry with jitter · bulkhead | **SRE / Platform** |
 
-Identity at the edge → rate limits at the model → canary at deploy → registry as source of truth. **Defense-in-depth for the agent era.**
+Identity at the edge → rate limits at the model → canary at deploy → registry as source of truth → SLO budget at the API surface → Rust primitives for hot paths. **Defense-in-depth for the agent era.**
 
 ---
 
@@ -181,6 +184,7 @@ Production-shaped governance and observability for AI / LLM workloads:
 
 | Repo | What it does |
 |---|---|
+| [`procurement-decision-api`](https://github.com/mizcausevic-dev/procurement-decision-api) | **First cross-ecosystem bridge in the portfolio.** Drafts AI Procurement Decision Cards from a buyer rubric and vendor Suite documents (AEO + agent-card + tool-card + ai-evidence + …). Connects [Kinetic Gain Protocol Suite](#-kinetic-gain-protocol-suite) (spec #11) with Decision Intelligence. Pydantic v2, FastAPI, httpx async, NIST AI RMF crosswalk linked from the OpenAPI spec. |
 | [`briefing-intelligence-engine`](https://github.com/mizcausevic-dev/briefing-intelligence-engine) | Executive briefing scoring, narrative generation, risk ranking |
 | [`signal-orchestration-lab`](https://github.com/mizcausevic-dev/signal-orchestration-lab) | Dependency-aware signal routing, escalation sequencing |
 
