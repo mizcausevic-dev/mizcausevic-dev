@@ -3,15 +3,18 @@
 > **Engineering · Platform Architecture · B2B SaaS Technologist**
 > Boston, MA · ~30 years across IBM, CyberArk, Alteryx, Digital.ai, Gryphon.ai
 
-I ship platform infrastructure for production AI: the layer between agent fleets and the people who run them. Reliability primitives, identity governance, AI observability, decision intelligence. **I also author open specifications for the answer-engine era** — see the [Kinetic Gain Protocol Suite](#-kinetic-gain-protocol-suite) below. Polyglot by choice: the language fits the problem, not the resume.
+I ship platform infrastructure for production AI: the layer between agent fleets and the people who run them. Reliability primitives, identity governance, AI observability, decision intelligence. **I also author open specifications for the answer-engine era — and a fifteen-repo implementation stack that consumes them** ([Suite × Implementations](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite#-suite--implementations)). Polyglot by choice: the language fits the problem, not the resume.
 
 **Publication note:** many of the repos below were published in a concentrated May 2026 portfolio sprint. The dates reflect public packaging, CI, screenshots, and repo hardening, not the first moment the ideas or workstreams existed.
 
 ---
 
-## 🚀 Currently Live
+## 🚀 Currently Live — two parallel layers
 
-**Twenty-two** productized open-source properties live at `kineticgain.com` subdomains. **All push-to-deploy via GitHub Actions FTP CI/CD.** Front door: **[suite.kineticgain.com](https://suite.kineticgain.com)** · Quickstart hub: **[docs.kineticgain.com](https://docs.kineticgain.com)**.
+The portfolio runs on **two parallel layers** that compose:
+
+1. **Twenty-two productized open-source properties** live at `kineticgain.com` subdomains — front doors, per-spec landings, operator dashboards, vendor directory, prompt-injection bench. All push-to-deploy via GitHub Actions FTP CI/CD. Front door: **[suite.kineticgain.com](https://suite.kineticgain.com)** · Quickstart hub: **[docs.kineticgain.com](https://docs.kineticgain.com)**.
+2. **Fifteen-repo Suite Implementation Stack** — the software that *consumes* the [Kinetic Gain Protocol Suite](#-kinetic-gain-protocol-suite) specs. Decision Intelligence engines · Platform Reliability primitives · MCP servers · data-contract enforcement · ed25519 attestation · drift detection · streaming validators. All CI-green, all semver-tagged at v0.1.0, all MIT-licensed. **Four cross-ecosystem hooks** chain them into one composable system. The catalog: [**Suite × Implementations**](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite#-suite--implementations). The compliance mapping: [**NIST AI RMF crosswalk**](https://suite.kineticgain.com/docs/nist-rmf-crosswalk.md) (v0.2 includes the implementation-tooling alignment).
 
 ### Hubs + tools
 
