@@ -82,6 +82,11 @@ The canonical depth example — every layer needed to consume the spec, across f
 | **CLI** | [`aeo-cli`](https://github.com/mizcausevic-dev/aeo-cli) — `aeo validate / fetch / inspect / claim`, colored output, end-to-end against the live well-known URL |
 | **Crawler** | [`aeo-crawler`](https://github.com/mizcausevic-dev/aeo-crawler) — BFS over AEO graphs, JSON Lines output, configurable depth + concurrency |
 | **Validator service** | [`aeo-validator-service`](https://github.com/mizcausevic-dev/aeo-validator-service) — **always-on HTTP validator** for AEO + all 11 Suite docs. Auto-detects the spec via `*_version` sniffing, hashes canonically, tracks **drift** across re-checks (`POST /watches/{id}/recheck` returns a structured `DriftReport`). |
+| **Graph explorer** | [`aeo-graph-explorer-rs`](https://github.com/mizcausevic-dev/aeo-graph-explorer-rs) — **Rust + axum + petgraph** graph-query service over `aeo-crawler` JSONL output. Ingests atomically; exposes `/nodes` · `/neighbors` · `/shortest-path` · `/find-by-claim`. **The fifth layer of the AEO Reference Stack — 3→5 layers gap closed.** |
+
+#### Spec-ecosystem primitive
+
+[`hash-attestation-rs`](https://github.com/mizcausevic-dev/hash-attestation-rs) — **sign + verify Suite docs** with ed25519 over the same canonical-hash convention every other Suite repo uses. The missing "this AEO actually came from the vendor" layer. Vendors sign, publish a well-known public key URL, consumers verify. Composes with `aeo-validator-service` (tamper events surface as structured issues) and `procurement-decision-api` (Decision Cards can carry a signature).
 
 ### 🔌 MCP Integration
 
@@ -124,8 +129,9 @@ Reliability primitives. Each independent. All designed to compose:
 | [`slo-budget-tracker`](https://github.com/mizcausevic-dev/slo-budget-tracker) | Python | SLO + error-budget library, FastAPI middleware, Prometheus exporter, multi-window burn-rate alerts | **SRE** |
 | [`reliability-toolkit-rs`](https://github.com/mizcausevic-dev/reliability-toolkit-rs) | **Rust** | Async Tokio primitives: token-bucket rate limiter · 3-state circuit breaker · exponential-backoff retry with jitter · bulkhead | **SRE / Platform** |
 | [`feature-flag-rs`](https://github.com/mizcausevic-dev/feature-flag-rs) | **Rust** | Server-side feature flag eval — targeting rules, sticky percentage rollouts (SHA-256 bucketing, no RNG), hot reload | **Platform / SRE** |
+| [`request-shadow-rs`](https://github.com/mizcausevic-dev/request-shadow-rs) | **Rust** | Async request mirroring with sampling + divergence detection — fires both legs concurrently, returns the primary while collecting a structured diff. The SRE primitive for safe migrations | **SRE / Platform** |
 
-Identity at the edge → rate limits at the model → canary at deploy → registry as source of truth → SLO budget at the API surface → Rust primitives for hot paths → feature flags for rollout control. **Defense-in-depth for the agent era.**
+Identity at the edge → rate limits at the model → canary at deploy → registry as source of truth → SLO budget at the API surface → Rust primitives for hot paths → feature flags for rollout control → shadow traffic for migrations. **Defense-in-depth for the agent era.**
 
 ---
 
