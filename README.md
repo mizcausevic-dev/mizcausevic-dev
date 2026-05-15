@@ -95,6 +95,7 @@ The canonical depth example — every layer needed to consume the spec, across f
 | [`mcp-aeo-server`](https://github.com/mizcausevic-dev/mcp-aeo-server) | AEO-only MCP server — 4 tools, one Claude Desktop config entry |
 | [`mcp-kinetic-gain`](https://github.com/mizcausevic-dev/mcp-kinetic-gain) | **Unified MCP server** — **47 tools across 11 specs** (v0.5.2, git-tagged), one Claude Desktop config entry, 96 tests passing. Headline tools: `aup_check_compliance` joins an AUP + Student AI Disclosure into a single allow/deny call; `decision_card_validate` enforces the full procurement Decision Card conditional ruleset. |
 | [`mcp-reliability-toolkit`](https://github.com/mizcausevic-dev/mcp-reliability-toolkit) | **Reliability MCP server** — 4 tools (`compute_slo_burn`, `design_rate_limiter`, `design_circuit_breaker`, `compose_reliability_pattern`). Same math as `slo-budget-tracker`; emits drop-in Python + Rust configs from a Claude conversation. |
+| [`mcp-decision-intelligence`](https://github.com/mizcausevic-dev/mcp-decision-intelligence) | **Decision Intelligence MCP server** — 4 tools (`validate_decision_card`, `preview_policy_bundle`, `plan_incident_remediation`, `check_contract_compatibility`). Read-only preview of what `procurement-decision-api` + `policy-as-code-engine` + `incident-correlation-rs` + `data-contract-registry` would do — deterministic, no LLM-in-the-loop reasoning. |
 
 ### 🖼️ Visualizers + galleries
 
@@ -130,8 +131,9 @@ Reliability primitives. Each independent. All designed to compose:
 | [`reliability-toolkit-rs`](https://github.com/mizcausevic-dev/reliability-toolkit-rs) | **Rust** | Async Tokio primitives: token-bucket rate limiter · 3-state circuit breaker · exponential-backoff retry with jitter · bulkhead | **SRE / Platform** |
 | [`feature-flag-rs`](https://github.com/mizcausevic-dev/feature-flag-rs) | **Rust** | Server-side feature flag eval — targeting rules, sticky percentage rollouts (SHA-256 bucketing, no RNG), hot reload | **Platform / SRE** |
 | [`request-shadow-rs`](https://github.com/mizcausevic-dev/request-shadow-rs) | **Rust** | Async request mirroring with sampling + divergence detection — fires both legs concurrently, returns the primary while collecting a structured diff. The SRE primitive for safe migrations | **SRE / Platform** |
+| [`audit-stream-py`](https://github.com/mizcausevic-dev/audit-stream-py) | Python | **Append-only governance event stream** for the whole portfolio. Hash-chained for tamper-evidence, SSE for live tailing, REST for queries. Every other portfolio repo is a producer. **Platform Reliability Stack #10 — the 10+ target is hit.** | **SRE / Compliance** |
 
-Identity at the edge → rate limits at the model → canary at deploy → registry as source of truth → SLO budget at the API surface → Rust primitives for hot paths → feature flags for rollout control → shadow traffic for migrations. **Defense-in-depth for the agent era.**
+Identity at the edge → rate limits at the model → canary at deploy → registry as source of truth → SLO budget at the API surface → Rust primitives for hot paths → feature flags for rollout control → shadow traffic for migrations → tamper-evident audit log. **Defense-in-depth for the agent era.**
 
 ---
 
@@ -235,6 +237,7 @@ Spec-first OpenAPI services:
 | Repo | What it does |
 |---|---|
 | [`data-contract-registry`](https://github.com/mizcausevic-dev/data-contract-registry) | **Schema registry for data contracts.** Semver versioning, compatibility checks (backward / forward / full), declared owners, freshness SLAs. Bridges to `procurement-decision-api` via `POST /contracts/owners/from-decision-card` — buyer + decision_maker from a Decision Card become the contract's paging targets. **Cross-ecosystem hook #3.** |
+| [`csv-data-quality-rs`](https://github.com/mizcausevic-dev/csv-data-quality-rs) | **Rust streaming CSV validator** against a `data-contract-registry` contract. Async, row-by-row, structured violation report (`required` / `bad_type` / `enum_mismatch` / `column_count_mismatch` / `invalid_json`). Memory cost is proportional to `max_samples`, not file size. **Cross-ecosystem hook #4.** |
 | [`revops-database-lab`](https://github.com/mizcausevic-dev/revops-database-lab) | PostgreSQL revenue modeling lab. |
 | [`revenue-intelligence-db`](https://github.com/mizcausevic-dev/revenue-intelligence-db) | Attribution + forecast + renewal-risk reporting. |
 | [`cloud-cost-intelligence-dashboard`](https://github.com/mizcausevic-dev/cloud-cost-intelligence-dashboard) | Cloud cost intelligence dashboards. |
