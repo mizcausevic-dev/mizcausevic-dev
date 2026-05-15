@@ -16,6 +16,46 @@ The portfolio runs on **two parallel layers** that compose:
 1. **Twenty-two productized open-source properties** live at `kineticgain.com` subdomains — front doors, per-spec landings, operator dashboards, vendor directory, prompt-injection bench. All push-to-deploy via GitHub Actions FTP CI/CD. Front door: **[suite.kineticgain.com](https://suite.kineticgain.com)** · Quickstart hub: **[docs.kineticgain.com](https://docs.kineticgain.com)**.
 2. **Fifteen-repo Suite Implementation Stack** — the software that *consumes* the [Kinetic Gain Protocol Suite](#-kinetic-gain-protocol-suite) specs. Decision Intelligence engines · Platform Reliability primitives · MCP servers · data-contract enforcement · ed25519 attestation · drift detection · streaming validators. All CI-green, all semver-tagged at v0.1.0, all MIT-licensed. **Four cross-ecosystem hooks** chain them into one composable system. The catalog: [**Suite × Implementations**](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite#-suite--implementations). The compliance mapping: [**NIST AI RMF crosswalk**](https://suite.kineticgain.com/docs/nist-rmf-crosswalk.md) (v0.2 includes the implementation-tooling alignment).
 
+### 🕸️ How it composes
+
+```mermaid
+flowchart TB
+    classDef spec fill:#10b981,stroke:#065f46,color:#fff,stroke-width:2px
+    classDef hook fill:#3b82f6,stroke:#1e40af,color:#fff,stroke-width:2px
+    classDef sup fill:#f3f4f6,stroke:#6b7280,color:#1f2937
+    classDef stream fill:#f59e0b,stroke:#92400e,color:#fff
+    classDef mcp fill:#a855f7,stroke:#581c87,color:#fff,stroke-width:2px
+
+    SPECS["📐 11 Kinetic Gain Protocol Suite specs<br/>AEO · Agent · Tool · Tutor · AUP · Disclosure<br/>Evidence · Provenance · Clinical · Incident · Decision"]:::spec
+
+    SPECS -->|"#1 ingest Suite docs"| PDA["procurement-decision-api<br/>drafts Decision Cards"]:::hook
+    PDA -->|"#2 conditions → runtime gates"| PAC["policy-as-code-engine<br/>PolicyBundle enforcement"]:::hook
+    PDA -->|"#3 extract owners"| DCR["data-contract-registry<br/>schema + SLAs"]:::hook
+    DCR -->|"#4 streaming CSV check"| CDQ["csv-data-quality-rs<br/>row-by-row validation"]:::hook
+
+    SPECS -.->|sign + verify| HA["hash-attestation-rs<br/>ed25519 over canonical hash"]:::sup
+    SPECS -.->|drift detection| AVS["aeo-validator-service<br/>always-on validation"]:::sup
+    AVS -.->|JSONL feed| AGE["aeo-graph-explorer-rs<br/>graph-query layer #5"]:::sup
+    SPECS -.->|incident → plan| ICR["incident-correlation-rs<br/>Suite-graph BFS"]:::sup
+    ICR -.->|drives| PAC
+
+    PDA --> AS
+    PAC --> AS
+    DCR --> AS
+    AVS --> AS
+    ICR --> AS
+    HA --> AS
+    AS["📋 audit-stream-py<br/>hash-chained tamper-evident spine"]:::stream
+
+    SPECS ==>|spec tools| MCP
+    PDA ==>|preview tools| MCP
+    AS ==>|event tools| MCP
+    HA ==>|verify tools| MCP
+    MCP["🤖 mcp-kinetic-gain v0.6.0<br/>60 tools · one Claude Desktop config entry"]:::mcp
+```
+
+**Green** = spec layer (the foundation). **Blue** = the four cross-ecosystem hooks that make it a stack rather than a pile. **Grey** = supporting implementation tools that feed into either side. **Amber** = the tamper-evident audit spine every governance moment writes to. **Purple** = the unified MCP surface that exposes the whole thing to Claude through one config entry.
+
 ### Hubs + tools
 
 | Property | What it does | Buyer |
