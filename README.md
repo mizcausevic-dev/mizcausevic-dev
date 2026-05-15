@@ -81,6 +81,7 @@ The canonical depth example — every layer needed to consume the spec, across f
 | **SDKs** | [`aeo-sdk-python`](https://github.com/mizcausevic-dev/aeo-sdk-python) (live on [PyPI](https://pypi.org/project/aeo-protocol/)) · [`aeo-sdk-typescript`](https://github.com/mizcausevic-dev/aeo-sdk-typescript) · [`aeo-sdk-rust`](https://github.com/mizcausevic-dev/aeo-sdk-rust) · [`aeo-sdk-go`](https://github.com/mizcausevic-dev/aeo-sdk-go) · [`aeo-sdk-swift`](https://github.com/mizcausevic-dev/aeo-sdk-swift) |
 | **CLI** | [`aeo-cli`](https://github.com/mizcausevic-dev/aeo-cli) — `aeo validate / fetch / inspect / claim`, colored output, end-to-end against the live well-known URL |
 | **Crawler** | [`aeo-crawler`](https://github.com/mizcausevic-dev/aeo-crawler) — BFS over AEO graphs, JSON Lines output, configurable depth + concurrency |
+| **Validator service** | [`aeo-validator-service`](https://github.com/mizcausevic-dev/aeo-validator-service) — **always-on HTTP validator** for AEO + all 11 Suite docs. Auto-detects the spec via `*_version` sniffing, hashes canonically, tracks **drift** across re-checks (`POST /watches/{id}/recheck` returns a structured `DriftReport`). |
 
 ### 🔌 MCP Integration
 
@@ -182,14 +183,15 @@ Production-shaped governance and observability for AI / LLM workloads:
 
 ---
 
-## 🧪 Decision Intelligence Engines · Python + FastAPI
+## 🧪 Decision Intelligence Engines
 
-| Repo | What it does |
-|---|---|
-| [`procurement-decision-api`](https://github.com/mizcausevic-dev/procurement-decision-api) | **First cross-ecosystem bridge in the portfolio.** Drafts AI Procurement Decision Cards from a buyer rubric and vendor Suite documents (AEO + agent-card + tool-card + ai-evidence + …). Connects [Kinetic Gain Protocol Suite](#-kinetic-gain-protocol-suite) (spec #11) with Decision Intelligence. Pydantic v2, FastAPI, httpx async, NIST AI RMF crosswalk linked from the OpenAPI spec. |
-| [`policy-as-code-engine`](https://github.com/mizcausevic-dev/policy-as-code-engine) | **Companion to `procurement-decision-api`.** Declarative policy evaluator — JSON/YAML rules, first-match-wins, deny-trumps-allow. Headline: `POST /bundles/from-decision-card` turns a Decision Card's conditions into a runtime-enforceable PolicyBundle. Closes the loop from "buyer signed off" to "request gated." |
-| [`briefing-intelligence-engine`](https://github.com/mizcausevic-dev/briefing-intelligence-engine) | Executive briefing scoring, narrative generation, risk ranking |
-| [`signal-orchestration-lab`](https://github.com/mizcausevic-dev/signal-orchestration-lab) | Dependency-aware signal routing, escalation sequencing |
+| Repo | Lang | What it does |
+|---|---|---|
+| [`procurement-decision-api`](https://github.com/mizcausevic-dev/procurement-decision-api) | Python | **First cross-ecosystem bridge in the portfolio.** Drafts AI Procurement Decision Cards from a buyer rubric and vendor Suite documents (AEO + agent-card + tool-card + ai-evidence + …). Connects [Kinetic Gain Protocol Suite](#-kinetic-gain-protocol-suite) (spec #11) with Decision Intelligence. Pydantic v2, FastAPI, httpx async, NIST AI RMF crosswalk linked from the OpenAPI spec. |
+| [`policy-as-code-engine`](https://github.com/mizcausevic-dev/policy-as-code-engine) | Python | **Companion to `procurement-decision-api`.** Declarative policy evaluator — JSON/YAML rules, first-match-wins, deny-trumps-allow. Headline: `POST /bundles/from-decision-card` turns a Decision Card's conditions into a runtime-enforceable PolicyBundle. Closes the loop from "buyer signed off" to "request gated." |
+| [`incident-correlation-rs`](https://github.com/mizcausevic-dev/incident-correlation-rs) | **Rust** | **Walks the Suite graph from an AI Incident Card** and emits a structured remediation plan. BFS over typed `SuiteEdge`s; `DecisionCard` → `RecheckPolicy`, `Vendor` → `RequestReview`, AEO/agent/tool → `Revalidate`. petgraph under the hood. The piece that turns "we had an incident" into "here's exactly what to touch next." |
+| [`briefing-intelligence-engine`](https://github.com/mizcausevic-dev/briefing-intelligence-engine) | Python | Executive briefing scoring, narrative generation, risk ranking |
+| [`signal-orchestration-lab`](https://github.com/mizcausevic-dev/signal-orchestration-lab) | Python | Dependency-aware signal routing, escalation sequencing |
 
 ---
 
@@ -224,9 +226,12 @@ Spec-first OpenAPI services:
 
 ## 🗃️ Data & Analytics
 
-[`revops-database-lab`](https://github.com/mizcausevic-dev/revops-database-lab) · [`revenue-intelligence-db`](https://github.com/mizcausevic-dev/revenue-intelligence-db) · [`cloud-cost-intelligence-dashboard`](https://github.com/mizcausevic-dev/cloud-cost-intelligence-dashboard)
-
-PostgreSQL revenue modeling, attribution analysis, forecast and renewal risk reporting, cloud cost intelligence.
+| Repo | What it does |
+|---|---|
+| [`data-contract-registry`](https://github.com/mizcausevic-dev/data-contract-registry) | **Schema registry for data contracts.** Semver versioning, compatibility checks (backward / forward / full), declared owners, freshness SLAs. Bridges to `procurement-decision-api` via `POST /contracts/owners/from-decision-card` — buyer + decision_maker from a Decision Card become the contract's paging targets. **Cross-ecosystem hook #3.** |
+| [`revops-database-lab`](https://github.com/mizcausevic-dev/revops-database-lab) | PostgreSQL revenue modeling lab. |
+| [`revenue-intelligence-db`](https://github.com/mizcausevic-dev/revenue-intelligence-db) | Attribution + forecast + renewal-risk reporting. |
+| [`cloud-cost-intelligence-dashboard`](https://github.com/mizcausevic-dev/cloud-cost-intelligence-dashboard) | Cloud cost intelligence dashboards. |
 
 ---
 
