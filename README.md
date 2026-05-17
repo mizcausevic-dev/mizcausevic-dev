@@ -167,6 +167,18 @@ The canonical depth example — every layer needed to consume the spec, across f
 
 [`hash-attestation-rs`](https://github.com/mizcausevic-dev/hash-attestation-rs) — **sign + verify Suite docs** with ed25519 over the same canonical-hash convention every other Suite repo uses. The missing "this AEO actually came from the vendor" layer. Vendors sign, publish a well-known public key URL, consumers verify. Composes with `aeo-validator-service` (tamper events surface as structured issues) and `procurement-decision-api` (Decision Cards can carry a signature).
 
+### 📈 AEO / GEO Infrastructure
+
+The spec is only one layer. The newer control-plane layer covers citation readiness, publication safety, visibility monitoring, and release posture:
+
+| Repo | What it does |
+|---|---|
+| [`aeo-citation-gap-finder`](https://github.com/mizcausevic-dev/aeo-citation-gap-finder) | Detects weakly sourced, stale, or unsupported claims before they leak into answer-engine surfaces |
+| [`llms-txt-governance-hub`](https://github.com/mizcausevic-dev/llms-txt-governance-hub) | Governs `llms.txt` manifests, exclusions, freshness windows, and release approvals |
+| [`geo-competitive-visibility-tracker`](https://github.com/mizcausevic-dev/geo-competitive-visibility-tracker) | Tracks answer-surface share, citation pressure, and competitor query ownership |
+| [`aeo-registry`](https://github.com/mizcausevic-dev/aeo-registry) | Governed inventory of manifests, claim readiness, freshness pressure, and publisher posture |
+| [`aeo-linter`](https://github.com/mizcausevic-dev/aeo-linter) | Rust CLI for manifest hygiene, source freshness, claim coverage, and answer-surface readiness |
+
 ### 🔌 MCP Integration
 
 | Repo | What it does |
@@ -279,6 +291,8 @@ Production-shaped governance and observability for AI / LLM workloads:
 | [`incident-correlation-rs`](https://github.com/mizcausevic-dev/incident-correlation-rs) | **Rust** | **Walks the Suite graph from an AI Incident Card** and emits a structured remediation plan. BFS over typed `SuiteEdge`s; `DecisionCard` → `RecheckPolicy`, `Vendor` → `RequestReview`, AEO/agent/tool → `Revalidate`. petgraph under the hood. The piece that turns "we had an incident" into "here's exactly what to touch next." |
 | [`briefing-intelligence-engine`](https://github.com/mizcausevic-dev/briefing-intelligence-engine) | Python | Executive briefing scoring, narrative generation, risk ranking |
 | [`signal-orchestration-lab`](https://github.com/mizcausevic-dev/signal-orchestration-lab) | Python | Dependency-aware signal routing, escalation sequencing |
+| [`decision-memory-engine`](https://github.com/mizcausevic-dev/decision-memory-engine) | Python | Decision history, rationale recovery, stale assumption tracking, and revisit posture |
+| [`evidence-ranking-engine`](https://github.com/mizcausevic-dev/evidence-ranking-engine) | Python | Evidence packet ranking by trust score, freshness, contradiction pressure, and citation density |
 
 ---
 
@@ -311,6 +325,24 @@ Spec-first OpenAPI services:
 
 ---
 
+## 🧩 WordPress / Headless Reliability
+
+The newer CMS lane is not brochure work. It is governance, preview trust, query discipline, and contract safety for headless WordPress estates:
+
+[`wordpress-block-seo-governance-auditor`](https://github.com/mizcausevic-dev/wordpress-block-seo-governance-auditor) · [`wordpress-graphql-governance-gateway`](https://github.com/mizcausevic-dev/wordpress-graphql-governance-gateway) · [`headless-seo-fallback-engine`](https://github.com/mizcausevic-dev/headless-seo-fallback-engine) · [`headless-preview-recovery-kit`](https://github.com/mizcausevic-dev/headless-preview-recovery-kit) · [`wpgraphql-query-cost-inspector`](https://github.com/mizcausevic-dev/wpgraphql-query-cost-inspector) · [`frontend-contract-testing-for-wordpress`](https://github.com/mizcausevic-dev/frontend-contract-testing-for-wordpress) · [`headless-editorial-command-center`](https://github.com/mizcausevic-dev/headless-editorial-command-center)
+
+This cluster covers answer-surface safety, preview recovery, metadata fallback, query cost, frontend payload contracts, and editorial release readiness.
+
+---
+
+## 🔐 Enterprise Integration / IAM / Workflow
+
+Commercially legible systems work across access review, evidence plumbing, connector testing, workflow infrastructure, and HR-to-identity provisioning:
+
+[`cyberark-access-review-sync`](https://github.com/mizcausevic-dev/cyberark-access-review-sync) · [`cyberark-connector-observability-exporter`](https://github.com/mizcausevic-dev/cyberark-connector-observability-exporter) · [`servicenow-cyberark-evidence-pipeline`](https://github.com/mizcausevic-dev/servicenow-cyberark-evidence-pipeline) · [`ibm-custom-connector-starter`](https://github.com/mizcausevic-dev/ibm-custom-connector-starter) · [`ukg-to-scim-provisioner`](https://github.com/mizcausevic-dev/ukg-to-scim-provisioner) · [`camunda-connector-test-harness`](https://github.com/mizcausevic-dev/camunda-connector-test-harness)
+
+---
+
 ## 🗃️ Data & Analytics
 
 | Repo | What it does |
@@ -320,6 +352,8 @@ Spec-first OpenAPI services:
 | [`revops-database-lab`](https://github.com/mizcausevic-dev/revops-database-lab) | PostgreSQL revenue modeling lab. |
 | [`revenue-intelligence-db`](https://github.com/mizcausevic-dev/revenue-intelligence-db) | Attribution + forecast + renewal-risk reporting. |
 | [`cloud-cost-intelligence-dashboard`](https://github.com/mizcausevic-dev/cloud-cost-intelligence-dashboard) | Cloud cost intelligence dashboards. |
+| [`semantic-metrics-catalog`](https://github.com/mizcausevic-dev/semantic-metrics-catalog) | Governed metric definitions, ownership lanes, semantic contracts, and freshness posture. |
+| [`attribution-warehouse-lab`](https://github.com/mizcausevic-dev/attribution-warehouse-lab) | Warehouse-first attribution modeling, path analysis, and governed revenue-credit logic. |
 
 ---
 
