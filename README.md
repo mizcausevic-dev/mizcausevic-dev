@@ -3,9 +3,21 @@
 > **Engineering · Platform Architecture · B2B SaaS Technologist**
 > Boston, MA · ~30 years across IBM, CyberArk, Alteryx, Digital.ai, Gryphon.ai
 
-I ship platform infrastructure for production AI: the layer between agent fleets and the people who run them. Reliability primitives, identity governance, AI observability, decision intelligence. **I also author open specifications for the answer-engine era — and a fifteen-repo implementation stack that consumes them** ([Suite × Implementations](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite#-suite--implementations)). Polyglot by choice: the language fits the problem, not the resume.
+I build the systems that sit between traffic, revenue, and the teams that operate them. Platform engineering, GTM systems, traffic integrity, digital intelligence, AI governance. **I also author open specifications for the answer-engine era — and a fifteen-repo implementation stack that consumes them** ([Suite × Implementations](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite#-suite--implementations)). Polyglot by choice: the language fits the problem, not the resume.
 
 **Publication note:** many of the repos below were published in a concentrated May 2026 portfolio sprint. The dates reflect public packaging, CI, screenshots, and repo hardening, not the first moment the ideas or workstreams existed.
+
+### 📡 Current expansion lane
+
+The next portfolio wave is intentionally shifting from pure infrastructure metrics toward **revenue-generating and traffic-integrity systems**:
+
+- `GTM Systems & Growth` — demand-gen automation, CRM routing, lifecycle control, offer motion
+- `Traffic Integrity` — bot mitigation, click-fraud reduction, clean analytics inputs
+- `Digital Intelligence` — attribution, telemetry, SEO governance, pipeline clarity
+- `Platform Engineering` — headless CMS, DevOps, core web vitals, resilient delivery
+
+First repo in that lane:
+- [`revops-lead-router`](https://github.com/mizcausevic-dev/revops-lead-router) — control plane for lead enrichment, CRM routing, speed-to-lead posture, and queue integrity
 
 ---
 
