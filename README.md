@@ -114,6 +114,7 @@ flowchart LR
 | [**examples.kineticgain.com**](https://examples.kineticgain.com) | **Examples gallery** — pick a spec, see its canonical example with JSON highlight | Developers / spec authors |
 | [**walker.kineticgain.com**](https://walker.kineticgain.com) | **well-known-walker** — paste any domain, see every Kinetic Gain disclosure it publishes | Procurement / Risk reviewers |
 | [**bench.kineticgain.com**](https://bench.kineticgain.com) | **prompt-injection-bench** — visual harness, paste a JSONL transcript, see pass rates | CISO / Red-team / Trust & Safety |
+| [**pulse.kineticgain.com**](https://pulse.kineticgain.com) | **AI Procurement Pulse** — quarterly research index of vendor AI governance disclosure across the open internet | Journalists / Analysts / Buyers |
 
 ### Per-spec landing pages (one per spec in the Suite)
 
@@ -129,6 +130,7 @@ flowchart LR
 | [**aup.kineticgain.com**](https://aup.kineticgain.com) | Classroom AI AUP | District / school / instructor |
 | [**clinical.kineticgain.com**](https://clinical.kineticgain.com) | Clinical AI Disclosure (HIPAA / FDA / SaMD) | Hospital CMIO / Compliance |
 | [**incidents.kineticgain.com**](https://incidents.kineticgain.com) | AI Incident Card — "CVE for AI agents" | CISO / Trust & Safety |
+| [**decisions.kineticgain.com**](https://decisions.kineticgain.com) | AI Procurement Decision Card — the buyer-side artifact (spec #11) | Procurement / District / Agency |
 
 ### Earlier product surfaces
 
@@ -199,6 +201,7 @@ The spec is only one layer. The newer control-plane layer covers citation readin
 | [`mcp-kinetic-gain`](https://github.com/mizcausevic-dev/mcp-kinetic-gain) | **Unified MCP server** — **47 tools across 11 specs** (v0.5.2, git-tagged), one Claude Desktop config entry, 96 tests passing. Headline tools: `aup_check_compliance` joins an AUP + Student AI Disclosure into a single allow/deny call; `decision_card_validate` enforces the full procurement Decision Card conditional ruleset. |
 | [`mcp-reliability-toolkit`](https://github.com/mizcausevic-dev/mcp-reliability-toolkit) | **Reliability MCP server** — 4 tools (`compute_slo_burn`, `design_rate_limiter`, `design_circuit_breaker`, `compose_reliability_pattern`). Same math as `slo-budget-tracker`; emits drop-in Python + Rust configs from a Claude conversation. |
 | [`mcp-decision-intelligence`](https://github.com/mizcausevic-dev/mcp-decision-intelligence) | **Decision Intelligence MCP server** — 4 tools (`validate_decision_card`, `preview_policy_bundle`, `plan_incident_remediation`, `check_contract_compatibility`). Read-only preview of what `procurement-decision-api` + `policy-as-code-engine` + `incident-correlation-rs` + `data-contract-registry` would do — deterministic, no LLM-in-the-loop reasoning. |
+| [`mcp-permission-broker`](https://github.com/mizcausevic-dev/mcp-permission-broker) | **Runtime permission gate** — the enforcement point between an AI Procurement Decision Card and an MCP tool call. Composes Decision Card conditions into PolicyBundles, applies deny-trumps-allow at request time, emits `tool_invocation_*` events to the audit-stream spine. The piece that turns "buyer signed off" into "this tool call is denied." |
 
 ### 🖼️ Visualizers + galleries
 
@@ -211,6 +214,12 @@ The spec is only one layer. The newer control-plane layer covers citation readin
 | [`bench.kineticgain.com`](https://bench.kineticgain.com) | [`prompt-injection-bench-web`](https://github.com/mizcausevic-dev/prompt-injection-bench-web) | **prompt-injection-bench** visual harness |
 
 The unified visualizer + unified MCP server give the Suite a complete read-side (human) and tool-side (agent) entry point. **Eleven specs, two front doors, twenty-two live properties.**
+
+### 📦 Client libraries
+
+| Repo | What it does |
+|---|---|
+| [`well-known-probe-js`](https://github.com/mizcausevic-dev/well-known-probe-js) | **Zero-dependency vanilla JavaScript** probe for all eleven Suite documents at any domain's `/.well-known/` paths. Runs in browser + Node 18+ + Deno + Bun. Returns a 0-100 disclosure score + tier + per-spec found/missing. Discriminator-aware (a 200 of the wrong JSON shape doesn't count). The shared core of the upcoming Vendor AI Disclosure Inspector browser-extension + Greasemonkey userscript trio. |
 
 ### 🛡️ Testing companion
 
@@ -366,6 +375,7 @@ Commercially legible systems work across access review, evidence plumbing, conne
 | [`cloud-cost-intelligence-dashboard`](https://github.com/mizcausevic-dev/cloud-cost-intelligence-dashboard) | Cloud cost intelligence dashboards. |
 | [`semantic-metrics-catalog`](https://github.com/mizcausevic-dev/semantic-metrics-catalog) | Governed metric definitions, ownership lanes, semantic contracts, and freshness posture. |
 | [`attribution-warehouse-lab`](https://github.com/mizcausevic-dev/attribution-warehouse-lab) | Warehouse-first attribution modeling, path analysis, and governed revenue-credit logic. |
+| [`pg-audit-stream-extension`](https://github.com/mizcausevic-dev/pg-audit-stream-extension) | **Postgres extension** (PL/pgSQL) that emits `audit-stream-py`-compatible governance events on watched table CRUD via `pg_notify`, plus a Python LISTEN bridge daemon. Database-tier governance — the spine's 8th producer, catching DML the application path would miss. PG14-17, CI green. |
 
 ---
 
