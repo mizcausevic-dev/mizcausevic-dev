@@ -219,7 +219,8 @@ The unified visualizer + unified MCP server give the Suite a complete read-side 
 
 | Repo | What it does |
 |---|---|
-| [`well-known-probe-js`](https://github.com/mizcausevic-dev/well-known-probe-js) | **Zero-dependency vanilla JavaScript** probe for all eleven Suite documents at any domain's `/.well-known/` paths. Runs in browser + Node 18+ + Deno + Bun. Returns a 0-100 disclosure score + tier + per-spec found/missing. Discriminator-aware (a 200 of the wrong JSON shape doesn't count). The shared core of the upcoming Vendor AI Disclosure Inspector browser-extension + Greasemonkey userscript trio. |
+| [`well-known-probe-js`](https://github.com/mizcausevic-dev/well-known-probe-js) | **Zero-dependency vanilla JavaScript** probe for all eleven Suite documents at any domain's `/.well-known/` paths. Runs in browser + Node 18+ + Deno + Bun. Returns a 0-100 disclosure score + tier + per-spec found/missing. Discriminator-aware (a 200 of the wrong JSON shape doesn't count). The shared core of the Vendor AI Disclosure Inspector. |
+| [`kineticgain-vendor-inspector`](https://github.com/mizcausevic-dev/kineticgain-vendor-inspector) | **Browser extension (MV3) + Greasemonkey userscript** that score what AI governance documents any vendor publishes at `/.well-known/`, right from the toolbar (extension) or as an on-page corner badge (userscript). One shared probe core, two distribution surfaces, a build step that keeps both in sync. The client half of the distribution lane — Procurement Pulse runs the same probe server-side. |
 
 ### 🛡️ Testing companion
 
