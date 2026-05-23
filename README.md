@@ -202,6 +202,7 @@ The spec is only one layer. The newer control-plane layer covers citation readin
 | [`mcp-reliability-toolkit`](https://github.com/mizcausevic-dev/mcp-reliability-toolkit) | **Reliability MCP server** — 4 tools (`compute_slo_burn`, `design_rate_limiter`, `design_circuit_breaker`, `compose_reliability_pattern`). Same math as `slo-budget-tracker`; emits drop-in Python + Rust configs from a Claude conversation. |
 | [`mcp-decision-intelligence`](https://github.com/mizcausevic-dev/mcp-decision-intelligence) | **Decision Intelligence MCP server** — 4 tools (`validate_decision_card`, `preview_policy_bundle`, `plan_incident_remediation`, `check_contract_compatibility`). Read-only preview of what `procurement-decision-api` + `policy-as-code-engine` + `incident-correlation-rs` + `data-contract-registry` would do — deterministic, no LLM-in-the-loop reasoning. |
 | [`mcp-permission-broker`](https://github.com/mizcausevic-dev/mcp-permission-broker) | **Runtime permission gate** — the enforcement point between an AI Procurement Decision Card and an MCP tool call. Composes Decision Card conditions into PolicyBundles, applies deny-trumps-allow at request time, emits `tool_invocation_*` events to the audit-stream spine. The piece that turns "buyer signed off" into "this tool call is denied." |
+| [`azure-openai-governance-bridge`](https://github.com/mizcausevic-dev/azure-openai-governance-bridge) | **The Azure-native sibling of the broker.** An Azure Function in front of Azure OpenAI that enforces the same deny-trumps-allow PolicyBundle contract on every chat-completion call (deployment + each declared tool), forwards allowed calls, 403/409s denied ones, emits `tool_invocation_*` to audit-stream-py. Bicep IaC included. Puts the Suite's governance on the data path enterprises actually run AI on. |
 
 ### 🖼️ Visualizers + galleries
 
@@ -351,9 +352,9 @@ Spec-first OpenAPI services:
 
 The newer CMS lane is not brochure work. It is governance, preview trust, query discipline, and contract safety for headless WordPress estates:
 
-[`wordpress-block-seo-governance-auditor`](https://github.com/mizcausevic-dev/wordpress-block-seo-governance-auditor) · [`wordpress-graphql-governance-gateway`](https://github.com/mizcausevic-dev/wordpress-graphql-governance-gateway) · [`headless-seo-fallback-engine`](https://github.com/mizcausevic-dev/headless-seo-fallback-engine) · [`headless-preview-recovery-kit`](https://github.com/mizcausevic-dev/headless-preview-recovery-kit) · [`wpgraphql-query-cost-inspector`](https://github.com/mizcausevic-dev/wpgraphql-query-cost-inspector) · [`frontend-contract-testing-for-wordpress`](https://github.com/mizcausevic-dev/frontend-contract-testing-for-wordpress) · [`headless-editorial-command-center`](https://github.com/mizcausevic-dev/headless-editorial-command-center)
+[`wordpress-block-seo-governance-auditor`](https://github.com/mizcausevic-dev/wordpress-block-seo-governance-auditor) · [`wordpress-graphql-governance-gateway`](https://github.com/mizcausevic-dev/wordpress-graphql-governance-gateway) · [`headless-seo-fallback-engine`](https://github.com/mizcausevic-dev/headless-seo-fallback-engine) · [`headless-preview-recovery-kit`](https://github.com/mizcausevic-dev/headless-preview-recovery-kit) · [`wpgraphql-query-cost-inspector`](https://github.com/mizcausevic-dev/wpgraphql-query-cost-inspector) · [`frontend-contract-testing-for-wordpress`](https://github.com/mizcausevic-dev/frontend-contract-testing-for-wordpress) · [`headless-editorial-command-center`](https://github.com/mizcausevic-dev/headless-editorial-command-center) · [`wp-kinetic-gain-audit`](https://github.com/mizcausevic-dev/wp-kinetic-gain-audit)
 
-This cluster covers answer-surface safety, preview recovery, metadata fallback, query cost, frontend payload contracts, and editorial release readiness.
+This cluster covers answer-surface safety, preview recovery, metadata fallback, query cost, frontend payload contracts, editorial release readiness, and — via **`wp-kinetic-gain-audit`** — a tamper-evident MySQL hash-chained governance audit log that plugs WordPress straight into the Suite's `audit-stream-py` spine.
 
 ---
 
@@ -377,6 +378,7 @@ Commercially legible systems work across access review, evidence plumbing, conne
 | [`semantic-metrics-catalog`](https://github.com/mizcausevic-dev/semantic-metrics-catalog) | Governed metric definitions, ownership lanes, semantic contracts, and freshness posture. |
 | [`attribution-warehouse-lab`](https://github.com/mizcausevic-dev/attribution-warehouse-lab) | Warehouse-first attribution modeling, path analysis, and governed revenue-credit logic. |
 | [`pg-audit-stream-extension`](https://github.com/mizcausevic-dev/pg-audit-stream-extension) | **Postgres extension** (PL/pgSQL) that emits `audit-stream-py`-compatible governance events on watched table CRUD via `pg_notify`, plus a Python LISTEN bridge daemon. Database-tier governance — the spine's 8th producer, catching DML the application path would miss. PG14-17, CI green. |
+| [`procurement-pulse-engine`](https://github.com/mizcausevic-dev/procurement-pulse-engine) | **The crawl + aggregate engine behind [pulse.kineticgain.com](https://pulse.kineticgain.com).** Probes a universe of vendor domains for all 11 Suite documents (vendored `well-known-probe` core), aggregates publication rate by vertical + per-spec + leaderboard. Issue #1 ran the first real baseline: 0.0% across 37 domains — the honest starting line. |
 
 ---
 
