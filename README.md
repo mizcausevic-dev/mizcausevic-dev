@@ -9,15 +9,21 @@ I build the systems that sit between traffic, revenue, and the teams that operat
 
 ### 📡 Current expansion lane
 
-The next portfolio wave is intentionally shifting from pure infrastructure metrics toward **revenue-generating and traffic-integrity systems**:
+The current public wave is intentionally shifting from pure infrastructure metrics toward **revenue-generating and traffic-integrity systems**:
 
 - `GTM Systems & Growth` — demand-gen automation, CRM routing, lifecycle control, offer motion
 - `Traffic Integrity` — bot mitigation, click-fraud reduction, clean analytics inputs
 - `Digital Intelligence` — attribution, telemetry, SEO governance, pipeline clarity
 - `Platform Engineering` — headless CMS, DevOps, core web vitals, resilient delivery
 
-First repo in that lane:
+Early anchors in that lane:
 - [`revops-lead-router`](https://github.com/mizcausevic-dev/revops-lead-router) — control plane for lead enrichment, CRM routing, speed-to-lead posture, and queue integrity
+- [`fraud-click-filter`](https://github.com/mizcausevic-dev/fraud-click-filter) · [`cf-bot-shield-tf`](https://github.com/mizcausevic-dev/cf-bot-shield-tf) · [`honeypot-form-validator`](https://github.com/mizcausevic-dev/honeypot-form-validator) · [`anomaly-log-hunter`](https://github.com/mizcausevic-dev/anomaly-log-hunter) — traffic-integrity layer for blocking fraudulent sessions before they burn ad spend or poison analytics
+- [`dbt-multi-touch-attr`](https://github.com/mizcausevic-dev/dbt-multi-touch-attr) · [`gtm-datalayer-standards`](https://github.com/mizcausevic-dev/gtm-datalayer-standards) · [`seo-vital-monitor`](https://github.com/mizcausevic-dev/seo-vital-monitor) · [`pipeline-velocity-dash`](https://github.com/mizcausevic-dev/pipeline-velocity-dash) — digital-intelligence layer for attribution, signal clarity, and route-level performance posture
+- [`offer-ladder-engine`](https://github.com/mizcausevic-dev/offer-ladder-engine) — offer-path and conversion-state control for pricing and package motion
+- [`edge-redirect-manager`](https://github.com/mizcausevic-dev/edge-redirect-manager) · [`headless-wp-vue-starter`](https://github.com/mizcausevic-dev/headless-wp-vue-starter) — web-platform layer for headless CMS delivery, route migration, preview-safe rendering, and SEO-conscious frontend architecture
+
+Current public GitHub count: **227 repos**.
 
 ---
 
