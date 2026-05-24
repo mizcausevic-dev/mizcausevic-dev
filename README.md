@@ -23,7 +23,7 @@ Early anchors in that lane:
 - [`offer-ladder-engine`](https://github.com/mizcausevic-dev/offer-ladder-engine) — offer-path and conversion-state control for pricing and package motion
 - [`edge-redirect-manager`](https://github.com/mizcausevic-dev/edge-redirect-manager) · [`headless-wp-vue-starter`](https://github.com/mizcausevic-dev/headless-wp-vue-starter) — web-platform layer for headless CMS delivery, route migration, preview-safe rendering, and SEO-conscious frontend architecture
 
-Current public GitHub count: **227 repos**.
+Current public GitHub count: **257 repos**.
 
 ---
 
@@ -356,11 +356,11 @@ Spec-first OpenAPI services:
 
 ## 🧩 WordPress / Headless Reliability
 
-The newer CMS lane is not brochure work. It is governance, preview trust, query discipline, and contract safety for headless WordPress estates:
+The newer CMS lane is not brochure work. It is governance, preview trust, query discipline, cache freshness, schema safety, and contract protection for headless WordPress estates:
 
-[`wordpress-block-seo-governance-auditor`](https://github.com/mizcausevic-dev/wordpress-block-seo-governance-auditor) · [`wordpress-graphql-governance-gateway`](https://github.com/mizcausevic-dev/wordpress-graphql-governance-gateway) · [`headless-seo-fallback-engine`](https://github.com/mizcausevic-dev/headless-seo-fallback-engine) · [`headless-preview-recovery-kit`](https://github.com/mizcausevic-dev/headless-preview-recovery-kit) · [`wpgraphql-query-cost-inspector`](https://github.com/mizcausevic-dev/wpgraphql-query-cost-inspector) · [`frontend-contract-testing-for-wordpress`](https://github.com/mizcausevic-dev/frontend-contract-testing-for-wordpress) · [`headless-editorial-command-center`](https://github.com/mizcausevic-dev/headless-editorial-command-center) · [`wp-kinetic-gain-audit`](https://github.com/mizcausevic-dev/wp-kinetic-gain-audit)
+[`wordpress-block-seo-governance-auditor`](https://github.com/mizcausevic-dev/wordpress-block-seo-governance-auditor) · [`wordpress-graphql-governance-gateway`](https://github.com/mizcausevic-dev/wordpress-graphql-governance-gateway) · [`headless-seo-fallback-engine`](https://github.com/mizcausevic-dev/headless-seo-fallback-engine) · [`headless-preview-recovery-kit`](https://github.com/mizcausevic-dev/headless-preview-recovery-kit) · [`wpgraphql-query-cost-inspector`](https://github.com/mizcausevic-dev/wpgraphql-query-cost-inspector) · [`frontend-contract-testing-for-wordpress`](https://github.com/mizcausevic-dev/frontend-contract-testing-for-wordpress) · [`headless-editorial-command-center`](https://github.com/mizcausevic-dev/headless-editorial-command-center) · [`headless-wp-vue-starter`](https://github.com/mizcausevic-dev/headless-wp-vue-starter) · [`wpgraphql-schema-diff-gate`](https://github.com/mizcausevic-dev/wpgraphql-schema-diff-gate) · [`wordpress-cache-invalidation-map`](https://github.com/mizcausevic-dev/wordpress-cache-invalidation-map) · [`wordpress-preview-trust-monitor`](https://github.com/mizcausevic-dev/wordpress-preview-trust-monitor) · [`wp-kinetic-gain-audit`](https://github.com/mizcausevic-dev/wp-kinetic-gain-audit)
 
-This cluster covers answer-surface safety, preview recovery, metadata fallback, query cost, frontend payload contracts, editorial release readiness, and — via **`wp-kinetic-gain-audit`** — a tamper-evident MySQL hash-chained governance audit log that plugs WordPress straight into the Suite's `audit-stream-py` spine.
+This cluster now covers answer-surface safety, preview recovery, metadata fallback, query cost, frontend payload contracts, editorial release readiness, schema-drift approval gates, cache invalidation mapping, preview trust monitoring, and — via **`wp-kinetic-gain-audit`** — a tamper-evident MySQL hash-chained governance audit log that plugs WordPress straight into the Suite's `audit-stream-py` spine.
 
 ---
 
