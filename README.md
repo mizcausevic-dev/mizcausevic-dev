@@ -69,7 +69,7 @@ flowchart TB
     PDA ==>|preview tools| MCP
     AS ==>|event tools| MCP
     HA ==>|verify tools| MCP
-    MCP["🤖 mcp-kinetic-gain v0.6.0<br/>60 tools · one Claude Desktop config entry"]:::mcp
+    MCP["🤖 mcp-kinetic-gain v0.7.1<br/>63 tools · one Claude Desktop config entry"]:::mcp
 ```
 
 **Green** = spec layer (the foundation). **Blue** = the four cross-ecosystem hooks that make it a stack rather than a pile. **Grey** = supporting implementation tools that feed into either side. **Amber** = the tamper-evident audit spine every governance moment writes to. **Purple** = the unified MCP surface that exposes the whole thing to Claude through one config entry.
@@ -204,7 +204,7 @@ The spec is only one layer. The newer control-plane layer covers citation readin
 | Repo | What it does |
 |---|---|
 | [`mcp-aeo-server`](https://github.com/mizcausevic-dev/mcp-aeo-server) | AEO-only MCP server — 4 tools, one Claude Desktop config entry |
-| [`mcp-kinetic-gain`](https://github.com/mizcausevic-dev/mcp-kinetic-gain) | **Unified MCP server** — **47 tools across 11 specs** (v0.5.2, git-tagged), one Claude Desktop config entry, 96 tests passing. Headline tools: `aup_check_compliance` joins an AUP + Student AI Disclosure into a single allow/deny call; `decision_card_validate` enforces the full procurement Decision Card conditional ruleset. |
+| [`mcp-kinetic-gain`](https://github.com/mizcausevic-dev/mcp-kinetic-gain) | **Unified MCP server** — **63 tools across 11 specs** (v0.7.1, git-tagged), one Claude Desktop config entry, 126 tests passing. Headline tools: `aup_check_compliance` joins an AUP + Student AI Disclosure into a single allow/deny call; `decision_card_validate` enforces the full procurement Decision Card conditional ruleset. |
 | [`mcp-reliability-toolkit`](https://github.com/mizcausevic-dev/mcp-reliability-toolkit) | **Reliability MCP server** — 4 tools (`compute_slo_burn`, `design_rate_limiter`, `design_circuit_breaker`, `compose_reliability_pattern`). Same math as `slo-budget-tracker`; emits drop-in Python + Rust configs from a Claude conversation. |
 | [`mcp-decision-intelligence`](https://github.com/mizcausevic-dev/mcp-decision-intelligence) | **Decision Intelligence MCP server** — 4 tools (`validate_decision_card`, `preview_policy_bundle`, `plan_incident_remediation`, `check_contract_compatibility`). Read-only preview of what `procurement-decision-api` + `policy-as-code-engine` + `incident-correlation-rs` + `data-contract-registry` would do — deterministic, no LLM-in-the-loop reasoning. |
 | [`mcp-permission-broker`](https://github.com/mizcausevic-dev/mcp-permission-broker) | **Runtime permission gate** — the enforcement point between an AI Procurement Decision Card and an MCP tool call. Composes Decision Card conditions into PolicyBundles, applies deny-trumps-allow at request time, emits `tool_invocation_*` events to the audit-stream spine. The piece that turns "buyer signed off" into "this tool call is denied." |
