@@ -2,6 +2,16 @@
 
 All notable changes to this project are documented here.
 
+## [1.1.0] - 2026-05-25
+
+### Released
+- **Industry Atlas complete** — fourteen standalone vertical operator control planes, each hardened from `v0.1-shipped` to **`v1.0-prod`** and live on its own `kineticgain.com` subdomain (GovTech, LegalTech, Digital Health ×2, Supply Chain, Manufacturing, Mobility, Commerce, MarTech, Creator economy, Travel, Construction, AgriTech, Food/Restaurant Tech).
+- Standardized the production bar across all surfaces: Node 20 + 22 CI, service-test coverage gate, AGPL-3.0, Dependabot, `npm audit`, `SECURITY.md`, Contributor Covenant code of conduct, deploy-time SEO (sitemap / robots / OpenGraph), static prerender → GitHub Pages with TLS.
+
+### Why this mattered
+- Demonstrated a repeatable squad operating model: forward-deploy builds the v0.1 surface, Platform/SRE hardens it to production, in a tight loop across fourteen verticals.
+- Turned a set of demos into a uniformly operable, evidence-backed portfolio that reads as production capability rather than prototypes.
+
 ## [1.0.0] - 2026-05-12
 
 ### Released
