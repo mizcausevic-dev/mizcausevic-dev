@@ -153,7 +153,7 @@ All twenty-two: mix of AGPL-3.0 and Apache-2.0, CI green, push-to-deploy via FTP
 
 ## 🏭 Industry Atlas — vertical operator control planes
 
-Twelve standalone **vertical operator surfaces**, each a TypeScript control plane for a regulated/operations workflow — intake → risk & obligation mapping → posture → safe escalation. Codex ships at `v0.1-shipped`; I (Platform/SRE) harden each to **`v1.0-prod`**: CI on Node 20 + 22, ≥60% service-test coverage, AGPL-3.0, Dependabot, `npm audit`, `SECURITY.md`, static prerender → GitHub Pages. All live, all CI-green.
+Fourteen standalone **vertical operator surfaces**, each a TypeScript control plane for a regulated/operations workflow — intake → risk & obligation mapping → posture → safe escalation. Codex ships at `v0.1-shipped`; I (Platform/SRE) harden each to **`v1.0-prod`**: CI on Node 20 + 22, ≥60% service-test coverage, AGPL-3.0, Dependabot, `npm audit`, `SECURITY.md`, static prerender → GitHub Pages. All live, all CI-green.
 
 | Live surface | Vertical | What it does |
 |---|---|---|
@@ -169,6 +169,8 @@ Twelve standalone **vertical operator surfaces**, each a TypeScript control plan
 | [**creators.kineticgain.com**](https://creators.kineticgain.com) | Creator economy | Partnership deal desk, obligation blockers, launch-safe collaboration |
 | [**bookings.kineticgain.com**](https://bookings.kineticgain.com) | Travel / Hospitality | Booking disruptions, recovery blockers, guest-communication posture |
 | [**permits.kineticgain.com**](https://permits.kineticgain.com) | Construction / GovTech | Permit-package readiness, inspection posture, construction-safe submission |
+| [**crops.kineticgain.com**](https://crops.kineticgain.com) | AgriTech | Crop-compliance observations, field-review triage, buyer-safe packet posture |
+| [**menus.kineticgain.com**](https://menus.kineticgain.com) | Food / Restaurant Tech | Menu availability sync, channel posture, launch-safe conventions |
 
 > HealthTech surfaces (`priorauth`, `consent`) are **HIPAA-readiness scaffolding only** — synthetic data, no PHI; see each repo's `SECURITY.md`.
 
