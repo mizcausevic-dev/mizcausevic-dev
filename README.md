@@ -151,6 +151,29 @@ All twenty-two: mix of AGPL-3.0 and Apache-2.0, CI green, push-to-deploy via FTP
 
 ---
 
+## 🏭 Industry Atlas — vertical operator control planes
+
+Twelve standalone **vertical operator surfaces**, each a TypeScript control plane for a regulated/operations workflow — intake → risk & obligation mapping → posture → safe escalation. Codex ships at `v0.1-shipped`; I (Platform/SRE) harden each to **`v1.0-prod`**: CI on Node 20 + 22, ≥60% service-test coverage, AGPL-3.0, Dependabot, `npm audit`, `SECURITY.md`, static prerender → GitHub Pages. All live, all CI-green.
+
+| Live surface | Vertical | What it does |
+|---|---|---|
+| [**dockets** → live](https://mizcausevic-dev.github.io/regulatory-comment-intelligence-hub/) | GovTech / RegTech | Regulatory comment intake, obligation mapping, approval posture, evidence-packaged submission *(dockets.kineticgain.com provisioning)* |
+| [**clauses.kineticgain.com**](https://clauses.kineticgain.com) | LegalTech | Clause extraction, obligation graphs, review blockers, renewal-safe execution |
+| [**priorauth.kineticgain.com**](https://priorauth.kineticgain.com) | Digital Health | Prior-auth evidence routing, payer rules, approval-safe escalation |
+| [**consent.kineticgain.com**](https://consent.kineticgain.com) | Digital Health | Consent state, audit streams, revocation-safe escalation |
+| [**shipments.kineticgain.com**](https://shipments.kineticgain.com) | Supply Chain | Shipment exceptions, carrier rules, SLA-safe recovery |
+| [**downtime.kineticgain.com**](https://downtime.kineticgain.com) | Manufacturing | Downtime incidents, root-cause blockers, restart-safe escalation |
+| [**dispatch.kineticgain.com**](https://dispatch.kineticgain.com) | Mobility | Dispatch readiness, route adherence, SLA-safe intervention |
+| [**catalog.kineticgain.com**](https://catalog.kineticgain.com) | Commerce | Catalog schema governance, dependency blockers, release-safe field changes |
+| [**campaigns.kineticgain.com**](https://campaigns.kineticgain.com) | Growth / MarTech | Campaign taxonomy, audience blockers, launch-safe conventions |
+| [**creators.kineticgain.com**](https://creators.kineticgain.com) | Creator economy | Partnership deal desk, obligation blockers, launch-safe collaboration |
+| [**bookings.kineticgain.com**](https://bookings.kineticgain.com) | Travel / Hospitality | Booking disruptions, recovery blockers, guest-communication posture |
+| [**permits.kineticgain.com**](https://permits.kineticgain.com) | Construction / GovTech | Permit-package readiness, inspection posture, construction-safe submission |
+
+> HealthTech surfaces (`priorauth`, `consent`) are **HIPAA-readiness scaffolding only** — synthetic data, no PHI; see each repo's `SECURITY.md`.
+
+---
+
 ## ✍️ Sveska — local-first notepad PWA
 
 A different discipline from the governance suite: a studio-grade, **offline-first** notepad at **[sveska.studio](https://sveska.studio)**. No account, no telemetry, no cloud dependency — every note lives in the browser's IndexedDB and the app works with the network unplugged.
