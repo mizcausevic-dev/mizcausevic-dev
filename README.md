@@ -9,12 +9,14 @@ I build the systems that sit between traffic, revenue, and the teams that operat
 
 ### 📡 Current expansion lane
 
-The current public wave is intentionally shifting from pure infrastructure metrics toward **revenue-generating and traffic-integrity systems**:
+The current public wave now spans **revenue systems, traffic integrity, web-platform reliability, and regulated workflow operations**:
 
 - `GTM Systems & Growth` — demand-gen automation, CRM routing, lifecycle control, offer motion
 - `Traffic Integrity` — bot mitigation, click-fraud reduction, clean analytics inputs
 - `Digital Intelligence` — attribution, telemetry, SEO governance, pipeline clarity
 - `Platform Engineering` — headless CMS, DevOps, core web vitals, resilient delivery
+- `Regulated Workflow Systems` — approval routing, obligation graphs, consent evidence, audit posture
+- `Operational Command Surfaces` — bookings, creator launches, menu sync, store incidents, permits, crop compliance
 
 Early anchors in that lane:
 - [`revops-lead-router`](https://github.com/mizcausevic-dev/revops-lead-router) — control plane for lead enrichment, CRM routing, speed-to-lead posture, and queue integrity
@@ -22,8 +24,10 @@ Early anchors in that lane:
 - [`dbt-multi-touch-attr`](https://github.com/mizcausevic-dev/dbt-multi-touch-attr) · [`gtm-datalayer-standards`](https://github.com/mizcausevic-dev/gtm-datalayer-standards) · [`seo-vital-monitor`](https://github.com/mizcausevic-dev/seo-vital-monitor) · [`pipeline-velocity-dash`](https://github.com/mizcausevic-dev/pipeline-velocity-dash) — digital-intelligence layer for attribution, signal clarity, and route-level performance posture
 - [`offer-ladder-engine`](https://github.com/mizcausevic-dev/offer-ladder-engine) — offer-path and conversion-state control for pricing and package motion
 - [`edge-redirect-manager`](https://github.com/mizcausevic-dev/edge-redirect-manager) · [`headless-wp-vue-starter`](https://github.com/mizcausevic-dev/headless-wp-vue-starter) — web-platform layer for headless CMS delivery, route migration, preview-safe rendering, and SEO-conscious frontend architecture
+- [`regulatory-comment-intelligence-hub`](https://github.com/mizcausevic-dev/regulatory-comment-intelligence-hub) · [`contract-clause-obligation-graph`](https://github.com/mizcausevic-dev/contract-clause-obligation-graph) · [`prior-authorization-evidence-router`](https://github.com/mizcausevic-dev/prior-authorization-evidence-router) · [`patient-consent-audit-stream`](https://github.com/mizcausevic-dev/patient-consent-audit-stream) — regulated workflow layer for approvals, obligation mapping, evidence routing, and synthetic audit posture
+- [`creator-partnership-deal-desk`](https://github.com/mizcausevic-dev/creator-partnership-deal-desk) · [`booking-disruption-command-center`](https://github.com/mizcausevic-dev/booking-disruption-command-center) · [`menu-availability-sync-engine`](https://github.com/mizcausevic-dev/menu-availability-sync-engine) · [`store-ops-incident-board`](https://github.com/mizcausevic-dev/store-ops-incident-board) — launch and operations layer for creator programs, hospitality disruption handling, menu sync, and store incident response
 
-Current public GitHub count: **257 repos**.
+Current public GitHub count: **253 repos**.
 
 ---
 
@@ -31,7 +35,7 @@ Current public GitHub count: **257 repos**.
 
 The portfolio runs on **two parallel layers** that compose:
 
-1. **Twenty-two productized open-source properties** live at `kineticgain.com` subdomains — front doors, per-spec landings, operator dashboards, vendor directory, prompt-injection bench. All push-to-deploy via GitHub Actions FTP CI/CD. Front door: **[suite.kineticgain.com](https://suite.kineticgain.com)** · Quickstart hub: **[docs.kineticgain.com](https://docs.kineticgain.com)** · **Live portfolio constellation across every public repo: [portfolio.kineticgain.com](https://portfolio.kineticgain.com)**.
+1. **A growing network of productized open-source properties** live at `kineticgain.com` subdomains — front doors, per-spec landings, operator dashboards, vertical command surfaces, vendor directory, and prompt-injection bench. All push-to-deploy via GitHub Actions FTP CI/CD. Front door: **[suite.kineticgain.com](https://suite.kineticgain.com)** · Quickstart hub: **[docs.kineticgain.com](https://docs.kineticgain.com)** · **Live portfolio constellation across every public repo: [portfolio.kineticgain.com](https://portfolio.kineticgain.com)**.
 2. **Fifteen-repo Suite Implementation Stack** — the software that *consumes* the [Kinetic Gain Protocol Suite](#-kinetic-gain-protocol-suite) specs. Decision Intelligence engines · Platform Reliability primitives · MCP servers · data-contract enforcement · ed25519 attestation · drift detection · streaming validators. All CI-green, all semver-tagged at v0.1.0, all MIT-licensed. **Four cross-ecosystem hooks** chain them into one composable system. The catalog: [**Suite × Implementations**](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite#-suite--implementations). The compliance mapping: [**NIST AI RMF crosswalk**](https://suite.kineticgain.com/docs/nist-rmf-crosswalk.md) (v0.2 includes the implementation-tooling alignment).
 
 ### 🕸️ How it composes
@@ -147,7 +151,7 @@ flowchart LR
 | [**rag.kineticgain.com**](https://rag.kineticgain.com) | **RAG Sentinel** — hallucination, drift, and citation quality monitoring | ML / AI Ops |
 | [**observe.kineticgain.com**](https://observe.kineticgain.com) | **AgentObserve** — operator console for AI agent fleets | SRE / Platform |
 
-All twenty-two: mix of AGPL-3.0 and Apache-2.0, CI green, push-to-deploy via FTP Action. **8 React 19 + TypeScript apps · 14 hand-written static HTML landings.**
+Across the live property network: mix of AGPL-3.0 and Apache-2.0, CI green, push-to-deploy via FTP Action. The current mix includes React + TypeScript operator apps, hand-written static HTML landings, and newer vertical command surfaces.
 
 ---
 
@@ -260,7 +264,7 @@ The spec is only one layer. The newer control-plane layer covers citation readin
 | [`walker.kineticgain.com`](https://walker.kineticgain.com) | [`well-known-walker-web`](https://github.com/mizcausevic-dev/well-known-walker-web) | **well-known-walker** — paste any domain, see every Kinetic Gain disclosure document it publishes |
 | [`bench.kineticgain.com`](https://bench.kineticgain.com) | [`prompt-injection-bench-web`](https://github.com/mizcausevic-dev/prompt-injection-bench-web) | **prompt-injection-bench** visual harness |
 
-The unified visualizer + unified MCP server give the Suite a complete read-side (human) and tool-side (agent) entry point. **Eleven specs, two front doors, twenty-two live properties.**
+The unified visualizer + unified MCP server give the Suite a complete read-side (human) and tool-side (agent) entry point. **Eleven specs, two front doors, and a growing operator subdomain network.**
 
 ### 📦 Client libraries
 
