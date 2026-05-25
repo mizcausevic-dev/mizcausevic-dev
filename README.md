@@ -151,6 +151,20 @@ All twenty-two: mix of AGPL-3.0 and Apache-2.0, CI green, push-to-deploy via FTP
 
 ---
 
+## ✍️ Sveska — local-first notepad PWA
+
+A different discipline from the governance suite: a studio-grade, **offline-first** notepad at **[sveska.studio](https://sveska.studio)**. No account, no telemetry, no cloud dependency — every note lives in the browser's IndexedDB and the app works with the network unplugged.
+
+| | |
+|---|---|
+| **Editor** | CodeMirror 6 rich editor — inline screenshot paste, Markdown highlighting, slash commands, snippets, find/replace, typewriter; classic textarea opt-out |
+| **Depth** | Multi-note tabs · version history + diff · fuzzy search · per-note Excalidraw canvas · streaming AI via a secure edge proxy (zero keys in the client) · `.txt` / `.md` / `.html` / `.pdf` export |
+| **Engineering** | React 18 + TS strict · Zustand · Dexie · vite-plugin-pwa · 281 tests · &lt;180 KB initial JS · accessibility-audited · Cloudflare Pages + edge function |
+
+Repo: [`mizcausevic-dev/sveska`](https://github.com/mizcausevic-dev/sveska) · [v0.8.0](https://github.com/mizcausevic-dev/sveska/releases/tag/v0.8.0) · MIT
+
+---
+
 ## 🧬 Kinetic Gain Protocol Suite
 
 A family of **eleven open JSON specifications** for the answer-engine and agent era — five core (AEO, Prompt Provenance, Agent Cards, AI Evidence Format, MCP Tool Cards), a three-spec **EdTech trio** (vendor / district / student), a **HealthTech vertical extension** (Clinical AI Disclosure — HIPAA / FDA / SaMD posture), a cross-cutting **AI Incident Card** that ties everything together post-hoc, and an **AI Procurement Decision Card** that signs off on a vendor's posture across the rest of the Suite. **Two regulated verticals covered. NIST AI RMF crosswalk shipped alongside.** All AGPL-3.0, all v0.1 draft, all `kinetic-gain-protocol-suite` tagged. Single landing: [`kinetic-gain-protocol-suite`](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite).
