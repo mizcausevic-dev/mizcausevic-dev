@@ -27,7 +27,19 @@ Early anchors in that lane:
 - [`regulatory-comment-intelligence-hub`](https://github.com/mizcausevic-dev/regulatory-comment-intelligence-hub) · [`contract-clause-obligation-graph`](https://github.com/mizcausevic-dev/contract-clause-obligation-graph) · [`prior-authorization-evidence-router`](https://github.com/mizcausevic-dev/prior-authorization-evidence-router) · [`patient-consent-audit-stream`](https://github.com/mizcausevic-dev/patient-consent-audit-stream) — regulated workflow layer for approvals, obligation mapping, evidence routing, and synthetic audit posture
 - [`creator-partnership-deal-desk`](https://github.com/mizcausevic-dev/creator-partnership-deal-desk) · [`booking-disruption-command-center`](https://github.com/mizcausevic-dev/booking-disruption-command-center) · [`menu-availability-sync-engine`](https://github.com/mizcausevic-dev/menu-availability-sync-engine) · [`store-ops-incident-board`](https://github.com/mizcausevic-dev/store-ops-incident-board) — launch and operations layer for creator programs, hospitality disruption handling, menu sync, and store incident response
 
-Current public GitHub count: **253 repos**.
+Current public GitHub count: **267 repos**.
+
+### 🧰 Developer Toolkit
+
+Fourteen new public repos now sit underneath the portfolio as a reusable **developer toolkit** layer:
+
+- `MCP governance` — [`mcp-registry-risk-scanner`](https://github.com/mizcausevic-dev/mcp-registry-risk-scanner) · [`mcp-tool-card-generator`](https://github.com/mizcausevic-dev/mcp-tool-card-generator) · [`mcp-tools-diff`](https://github.com/mizcausevic-dev/mcp-tools-diff)
+- `GenAI observability` — [`agent-trace-normalizer`](https://github.com/mizcausevic-dev/agent-trace-normalizer) · [`llm-cost-span-exporter`](https://github.com/mizcausevic-dev/llm-cost-span-exporter) · [`rag-evidence-trace-linker`](https://github.com/mizcausevic-dev/rag-evidence-trace-linker)
+- `K8s control planes` — [`governance-disclosure-operator`](https://github.com/mizcausevic-dev/governance-disclosure-operator) · [`llm-cost-budget-operator`](https://github.com/mizcausevic-dev/llm-cost-budget-operator) · [`scheduled-audit-operator`](https://github.com/mizcausevic-dev/scheduled-audit-operator)
+- `Agent-runtime adapters` — [`agent-tool-adapters`](https://github.com/mizcausevic-dev/agent-tool-adapters) · [`agent-card-runtime-adapters`](https://github.com/mizcausevic-dev/agent-card-runtime-adapters)
+- `Knowledge graph + evidence` — [`rag-evidence-graph`](https://github.com/mizcausevic-dev/rag-evidence-graph) · [`wellknown-index-aggregator`](https://github.com/mizcausevic-dev/wellknown-index-aggregator)
+
+These are not customer-facing protocol specs. They are the implementation toolkit underneath the protocol layer: manifest scanning, disclosure generation, tool drift detection, runtime adapters, evidence integrity, cost spans, and Kubernetes-native governance publishing.
 
 ---
 
