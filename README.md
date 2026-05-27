@@ -37,7 +37,7 @@ Early anchors in that lane:
   - [`gcp-billing-anomaly-router`](https://github.com/mizcausevic-dev/gcp-billing-anomaly-router) → [billing.kineticgain.com](https://billing.kineticgain.com/) — GCP billing-anomaly routing, budget breaches & FinOps escalation
   - [`azure-landing-zone-drift-radar`](https://github.com/mizcausevic-dev/azure-landing-zone-drift-radar) → [zone.kineticgain.com](https://zone.kineticgain.com/) — Azure landing-zone baseline drift & guardrail risk
 
-Current public GitHub count: **320+ repos**.
+Current public GitHub count: **342 repos**.
 
 ### 🧰 Developer Toolkit
 
