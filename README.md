@@ -38,6 +38,10 @@ Early anchors in that lane:
   - [`gcp-iam-policy-diff-lab`](https://github.com/mizcausevic-dev/gcp-iam-policy-diff-lab) → [gcp.kineticgain.com](https://gcp.kineticgain.com/) — GCP IAM policy drift & org-policy posture
   - [`gcp-billing-anomaly-router`](https://github.com/mizcausevic-dev/gcp-billing-anomaly-router) → [billing.kineticgain.com](https://billing.kineticgain.com/) — GCP billing-anomaly routing, budget breaches & FinOps escalation
   - [`azure-landing-zone-drift-radar`](https://github.com/mizcausevic-dev/azure-landing-zone-drift-radar) → [zone.kineticgain.com](https://zone.kineticgain.com/) — Azure landing-zone baseline drift & guardrail risk
+- **Polyglot Operator Reporting lane** — three new operator surfaces in three different runtimes, each picked because the language fits the problem (mobile briefings → Flutter, scientific optimization → Julia, warehouse-style mart → Python). All v1.0-prod, all subdomain-deployed:
+  - [`flutter-operator-console`](https://github.com/mizcausevic-dev/flutter-operator-console) → [flutter.kineticgain.com](https://flutter.kineticgain.com/) — Flutter web operator console: signal triage, briefings, dispatch posture
+  - [`capacity-optimizer-jl`](https://github.com/mizcausevic-dev/capacity-optimizer-jl) → [capacity.kineticgain.com](https://capacity.kineticgain.com/) — Julia + JuMP capacity planning, constraint optimization, scenario diffs
+  - [`regulatory-reporting-mart`](https://github.com/mizcausevic-dev/regulatory-reporting-mart) → [reporting.kineticgain.com](https://reporting.kineticgain.com/) — Python warehouse-style mart: docket readiness, evidence packets, deadline pressure, late-risk
 
 Current public GitHub count: **343 repos**.
 
@@ -202,6 +206,51 @@ Fifteen standalone **vertical operator surfaces**, each a TypeScript control pla
 | [**stores.kineticgain.com**](https://stores.kineticgain.com) | Retail / Store Ops | Store incident triage, SLA blockers, reopen-safe recovery posture |
 
 > HealthTech surfaces (`priorauth`, `consent`) are **HIPAA-readiness scaffolding only** — synthetic data, no PHI; see each repo's `SECURITY.md`.
+
+---
+
+## 🎯 PR-Gate GitHub Actions — quintets across every protocol
+
+**Seventeen Action wrappers** that turn every Kinetic Gain protocol library into a per-PR governance gate. Composite Node 20 actions with `dist/index.js` committed for SHA/tag pinning, hermetic tests with injected `gitShow`, AGPL-3.0-or-later, Dependabot-managed.
+
+### Per-protocol diff Action quintet — PR breaking-change gates
+
+Each one retrieves the previous version of a single governance doc via `git show <base.sha>:<path>`, diffs against HEAD, posts the structured diff as a PR comment, and fails the build on breaking changes.
+
+| Protocol | Action | Headline breaking-change reasons |
+|---|---|---|
+| A2A AgentCard | [`agent-card-diff-action`](https://github.com/mizcausevic-dev/agent-card-diff-action) | `autonomy-level-elevated`, `tool-side-effects-elevated`, `incident-response-uri-removed`, `refusal-category-removed` |
+| MCP Tool Card | [`mcp-tool-card-diff-action`](https://github.com/mizcausevic-dev/mcp-tool-card-diff-action) | `side-effect-class-escalated`, `pii-exposure-escalated`, `human-approval-removed`, `external-system-added`, `input-schema-changed` |
+| Prompt Provenance | [`prompt-provenance-diff-action`](https://github.com/mizcausevic-dev/prompt-provenance-diff-action) | `prompt-hash-changed`, `approval-state-regressed`, `lineage-parent-changed`, `intent-out-of-scope-changed` |
+| Evidence Bundle | [`evidence-bundle-diff-action`](https://github.com/mizcausevic-dev/evidence-bundle-diff-action) | `item-hash-changed`, `item-removed`, `signature-removed`, `signature-signer-changed`, `bundle-expires-shortened` |
+| OTel GenAI rollup | [`otel-genai-diff-action`](https://github.com/mizcausevic-dev/otel-genai-diff-action) | `cost-increased`, `input-tokens-jumped`, `output-tokens-jumped`, `model-added`, `currency-changed` (configurable threshold) |
+
+### Per-protocol fleet-summary Action quintet — one-doc-vs-fleet checks
+
+Each one summarizes a single doc against the rest of a fleet (a directory of peer docs of the same protocol), surfacing the outliers and posting a structured PR summary.
+
+[`agent-card-fleet-summary-action`](https://github.com/mizcausevic-dev/agent-card-fleet-summary-action) · [`mcp-tool-card-fleet-summary-action`](https://github.com/mizcausevic-dev/mcp-tool-card-fleet-summary-action) · [`prompt-provenance-fleet-summary-action`](https://github.com/mizcausevic-dev/prompt-provenance-fleet-summary-action) · [`evidence-bundle-fleet-summary-action`](https://github.com/mizcausevic-dev/evidence-bundle-fleet-summary-action) · [`otel-genai-fleet-summary-action`](https://github.com/mizcausevic-dev/otel-genai-fleet-summary-action)
+
+### Cross-protocol Suite Actions
+
+The wiring that ties the per-protocol quintets together across mixed-content repos:
+
+| Action | What it does |
+|---|---|
+| [`kg-protocol-detect-action`](https://github.com/mizcausevic-dev/kg-protocol-detect-action) | Scans a directory of JSON docs and identifies which Suite protocol each belongs to. Routes mixed-content repos to the right per-protocol diff lane. |
+| [`kg-suite-canonicalize-action`](https://github.com/mizcausevic-dev/kg-suite-canonicalize-action) | Canonicalizes every Suite doc in a directory (stable key ordering, hash-ready output). PR-gates drift between canonical and authored forms. |
+| [`kg-suite-conformance-runner-action`](https://github.com/mizcausevic-dev/kg-suite-conformance-runner-action) | Runs spec-conformance checks across every Suite doc in a directory; reports per-spec compliance + per-finding evidence. |
+| [`kg-suite-fleet-overview-action`](https://github.com/mizcausevic-dev/kg-suite-fleet-overview-action) | Protocol-aware fleet overview across all 5 governance protocols in one repo — buckets, doc counts, unrouted-document gate. |
+| [`kg-suite-spec-version-tracker-action`](https://github.com/mizcausevic-dev/kg-suite-spec-version-tracker-action) | Tracks the `*_version` discriminator across every Suite doc in a repo, fails the PR on unsanctioned spec-version upgrades. |
+
+### Specialized PR gates
+
+| Action | What it does |
+|---|---|
+| [`llm-cost-rollup-action`](https://github.com/mizcausevic-dev/llm-cost-rollup-action) | Runs `otel-genai-rollup` across an OTLP trace export and gates the PR on cost budget breaches. |
+| [`k8s-pre-merge-action`](https://github.com/mizcausevic-dev/k8s-pre-merge-action) | Composite gate across the K8s scanner family — deprecated APIs, RBAC over-scope, pod security, Helm values coverage — one Action, one PR comment. |
+
+**Composition story**: `kg-protocol-detect-action` identifies what protocols live in the repo → the matching per-protocol `*-diff-action` gates breaking changes → the matching `*-fleet-summary-action` surfaces outliers across the fleet → `kg-suite-conformance-runner-action` checks spec conformance → `kg-suite-canonicalize-action` enforces stable serialization. End-to-end PR governance with zero hand-rolled glue.
 
 ---
 
