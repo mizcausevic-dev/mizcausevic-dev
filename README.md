@@ -17,7 +17,7 @@ The current public wave now spans **revenue systems, traffic integrity, web-plat
 - `Platform Engineering` — headless CMS, DevOps, core web vitals, resilient delivery
 - `Regulated Workflow Systems` — approval routing, obligation graphs, consent evidence, audit posture
 - `Operational Command Surfaces` — bookings, creator launches, menu sync, store incidents, permits, crop compliance
-- `Cloud Identity, Platform & FinOps Governance` — operator surfaces for Microsoft (Entra access reviews, Intune device compliance, M365 Purview retention), AWS (IAM Access Analyzer), GCP (IAM policy drift + billing-anomaly routing), and Azure (landing-zone drift). Each is a synthetic-data operator console at production hardness — AGPL-3.0-or-later, dual-Node CI, dependabot, 95%+ coverage, deployed on its own kineticgain.com subdomain.
+- `Cloud Identity, Platform, FinOps & Threat Detection` — operator surfaces for Microsoft (Entra access reviews, Intune device compliance, M365 Purview retention), AWS (IAM Access Analyzer + GuardDuty triage), GCP (IAM policy drift + billing-anomaly routing), and Azure (landing-zone drift). Each is a synthetic-data operator console at production hardness — AGPL-3.0-or-later, dual-Node CI, dependabot, 95%+ coverage, deployed on its own kineticgain.com subdomain.
 
 Early anchors in that lane:
 - [`revops-lead-router`](https://github.com/mizcausevic-dev/revops-lead-router) — control plane for lead enrichment, CRM routing, speed-to-lead posture, and queue integrity
@@ -27,14 +27,15 @@ Early anchors in that lane:
 - [`edge-redirect-manager`](https://github.com/mizcausevic-dev/edge-redirect-manager) · [`headless-wp-vue-starter`](https://github.com/mizcausevic-dev/headless-wp-vue-starter) — web-platform layer for headless CMS delivery, route migration, preview-safe rendering, and SEO-conscious frontend architecture
 - [`regulatory-comment-intelligence-hub`](https://github.com/mizcausevic-dev/regulatory-comment-intelligence-hub) · [`contract-clause-obligation-graph`](https://github.com/mizcausevic-dev/contract-clause-obligation-graph) · [`prior-authorization-evidence-router`](https://github.com/mizcausevic-dev/prior-authorization-evidence-router) · [`patient-consent-audit-stream`](https://github.com/mizcausevic-dev/patient-consent-audit-stream) — regulated workflow layer for approvals, obligation mapping, evidence routing, and synthetic audit posture
 - [`creator-partnership-deal-desk`](https://github.com/mizcausevic-dev/creator-partnership-deal-desk) · [`booking-disruption-command-center`](https://github.com/mizcausevic-dev/booking-disruption-command-center) · [`menu-availability-sync-engine`](https://github.com/mizcausevic-dev/menu-availability-sync-engine) · [`store-ops-incident-board`](https://github.com/mizcausevic-dev/store-ops-incident-board) — launch and operations layer for creator programs, hospitality disruption handling, menu sync, and store incident response
-- **Multi-cloud identity, platform & FinOps governance lane** — seven operator consoles all at v1.0-prod, all running on their own kineticgain.com subdomain:
+- **Multi-cloud identity, platform, FinOps & threat-detection lane** — eight operator consoles all at v1.0-prod, all running on their own kineticgain.com subdomain:
   - [`entra-access-review-control-plane`](https://github.com/mizcausevic-dev/entra-access-review-control-plane) → [entra.kineticgain.com](https://entra.kineticgain.com/) — Microsoft Entra access reviews & privileged role drift
   - [`intune-device-compliance-ops`](https://github.com/mizcausevic-dev/intune-device-compliance-ops) → [intune.kineticgain.com](https://intune.kineticgain.com/) — Intune device compliance & jailbreak / OS-drift posture
   - [`m365-retention-case-orchestrator`](https://github.com/mizcausevic-dev/m365-retention-case-orchestrator) → [retention.kineticgain.com](https://retention.kineticgain.com/) — Microsoft 365 Purview retention & eDiscovery
   - [`aws-iam-access-analyzer-console`](https://github.com/mizcausevic-dev/aws-iam-access-analyzer-console) → [aws.kineticgain.com](https://aws.kineticgain.com/) — AWS IAM Access Analyzer & cross-account trust
+  - [`aws-guardduty-triage-board`](https://github.com/mizcausevic-dev/aws-guardduty-triage-board) → [guardduty.kineticgain.com](https://guardduty.kineticgain.com/) — AWS GuardDuty detector posture, threat-finding triage & incident response
   - [`gcp-iam-policy-diff-lab`](https://github.com/mizcausevic-dev/gcp-iam-policy-diff-lab) → [gcp.kineticgain.com](https://gcp.kineticgain.com/) — GCP IAM policy drift & org-policy posture
-  - [`azure-landing-zone-drift-radar`](https://github.com/mizcausevic-dev/azure-landing-zone-drift-radar) → [zone.kineticgain.com](https://zone.kineticgain.com/) — Azure landing-zone baseline drift & guardrail risk
   - [`gcp-billing-anomaly-router`](https://github.com/mizcausevic-dev/gcp-billing-anomaly-router) → [billing.kineticgain.com](https://billing.kineticgain.com/) — GCP billing-anomaly routing, budget breaches & FinOps escalation
+  - [`azure-landing-zone-drift-radar`](https://github.com/mizcausevic-dev/azure-landing-zone-drift-radar) → [zone.kineticgain.com](https://zone.kineticgain.com/) — Azure landing-zone baseline drift & guardrail risk
 
 Current public GitHub count: **320+ repos**.
 
