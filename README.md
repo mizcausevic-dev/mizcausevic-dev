@@ -59,6 +59,37 @@ These are not customer-facing protocol specs. They are the implementation toolki
 
 ---
 
+## 🧭 Next horizon — Vertical × Monetization matrix (v2 expansion)
+
+The next ~10 operator-surface repos are organized as **three sub-verticals × four-tier monetization ladder**, with SEO and security posture as first-class concerns on every repo. Each lane lands on a real enterprise platform; each repo carries the credible "from someone who lived in this stack" hook (IBM enterprise integration · CyberArk identity · Alteryx analytics).
+
+**Three sub-verticals:**
+
+| Sub-vertical | Platforms | Buyer | Umbrella |
+|---|---|---|---|
+| **Workflow / CX** | Camunda 8/Zeebe · Genesys Cloud · IBM watsonx Governance | CISO / CTO / Platform Eng / VP CX | Kinetic Gain Suite |
+| **Workforce / Internal Comm** | UKG Pro · FirstUp · cross-platform employee-AUP | CISO / Head of HR Tech / Compliance | Kinetic Gain Suite |
+| **Growth Ops** | VWO REST · Klaviyo EP · MarTech-stack cross-cut | CMO / RevOps / Growth Eng | **Kinetic Gain Growth Ops** (sister umbrella) |
+
+**Four-tier monetization ladder per repo:**
+
+| Tier | What ships | Pricing | Channel |
+|---|---|---|---|
+| **1 · Free operator surface** | Public README + static dashboard + CLI + synthetic fixtures at `<repo>.kineticgain.com` | $0 | GitHub + Pages |
+| **2 · Template / policy pack** | Governance YAMLs · dashboard configs · audit checklist templates · CSV starter datasets | $49–$199 | CodeCanyon · Gumroad · direct |
+| **3 · Hosted SaaS** | OAuth into tenant · multi-tenant scheduling · signed evidence packets | $99–$499 / mo | `hosted.kineticgain.com` (gated on EIN → Stripe) |
+| **4 · KGE module** | Embedded in-app dashboard inside the customer's own product, per [kineticgain.com/embedded](https://kineticgain.com/embedded/) | $1.5K–$7.5K / mo | Direct contract |
+
+**Cross-cutting (every repo, no exceptions):**
+- **SEO** — dark slate/blue theme · descriptive dofollow anchors · `/.well-known/` Suite docs · hub-and-spoke interlinking · GH topics + homepage set · sitemap entry
+- **Security** — read-only by default · minimal OAuth scopes · no tenant credentials in repo · synthetic fixtures only · evidence packets signed (ed25519 once `pulse-signing.json` ships)
+- **Compliance language** — HealthTech: "HIPAA-readiness scaffolding, synthetic data, no PHI" only; never "HIPAA-compliant"/PHI/BAA. Same caution for FERPA on EdTech-adjacent workforce repos.
+- **Pulse universe entry** — every deploy adds its CNAME to the [AI Procurement Pulse](https://pulse.kineticgain.com/) universe so the publication measures it from day one
+
+**Phase 0 anchors (this week):** [`genesys-cx-disclosure-board`](https://github.com/mizcausevic-dev) (Suite umbrella, warmest CISO buyer, highest tier-4 KGE fit) + [`klaviyo-flow-consent-audit`](https://github.com/mizcausevic-dev) (Growth Ops umbrella, clearest CMO/RevOps narrative). Two anchors prove the four-tier ladder in two distinct buyer contexts before the remaining 8 fill out at tier-1 + tier-2.
+
+---
+
 ## 🚀 Currently Live — two parallel layers
 
 The portfolio runs on **two parallel layers** that compose:
