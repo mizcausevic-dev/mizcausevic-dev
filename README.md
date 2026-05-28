@@ -43,7 +43,7 @@ Early anchors in that lane:
   - [`capacity-optimizer-jl`](https://github.com/mizcausevic-dev/capacity-optimizer-jl) → [capacity.kineticgain.com](https://capacity.kineticgain.com/) — Julia + JuMP capacity planning, constraint optimization, scenario diffs
   - [`regulatory-reporting-mart`](https://github.com/mizcausevic-dev/regulatory-reporting-mart) → [reporting.kineticgain.com](https://reporting.kineticgain.com/) — Python warehouse-style mart: docket readiness, evidence packets, deadline pressure, late-risk
 
-Current public GitHub count: **370 repos**. Operator-surface hardening backlog (squad doctrine v1.1): **49 .kineticgain.com subdomains** now at `v1.0-prod`, every Codex-shipped v0.1 caught up — zero gaps remaining at the cutoff. The full grouped index is at [kineticgain.com/constellation](https://kineticgain.com/constellation/).
+Current public GitHub count: **372 repos**. Operator-surface hardening backlog (squad doctrine v1.1): **49 .kineticgain.com subdomains** now at `v1.0-prod`, every Codex-shipped v0.1 caught up — zero gaps remaining at the cutoff. The full grouped index is at [kineticgain.com/constellation](https://kineticgain.com/constellation/).
 
 ### 🪝 Request-time governance bridge family
 
@@ -52,6 +52,18 @@ Three sibling repos enforce a buyer's **AI Procurement Decision Card → PolicyB
 - [`ibm-watsonx-governance-bridge`](https://github.com/mizcausevic-dev/ibm-watsonx-governance-bridge) → [watsonx.kineticgain.com](https://watsonx.kineticgain.com/) — IBM watsonx.ai (Python · IBM Cloud IAM · Code Engine deploy manifest · **v1.0-prod**)
 - [`azure-openai-governance-bridge`](https://github.com/mizcausevic-dev/azure-openai-governance-bridge) — Azure OpenAI (Python · Azure Functions v2 · Bicep IaC)
 - [`mcp-permission-broker`](https://github.com/mizcausevic-dev/mcp-permission-broker) — Model Context Protocol transport (the MCP-side sibling)
+
+### 🛡️ Decision Card → vault contract family
+
+Same buyer-published AI Procurement Decision Card v0.2, a different enforcement axis: instead of gating *requests*, this family gates *field-level PII at the seam*. The Decision Card declares `data_vault_targets[]` — which fields may be tokenized through a Skyyflow-shaped vault, and which roles may detokenize. Four sibling surfaces consume one contract:
+
+- [`ai-procurement-decision-spec`](https://github.com/mizcausevic-dev/ai-procurement-decision-spec) — the JSON Schema (v0.2 adds `data_vault_targets`)
+- [`kg-skyyflow-klaviyo-bridge`](https://github.com/mizcausevic-dev/kg-skyyflow-klaviyo-bridge) — Node lib + CLI · `audit` · `tokenize` · `detokenize` · `transform` (webhook → Klaviyo) · per-field protection levels (`none` / `masked` / `tokenized`) · **v0.2.0** · AGPL-3.0
+- [`skyyflow-klaviyo-bridge-console`](https://github.com/mizcausevic-dev/skyyflow-klaviyo-bridge-console) — React + Vite operator console for the bridge engine: dashboard · live webhook simulator with a 3-stage animated pipeline · field mapper · sync log stream
+- [`rag-sentinel`](https://github.com/mizcausevic-dev/rag-sentinel) — tokenize-before-index for RAG pipelines (server-side enforcement of the same contract)
+- [`deal-desk-workspace`](https://github.com/mizcausevic-dev/deal-desk-workspace) — RBAC-aware reveal for the deal-desk surface (client-side enforcement of the same contract)
+
+One Decision Card, four enforcement points. Same `SkyyflowVault` interface across server-side (rag-sentinel), client-side (deal-desk-workspace, console), pipeline-side (bridge lib), and CLI.
 
 ### 🧰 Developer Toolkit
 
