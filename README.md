@@ -43,7 +43,7 @@ Early anchors in that lane:
   - [`capacity-optimizer-jl`](https://github.com/mizcausevic-dev/capacity-optimizer-jl) → [capacity.kineticgain.com](https://capacity.kineticgain.com/) — Julia + JuMP capacity planning, constraint optimization, scenario diffs
   - [`regulatory-reporting-mart`](https://github.com/mizcausevic-dev/regulatory-reporting-mart) → [reporting.kineticgain.com](https://reporting.kineticgain.com/) — Python warehouse-style mart: docket readiness, evidence packets, deadline pressure, late-risk
 
-Current public GitHub count: **370 repos**.
+Current public GitHub count: **367 repos**. Operator-surface hardening backlog (squad doctrine v1.1): **47 .kineticgain.com subdomains** now at `v1.0-prod` — zero gaps remaining at the cutoff.
 
 ### 🪝 Request-time governance bridge family
 
