@@ -43,7 +43,15 @@ Early anchors in that lane:
   - [`capacity-optimizer-jl`](https://github.com/mizcausevic-dev/capacity-optimizer-jl) → [capacity.kineticgain.com](https://capacity.kineticgain.com/) — Julia + JuMP capacity planning, constraint optimization, scenario diffs
   - [`regulatory-reporting-mart`](https://github.com/mizcausevic-dev/regulatory-reporting-mart) → [reporting.kineticgain.com](https://reporting.kineticgain.com/) — Python warehouse-style mart: docket readiness, evidence packets, deadline pressure, late-risk
 
-Current public GitHub count: **343 repos**.
+Current public GitHub count: **370 repos**.
+
+### 🪝 Request-time governance bridge family
+
+Three sibling repos enforce a buyer's **AI Procurement Decision Card → PolicyBundle** at request time, one per upstream surface — the v2 strategy's IBM-credibility flagship lane. Same primitive (deny-trumps-allow eval, `x-kg-correlation-id` propagation, audit-stream emission), three platforms:
+
+- [`ibm-watsonx-governance-bridge`](https://github.com/mizcausevic-dev/ibm-watsonx-governance-bridge) → [watsonx.kineticgain.com](https://watsonx.kineticgain.com/) — IBM watsonx.ai (Python · IBM Cloud IAM · Code Engine deploy manifest · **v1.0-prod**)
+- [`azure-openai-governance-bridge`](https://github.com/mizcausevic-dev/azure-openai-governance-bridge) — Azure OpenAI (Python · Azure Functions v2 · Bicep IaC)
+- [`mcp-permission-broker`](https://github.com/mizcausevic-dev/mcp-permission-broker) — Model Context Protocol transport (the MCP-side sibling)
 
 ### 🧰 Developer Toolkit
 
