@@ -61,32 +61,40 @@ These are not customer-facing protocol specs. They are the implementation toolki
 
 ## 🧭 Next horizon — Vertical × Monetization matrix (v2 expansion)
 
-The next ~10 operator-surface repos are organized as **three sub-verticals × four-tier monetization ladder**, with SEO and security posture as first-class concerns on every repo. Each lane lands on a real enterprise platform; each repo carries the credible "from someone who lived in this stack" hook (IBM enterprise integration · CyberArk identity · Alteryx analytics).
+The next ~10 operator-surface repos are organized as **three sub-verticals × four-tier monetization ladder**, with SEO and security posture as first-class concerns on every repo. Each lane lands on a real enterprise platform; each repo carries the credible "from someone who lived in this stack" hook — **IBM** enterprise integration · **CyberArk** identity · **Alteryx** analytics.
 
 **Three sub-verticals:**
 
-| Sub-vertical | Platforms | Buyer | Umbrella |
+| Sub-vertical | Platforms | Buyer | Placement |
 |---|---|---|---|
-| **Workflow / CX** | Camunda 8/Zeebe · Genesys Cloud · IBM watsonx Governance | CISO / CTO / Platform Eng / VP CX | Kinetic Gain Suite |
-| **Workforce / Internal Comm** | UKG Pro · FirstUp · cross-platform employee-AUP | CISO / Head of HR Tech / Compliance | Kinetic Gain Suite |
-| **Growth Ops** | VWO REST · Klaviyo EP · MarTech-stack cross-cut | CMO / RevOps / Growth Eng | **Kinetic Gain Growth Ops** (sister umbrella) |
+| **Workflow / CX** | IBM watsonx Governance · Genesys Cloud · Camunda 8/Zeebe | CISO / CTO / Platform Eng / VP CX | Kinetic Gain Suite |
+| **Workforce / Internal Comm** | UKG Pro · employee-AUP cross-cut · FirstUp *(second-tier priority)* | CISO / Head of HR Tech / Compliance | Kinetic Gain Suite |
+| **Growth Ops** | Klaviyo EP · VWO REST · MarTech-stack cross-cut | CMO / RevOps / Growth Eng | Lane under Kinetic Gain (`growth.kineticgain.com`) — brand split deferred until demand proves it |
 
-**Four-tier monetization ladder per repo:**
+**Four-tier monetization ladder per repo (honest tier wording):**
 
-| Tier | What ships | Pricing | Channel |
+| Tier | What ships | Pricing | README phrasing |
 |---|---|---|---|
-| **1 · Free operator surface** | Public README + static dashboard + CLI + synthetic fixtures at `<repo>.kineticgain.com` | $0 | GitHub + Pages |
-| **2 · Template / policy pack** | Governance YAMLs · dashboard configs · audit checklist templates · CSV starter datasets | $49–$199 | CodeCanyon · Gumroad · direct |
-| **3 · Hosted SaaS** | OAuth into tenant · multi-tenant scheduling · signed evidence packets | $99–$499 / mo | `hosted.kineticgain.com` (gated on EIN → Stripe) |
-| **4 · KGE module** | Embedded in-app dashboard inside the customer's own product, per [kineticgain.com/embedded](https://kineticgain.com/embedded/) | $1.5K–$7.5K / mo | Direct contract |
+| **1 · Free operator surface** | Public README + static dashboard + CLI + synthetic fixtures at `<repo>.kineticgain.com` | $0 | "Free now" — only once deployed and CI-green |
+| **2 · Template / policy pack** | Governance YAMLs · dashboard configs · audit checklist templates · CSV starter datasets | $49–$199 | "Template pack available" OR "Template pack planned" — never imply available if not |
+| **3 · Hosted SaaS** | OAuth into tenant · multi-tenant scheduling · signed evidence packets | $99–$499 / mo | "Hosted preview" — only when a real OAuth + tenant path exists; otherwise omit |
+| **4 · KGE module** | Embedded in-app dashboard inside the customer's own product, per [kineticgain.com/embedded](https://kineticgain.com/embedded/) | $1.5K–$7.5K / mo | "Embedded available by engagement" — direct-contract phrasing, no signup form |
+
+Default for a tier-1-only repo: list tiers 1 + 2-planned only. No SaaS-looking promises without an OAuth + billing + tenant + support motion behind them.
 
 **Cross-cutting (every repo, no exceptions):**
 - **SEO** — dark slate/blue theme · descriptive dofollow anchors · `/.well-known/` Suite docs · hub-and-spoke interlinking · GH topics + homepage set · sitemap entry
 - **Security** — read-only by default · minimal OAuth scopes · no tenant credentials in repo · synthetic fixtures only · evidence packets signed (ed25519 once `pulse-signing.json` ships)
-- **Compliance language** — HealthTech: "HIPAA-readiness scaffolding, synthetic data, no PHI" only; never "HIPAA-compliant"/PHI/BAA. Same caution for FERPA on EdTech-adjacent workforce repos.
-- **Pulse universe entry** — every deploy adds its CNAME to the [AI Procurement Pulse](https://pulse.kineticgain.com/) universe so the publication measures it from day one
+- **Compliance language (broad)** — across **HIPAA · FERPA · SOC 2 · GDPR · ISO 27001 · accessibility (WCAG/ADA) · AI governance (NIST AI RMF, EU AI Act, ISO 42001)**: always frame as `readiness · evidence · posture · controls · scaffolding`. Never "certified" / "compliant" unless truly audited and currently attested. No "BAA" / "DPA" / "PHI" / "PII" / "audit ready" promises without legal review.
+- **Anti-overlap discipline** — before opening any new repo, document core primitive · target buyer · target platform · monetization tier path · nearest existing repo · why distinct. Blocks the "same surface, different wrapper" drift.
+- **Pulse universe entry** — every deploy adds its CNAME to the [AI Procurement Pulse](https://pulse.kineticgain.com/) universe, additively · async if possible · non-fatal on failure. Pulse-entry never blocks a publish.
 
-**Phase 0 anchors (this week):** [`genesys-cx-disclosure-board`](https://github.com/mizcausevic-dev) (Suite umbrella, warmest CISO buyer, highest tier-4 KGE fit) + [`klaviyo-flow-consent-audit`](https://github.com/mizcausevic-dev) (Growth Ops umbrella, clearest CMO/RevOps narrative). Two anchors prove the four-tier ladder in two distinct buyer contexts before the remaining 8 fill out at tier-1 + tier-2.
+**Phase 0 anchors (founder-credibility-ordered):**
+1. [`ibm-watsonx-governance-bridge`](https://github.com/mizcausevic-dev) — **founder-credibility flagship.** IBM is the most credible "lived in this stack" hook in the portfolio; watsonx Governance is the cleanest disclosure-shaped target.
+2. [`genesys-cx-disclosure-board`](https://github.com/mizcausevic-dev) — **enterprise workflow/CX flagship.** Warmest CISO/VP-CX buyer + highest tier-4 KGE fit.
+3. [`klaviyo-flow-consent-audit`](https://github.com/mizcausevic-dev) — **Growth Ops flagship.** Cleanest CMO/RevOps narrative; consent-state lineage is a timely angle.
+
+Three anchors prove the four-tier ladder in three distinct buyer contexts before the remaining 7 fill out at tier-1 + tier-2-planned. FirstUp deferred to second-tier priority — good fit, weaker instant recognition than IBM/Genesys/Camunda/UKG/Klaviyo/VWO.
 
 ---
 
