@@ -249,8 +249,11 @@ The wiring that ties the per-protocol quintets together across mixed-content rep
 |---|---|
 | [`llm-cost-rollup-action`](https://github.com/mizcausevic-dev/llm-cost-rollup-action) | Runs `otel-genai-rollup` across an OTLP trace export and gates the PR on cost budget breaches. |
 | [`k8s-pre-merge-action`](https://github.com/mizcausevic-dev/k8s-pre-merge-action) | Composite gate across the K8s scanner family — deprecated APIs, RBAC over-scope, pod security, Helm values coverage — one Action, one PR comment. |
+| [`procurement-pulse-action`](https://github.com/mizcausevic-dev/procurement-pulse-action) | Probes your own `/.well-known/` for all 11 Suite documents and reports a 0-100 self-score + tier. Three output modes (PR comment / pulse-receipt JSON / self-score SVG badge), two gate modes (`min-score` threshold / `min-tier` ladder). Same probe core as the [Pulse Issue crawler](https://pulse.kineticgain.com/) and the [browser-extension Vendor Inspector](https://github.com/mizcausevic-dev/kineticgain-vendor-inspector). |
 
-**Composition story**: `kg-protocol-detect-action` identifies what protocols live in the repo → the matching per-protocol `*-diff-action` gates breaking changes → the matching `*-fleet-summary-action` surfaces outliers across the fleet → `kg-suite-conformance-runner-action` checks spec conformance → `kg-suite-canonicalize-action` enforces stable serialization. End-to-end PR governance with zero hand-rolled glue.
+**Composition story**: `kg-protocol-detect-action` identifies what protocols live in the repo → the matching per-protocol `*-diff-action` gates breaking changes → the matching `*-fleet-summary-action` surfaces outliers across the fleet → `kg-suite-conformance-runner-action` checks spec conformance → `kg-suite-canonicalize-action` enforces stable serialization → `procurement-pulse-action` self-scores the deployed `/.well-known/` surface. End-to-end PR governance with zero hand-rolled glue.
+
+**Dogfooded on kineticgain.com itself.** [![kg pulse self-score](https://raw.githubusercontent.com/mizcausevic-dev/kineticgain-com-apex/main/docs/pulse-badge.svg)](https://kineticgain.com/.well-known/pulse-receipt.json) Weekly `procurement-pulse-action` run probes the apex and refreshes the badge + the public receipt at [kineticgain.com/.well-known/pulse-receipt.json](https://kineticgain.com/.well-known/pulse-receipt.json).
 
 ---
 
