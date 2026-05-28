@@ -43,7 +43,7 @@ Early anchors in that lane:
   - [`capacity-optimizer-jl`](https://github.com/mizcausevic-dev/capacity-optimizer-jl) → [capacity.kineticgain.com](https://capacity.kineticgain.com/) — Julia + JuMP capacity planning, constraint optimization, scenario diffs
   - [`regulatory-reporting-mart`](https://github.com/mizcausevic-dev/regulatory-reporting-mart) → [reporting.kineticgain.com](https://reporting.kineticgain.com/) — Python warehouse-style mart: docket readiness, evidence packets, deadline pressure, late-risk
 
-Current public GitHub count: **367 repos**. Operator-surface hardening backlog (squad doctrine v1.1): **47 .kineticgain.com subdomains** now at `v1.0-prod` — zero gaps remaining at the cutoff.
+Current public GitHub count: **370 repos**. Operator-surface hardening backlog (squad doctrine v1.1): **49 .kineticgain.com subdomains** now at `v1.0-prod`, every Codex-shipped v0.1 caught up — zero gaps remaining at the cutoff. The full grouped index is at [kineticgain.com/constellation](https://kineticgain.com/constellation/).
 
 ### 🪝 Request-time governance bridge family
 
