@@ -3,7 +3,28 @@
 > **Engineering · Platform Architecture · B2B SaaS Technologist**
 > Boston, MA · ~30 years across IBM, CyberArk, Alteryx, Digital.ai, Gryphon.ai
 
-I build the systems that sit between traffic, revenue, and the teams that operate them. Platform engineering, GTM systems, traffic integrity, digital intelligence, AI governance. **I also author open specifications for the answer-engine era — and a fifteen-repo implementation stack that consumes them** ([Suite × Implementations](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite#-suite--implementations)). Polyglot by choice: the language fits the problem, not the resume.
+I build the systems that sit between traffic, revenue, and the teams that operate them. Platform engineering, GTM systems, traffic integrity, digital intelligence, AI governance. **Publicly: 396 repos, 60+ live properties, and 15+ production-style operator surfaces.** I also author open specifications for the answer-engine era — and a fifteen-repo implementation stack that consumes them ([Suite × Implementations](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite#-suite--implementations)). Polyglot by choice: the language fits the problem, not the resume.
+
+> *"Long-lived credentials are tomorrow's incident reports. Build short-lived. Audit always. Document once."*
+
+### TL;DR
+
+- **Recruiters:** platform engineer / systems architect shipping across GTM, cloud, identity, AI governance, and operator tooling.
+- **CISOs / CTOs:** buyer-safe control planes, evidence routing, policy enforcement, and synthetic-data workflow surfaces for regulated and enterprise operations.
+- **Developers:** start with [docs.kineticgain.com](https://docs.kineticgain.com), [suite.kineticgain.com](https://suite.kineticgain.com), and [portfolio.kineticgain.com](https://portfolio.kineticgain.com).
+- **Founders / investors:** monetization ladder already in motion across open source, templates, hosted operator surfaces, and embedded implementation work.
+- **Fastest proof:** [portfolio.kineticgain.com](https://portfolio.kineticgain.com) for the live atlas, [suite.kineticgain.com](https://suite.kineticgain.com) for the protocol layer, [docs.kineticgain.com](https://docs.kineticgain.com) for guided entry points.
+
+### 👁️ Quick Navigation
+
+| If you're here for... | Jump to |
+|---|---|
+| Current scope and active build lanes | [Current expansion lane](#-current-expansion-lane) |
+| Reusable implementation tooling | [Developer Toolkit](#-developer-toolkit) |
+| Live public properties and stack composition | [Live Now — 60+ properties + implementation stack](#-live-now--60-properties--implementation-stack) |
+| Vertical operator surfaces | [Industry Atlas](#-industry-atlas--vertical-operator-control-planes) |
+| Local-first product work | [Sveska](#-sveska--local-first-notepad-pwa) |
+| Specs and governance infrastructure | [Kinetic Gain Protocol Suite](#-kinetic-gain-protocol-suite) |
 
 **Publication note:** many of the repos below were published in a concentrated May 2026 portfolio sprint. The dates reflect public packaging, CI, screenshots, and repo hardening, not the first moment the ideas or workstreams existed.
 
@@ -43,7 +64,7 @@ Early anchors in that lane:
   - [`capacity-optimizer-jl`](https://github.com/mizcausevic-dev/capacity-optimizer-jl) → [capacity.kineticgain.com](https://capacity.kineticgain.com/) — Julia + JuMP capacity planning, constraint optimization, scenario diffs
   - [`regulatory-reporting-mart`](https://github.com/mizcausevic-dev/regulatory-reporting-mart) → [reporting.kineticgain.com](https://reporting.kineticgain.com/) — Python warehouse-style mart: docket readiness, evidence packets, deadline pressure, late-risk
 
-Current public GitHub count: **372 repos**. Operator-surface hardening backlog (squad doctrine v1.1): **49 .kineticgain.com subdomains** now at `v1.0-prod`, every Codex-shipped v0.1 caught up — zero gaps remaining at the cutoff. The full grouped index is at [kineticgain.com/constellation](https://kineticgain.com/constellation/).
+Current public GitHub count: **396 repos**. Operator-surface hardening backlog (squad doctrine v1.1): **49 .kineticgain.com subdomains** now at `v1.0-prod`, every Codex-shipped v0.1 caught up — zero gaps remaining at the cutoff. The full grouped index is at [kineticgain.com/constellation](https://kineticgain.com/constellation/).
 
 ### 🪝 Request-time governance bridge family
 
@@ -118,7 +139,7 @@ Three anchors prove the four-tier ladder in three distinct buyer contexts before
 
 ---
 
-## 🚀 Currently Live — two parallel layers
+## 🚀 Live Now — 60+ properties + implementation stack
 
 The portfolio runs on **two parallel layers** that compose:
 
@@ -584,8 +605,6 @@ Commercially legible systems work across access review, evidence plumbing, conne
 ## 🤝 Working Interest
 
 Open to **Director / Principal-level Platform Engineering, Web Engineering, or AI Platform** roles at enterprise B2B SaaS companies. East Coast time zone. Remote-friendly.
-
-> *"Long-lived credentials are tomorrow's incident reports. Build short-lived. Audit always. Document once."*
 
 ---
 
