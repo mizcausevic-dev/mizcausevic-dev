@@ -55,9 +55,9 @@ Three sibling repos enforce a buyer's **AI Procurement Decision Card → PolicyB
 
 ### 🛡️ Decision Card → vault contract family
 
-Same buyer-published AI Procurement Decision Card v0.2, a different enforcement axis: instead of gating *requests*, this family gates *field-level PII at the seam*. The Decision Card declares `data_vault_targets[]` — which fields may be tokenized through a Skyyflow-shaped vault, and which roles may detokenize. Four sibling surfaces consume one contract:
+Same buyer-published AI Procurement Decision Card (now at **v0.3**), a different enforcement axis: instead of gating *requests*, this family gates *field-level PII at the seam*. The Decision Card declares `data_vault_targets[]` (v0.2 — who can read) and `retention_envelope[]` (v0.3 — how long the data lives and how deletion is signed). Four sibling surfaces consume one contract:
 
-- [`ai-procurement-decision-spec`](https://github.com/mizcausevic-dev/ai-procurement-decision-spec) — the JSON Schema (v0.2 adds `data_vault_targets`)
+- [`ai-procurement-decision-spec`](https://github.com/mizcausevic-dev/ai-procurement-decision-spec) — the JSON Schema (v0.2 adds `data_vault_targets`, v0.3 adds `retention_envelope` with per-field TTL + ed25519-signed deletion-proof endpoints)
 - [`kg-skyyflow-klaviyo-bridge`](https://github.com/mizcausevic-dev/kg-skyyflow-klaviyo-bridge) — Node lib + CLI · `audit` · `tokenize` · `detokenize` · `transform` (webhook → Klaviyo) · per-field protection levels (`none` / `masked` / `tokenized`) · **v0.2.0** · AGPL-3.0
 - [`skyyflow-klaviyo-bridge-console`](https://github.com/mizcausevic-dev/skyyflow-klaviyo-bridge-console) — React + Vite operator console for the bridge engine: dashboard · live webhook simulator with a 3-stage animated pipeline · field mapper · sync log stream
 - [`rag-sentinel`](https://github.com/mizcausevic-dev/rag-sentinel) — tokenize-before-index for RAG pipelines (server-side enforcement of the same contract)
