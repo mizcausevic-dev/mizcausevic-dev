@@ -183,6 +183,8 @@ The next ~10 operator-surface repos are organized as **three sub-verticals × fo
 | **3 · Hosted SaaS** | OAuth into tenant · multi-tenant scheduling · signed evidence packets | $99–$499 / mo | "Hosted preview" — only when a real OAuth + tenant path exists; otherwise omit |
 | **4 · KGE module** | Embedded in-app dashboard inside the customer's own product, per [kineticgain.com/embedded](https://kineticgain.com/embedded/) | $1.5K–$7.5K / mo | "Embedded available by engagement" — direct-contract phrasing, no signup form |
 
+> **Tier-4 runtime SDK shipped (2026-05-30):** [`kinetic-gain-embedded`](https://github.com/mizcausevic-dev/kinetic-gain-embedded) v0.1 — drop-in TypeScript SDK (Apache-2.0, zero runtime deps, dual ESM/CJS) for B2B SaaS embedders. Emits hash-chained audit events, enforces Decision Card vault contracts before AI tools touch sensitive data, signs with ed25519. 42 tests across 4 suites; CI matrix on Node 20+22. The runtime side of the Suite; hosted tiers stack on top.
+
 Default for a tier-1-only repo: list tiers 1 + 2-planned only. No SaaS-looking promises without an OAuth + billing + tenant + support motion behind them.
 
 **Cross-cutting (every repo, no exceptions):**
