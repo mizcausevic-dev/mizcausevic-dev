@@ -336,6 +336,33 @@ Shipped **2026-05-31** as a coherent apex layer for the buyers who can't easily 
 
 Companion: **[kinetic-gain-embedded](https://github.com/mizcausevic-dev/kinetic-gain-embedded) SDK** ships a [`docs/sales/PROCUREMENT-PACKET.md`](https://github.com/mizcausevic-dev/kinetic-gain-embedded/blob/main/docs/sales/PROCUREMENT-PACKET.md) — KGE-enabled 17-section fill-in template for the inverse audience (the SaaS founder selling INTO an enterprise security review, leveraging KGE's hash-chained audit + vault-contract tokenization as verifiable claims).
 
+### 🏥 Squad triage 2026-05-31 — three new lanes (56 v1.0-prod + 32 semver releases shipped)
+
+A 115-repo Codex squad backlog triaged + classified + 92% drained in one continuous session. Three coherent product lanes emerged:
+
+#### 📐 Operator Diagnostics — narrowly-scoped operator data tools
+Distinct from `/trust/` governance scaffolding and `/calculators/` rubric math. Net-new lane after 10 exec-family duplicates were archived publicly with supersession notes pointing at the apex executive-tools layer.
+
+| Live surface | Buyer | What it does |
+|---|---|---|
+| [**reality.kineticgain.com**](https://reality.kineticgain.com/) | CFO · Board · Vendor-claim review | Claims-vs-Reality Engine — vendor-claim/proof-gap scoring + board-ready diligence output |
+| [**revenue.kineticgain.com**](https://revenue.kineticgain.com/) | CRO · Growth Ops | Revenue Infrastructure Scorecard — pipeline integrity, attribution health, conversion-stack maturity |
+| [**replace.kineticgain.com**](https://replace.kineticgain.com/) | CFO · CIO · Procurement | Vendor Replacement Intelligence — narrower than the rubric Vendor Renewal calc; surfaces switching-cost data |
+| [**members.kineticgain.com**](https://members.kineticgain.com/) | Growth Ops · WordPress | WordPress Member Journey Consent Kit — lifecycle consent evidence across login/profile/upgrade/cancel |
+
+Pending Codex CI fixes (issues filed): identity.kineticgain.com · martech.kineticgain.com · experiments.kineticgain.com · margin.kineticgain.com.
+
+#### 🩺 HealthTech operator surfaces — clinical + GxP-territory depth
+Eight clinical / GxP-territory operator surfaces. Each explicitly states "no claim of HIPAA / GMP / GxP / FDA compliance" — readiness/posture/scaffolding only. Synthetic data, no patient/clinician/biotech secrets.
+
+[**gxp**](https://gxp.kineticgain.com/) (Change Control Board) · [**assay**](https://assay.kineticgain.com/) (Release Readiness) · [**capa**](https://capa.kineticgain.com/) (Deviation/CAPA Ledger) · [**narrative**](https://narrative.kineticgain.com/) (Clinical Event Review) · [**diagnostics**](https://diagnostics.kineticgain.com/) (QC Evidence Router) · [**instruments**](https://instruments.kineticgain.com/) (Instrument Change Audit) · [**safety**](https://safety.kineticgain.com/) (Pharmacovigilance Signal Router) · [**specimen**](https://specimen.kineticgain.com/) (Chain Of Custody Console)
+
+#### 📐 Polyglot proof expansion — Julia + R + Python operator surfaces
+Seven new entries to the Polyglot Platform Stack: **3 Julia** ([appeals](https://appeals.kineticgain.com/) Campaign Appeal Fatigue Monitor · [treasury](https://treasury.kineticgain.com/) Liquidity Signal Lab · [yield](https://yield.kineticgain.com/) Forecast Studio), **3 R** ([care](https://care.kineticgain.com/) Variation Analysis · [loss](https://loss.kineticgain.com/) Claims Trend Lab · [donors](https://donors.kineticgain.com/) Cohort Risk Lab), **1 Python** ([outcomes](https://outcomes.kineticgain.com/) Program Outcome Proof Ledger).
+
+#### ⚙️ +21 GitHub Actions semver-released (Marketplace-ready)
+All 21 protocol PR-gate Actions now have `v0.1.0` releases + floating `v0.1` major version tags for consumer pinning. Marketplace publish pending UI checkbox per Action. See full Action quintet under **🎯 PR-Gate GitHub Actions** below.
+
 ### Hubs + tools
 
 | Property | What it does | Buyer |
