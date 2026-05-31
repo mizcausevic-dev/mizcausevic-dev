@@ -322,6 +322,20 @@ flowchart LR
 
 **Blue** = Python FastAPI producers. **Tan** = Rust producers (two libraries gated behind `--features audit-stream` so library consumers can strip out the HTTP dep, one axum service with the feature on by default). **Amber** = the spine itself. **Grey** = the three downstream surfaces auditors and operators consume.
 
+### 🧮 Apex executive tools — kineticgain.com browser-only surfaces
+
+Shipped **2026-05-31** as a coherent apex layer for the buyers who can't easily map a Suite spec to a same-day decision. Vanilla JS, inline CSS, JS<30KB per page, strict CSP, no login, no telemetry. Aligned in vocabulary with NIST AI RMF, EU AI Act, ISO/IEC 42001, GDPR Art. 28, ISO/IEC 27018, SOC 2 CC9.2 — never "compliant" / "certified" without external attestation.
+
+| Path | What it does | Buyer |
+|---|---|---|
+| [**kineticgain.com/calculators/**](https://kineticgain.com/calculators/) | **Six math-rubric calculators** — AI build-vs-buy, cloud replatform ROI, compliance cost of delay, security breach exposure, AI use-case prioritizer, vendor renewal decision. Transparent formulas, dollar-impact ranges. | CFO · CIO · CTO · COO · Procurement |
+| [**kineticgain.com/trust/**](https://kineticgain.com/trust/) | **Trust Pack — 8 tools** — AI System Card Builder · Evidence Locker · Shadow AI Discovery · AI Vendor Intake · AI Incident Tabletop · Risk Register · Subprocessor Disclosure Template · Vendor AI Disclosure Review (Pulse compound). | Head of Trust · CISO · GC · DPO |
+| [**kineticgain.com/portfolio-triage/**](https://kineticgain.com/portfolio-triage/) | **9-dimension per-portco scoring** — verdict bands (help-now · operator-support · prepare-for-diligence · monitor · leave-alone), CSV/JSON/MD export. | PE operating partner · VC ops · Holdco |
+| [**kineticgain.com/kill-list/**](https://kineticgain.com/kill-list/) | **Complexity tax audit** — 8 drag categories × 3 prompts; ranked stop-doing list. | COO · Operations leader |
+| [**kineticgain.com/policies/**](https://kineticgain.com/policies/) | **10-vertical readiness spec aggregator** — index linking the HIPAA/FERPA/ECOA/NAIC/EEOC/CFPB/OMB/ABA/NERC CIP/DFARS readiness specs from the Suite. | All buyers · readiness research |
+
+Companion: **[kinetic-gain-embedded](https://github.com/mizcausevic-dev/kinetic-gain-embedded) SDK** ships a [`docs/sales/PROCUREMENT-PACKET.md`](https://github.com/mizcausevic-dev/kinetic-gain-embedded/blob/main/docs/sales/PROCUREMENT-PACKET.md) — KGE-enabled 17-section fill-in template for the inverse audience (the SaaS founder selling INTO an enterprise security review, leveraging KGE's hash-chained audit + vault-contract tokenization as verifiable claims).
+
 ### Hubs + tools
 
 | Property | What it does | Buyer |
