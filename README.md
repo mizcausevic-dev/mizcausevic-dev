@@ -336,9 +336,9 @@ Shipped **2026-05-31** as a coherent apex layer for the buyers who can't easily 
 
 Companion: **[kinetic-gain-embedded](https://github.com/mizcausevic-dev/kinetic-gain-embedded) SDK** ships a [`docs/sales/PROCUREMENT-PACKET.md`](https://github.com/mizcausevic-dev/kinetic-gain-embedded/blob/main/docs/sales/PROCUREMENT-PACKET.md) — KGE-enabled 17-section fill-in template for the inverse audience (the SaaS founder selling INTO an enterprise security review, leveraging KGE's hash-chained audit + vault-contract tokenization as verifiable claims).
 
-### 🏥 Squad triage 2026-05-31 — three new lanes (56 v1.0-prod + 32 semver releases shipped)
+### 🏥 Squad triage 2026-05-31 — four new lanes (60 v1.0-prod + 32 semver releases shipped)
 
-A 115-repo Codex squad backlog triaged + classified + 92% drained in one continuous session. Three coherent product lanes emerged:
+A 115-repo Codex squad backlog triaged + classified + 92% drained in one continuous session, then a 4th lane crystallized later same day as Codex shipped a coherent buyer-diligence-response family:
 
 #### 📐 Operator Diagnostics — narrowly-scoped operator data tools
 Distinct from `/trust/` governance scaffolding and `/calculators/` rubric math. Net-new lane after 10 exec-family duplicates were archived publicly with supersession notes pointing at the apex executive-tools layer.
@@ -359,6 +359,18 @@ Eight clinical / GxP-territory operator surfaces. Each explicitly states "no cla
 
 #### 📐 Polyglot proof expansion — Julia + R + Python operator surfaces
 Seven new entries to the Polyglot Platform Stack: **3 Julia** ([appeals](https://appeals.kineticgain.com/) Campaign Appeal Fatigue Monitor · [treasury](https://treasury.kineticgain.com/) Liquidity Signal Lab · [yield](https://yield.kineticgain.com/) Forecast Studio), **3 R** ([care](https://care.kineticgain.com/) Variation Analysis · [loss](https://loss.kineticgain.com/) Claims Trend Lab · [donors](https://donors.kineticgain.com/) Cohort Risk Lab), **1 Python** ([outcomes](https://outcomes.kineticgain.com/) Program Outcome Proof Ledger).
+
+#### 🤝 Sales Enablement Stack — buyer-diligence response (NEW lane)
+The seller-side counterpart to the buyer-trust tooling at `/trust/`. Four operator surfaces that compress the cycle time of vendor-diligence response — proof-gap monitoring, trust-center evidence packaging, security-questionnaire answering, RFP assembly. Same readiness/posture/scaffolding vocabulary discipline (no "compliant" / "certified" claims).
+
+| Live surface | Buyer | What it does |
+|---|---|---|
+| [**proofgap.kineticgain.com**](https://proofgap.kineticgain.com/) | Sales · Diligence response | Vendor Proof Gap Monitor — claim coverage, evidence freshness, benchmark confidence, reuse safety |
+| [**trust.kineticgain.com**](https://trust.kineticgain.com/) | Sales · Trust ops | Trust Center Evidence Room — evidence packaging, artifact freshness, review readiness, buyer-safe diligence posture |
+| [**questionnaire.kineticgain.com**](https://questionnaire.kineticgain.com/) | Sales · Security response | Security Questionnaire Answer Studio — answer library, response ownership, cycle-time reduction, trust-evidence reuse |
+| [**rfp.kineticgain.com**](https://rfp.kineticgain.com/) | Sales · Procurement response | RFP Response Assembler — RFP coverage, differentiation, evidence reuse, submission readiness |
+
+(Subdomain HTTPS provisioning is first-time-on-Pages; full SSL lands within 24h. HTTP confirms content is live.)
 
 #### ⚙️ +21 GitHub Actions semver-released (Marketplace-ready)
 All 21 protocol PR-gate Actions now have `v0.1.0` releases + floating `v0.1` major version tags for consumer pinning. Marketplace publish pending UI checkbox per Action. See full Action quintet under **🎯 PR-Gate GitHub Actions** below.
