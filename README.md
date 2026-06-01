@@ -3,7 +3,7 @@
 > **Engineering · Platform Architecture · B2B SaaS Technologist**
 > Boston, MA · ~30 years across IBM, CyberArk, Alteryx, Digital.ai, Gryphon.ai
 
-I build the systems that sit between traffic, revenue, and the teams that operate them. Platform engineering, GTM systems, traffic integrity, digital intelligence, AI governance. **Publicly: 396 repos, 60+ live properties, and 15+ production-style operator surfaces.** I also author open specifications for the answer-engine era — and a fifteen-repo implementation stack that consumes them ([Suite × Implementations](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite#-suite--implementations)). Polyglot by choice: the language fits the problem, not the resume.
+I build the systems that sit between traffic, revenue, and the teams that operate them. Platform engineering, GTM systems, traffic integrity, digital intelligence, AI governance. **Publicly: 77 distinct repos organised into 12 named platforms, 105 live properties across 17 verticals, and 15+ production-style operator surfaces.** I also author open specifications for the answer-engine era — and a fifteen-repo implementation stack that consumes them ([Suite × Implementations](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite#-suite--implementations)). Polyglot by choice: the language fits the problem, not the resume.
 
 > *"Long-lived credentials are tomorrow's incident reports. Build short-lived. Audit always. Document once."*
 
@@ -14,6 +14,30 @@ I build the systems that sit between traffic, revenue, and the teams that operat
 - **Developers:** start with [docs.kineticgain.com](https://docs.kineticgain.com), [suite.kineticgain.com](https://suite.kineticgain.com), and [portfolio.kineticgain.com](https://portfolio.kineticgain.com).
 - **Founders / investors:** monetization ladder already in motion across open source, templates, hosted operator surfaces, and embedded implementation work.
 - **Fastest proof:** [portfolio.kineticgain.com](https://portfolio.kineticgain.com) for the live atlas, [suite.kineticgain.com](https://suite.kineticgain.com) for the protocol layer, [docs.kineticgain.com](https://docs.kineticgain.com) for guided entry points.
+
+<!-- BEGIN GENERATED estate-block — replace contents with generated/github-readme-block.md from kineticgain-com-apex when canonical changes; do not hand-edit between markers -->
+<!-- GENERATED from canonical.json — do not hand-edit -->
+### Kinetic Gain estate
+
+77 public repos · 105 live properties · 11 open specs · 17 verticals
+
+| Named platform | Repos |
+|---|---|
+| Kinetic Gain Protocol Suite | 12 |
+| Kinetic Gain Implementation Stack | 27 |
+| AEO Reference Stack | 13 |
+| Agent Operations Suite | 23 |
+| Platform Reliability Stack | 17 |
+| Decision Intelligence | 11 |
+| AI Procurement Pulse | 5 |
+| HealthTech / Clinical Stack | 18 |
+| Growth & Consent Operations | 20 |
+| MCP Servers | 38 |
+| Landing Sites | 12 |
+| Frontend Showcase | 28 |
+
+> Counts are platform cluster sizes; a repo may belong to several platforms, so they sum to 224 membership-slots across 77 distinct repos.
+<!-- END GENERATED estate-block -->
 
 ### 👁️ Quick Navigation
 
