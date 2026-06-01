@@ -336,9 +336,9 @@ Shipped **2026-05-31** as a coherent apex layer for the buyers who can't easily 
 
 Companion: **[kinetic-gain-embedded](https://github.com/mizcausevic-dev/kinetic-gain-embedded) SDK** ships a [`docs/sales/PROCUREMENT-PACKET.md`](https://github.com/mizcausevic-dev/kinetic-gain-embedded/blob/main/docs/sales/PROCUREMENT-PACKET.md) — KGE-enabled 17-section fill-in template for the inverse audience (the SaaS founder selling INTO an enterprise security review, leveraging KGE's hash-chained audit + vault-contract tokenization as verifiable claims).
 
-### 🏥 Squad triage 2026-05-31 — four new lanes (60 v1.0-prod + 32 semver releases shipped)
+### 🏥 Squad triage 2026-05-31 — five new lanes (65 v1.0-prod + 21 LIVE on Marketplace + npm publish)
 
-A 115-repo Codex squad backlog triaged + classified + 92% drained in one continuous session, then a 4th lane crystallized later same day as Codex shipped a coherent buyer-diligence-response family:
+A 115-repo Codex squad backlog triaged + classified + 92% drained in one continuous session. Three coherent product lanes emerged in the first pass. A 4th lane (Sales Enablement) crystallized later same day from Codex's evening ship-out. A 5th lane (Executive Intelligence) followed from a 9-repo product-judgment triage — 5 surfaces survived buyer-distinguishability, 4 archived with supersession notes.
 
 #### 📐 Operator Diagnostics — narrowly-scoped operator data tools
 Distinct from `/trust/` governance scaffolding and `/calculators/` rubric math. Net-new lane after 10 exec-family duplicates were archived publicly with supersession notes pointing at the apex executive-tools layer.
@@ -370,10 +370,37 @@ The seller-side counterpart to the buyer-trust tooling at `/trust/`. Four operat
 | [**questionnaire.kineticgain.com**](https://questionnaire.kineticgain.com/) | Sales · Security response | Security Questionnaire Answer Studio — answer library, response ownership, cycle-time reduction, trust-evidence reuse |
 | [**rfp.kineticgain.com**](https://rfp.kineticgain.com/) | Sales · Procurement response | RFP Response Assembler — RFP coverage, differentiation, evidence reuse, submission readiness |
 
+#### 🧠 Executive Intelligence Stack — board-prep + investor-facing (NEW lane)
+Survivors of the 9-repo exec-family product judgment triage. Each carries a buyer-distinguishable promise (rather than the "executive-intelligence template prose" word-salad that got the other 4 archived).
+
+| Live surface | Buyer | What it does |
+|---|---|---|
+| [**sparring.kineticgain.com**](https://sparring.kineticgain.com/) | Founder · CEO · Board prep | Boardroom Sparring Partner — board-prep Q&A rehearsal, pushback, memo posture, investor-facing readiness |
+| [**thesis.kineticgain.com**](https://thesis.kineticgain.com/) | Founder · Fundraising | Category Thesis Builder — investor-ready category framing, why-now clarity, thesis-defensible narrative |
+| [**exit.kineticgain.com**](https://exit.kineticgain.com/) | Founder · Pre-exit | Exit Room — exit-readiness intelligence, red flags, diligence gaps, investor-facing deal posture |
+| [**style.kineticgain.com**](https://style.kineticgain.com/) | Brand · Design system | Brand Governance Styleguide — approved tokens, pattern approvals, release-safe style posture |
+| [**release.kineticgain.com**](https://release.kineticgain.com/) | DevEx · Platform release | Release Readiness Shell Kit — bash-native launch blockers, rollback posture, freeze windows |
+
 (Subdomain HTTPS provisioning is first-time-on-Pages; full SSL lands within 24h. HTTP confirms content is live.)
 
-#### ⚙️ +21 GitHub Actions semver-released (Marketplace-ready)
-All 21 protocol PR-gate Actions now have `v0.1.0` releases + floating `v0.1` major version tags for consumer pinning. Marketplace publish pending UI checkbox per Action. See full Action quintet under **🎯 PR-Gate GitHub Actions** below.
+#### ⚙️ +21 GitHub Actions LIVE on GitHub Marketplace
+All 21 protocol PR-gate + governance Actions [LIVE on GitHub Marketplace](https://github.com/marketplace?type=actions&query=Kinetic+Gain) as of 2026-05-31. Each has `v0.1.0` exact-version + floating `v0.1` major-version tags for consumer pinning:
+
+```yaml
+uses: mizcausevic-dev/agent-card-diff-action@v0.1      # floating major (auto-update within 0.1.x)
+uses: mizcausevic-dev/agent-card-diff-action@v0.1.0    # exact pin
+```
+
+See full per-protocol breakdown under **🎯 PR-Gate GitHub Actions** below.
+
+#### 📦 Kinetic Gain Embedded LIVE on npm
+[`kinetic-gain-embedded@0.1.1`](https://www.npmjs.com/package/kinetic-gain-embedded) published to npm with provenance attestation (Apache-2.0, dual ESM/CJS, zero runtime deps, Node 20+). Drop-in audit-stream + Decision Card vault contract SDK for B2B SaaS embedders:
+
+```bash
+npm install kinetic-gain-embedded
+```
+
+[Pricing tiers](https://kineticgain.com/embedded/pricing/) · [Procurement Packet template](https://github.com/mizcausevic-dev/kinetic-gain-embedded/blob/main/docs/sales/PROCUREMENT-PACKET.md) · [Synthetic case study](https://github.com/mizcausevic-dev/kinetic-gain-embedded/blob/main/docs/case-studies/healthtech-saas-rollout.md)
 
 ### Hubs + tools
 
