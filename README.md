@@ -49,6 +49,7 @@ I build the systems that sit between traffic, revenue, and the teams that operat
 | Vertical operator surfaces | [Industry Atlas](#-industry-atlas--vertical-operator-control-planes) |
 | Local-first product work | [Sveska](#-sveska--local-first-notepad-pwa) |
 | Specs and governance infrastructure | [Kinetic Gain Protocol Suite](#-kinetic-gain-protocol-suite) |
+| Buyer security diligence — what runs across the estate | [kineticgain.com/trust/security-posture/](https://kineticgain.com/trust/security-posture/) |
 
 **Publication note:** many of the repos below were published in a concentrated May 2026 portfolio sprint. The dates reflect public packaging, CI, screenshots, and repo hardening, not the first moment the ideas or workstreams existed.
 
@@ -658,6 +659,8 @@ Reliability primitives. Each independent. All designed to compose:
 | [`audit-stream-py`](https://github.com/mizcausevic-dev/audit-stream-py) | Python | **Append-only governance event stream** for the whole portfolio. Hash-chained for tamper-evidence, SSE for live tailing, REST for queries. Every other portfolio repo is a producer. **Platform Reliability Stack #10 — the 10+ target is hit.** | **SRE / Compliance** |
 
 Identity at the edge → rate limits at the model → canary at deploy → registry as source of truth → SLO budget at the API surface → Rust primitives for hot paths → feature flags for rollout control → shadow traffic for migrations → tamper-evident audit log. **Defense-in-depth for the agent era.**
+
+The **17 defensive layers** actually running across the portfolio (Dependabot on 226 repos · CodeQL + OpenSSF Scorecard on 58–61 · SHA-pinned actions across **419 `uses:` lines** · ed25519-signed `/.well-known/` docs · npm provenance · CycloneDX SBOM) are inventoried and independently verifiable at **[kineticgain.com/trust/security-posture/](https://kineticgain.com/trust/security-posture/)** — published the same way I ask vendors to publish theirs.
 
 ---
 
