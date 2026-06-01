@@ -400,7 +400,7 @@ See full per-protocol breakdown under **🎯 PR-Gate GitHub Actions** below.
 npm install kinetic-gain-embedded
 ```
 
-[Pricing tiers](https://kineticgain.com/embedded/pricing/) · [Procurement Packet template](https://github.com/mizcausevic-dev/kinetic-gain-embedded/blob/main/docs/sales/PROCUREMENT-PACKET.md) · [Synthetic case study](https://github.com/mizcausevic-dev/kinetic-gain-embedded/blob/main/docs/case-studies/healthtech-saas-rollout.md)
+[Pricing tiers](https://kineticgain.com/embedded/pricing/) · [ROI calculator](https://kineticgain.com/embedded/roi/) · [Procurement Packet template](https://github.com/mizcausevic-dev/kinetic-gain-embedded/blob/main/docs/sales/PROCUREMENT-PACKET.md) · [Synthetic case study](https://github.com/mizcausevic-dev/kinetic-gain-embedded/blob/main/docs/case-studies/healthtech-saas-rollout.md)
 
 ### Hubs + tools
 
