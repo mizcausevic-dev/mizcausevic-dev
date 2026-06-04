@@ -1,9 +1,15 @@
 name: Sync canonical splices into README
 
 # Profile READMEs render instantly on push to main — no deploy step exists.
-# This workflow pulls the apex canonical (kineticgain-com-apex), regenerates the
-# splice payloads, applies them to README.md between BEGIN/END markers, and
-# commits + pushes only if anything changed. Numbers can't drift from canonical.
+# This workflow fetches the apex canonical (kineticgain.com publishes
+# kinetic-gain-canonical.json publicly via its own FTP deploy), rebuilds the
+# splice payloads inline from canonical fields, applies them to README.md
+# between BEGIN/END markers, and commits + pushes only if anything changed.
+# Numbers can't drift from canonical.
+#
+# Architecture: public-URL fetch (matches kinetic-gain-suite-landing and
+# mizcausevic-dev.github.io). The public web contract IS the cross-repo
+# interface — no PAT secret, no private-repo dependency, no apex-clone.
 
 on:
   schedule:
@@ -24,57 +30,84 @@ jobs:
       - name: Checkout profile repo
         uses: actions/checkout@v4
 
-      - name: Fetch apex canonical + regenerate splices
-        env:
-          # apex is private; default GITHUB_TOKEN is scoped to this repo only.
-          # APEX_READ_TOKEN is a repo secret (PAT w/ `repo` scope) — rotate it the
-          # same cadence as other long-lived tokens. Stays out of git, never logged.
-          APEX_READ_TOKEN: ${{ secrets.APEX_READ_TOKEN }}
+      - name: Fetch canonical + apply splices
         run: |
-          git clone --depth=1 "https://x-access-token:${APEX_READ_TOKEN}@github.com/mizcausevic-dev/kineticgain-com-apex.git" /tmp/apex
-          cd /tmp/apex
-          python3 generate.py
-          echo "--- generated/ ---"
-          ls -la generated/
+          # Real Chrome UA — Hostinger's edge WAF returns 403 to default curl UA
+          # on GitHub Actions IPs. Same UA pattern used by other consumer repos.
+          UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+          mkdir -p /tmp/canonical
+          if ! curl -sS -f -A "$UA" -H 'Accept: application/json' \
+                  https://kineticgain.com/kinetic-gain-canonical.json \
+                  -o /tmp/canonical/kg.json; then
+            echo "WARN: canonical fetch failed — skipping splice (README stays at last-known-good)."
+            exit 0
+          fi
 
-      - name: Apply splices to README.md
-        run: |
           python3 <<'PY'
-          import pathlib
+          import json, pathlib
 
-          APEX = pathlib.Path("/tmp/apex")
+          C = json.loads(pathlib.Path("/tmp/canonical/kg.json").read_text(encoding="utf-8"))
+          S = C["headline_stats"]
+          PLATS = C["named_platforms"]
+          SEC = C.get("security_stats", {})
 
-          # (begin_marker_prefix, end_marker, source_file_under_apex)
+          # ---- Splice payload 1: estate-block (table of named platforms) ----
+          # Mirrors generate.py readme_block() — kept in sync with apex's emitter.
+          rows = "\n".join(f"| {p['name']} | {p['count']} |" for p in PLATS)
+          membership_sum = sum(p["count"] for p in PLATS)
+          estate_block = (
+              "<!-- GENERATED from canonical.json — do not hand-edit -->\n"
+              f"### Kinetic Gain estate\n\n"
+              f"{S['public_repos']} public repos · "
+              f"{S['live_properties']} live properties · "
+              f"{S['open_specs']} open specs · "
+              f"{S['verticals']} verticals\n\n"
+              f"| Named platform | Repos |\n"
+              f"|---|---|\n"
+              f"{rows}\n\n"
+              f"> Counts are platform cluster sizes; a repo may belong to several platforms, "
+              f"so they sum to {membership_sum} membership-slots across "
+              f"{S['public_repos']} distinct repos."
+          )
+
+          # ---- Splice payload 2: security-stats-inline ----
+          # Mirrors generate.py security_stats_inline_md().
+          if SEC:
+              security_block = (
+                  "<!-- GENERATED from canonical.json — do not hand-edit -->\n"
+                  f"Dependabot on **{SEC['dependabot_repos']} repos** · "
+                  f"CodeQL on **{SEC['codeql_repos']}** · "
+                  f"OpenSSF Scorecard on **{SEC['scorecard_repos']}** "
+                  "(strict subset of CodeQL) · "
+                  f"SHA-pinned actions across **{SEC['sha_pinned_uses_lines']} `uses:` lines** "
+                  f"(measured {SEC['measured']})."
+              )
+          else:
+              security_block = "<!-- GENERATED — security_stats absent from canonical -->"
+
           SPLICES = [
-              (
-                  "<!-- BEGIN GENERATED estate-block",
-                  "<!-- END GENERATED estate-block -->",
-                  APEX / "generated/github-readme-block.md",
-              ),
-              (
-                  "<!-- BEGIN GENERATED security-stats-inline",
-                  "<!-- END GENERATED security-stats-inline -->",
-                  APEX / "generated/security-stats-inline.md",
-              ),
+              ("<!-- BEGIN GENERATED estate-block",          "<!-- END GENERATED estate-block -->",          estate_block),
+              ("<!-- BEGIN GENERATED security-stats-inline", "<!-- END GENERATED security-stats-inline -->", security_block),
           ]
 
           readme = pathlib.Path("README.md")
           src = readme.read_text(encoding="utf-8")
-
-          for begin_prefix, end_marker, src_file in SPLICES:
-              new = src_file.read_text(encoding="utf-8").strip()
+          changed = 0
+          for begin_prefix, end_marker, payload in SPLICES:
               i = src.find(begin_prefix)
               j = src.find(end_marker, i)
               if i < 0 or j < 0:
-                  raise SystemExit(
-                      f"FAIL: markers missing for {src_file.name}: begin={i} end={j}"
-                  )
+                  raise SystemExit(f"FAIL: markers missing for {begin_prefix}: begin={i} end={j}")
               i_end_of_begin = src.find("-->", i) + len("-->")
-              src = src[:i_end_of_begin] + "\n" + new + "\n" + src[j:]
-              print(f"OK: spliced {len(new)} bytes from {src_file.name}")
-
+              before = src
+              src = src[:i_end_of_begin] + "\n" + payload + "\n" + src[j:]
+              if src != before:
+                  changed += 1
+                  print(f"OK: spliced {len(payload)} bytes")
+              else:
+                  print(f"OK: {begin_prefix} already in sync")
           readme.write_text(src, encoding="utf-8", newline="\n")
-          print("OK: wrote README.md")
+          print(f"OK: wrote README.md ({changed} splices changed)")
           PY
 
       - name: Commit + push if changed
@@ -83,7 +116,7 @@ jobs:
           git config user.name "Kinetic Gain Bot"
           if ! git diff --quiet README.md; then
             git add README.md
-            git commit -m "chore(sync): refresh README splices from apex canonical [skip ci]"
+            git commit -m "chore(sync): refresh README splices from canonical [skip ci]"
             git push origin main
             echo "Pushed canonical-splice refresh."
           else
