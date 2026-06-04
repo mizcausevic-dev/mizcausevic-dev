@@ -1,0 +1,86 @@
+name: Sync canonical splices into README
+
+# Profile READMEs render instantly on push to main — no deploy step exists.
+# This workflow pulls the apex canonical (kineticgain-com-apex), regenerates the
+# splice payloads, applies them to README.md between BEGIN/END markers, and
+# commits + pushes only if anything changed. Numbers can't drift from canonical.
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'  # every 6 hours, offset off the top to avoid GH cron herd
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-canonical
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout profile repo
+        uses: actions/checkout@v4
+
+      - name: Fetch apex canonical + regenerate splices
+        run: |
+          git clone --depth=1 https://github.com/mizcausevic-dev/kineticgain-com-apex.git /tmp/apex
+          cd /tmp/apex
+          python3 generate.py
+          echo "--- generated/ ---"
+          ls -la generated/
+
+      - name: Apply splices to README.md
+        run: |
+          python3 <<'PY'
+          import pathlib
+
+          APEX = pathlib.Path("/tmp/apex")
+
+          # (begin_marker_prefix, end_marker, source_file_under_apex)
+          SPLICES = [
+              (
+                  "<!-- BEGIN GENERATED estate-block",
+                  "<!-- END GENERATED estate-block -->",
+                  APEX / "generated/github-readme-block.md",
+              ),
+              (
+                  "<!-- BEGIN GENERATED security-stats-inline",
+                  "<!-- END GENERATED security-stats-inline -->",
+                  APEX / "generated/security-stats-inline.md",
+              ),
+          ]
+
+          readme = pathlib.Path("README.md")
+          src = readme.read_text(encoding="utf-8")
+
+          for begin_prefix, end_marker, src_file in SPLICES:
+              new = src_file.read_text(encoding="utf-8").strip()
+              i = src.find(begin_prefix)
+              j = src.find(end_marker, i)
+              if i < 0 or j < 0:
+                  raise SystemExit(
+                      f"FAIL: markers missing for {src_file.name}: begin={i} end={j}"
+                  )
+              i_end_of_begin = src.find("-->", i) + len("-->")
+              src = src[:i_end_of_begin] + "\n" + new + "\n" + src[j:]
+              print(f"OK: spliced {len(new)} bytes from {src_file.name}")
+
+          readme.write_text(src, encoding="utf-8", newline="\n")
+          print("OK: wrote README.md")
+          PY
+
+      - name: Commit + push if changed
+        run: |
+          git config user.email "noreply@kineticgain.com"
+          git config user.name "Kinetic Gain Bot"
+          if ! git diff --quiet README.md; then
+            git add README.md
+            git commit -m "chore(sync): refresh README splices from apex canonical [skip ci]"
+            git push origin main
+            echo "Pushed canonical-splice refresh."
+          else
+            echo "No changes — canonical already in sync."
+          fi
