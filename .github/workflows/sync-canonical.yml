@@ -25,8 +25,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Fetch apex canonical + regenerate splices
+        env:
+          # apex is private; default GITHUB_TOKEN is scoped to this repo only.
+          # APEX_READ_TOKEN is a repo secret (PAT w/ `repo` scope) — rotate it the
+          # same cadence as other long-lived tokens. Stays out of git, never logged.
+          APEX_READ_TOKEN: ${{ secrets.APEX_READ_TOKEN }}
         run: |
-          git clone --depth=1 https://github.com/mizcausevic-dev/kineticgain-com-apex.git /tmp/apex
+          git clone --depth=1 "https://x-access-token:${APEX_READ_TOKEN}@github.com/mizcausevic-dev/kineticgain-com-apex.git" /tmp/apex
           cd /tmp/apex
           python3 generate.py
           echo "--- generated/ ---"
