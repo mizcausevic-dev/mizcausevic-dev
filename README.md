@@ -678,7 +678,7 @@ Reliability primitives. Each independent. All designed to compose:
 
 Identity at the edge → rate limits at the model → canary at deploy → registry as source of truth → SLO budget at the API surface → Rust primitives for hot paths → feature flags for rollout control → shadow traffic for migrations → tamper-evident audit log. **Defense-in-depth for the agent era.**
 
-The **17 defensive layers** actually running across the portfolio (Dependabot on 226 repos · CodeQL + OpenSSF Scorecard on 58–61 · SHA-pinned actions across **419 `uses:` lines** · ed25519-signed `/.well-known/` docs · npm provenance · CycloneDX SBOM) are inventoried and independently verifiable at **[kineticgain.com/trust/security-posture/](https://kineticgain.com/trust/security-posture/)** — published the same way I ask vendors to publish theirs.
+The **17 defensive layers** actually running across the portfolio (Dependabot on 410 repos · CodeQL on 98 · OpenSSF Scorecard on 52 · SHA-pinned actions across **558 `uses:` lines** · ed25519-signed `/.well-known/` docs · npm provenance · CycloneDX SBOM) are inventoried and independently verifiable at **[kineticgain.com/trust/security-posture/](https://kineticgain.com/trust/security-posture/)** — published the same way I ask vendors to publish theirs.
 
 ---
 
