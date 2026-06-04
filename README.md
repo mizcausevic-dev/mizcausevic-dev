@@ -3,7 +3,7 @@
 > **Engineering · Platform Architecture · B2B SaaS Technologist**
 > Boston, MA · ~30 years across IBM, CyberArk, Alteryx, Digital.ai, Gryphon.ai
 
-I build the systems that sit between traffic, revenue, and the teams that operate them. Platform engineering, GTM systems, traffic integrity, digital intelligence, AI governance. **Publicly: 77 distinct repos organised into 12 named platforms, 105 live properties across 17 verticals, and 15+ production-style operator surfaces.** I also author open specifications for the answer-engine era — and a fifteen-repo implementation stack that consumes them ([Suite × Implementations](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite#-suite--implementations)). Polyglot by choice: the language fits the problem, not the resume.
+I build the systems that sit between traffic, revenue, and the teams that operate them. Platform engineering, GTM systems, traffic integrity, digital intelligence, AI governance. **Publicly: 77 distinct repos organised into 12 named platforms, 107 live properties across 17 verticals, and 60+ production-style operator surfaces.** I also author open specifications for the answer-engine era — and a fifteen-repo implementation stack that consumes them ([Suite × Implementations](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite#-suite--implementations)). Polyglot by choice: the language fits the problem, not the resume.
 
 > *"Long-lived credentials are tomorrow's incident reports. Build short-lived. Audit always. Document once."*
 
