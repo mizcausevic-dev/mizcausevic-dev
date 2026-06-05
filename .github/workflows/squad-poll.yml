@@ -33,7 +33,7 @@ jobs:
     steps:
       - name: Scan org for v0.1-shipped repos without v1.0-prod
         env:
-          GH_TOKEN: ${{ secrets.SQUAD_POLL_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           ORG=mizcausevic-dev
@@ -74,7 +74,7 @@ jobs:
       - name: Find or open tracking issue
         if: env.BACKLOG_COUNT != '0'
         env:
-          GH_TOKEN: ${{ secrets.SQUAD_POLL_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           REPO=mizcausevic-dev/mizcausevic-dev
@@ -127,7 +127,7 @@ jobs:
       - name: Close tracking issue if backlog is empty
         if: env.BACKLOG_COUNT == '0'
         env:
-          GH_TOKEN: ${{ secrets.SQUAD_POLL_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           REPO=mizcausevic-dev/mizcausevic-dev
           TITLE_PREFIX='[squad-poll] Backlog: repos awaiting v1.0-prod harden'
