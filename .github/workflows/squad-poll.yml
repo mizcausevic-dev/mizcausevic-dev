@@ -118,6 +118,10 @@ jobs:
             echo "Updated #$EXISTING with $N candidates"
           else
             echo "Opening new tracking issue"
+            # Ensure the squad-backlog label exists (idempotent — ignore "already exists")
+            gh label create squad-backlog --repo "$REPO" \
+              --color FBCA04 --description "Codex-shipped repos awaiting v1.0-prod harden" \
+              2>/dev/null || true
             gh issue create --repo "$REPO" \
               --title "$TITLE_PREFIX ($N outstanding)" \
               --body-file "$BODY_FILE" \
