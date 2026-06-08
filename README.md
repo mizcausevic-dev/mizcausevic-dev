@@ -464,7 +464,7 @@ npm install kinetic-gain-embedded
 | [**aeo.kineticgain.com**](https://aeo.kineticgain.com) | AEO Protocol — interactive visualizer | Platform Eng / AEO |
 | [**prompts.kineticgain.com**](https://prompts.kineticgain.com) | Prompt Provenance | LLM Platform / SRE |
 | [**agents.kineticgain.com**](https://agents.kineticgain.com) | Agent Cards | Platform Eng / Procurement |
-| [**evidence.kineticgain.com**](https://evidence.kineticgain.com) | AI Evidence Format | RAG / Search / Answer engines |
+| [**evidence.kineticgain.com**](https://evidence.kineticgain.com) | AI Evidence Format — WordPress reference impl: [`ai-evidence-block`](https://github.com/mizcausevic-dev/ai-evidence-block) | RAG / Search / Answer engines |
 | [**toolcards.kineticgain.com**](https://toolcards.kineticgain.com) | MCP Tool Cards | MCP authors / Platform Sec |
 | [**tutor.kineticgain.com**](https://tutor.kineticgain.com) | AI Tutor Cards | EdTech / District Procurement |
 | [**student.kineticgain.com**](https://student.kineticgain.com) | Student AI Disclosure | Academic integrity / LMS |
