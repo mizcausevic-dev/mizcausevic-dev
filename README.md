@@ -19,7 +19,7 @@ I build the systems that sit between traffic, revenue, and the teams that operat
 <!-- GENERATED from canonical.json — do not hand-edit -->
 ### Kinetic Gain estate
 
-77 public repos · 107 live properties · 11 open specs · 17 verticals
+77 public repos · 77 live properties · 11 open specs · 17 verticals
 
 | Named platform | Repos |
 |---|---|
