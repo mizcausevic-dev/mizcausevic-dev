@@ -58,7 +58,7 @@ jobs:
           estate_block = (
               "<!-- GENERATED from canonical.json — do not hand-edit -->\n"
               f"### Kinetic Gain estate\n\n"
-              f"{S['public_repos']} public repos · "
+              f"{S['named_platforms']} named platforms · "
               f"{S['live_properties']} live properties · "
               f"{S['open_specs']} open specs · "
               f"{S['verticals']} verticals\n\n"
@@ -66,8 +66,7 @@ jobs:
               f"|---|---|\n"
               f"{rows}\n\n"
               f"> Counts are platform cluster sizes; a repo may belong to several platforms, "
-              f"so they sum to {membership_sum} membership-slots across "
-              f"{S['public_repos']} distinct repos."
+              f"so they sum to {membership_sum} membership-slots."
           )
 
           # ---- Splice payload 2: security-stats-inline ----
