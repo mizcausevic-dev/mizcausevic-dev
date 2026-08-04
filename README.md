@@ -19,7 +19,7 @@ I build the systems that sit between traffic, revenue, and the teams that operat
 <!-- GENERATED from canonical.json — do not hand-edit -->
 ### Kinetic Gain estate
 
-12 named platforms · 107 live properties · 11 Suite specs · 17 verticals
+12 named platforms · 107 live properties · 17 open specs · 17 verticals
 
 | Named platform | Repos |
 |---|---|
@@ -36,7 +36,7 @@ I build the systems that sit between traffic, revenue, and the teams that operat
 | Landing Sites | 12 |
 | Frontend Showcase | 28 |
 
-> Counts are platform cluster sizes; a repo may belong to several platforms, so they sum to 224 membership-slots across 77 distinct repos. The 11 Suite specs ship as 71 callable MCP tools via [mcp-kinetic-gain](https://github.com/mizcausevic-dev/mcp-kinetic-gain). 16 open specifications are published across the full estate.
+> Counts are platform cluster sizes; a repo may belong to several platforms, so they sum to 224 membership-slots.
 <!-- END GENERATED estate-block -->
 
 ### 👁️ Quick Navigation
