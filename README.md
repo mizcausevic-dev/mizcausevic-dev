@@ -1,19 +1,84 @@
 # Miz Causevic
 
-> **Engineering · Platform Architecture · B2B SaaS Technologist**
-> Boston, MA · ~30 years across IBM, CyberArk, Alteryx, Digital.ai, Gryphon.ai
+**Platform architecture and web engineering for enterprise B2B SaaS.** Boston, Massachusetts.
+Founder of **Kinetic Gain LLC**, where I build governance tooling for the answer-engine and agent era.
 
-I build the systems that sit between traffic, revenue, and the teams that operate them. Platform engineering, GTM systems, traffic integrity, digital intelligence, AI governance. **Publicly: 77 distinct repos organised into 12 named platforms, 107 live properties across 17 verticals, and 200+ production-style operator surfaces at `v1.0-prod`.** I also author open specifications for the answer-engine era — and a fifteen-repo implementation stack that consumes them ([Suite × Implementations](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite#-suite--implementations)). Polyglot by choice: the language fits the problem, not the resume.
+Miz Causevic (Mirza Causevic). Background across IBM, CyberArk, Alteryx, Digital.ai and Gryphon.ai,
+in platform engineering, identity and privileged access, and analytics workflow.
 
-> *"Long-lived credentials are tomorrow's incident reports. Build short-lived. Audit always. Document once."*
+**Open to Director of Web Engineering, Principal Platform Engineering, and VP Platform Architecture
+roles.** East Coast US, remote friendly.
+[LinkedIn](https://www.linkedin.com/in/mirzacausevic/) · [kineticgain.com](https://kineticgain.com)
 
-### TL;DR
+<!-- INTERNAL NOTE, does not render on the profile page.
+     Two gaps a hiring manager will look for that this file cannot honestly assert yet:
 
-- **Recruiters:** platform engineer / systems architect shipping across GTM, cloud, identity, AI governance, and operator tooling.
-- **CISOs / CTOs:** buyer-safe control planes, evidence routing, policy enforcement, and synthetic-data workflow surfaces for regulated and enterprise operations.
-- **Developers:** start with [docs.kineticgain.com](https://docs.kineticgain.com), [suite.kineticgain.com](https://suite.kineticgain.com), and [portfolio.kineticgain.com](https://portfolio.kineticgain.com). Agent tooling: `npx mcp-kinetic-gain`. 71 tools across 11 Suite specs, one Claude Desktop config entry.
-- **Founders / investors:** monetization ladder already in motion across open source, templates, hosted operator surfaces, and embedded implementation work.
-- **Fastest proof:** [portfolio.kineticgain.com](https://portfolio.kineticgain.com) for the live atlas, [suite.kineticgain.com](https://suite.kineticgain.com) for the protocol layer, [docs.kineticgain.com](https://docs.kineticgain.com) for guided entry points.
+     1. LEADERSHIP EVIDENCE. A six-lens fleet review grepped the previous 13,000-word version and
+        found ZERO occurrences of: mentor, engineers, stakeholder, roadmap, on-call, hired, P&L.
+        For a Director or VP screen that reads as a very high-leverage IC who has not yet led.
+        Add two or three concrete lines to Background: team size led, what you owned, one outcome.
+
+     2. YEARS OF EXPERIENCE. The old README said "~30 years" while the role brief says "20+".
+        A screener who cross-checks distrusts every other number on the page once two disagree.
+        Deliberately omitted here rather than guessed. Pick one and state it. -->
+
+## Start here
+
+| If you are | Go to |
+|---|---|
+| A developer who found `mcp-kinetic-gain` | [MCP server](#mcp-kinetic-gain) below. Install is one line |
+| Evaluating the governance specs | [suite.kineticgain.com](https://suite.kineticgain.com) |
+| A recruiter or hiring manager | [Background](#background) and the role note above |
+| Doing security or vendor diligence | [kineticgain.com/trust/](https://kineticgain.com/trust/) |
+| Looking for the full estate | [portfolio.kineticgain.com](https://portfolio.kineticgain.com) |
+
+## mcp-kinetic-gain
+
+One MCP server exposing every Kinetic Gain Protocol Suite spec as a callable tool, over stdio.
+**v0.9.1, 75 tools, 12 specs, 172 tests passing, AGPL-3.0.**
+
+```bash
+npx -y mcp-kinetic-gain validate <files...>
+```
+
+Claude Desktop, one entry:
+
+```json
+{
+  "mcpServers": {
+    "kinetic-gain": {
+      "command": "npx",
+      "args": ["-y", "mcp-kinetic-gain"]
+    }
+  }
+}
+```
+
+Three tools that show the shape of it:
+
+- `aup_check_compliance` joins a Classroom AI AUP and a Student AI Disclosure into one allow or deny call.
+- `decision_card_validate` enforces the full AI Procurement Decision Card conditional ruleset.
+- `defensetech_vault_resolve_3axis` resolves a CUI tier, export-control status and foreign-person
+  restriction tuple to the most restrictive policy that satisfies all three.
+
+Published on [npm](https://www.npmjs.com/package/mcp-kinetic-gain) and the
+[MCP Registry](https://registry.modelcontextprotocol.io), both at 0.9.1. Also listed on Glama,
+PulseMCP, metatext and mcpmarket.
+
+## What this is, and what it is not
+
+The specs are **v0.1 drafts**. Nothing here has been certified or attested by a third party, and I do
+not claim otherwise. Where you see regulatory names such as FERPA, HIPAA, DFARS or NYC Local Law 144,
+they mark **which obligation a field is modelled against**. They are not a compliance claim about your
+use of it.
+
+Vertical reference implementations ship with **synthetic fixtures only**. No PHI, no student records,
+no real claimant data. Tools report **conformance** against a JSON Schema, which is a structural check,
+not a legal opinion.
+
+Every repo carries its own `SECURITY.md`. That is where the scoped, checkable version of any claim lives.
+
+## The Kinetic Gain estate
 
 <!-- BEGIN GENERATED estate-block — replace contents with generated/github-readme-block.md from kineticgain-com-apex when canonical changes; do not hand-edit between markers -->
 <!-- GENERATED from canonical.json — do not hand-edit -->
@@ -39,807 +104,46 @@ I build the systems that sit between traffic, revenue, and the teams that operat
 > Counts are platform cluster sizes; a repo may belong to several platforms, so they sum to 224 membership-slots.
 <!-- END GENERATED estate-block -->
 
-### 👁️ Quick Navigation
-
-| If you're here for... | Jump to |
-|---|---|
-| Current scope and active build lanes | [Current expansion lane](#-current-expansion-lane) |
-| Reusable implementation tooling | [Developer Toolkit](#-developer-toolkit) |
-| Live public properties and stack composition | [Live Now — 60+ properties + implementation stack](#-live-now--60-properties--implementation-stack) |
-| Vertical operator surfaces | [Industry Atlas](#-industry-atlas--vertical-operator-control-planes) |
-| Local-first product work | [Sveska](#-sveska--local-first-notepad-pwa) |
-| Specs and governance infrastructure | [Kinetic Gain Protocol Suite](#-kinetic-gain-protocol-suite) |
-| Buyer security diligence — what runs across the estate | [kineticgain.com/trust/security-posture/](https://kineticgain.com/trust/security-posture/) |
-
-**Publication note:** many of the repos below were published in a concentrated May 2026 portfolio sprint. The dates reflect public packaging, CI, screenshots, and repo hardening, not the first moment the ideas or workstreams existed.
-
-### 📡 Current expansion lane
-
-The current public wave now spans **revenue systems, traffic integrity, web-platform reliability, regulated workflow operations, a polyglot language atlas, and multi-cloud identity & platform governance**:
-
-- `GTM Systems & Growth` — demand-gen automation, CRM routing, lifecycle control, offer motion
-- `Traffic Integrity` — bot mitigation, click-fraud reduction, clean analytics inputs
-- `Digital Intelligence` — attribution, telemetry, SEO governance, pipeline clarity
-- `Platform Engineering` — headless CMS, DevOps, core web vitals, resilient delivery
-- `Regulated Workflow Systems` — approval routing, obligation graphs, consent evidence, audit posture
-- `Operational Command Surfaces` — bookings, creator launches, menu sync, store incidents, permits, crop compliance
-- `Language Atlas` — real operator surfaces in Flutter, Julia, Python, Rust, Go, PHP, Kotlin, and more where the language fits the system shape
-- `Cloud Identity, Platform, FinOps & Threat Detection` — operator surfaces for Microsoft (Entra access reviews, Intune device compliance, M365 Purview retention), AWS (IAM Access Analyzer + GuardDuty triage), GCP (IAM policy drift + billing-anomaly routing), and Azure (landing-zone drift). Each is a synthetic-data operator console at production hardness — AGPL-3.0-or-later, dual-Node CI, dependabot, 95%+ coverage, deployed on its own kineticgain.com subdomain.
-
-Early anchors in that lane:
-- [`revops-lead-router`](https://github.com/mizcausevic-dev/revops-lead-router) — control plane for lead enrichment, CRM routing, speed-to-lead posture, and queue integrity
-- [`fraud-click-filter`](https://github.com/mizcausevic-dev/fraud-click-filter) · [`cf-bot-shield-tf`](https://github.com/mizcausevic-dev/cf-bot-shield-tf) · [`honeypot-form-validator`](https://github.com/mizcausevic-dev/honeypot-form-validator) · [`anomaly-log-hunter`](https://github.com/mizcausevic-dev/anomaly-log-hunter) — traffic-integrity layer for blocking fraudulent sessions before they burn ad spend or poison analytics
-- [`dbt-multi-touch-attr`](https://github.com/mizcausevic-dev/dbt-multi-touch-attr) · [`gtm-datalayer-standards`](https://github.com/mizcausevic-dev/gtm-datalayer-standards) · [`seo-vital-monitor`](https://github.com/mizcausevic-dev/seo-vital-monitor) · [`pipeline-velocity-dash`](https://github.com/mizcausevic-dev/pipeline-velocity-dash) — digital-intelligence layer for attribution, signal clarity, and route-level performance posture
-- [`offer-ladder-engine`](https://github.com/mizcausevic-dev/offer-ladder-engine) — offer-path and conversion-state control for pricing and package motion
-- [`edge-redirect-manager`](https://github.com/mizcausevic-dev/edge-redirect-manager) · [`headless-wp-vue-starter`](https://github.com/mizcausevic-dev/headless-wp-vue-starter) — web-platform layer for headless CMS delivery, route migration, preview-safe rendering, and SEO-conscious frontend architecture
-- [`regulatory-comment-intelligence-hub`](https://github.com/mizcausevic-dev/regulatory-comment-intelligence-hub) · [`contract-clause-obligation-graph`](https://github.com/mizcausevic-dev/contract-clause-obligation-graph) · [`prior-authorization-evidence-router`](https://github.com/mizcausevic-dev/prior-authorization-evidence-router) · [`patient-consent-audit-stream`](https://github.com/mizcausevic-dev/patient-consent-audit-stream) — regulated workflow layer for approvals, obligation mapping, evidence routing, and synthetic audit posture
-- [`creator-partnership-deal-desk`](https://github.com/mizcausevic-dev/creator-partnership-deal-desk) · [`booking-disruption-command-center`](https://github.com/mizcausevic-dev/booking-disruption-command-center) · [`menu-availability-sync-engine`](https://github.com/mizcausevic-dev/menu-availability-sync-engine) · [`store-ops-incident-board`](https://github.com/mizcausevic-dev/store-ops-incident-board) — launch and operations layer for creator programs, hospitality disruption handling, menu sync, and store incident response
-- [`flutter-operator-console`](https://github.com/mizcausevic-dev/flutter-operator-console) · [`capacity-optimizer-jl`](https://github.com/mizcausevic-dev/capacity-optimizer-jl) · [`regulatory-reporting-mart`](https://github.com/mizcausevic-dev/regulatory-reporting-mart) — language-atlas proof that the portfolio ships real operator systems in Flutter/Dart, Julia, and Python, not just one web stack
-- **Multi-cloud identity, platform, FinOps & threat-detection lane** — eight operator consoles all at v1.0-prod, all running on their own kineticgain.com subdomain:
-  - [`entra-access-review-control-plane`](https://github.com/mizcausevic-dev/entra-access-review-control-plane) → [entra.kineticgain.com](https://entra.kineticgain.com/) — Microsoft Entra access reviews & privileged role drift
-  - [`intune-device-compliance-ops`](https://github.com/mizcausevic-dev/intune-device-compliance-ops) → [intune.kineticgain.com](https://intune.kineticgain.com/) — Intune device compliance & jailbreak / OS-drift posture
-  - [`m365-retention-case-orchestrator`](https://github.com/mizcausevic-dev/m365-retention-case-orchestrator) → [retention.kineticgain.com](https://retention.kineticgain.com/) — Microsoft 365 Purview retention & eDiscovery
-  - [`aws-iam-access-analyzer-console`](https://github.com/mizcausevic-dev/aws-iam-access-analyzer-console) → [aws.kineticgain.com](https://aws.kineticgain.com/) — AWS IAM Access Analyzer & cross-account trust
-  - [`aws-guardduty-triage-board`](https://github.com/mizcausevic-dev/aws-guardduty-triage-board) → [guardduty.kineticgain.com](https://guardduty.kineticgain.com/) — AWS GuardDuty detector posture, threat-finding triage & incident response
-  - [`gcp-iam-policy-diff-lab`](https://github.com/mizcausevic-dev/gcp-iam-policy-diff-lab) → [gcp.kineticgain.com](https://gcp.kineticgain.com/) — GCP IAM policy drift & org-policy posture
-  - [`gcp-billing-anomaly-router`](https://github.com/mizcausevic-dev/gcp-billing-anomaly-router) → [billing.kineticgain.com](https://billing.kineticgain.com/) — GCP billing-anomaly routing, budget breaches & FinOps escalation
-  - [`azure-landing-zone-drift-radar`](https://github.com/mizcausevic-dev/azure-landing-zone-drift-radar) → [zone.kineticgain.com](https://zone.kineticgain.com/) — Azure landing-zone baseline drift & guardrail risk
-- **Horizontal composition tools for the Suite-as-parallel-structure thesis** — four pieces that make the eleven 6-packs demonstrably composable at runtime, structurally comparable as buyer reference, dashboard-observable as Suite-wide posture, and discoverable at the suite hub:
-  - **[`kg-suite-vertical-router`](https://github.com/mizcausevic-dev/kg-suite-vertical-router)** — npm package + GitHub Action that auto-detects + routes ANY Suite artifact (Decision Card vault contract / Incident Card / Evidence Bundle manifest / audit-stream event / state-tracker event) to the right vertical-specific verification logic. One CLI command (`kg-suite-route artifact.json`) routes any artifact across any of the 11 verticals. Enforces 4 cross-cutting invariants: human-in-loop, FCRA permissible-purpose, NYC LL 144 candidate-notice, Incident-Card regulator-referral-evaluation structure.
-  - **[`kg-suite-vertical-comparator`](https://github.com/mizcausevic-dev/kg-suite-vertical-comparator)** — generates AEO-friendly Markdown + JSON tables surfacing SAME canonical shapes vs DIFFERENT per-vertical design contributions across all 66 sibling spec repos. Pre-generated canonical [`CROSS-VERTICAL-COMPARISON.md`](https://github.com/mizcausevic-dev/kg-suite-vertical-comparator/blob/main/docs/CROSS-VERTICAL-COMPARISON.md) covers the 11 × 6 matrix + 5 cross-cutting invariant tables. Plus per-artifact `kg-suite-compare a b` CLI. Reuse on procurement comparison sheets, RFPs, vendor due-diligence packages.
-  - **[`kg-suite-fleet-dashboard`](https://github.com/mizcausevic-dev/kg-suite-fleet-dashboard)** — single-file static HTML operator dashboard showing Suite-wide posture: hero count badges (11 verticals · 6 shapes · 66 repos · 5 invariants — 10/11 ref-impl coverage), per-vertical posture cards, cross-vertical posture-by-shape table, cross-cutting invariant compliance matrix, and CLI cards for router + comparator. Dark-themed, no framework, no build step, strict CSP. Live at [`mizcausevic-dev.github.io/kg-suite-fleet-dashboard/`](https://mizcausevic-dev.github.io/kg-suite-fleet-dashboard/).
-  - **Eleven dark-themed vertical mini-landings** on [`suite.kineticgain.com/verticals/`](https://suite.kineticgain.com/verticals/) — one buyer-facing page per vertical 6-pack with federal-floor regulatory anchor, canonical example, key design innovation, and all 6 sibling repos as cards.
-- **HealthTech + EdTech + PropTech + InsurTech + HR Tech + FinTech + GovTech + LegalTech + EnergyTech + DefenseTech + RetailTech 6-packs — sixty-six sibling specs / profiles / labs that fan out the Suite's regulated-vertical coverage across eleven verticals as parallel structures.** Each vertical's six repos mirror the same six shapes (Decision Card vault profile · Incident Card profile · Evidence Bundle profile for compliance · Evidence Bundle profile for bias · Operator audit-stream schema · Operator regulatory-lifecycle tracker), so a buyer's tooling that processes one vertical's artifacts works on the other ten. All v0.1 draft, all MIT (spec-side licensing), all `kinetic-gain-protocol-suite` topic-tagged, all composing with each other via `linked_records` so a single deployment's evidence reads as one graph.
-
-- **TEN reference implementations** (AGPL-3.0) — one per vertical, completing **10/10 reference-impl coverage**. Each proves its vertical's audit-stream spec is implementable end-to-end, the parallel-structure thesis holds in code, and the per-vertical regulatory invariants survive a real hash-chained trajectory. Together they map five distinct wall-clock invariant patterns the Suite supports (forward-from-event, backward-before-event, must-precede precondition, anchored-on-completed-application, bounded-backward window):
-  - [`fhir-resource-access-audit-reference`](https://github.com/mizcausevic-dev/fhir-resource-access-audit-reference) — HealthTech: reads HAPI FHIR test server, applies HIPAA Safe-Harbor vault, hash-chains Suite events, re-validates spec JSON Schema in CI
-  - [`matter-decision-record-audit-stream-reference`](https://github.com/mizcausevic-dev/matter-decision-record-audit-stream-reference) — LegalTech: canonical 7-step matter trajectory, attorney-client vault, **three invariants** (privilege-tier consistency + engagement-letter binding + citation-validation-before-production-ready), 9 tests green
-  - [`grid-decision-record-audit-stream-reference`](https://github.com/mizcausevic-dev/grid-decision-record-audit-stream-reference) — EnergyTech: NERC CIP-008 **1-hour wall-clock** incident reporting invariant
-  - [`defense-decision-record-audit-stream-reference`](https://github.com/mizcausevic-dev/defense-decision-record-audit-stream-reference) — DefenseTech: 3-axis CUI vault contract (categorization × export-control × foreign-person-access) + **DFARS 72-hour cyber-incident wall clock**
-  - [`government-decision-record-audit-stream-reference`](https://github.com/mizcausevic-dev/government-decision-record-audit-stream-reference) — GovTech: OMB M-24-10 rights-impacting vs safety-impacting trajectory + impact-assessment-before-deployment precondition
-  - [`financial-decision-record-audit-stream-reference`](https://github.com/mizcausevic-dev/financial-decision-record-audit-stream-reference) — FinTech: FCRA §604 permissible-purpose enumeration + ECOA timing-of-credit-decision binding
-  - [`employment-decision-record-audit-stream-reference`](https://github.com/mizcausevic-dev/employment-decision-record-audit-stream-reference) — HR Tech: **NYC LL 144 14-day backward-before-event** candidate-notice window + EEOC four-fifths-rule wired to bias-audit timestamp
-  - [`student-data-access-audit-stream-reference`](https://github.com/mizcausevic-dev/student-data-access-audit-stream-reference) — EdTech: FERPA basis enumeration (34 CFR Part 99) + COPPA **must-precede-event** verifiable parental consent for under-13 (16 CFR §312.4)
-  - [`mortgage-decision-record-audit-stream-reference`](https://github.com/mizcausevic-dev/mortgage-decision-record-audit-stream-reference) — PropTech: **UNIVERSAL** human-underwriter rule (only Suite vertical with universal-not-scoped human gate) + **ECOA 30-day notice anchored on application-completed-at**, not event timestamp
-  - [`insurance-decision-record-audit-stream-reference`](https://github.com/mizcausevic-dev/insurance-decision-record-audit-stream-reference) — InsurTech: scoped human-adjudicator + **NAIC Model Bulletin on AI 90-day bounded-backward** bias-monitoring window
-
-  **HealthTech 6-pack** (FDA + HIPAA + Section 1557 + IMDRF):
-  - [`fhir-resource-access-audit`](https://github.com/mizcausevic-dev/fhir-resource-access-audit) — append-only ledger of which AI tool read which patient FHIR resource (HL7 FHIR `AuditEvent` → Suite audit-stream)
-  - [`fda-samd-classification-board`](https://github.com/mizcausevic-dev/fda-samd-classification-board) — hash-chained record + reference verifier for an AI/ML medical device's FDA SaMD classification lifecycle (510(k) / De Novo / PMA + PCCP per FDA Dec 2024 final)
-  - [`hipaa-readiness-evidence-bundle`](https://github.com/mizcausevic-dev/hipaa-readiness-evidence-bundle) — evidence-bundle-spec profile scoped to HIPAA Security Rule's 18 Administrative / Physical / Technical standards
-  - [`clinical-bias-cohort-coverage-lab`](https://github.com/mizcausevic-dev/clinical-bias-cohort-coverage-lab) — pre-market + post-deployment bias coverage profile (OMB SPD 15 + Section 1557 + Fitzpatrick + equity metrics)
-  - [`medical-adverse-event-incident-card`](https://github.com/mizcausevic-dev/medical-adverse-event-incident-card) — AI Incident Card profile mapping to FDA MedWatch + EU MDR vigilance + IMDRF AE Terminology + CTCAE-aligned severity
-  - [`phi-vault-contract-profile`](https://github.com/mizcausevic-dev/phi-vault-contract-profile) — AI Procurement Decision Card v0.3 vault contract profile naming HIPAA's 18 Safe Harbor identifier categories
-
-  **EdTech 6-pack** (FERPA + COPPA + IDEA / Section 504 + ESSA + 50 state student-data-privacy regimes):
-  - [`student-data-access-audit-stream`](https://github.com/mizcausevic-dev/student-data-access-audit-stream) — append-only ledger of which AI tool read which student record under what FERPA exception or COPPA consent basis. CEDS + Ed-Fi semantics → Suite audit-stream
-  - [`state-ai-disclosure-state-tracker`](https://github.com/mizcausevic-dev/state-ai-disclosure-state-tracker) — hash-chained per-state lifecycle record for the 50 state student-data-privacy + state-AI-policy regimes (IL SOPPA, CA AB 1584 + AB 2876, TX HB 18 / SCOPE, NY ED Law 2-d, VA ChAIPA, etc.). Per-state state machine + verifier
-  - [`ferpa-readiness-evidence-bundle`](https://github.com/mizcausevic-dev/ferpa-readiness-evidence-bundle) — evidence-bundle-spec profile scoped to FERPA's 8 obligation families (annual notification, school-official exception, directory information, consent, records of disclosure, amendment, breach response, vendor procurement controls)
-  - [`student-cohort-bias-coverage-lab`](https://github.com/mizcausevic-dev/student-cohort-bias-coverage-lab) — bias coverage profile scoped to ESSA accountability subgroups (race per OMB SPD 15, EL, IDEA/504, migrant, gender per Title IX) + EdTech additional dimensions (Fitzpatrick analog: EL WIDA proficiency, foster, homeless, primary home language)
-  - [`ai-student-record-incident-card-profile`](https://github.com/mizcausevic-dev/ai-student-record-incident-card-profile) — AI Incident Card profile mapping severity/type fields to FERPA + COPPA + IDEA + Section 504 + Title VI/IX/504 civil rights + per-state breach-notification taxonomies, plus a CTCAE-analog instructional-impact severity scale
-  - [`pii-student-vault-contract-profile`](https://github.com/mizcausevic-dev/pii-student-vault-contract-profile) — AI Procurement Decision Card v0.3 vault contract profile naming FERPA's 7 §99.3 PII categories AND COPPA's 10 §312.2 PI categories (2025 refresh) AND a four-doctrine consent_basis_taxonomy
-
-  **PropTech 6-pack** (RESPA + ECOA Reg B + Fair Housing Act + HMDA + GLBA Safeguards + CFPB UDAAP + 50 state real-estate-AI regimes):
-  - [`mortgage-decision-record-audit-stream`](https://github.com/mizcausevic-dev/mortgage-decision-record-audit-stream) — per-mortgage-application AI-tool-access events, hash-chained for ECOA Reg B 12 CFR 1002.12 + GLBA + HMDA + CFPB UDAAP recordkeeping. MISMO + Fannie Mae URLA semantics → Suite audit-stream. `human_underwriter_required` invariant blocks autonomous adverse-action issuance
-  - [`state-real-estate-ai-disclosure-tracker`](https://github.com/mizcausevic-dev/state-real-estate-ai-disclosure-tracker) — per-state lifecycle ledger of US state real-estate / mortgage / appraisal / tenant-screening AI-disclosure laws. State machine + verifier. Seed: CA SB 942, CO SB 24-205, IL HB 3773, NY S 1169, TX HB 1709 (TRAIGA)
-  - [`respa-readiness-evidence-bundle`](https://github.com/mizcausevic-dev/respa-readiness-evidence-bundle) — evidence-bundle-spec profile scoped to mortgage / real-estate AI compliance readiness across 10 obligation families (RESPA, ECOA Reg B, TILA-RESPA TRID, Fair Housing, HMDA, GLBA Safeguards, CFPB UDAAP, ALTA Best Practices, NAR 2024 Settlement, state real-estate AI laws)
-  - [`mortgage-applicant-bias-coverage-lab`](https://github.com/mizcausevic-dev/mortgage-applicant-bias-coverage-lab) — pre-deployment + ongoing-monitoring bias coverage profile for AI mortgage / appraisal / pricing tools. ECOA Reg B 9 protected classes + Fair Housing Act 7 classes + mortgage dimensions (LTV/DTI bands, MSA, census tract, majority-minority-tract flag). **EEOC four-fifths-rule** canonical disparate-impact threshold
-  - [`title-chain-evidence-incident-card-profile`](https://github.com/mizcausevic-dev/title-chain-evidence-incident-card-profile) — AI Incident Card profile mapping severity / type fields to CFPB UDAAP + ECOA + Fair Housing + RESPA Section 8 + title-chain integrity event taxonomies
-  - [`mls-data-access-vault-contract-profile`](https://github.com/mizcausevic-dev/mls-data-access-vault-contract-profile) — AI Procurement Decision Card v0.3 vault contract profile naming RESPA + ECOA + Fair Housing + MLS + GLBA data categories AND a 7-doctrine consent_basis_taxonomy
-
-  **InsurTech 6-pack** (NAIC AI Model Bulletin Nov 2023 + state DOI adoptions + NY DFS Circular Letter 7 + CO SB 21-169 + CA DOI Bulletin 2022-5 + FCRA + GLBA + ACORD):
-  - [`insurance-decision-record-audit-stream`](https://github.com/mizcausevic-dev/insurance-decision-record-audit-stream) — per-application / claim / pricing AI-tool-access events, hash-chained. Covers underwriting + claims + pricing under one schema with kind enum branching. ACORD-bridged. `human_adjudicator_required` invariant scoped to adverse-action-capable kinds + recommendations
-  - [`state-insurance-ai-disclosure-tracker`](https://github.com/mizcausevic-dev/state-insurance-ai-disclosure-tracker) — per-state lifecycle ledger of US state DOI AI bulletins / circular letters / regulations / statutes. 9-state lifecycle + 6-vehicle taxonomy. Seed: CT (first NAIC adoption), NY DFS CL 7, CO 3 CCR 702-10 (CO SB 21-169 implementation), CA Bulletin 2022-5, WA TAA 2024-04
-  - [`naic-ai-bulletin-readiness-evidence-bundle`](https://github.com/mizcausevic-dev/naic-ai-bulletin-readiness-evidence-bundle) — evidence-bundle-spec profile scoped to NAIC AI Model Bulletin (Nov 2023) readiness across 6 obligation families (governance · risk-management · third-party-ai · testing-validation · consumer-protection · state-doi-examination-readiness). NY DFS CL 7 + CO 3 CCR 702-10 overlays
-  - [`insurance-applicant-bias-coverage-lab`](https://github.com/mizcausevic-dev/insurance-applicant-bias-coverage-lab) — pre-deployment + ongoing-monitoring bias coverage profile. CO SB 21-169 + NAIC §3 + NY DFS CL 7 + EEOC four-fifths-rule + the insurance-unique **`actuarial-soundness-defended`** coverage status (recognizes apparent gaps that are actuarially justified)
-  - [`unfair-discrimination-incident-card-profile`](https://github.com/mizcausevic-dev/unfair-discrimination-incident-card-profile) — AI Incident Card profile for insurance unfair-discrimination / biased decisioning / NAIC governance gaps / ECDIS defects / FCRA-dispute patterns / state DOI exam findings. 10 event types + 4-tier severity + 6 regulator-referral pathways with evaluation-state tracking
-  - [`policyholder-data-vault-contract-profile`](https://github.com/mizcausevic-dev/policyholder-data-vault-contract-profile) — AI Procurement Decision Card v0.3 vault contract profile naming 15 insurance-data categories (ACORD-family + external consumer data + media + protected-class data) + 7-doctrine consent_basis + 9 protection levels + 5 vendor due-diligence artifacts. Protected-class data default: tokenized AND NOT a model input
-
-  **HR Tech 6-pack** (EEOC AI Guidance May 2023 + Title VII + ADA + ADEA + GINA + OFCCP + NYC Local Law 144 + IL 820 ILCS 42 Video Interview Act + MD HB 1202 Facial Recognition + CO SB 24-205):
-  - [`employment-decision-record-audit-stream`](https://github.com/mizcausevic-dev/employment-decision-record-audit-stream) — per-hiring / promotion / performance / termination AI-tool-access events, hash-chained. 14-kind event taxonomy. Workday/UKG/Greenhouse-bridged. **Two distinct invariants**: human-hiring-decision-required + NYC LL 144 candidate-notice-provided (the only Suite audit-stream with two orthogonal invariants because LL 144 imposes a candidate-notice obligation independent of human-in-loop)
-  - [`state-employment-ai-disclosure-tracker`](https://github.com/mizcausevic-dev/state-employment-ai-disclosure-tracker) — per-jurisdiction lifecycle ledger of US state + local employment-AI laws. **First Suite tracker supporting sub-state jurisdictions** (US-XX-CITY pattern, because NYC LL 144 is THE headline). Seed: NYC LL 144, IL 820 ILCS 42 + HB 3773, MD HB 1202, CA AB 331 (withdrawn), CO SB 24-205
-  - [`eeoc-readiness-evidence-bundle`](https://github.com/mizcausevic-dev/eeoc-readiness-evidence-bundle) — evidence-bundle-spec profile scoped to EEOC AI Guidance (May 2023) readiness across 6 obligation families (title-vii-disparate-impact · ada-accommodation · adea-age-fairness · gina-genetic-info-prohibition · eeoc-recordkeeping · ofccp-federal-contractor)
-  - [`employment-candidate-bias-coverage-lab`](https://github.com/mizcausevic-dev/employment-candidate-bias-coverage-lab) — pre-deployment + ongoing-monitoring bias coverage profile. NYC LL 144 annual-bias-audit + UGESP four-fifths-rule + UGESP §1607.5(D) **2-SD practical-significance test** + Bostock SO/GI expansion + the HR-Tech-unique **`accommodation-pathway-impairment`** coverage status
-  - [`employment-ai-incident-card-profile`](https://github.com/mizcausevic-dev/employment-ai-incident-card-profile) — AI Incident Card profile for employment-AI consumer-harm events. 13 event types + 4-tier severity + 7 regulator-referral pathways (EEOC + state civil-rights agency + NYC DCWP + OFCCP + DOJ + ADA-Rehab-503 + state AG) with evaluation-state tracking
-  - [`candidate-data-vault-contract-profile`](https://github.com/mizcausevic-dev/candidate-data-vault-contract-profile) — AI Procurement Decision Card v0.3 vault contract profile naming 19 candidate-data categories + 7-doctrine consent_basis + 9 protection levels + **5-flag ADA accommodation pathway block** + 7 vendor due-diligence artifacts. **6 categories** default `tokenized-and-not-as-model-input-by-default` (biometric features, credit-check, social-media-scrape, protected-class self-ID, accommodation request, ADA medical doc)
-
-  **FinTech 6-pack** (CFPB AI bulletin 2023 + CFPB Section 1071 + CFPB Section 1033 + CFPB UDAAP + OCC/FRB/FDIC joint AI statement 2023 + OCC Bulletin 2011-12 + FRB SR 11-7 + ECOA Reg B + FCRA Reg V + GLBA Safeguards + BSA/AML + SEC/FINRA. Distinct from PropTech mortgage):
-  - [`financial-decision-record-audit-stream`](https://github.com/mizcausevic-dev/financial-decision-record-audit-stream) — per-consumer-credit / deposit / payment / fraud / AML / robo-advisor / Section-1071-small-business AI-tool-access events, hash-chained. 15-kind event taxonomy across 19 product lines. Two orthogonal invariants: **human-credit-officer-required** AND **FCRA permissible-purpose required** (every credit-bureau pull must cite FCRA §604)
-  - [`state-financial-ai-disclosure-tracker`](https://github.com/mizcausevic-dev/state-financial-ai-disclosure-tracker) — per-state lifecycle ledger of US state banking-regulator regulations + state-AG enforcement + state statutes. **First Suite tracker supporting multi-regulation per state** (CA CCFPL statute + CA DFPI 10 CCR 1060-1077 implementation as parallel lifecycle streams). Seed: NY Part 500 + 2nd Amendment, CA CCFPL + DFPI 10 CCR, CO SB 24-205, IL HB 3773, TX HB 1709
-  - [`cfpb-readiness-evidence-bundle`](https://github.com/mizcausevic-dev/cfpb-readiness-evidence-bundle) — evidence-bundle-spec profile across **8 obligation families** (model-risk-management · ECOA Reg B · FCRA Reg V · GLBA Safeguards · BSA/AML · Section 1071 small business · Section 1033 financial data rights · CFPB UDAAP). ECOA-specific P760D (25-month) recordkeeping freshness floor
-  - [`financial-applicant-bias-coverage-lab`](https://github.com/mizcausevic-dev/financial-applicant-bias-coverage-lab) — pre-deployment + ongoing-monitoring bias coverage profile. ECOA Reg B 9 protected classes + Section 1071 minority/women/LGBTQI-owned business status + FinTech-specific dimensions (credit-score band, channel online vs in-branch, thin-file vs thick-file). Adds **`business-necessity-defended`** AND **`redlining-pattern-flagged`** coverage statuses
-  - [`financial-ai-incident-card-profile`](https://github.com/mizcausevic-dev/financial-ai-incident-card-profile) — AI Incident Card profile for FinTech AI consumer-harm events. 15 event types + 4-tier severity + 9 regulator-referral pathways including **primary-federal-supervisor-notification** (routes to OCC / FRB / FDIC / NCUA per institution type) + `fincen-sar-narrative-update` + `cfpb-fair-lending-referral`
-  - [`financial-customer-data-vault-contract-profile`](https://github.com/mizcausevic-dev/financial-customer-data-vault-contract-profile) — AI Procurement Decision Card v0.3 vault contract profile naming 17 financial-data categories + 10-doctrine consent_basis + 10 protection levels + 8 vendor due-diligence artifacts. **Section 1071 demographic + ECOA-protected-class** default `tokenized-and-not-as-model-input-by-default`. Section 1033 data-portability window in retention envelope
-
-  **GovTech 6-pack** (OMB M-24-10 + AI Bill of Rights + Section 508 + Privacy Act + FOIA + NIST AI RMF + EO 14110 [rescinded] / EO 14179 + FedRAMP + state government AI laws — covers government's OWN AI use, distinct from prior 6 verticals which cover government-as-regulator):
-  - [`government-decision-record-audit-stream`](https://github.com/mizcausevic-dev/government-decision-record-audit-stream) — per-federal / state / local AI decision-record events, hash-chained. 16-kind event taxonomy across benefit determination + federal contracting + FOIA + tax admin + law enforcement + chatbot + regulatory permit. **First Suite audit stream with THREE orthogonal invariants**: human-agency-officer + Federal AI Use Case Inventory + classification-clearance (E.O. 13526 / 32 CFR Part 2002 CUI ordered enforcement)
-  - [`state-government-ai-disclosure-tracker`](https://github.com/mizcausevic-dev/state-government-ai-disclosure-tracker) — per-jurisdiction lifecycle ledger of US federal EOs + OMB memos + state government AI laws + local AI ordinances. Includes **`rescinded`** lifecycle state (executive orders + memos uniquely susceptible). Seed: OMB M-24-10 effective, EO 14110 rescinded by EO 14179, CT Public Act 23-16, NYC AI Mayoral Action Plan
-  - [`omb-m24-10-readiness-evidence-bundle`](https://github.com/mizcausevic-dev/omb-m24-10-readiness-evidence-bundle) — evidence-bundle-spec profile across **8 obligation families** covering OMB M-24-10 governance + Federal AI Use Case Inventory + rights-impacting + safety-impacting minimum practices + OMB M-24-18 procurement + Section 508 accessibility + Privacy Act / FOIA + NIST AI RMF
-  - [`government-applicant-bias-coverage-lab`](https://github.com/mizcausevic-dev/government-applicant-bias-coverage-lab) — pre-deployment + ongoing-monitoring bias coverage profile. OMB M-24-10 §5(d) + Title VI + ADA Title II + Section 1557 + OFCCP-equivalent + EEOC four-fifths-rule. Adds **GovTech-unique Title VI LEP dimension** + **`accessibility-pathway-impairment`** + **`agency-civil-rights-finding-pending`** coverage statuses
-  - [`government-ai-incident-card-profile`](https://github.com/mizcausevic-dev/government-ai-incident-card-profile) — AI Incident Card profile for federal / state / local government AI consumer-harm events. **18 event types — most extensive of any vertical Incident Card** because government AI has the widest event-type surface area (multiple internal regulators + multiple external regulators + congressional oversight + state AG overlay + Federal AI Use Case Inventory inaccuracy as distinct event). 10 regulator-referral pathways including the GovTech-unique `federal-ai-use-case-inventory-correction`
-  - [`citizen-data-vault-contract-profile`](https://github.com/mizcausevic-dev/citizen-data-vault-contract-profile) — AI Procurement Decision Card v0.3 vault contract profile naming 15 government-data categories. 10 protection levels including GovTech-unique **`clearance-gated`** (REQUIRES matching `agent_clearance_level`) + **`tokenized-with-foia-exemption-tagging`** + **`tokenized-with-language-code-cleartext`** (Title VI LEP routing). **REQUIRED `ai_use_case_inventory_block`** — the OMB M-24-10 §3(a) inventory-publication requirement encoded directly into the Decision Card (no other vertical has this)
-
-  **LegalTech 6-pack** (ABA Model Rules 1.1c8 + 1.6 + 1.6(c) + 1.7 + 1.9 + 3.3 + 5.3 + 5.5 + attorney-client privilege + work-product doctrine + state bar opinions (CA / NY-COSAC / FL / DC / PA / TX / IL) + Mata v. Avianca-era federal court standing orders — covers attorneys' OWN AI use ethics, distinct from prior 7 verticals):
-  - [`matter-decision-record-audit-stream`](https://github.com/mizcausevic-dev/matter-decision-record-audit-stream) — per-matter privileged decision events, hash-chained. 14-kind event taxonomy. **FIRST Suite audit stream where `resource.privilege_tier` is REQUIRED on every event** — 8-value taxonomy (privileged · work-product · joint-defense · common-interest · public-record · pre-litigation-investigative-privilege · tribunal-disclosure-required · opposing-party-quarantine). Three invariants: privilege-tier consistency + engagement-letter binding (ABA 1.7/1.9) + citation-validation-before-production-ready (anti-Mata-v-Avianca)
-  - [`state-bar-ai-disclosure-tracker`](https://github.com/mizcausevic-dev/state-bar-ai-disclosure-tracker) — jurisdiction-spanning lifecycle tracker. 9 jurisdictions seeded (ABA + 7 state bars + SDNY Mata v. Avianca sanction). Same `bar_jurisdiction` field accepts both state bar (`US-CA-BAR`) and federal court (`SDNY`) identifiers
-  - [`aba-rule-1-6-readiness-evidence-bundle`](https://github.com/mizcausevic-dev/aba-rule-1-6-readiness-evidence-bundle) — evidence-bundle-spec profile. **8 obligation families × 35 required evidence kinds.** Treats attorney-client privilege + work-product doctrine as TWO separate families (waiver mechanics differ from confidentiality)
-  - [`legal-applicant-bias-coverage-lab`](https://github.com/mizcausevic-dev/legal-applicant-bias-coverage-lab) — bias coverage for legal AI (jury selection, sentencing, immigration triage, public defender caseload, eDiscovery TAR). Three LegalTech-unique subgroups (indigent_defendant_status / immigration_status / criminal_history_band) + **`compas-cautionary-pattern-detected`** + **`batson-pattern-detected`** coverage statuses + supervising-attorney review REQUIRED on four trigger categories (lab gates, doesn't just measure)
-  - [`legal-ai-incident-card-profile`](https://github.com/mizcausevic-dev/legal-ai-incident-card-profile) — 18 event types incl Mata-v-Avianca court-sanctioned-hallucination. **6-code `privilege_waiver_risk_taxonomy`** (Fed. R. Evid. 502(d) clawback as distinct rung — no other vertical Incident Card has this). **ed25519 signature REQUIRED** (LegalTech tightens this; sibling verticals leave it optional). Criminal-defense Sixth-Amendment effective-assistance disclosure as a first-class referral pathway
-  - [`attorney-client-data-vault-contract-profile`](https://github.com/mizcausevic-dev/attorney-client-data-vault-contract-profile) — design centerpiece. 18 attorney-client-data categories × 8 privilege tiers (**same enum as the audit-stream** — typed cross-repo binding). **4 LegalTech-unique runtime invariants**: cross-matter-firewall + privilege-marker stamping + opposing-party-quarantine enforcement + no-training-data-use vendor contract clause REQUIRED. Two LegalTech-unique protection levels: `tokenized-and-not-as-model-input-by-default-cross-matter` + `privilege-marker-required-on-every-disclosure`
-
-  **EnergyTech 6-pack** (NERC CIP-002 through CIP-014 + NERC operating procedures + FERC Orders 2222 + 715 + TSA Security Directives SD-2021-02 / SD-2021-02C + DOE EO 14028 implementation + EPA Clean Air Act Section 114 + state PUC orders (CA / NY / TX / MA / IL / WA) + ISO/RTO Business Practice Manuals — covers AI tools touching the bulk electric system + pipelines + wholesale energy markets, distinct from prior 8 verticals):
-  - [`grid-decision-record-audit-stream`](https://github.com/mizcausevic-dev/grid-decision-record-audit-stream) — per-grid-operations AI-decision events. 17-kind taxonomy. **FIRST Suite audit stream where `resource.bes_cyber_system_categorization` (HIGH/MEDIUM/LOW/NONE/PHYSICAL-SECURITY-PERIMETER-ONLY per CIP-002-5.1a) AND `resource.ot_it_boundary` (OT/IT/OT-IT-CROSSING) are BOTH REQUIRED on every event** — first vertical with physical-realm-vs-data-realm distinction. Three invariants including the **FIRST Suite invariant enforcing a regulatory wall-clock numerically** (CIP-008 1-hour reporting window)
-  - [`state-puc-ai-disclosure-tracker`](https://github.com/mizcausevic-dev/state-puc-ai-disclosure-tracker) — mixed-authority lifecycle tracker covering state PUC + FERC + NERC + ISO/RTO + TSA/DOE/EPA all in one `jurisdiction` field — collapsing reflects the energy sector's actual multi-layered regulatory geography. 10 jurisdictions seeded (6 state PUCs + FERC Order 2222 + NERC CIP-013-3 + TSA SD-2021-02C + CAISO BPM Rev 71). Per-(jurisdiction, docket) lifecycle threading.
-  - [`nerc-cip-readiness-evidence-bundle`](https://github.com/mizcausevic-dev/nerc-cip-readiness-evidence-bundle) — **12 obligation families × 53 required evidence kinds — LARGEST evidence bundle in the Suite.** Two parallel regulatory clocks (CIP-008 1-hour + TSA 12-hour) as separately-named drill records. AI model version change explicitly treated as CIP-010 configuration change.
-  - [`grid-operator-bias-coverage-lab`](https://github.com/mizcausevic-dev/grid-operator-bias-coverage-lab) — **POPULATION-LEVEL equity in essential service delivery, not individual decisioning** — first Suite bias lab reframed. 9 subgroup taxonomies anchored to EPA EJSCREEN + Justice40 + state DAC designations + DOE LEAD. 3 EnergyTech-unique pattern detectors. **7-day freshness window** for load shed events (shortest in Suite).
-  - [`grid-operations-incident-card-profile`](https://github.com/mizcausevic-dev/grid-operations-incident-card-profile) — **20 event types — MOST EXTENSIVE Incident Card across all 9 verticals.** Includes regulatory-clock meta-violations as first-class event types (missing the window is its own separately-enforceable violation). **12 referral pathways** — most extensive in Suite — including NERC E-ISAC, CISA, TSA, DOE CESER, FERC, ISO/RTO Market Monitor, EPA EJ, DOJ Civil Rights, FBI Cyber Division
-  - [`grid-asset-data-vault-contract-profile`](https://github.com/mizcausevic-dev/grid-asset-data-vault-contract-profile) — design centerpiece. 20 grid-asset data categories × 5 BES tiers × 3 OT/IT codes × 12 protection levels (7 EnergyTech-unique). `bes_cyber_system_categorization` + `ot_it_boundary` are SAME enums cross-bound across THREE EnergyTech repos — **strongest typed cross-repo binding in the Suite to date**. **`medical-baseline-tokenized-with-flag`** protection level is the only place in the Suite where a per-record flag remains accessible alongside opaque identity (outage-prioritization AI must honor critical-medical-equipment registry without learning who the customer is). 5 EnergyTech-unique runtime invariants including asymmetric OT→IT data-diode enforcement (IT→OT FORBIDDEN by default)
-
-  **DefenseTech module** (DFARS 252.204-7012/7019/7020/7021 + CMMC 2.0 L1/L2/L3 + NIST SP 800-171 r2 + NIST SP 800-172 + ITAR 22 CFR 120-130 + EAR 15 CFR 730-774 + EAR deemed export 22 CFR 120.50 + E.O. 13526 + ICD 705 + DoDI 5230.24 + CUI Notice 2020-04 + NISPOM 32 CFR 117 + FAR 52.204-21 + False Claims Act 31 USC 3729 — covers AI tools used by DIB prime + sub contractors + FFRDCs + defense-systems integrators touching CUI / classified / ITAR-controlled technical data, distinct from prior 9 verticals):
-  - [`defense-decision-record-audit-stream`](https://github.com/mizcausevic-dev/defense-decision-record-audit-stream) — per-defense-AI-decision events. 18-kind taxonomy. **FIRST Suite audit stream with THREE first-class required fields on resource**: `cui_categorization` (9 tiers PUBLIC → SCI) + `export_control_status` (NOT-CONTROLLED / EAR-99 / EAR-CCL / ITAR) + `foreign_person_access_restriction` (5 tiers). Three invariants: CUI distribution-statement on CUI-Specified+ (DoDI 5230.24); export-control gating (ITAR requires us_person_status verification + DDTC license number on AUTHORIZED-FOREIGN-PERSON); **DFARS 252.204-7012(c)(1)(ii) 72-hour wall-clock** — SECOND Suite verifier enforcing numeric regulatory time-arithmetic (after EnergyTech CIP-008 1-hour).
-  - [`dod-cmmc-disclosure-tracker`](https://github.com/mizcausevic-dev/dod-cmmc-disclosure-tracker) — 10 federal authorities seeded: DoD CIO + Cyber AB + DIBCAC + DDTC + BIS + NIST + GSA + DCMA + DCSA + NARA-ISOO. **8 distinct enforcement modes** — most diverse enforcement-mode diversity of any state-tracker in the Suite, reflecting that no two federal-defense authorities work the same way (contract-clause-flowdown vs license-pre-authorization vs facility-personnel-clearance vs registry-curation-plus-agency-oversight are structurally different).
-  - [`cmmc-l2-l3-readiness-evidence-bundle`](https://github.com/mizcausevic-dev/cmmc-l2-l3-readiness-evidence-bundle) — **18 control families × 48 evidence kinds**. 14 NIST 800-171 families + 4 CMMC-program-specific families (Program Mgmt / POA&M / SPRS Scoring / C3PAO Assessment Artifacts). Three invariants: L3+DIBCAC requires dibcac confidence score; DFARS 7019/7020 in scope requires cmmc-sprs-scoring evidence; every `not-satisfied` outcome must carry a `poam_ref` (orphan failures break POA&M traceability).
-  - [`defense-contractor-bias-coverage-lab`](https://github.com/mizcausevic-dev/defense-contractor-bias-coverage-lab) — 15 dimensions × 8 metric kinds × 14 regulatory bases × 8 decision domains. **Population-level only** (per OFCCP guidance — counts below 20 reported as `insufficient-data` to avoid de-anonymization). DefenseTech-unique dimensions: protected-veteran-status-vevraa-4212, security-clearance-tier-distribution, clearance-denial-rate, polygraph-success-rate, subcontractor-sb-sdb-vosb-classification, insider-threat-flag-rate. Three invariants on regulatory citation completeness.
-  - [`defense-ai-incident-card-profile`](https://github.com/mizcausevic-dev/defense-ai-incident-card-profile) — **22 event types — LARGEST Incident Card profile in the Suite.** Spans DFARS cyber incidents, CUI handling (spillage / marking / mishandling), ITAR + EAR violations, foreign-person access (unauthorized + blocked), classified-environment misuse + SCIF policy violations + AI-generated classified-marking errors, NISPOM insider-threat flags, CMMC POA&M failures + SPRS discrepancies, AI-tool supply-chain compromise. DFARS 72-hour clock enforced at the published-Card level (mirrors audit-stream invariant).
-  - [`cui-data-vault-contract-profile`](https://github.com/mizcausevic-dev/cui-data-vault-contract-profile) — **DESIGN CENTERPIECE. FIRST Suite vault contract with 3 orthogonal typed policy axes** (`cui_handling_policy` 9 tiers × `export_control_handling_policy` 4 tiers × `foreign_person_handling_policy` 5 tiers). `resolvePolicy()` intersects all 3 axes at runtime — most-restrictive axis wins. **`cross_binding_refs` as REQUIRED schema fields** publish sibling repos (audit-stream + evidence-bundle + incident-card) — DefenseTech is the first vertical where the vault contract is the explicit cross-binding centerpiece of the 6-pack. 4 runtime invariants: distribution_statement on CUI-Specified+; us-person-verified min on ITAR; audit_stream_event + fso_cosign on CLASSIFIED-*; audit_stream_event on AUTHORIZED-FOREIGN-PERSON (per-event DDTC review).
-
-  **RetailTech 6-pack** (FTC Section 5 + FTC 2023 algorithmic-pricing guidance + FTC Operation AI Comply 2024 + EU Omnibus Directive 2019/2161 Art 6a personalized-pricing disclosure + NY S365A ATBP + NYC §22-1201 biometric ordinance + CA SB-892 + CA CPPA ADMT (effective 2026-01-01) + CCPA / CPRA + BIPA 740 ILCS 14 + IL SB 2979 (2024) per-scan-stacking remediation + PCI DSS 4.0 + GLBA Safeguards retail-finance — covers AI tools in retail commerce: dynamic + personalized pricing, recommendation engines, fraud detection, biometric checkout, loyalty / refund AI, distinct from prior 10 verticals because RetailTech has NO federal adverse-action statute equivalent to ECOA — invariants are driven by FTC §5 + EU + state law + BIPA biometric consent + PCI DSS scope segregation):
-  - [`retail-decision-record-audit-stream`](https://github.com/mizcausevic-dev/retail-decision-record-audit-stream) — 16-kind event taxonomy across 12 commerce surfaces (web / mobile-app / in-store-pos / in-store-kiosk / call-center / chatbot / marketplace-listing / partner-portal / connected-tv / voice-assistant / sms / mobile-web). 20 resource types. **TWO RetailTech-specific invariants**: personalized-pricing-transparency-disclosure-required (EU Omnibus 2019/2161 Art 6a + FTC §5 — `pricing_transparency.disclosure_artifact_url` REQUIRED on `retail.pricing.personalized-quote-produced` / `dynamic-adjustment-applied` / `surge-tier-assigned` events); biometric-consent-artifact-required (BIPA §15(b)+(c) — `biometric_governance.consent_artifact_ref` + `retention_envelope_id` REQUIRED on face/voice/gait/palm/retina template resources). Payment-data MUST NOT appear in audit-stream events (PCI DSS scope segregation).
-  - [`state-retail-ai-disclosure-tracker`](https://github.com/mizcausevic-dev/state-retail-ai-disclosure-tracker) — per-state retail/consumer AI law lifecycle ledger. 17 obligation kinds across personalized-pricing disclosure / ADM opt-out / annual bias audit / biometric consent + retention / dark patterns prohibition / data broker registration / minor targeting restriction / sensitive PI opt-in. 15 covered-decision types × 12 covered-actor enums. Seed: IL BIPA + 2024 SB 2979 amendment, CA CCPA → CPRA → CPPA ADMT (effective 2026-01-01), NY S365A ATBP (in-comment-period) + NYC §22-1201 biometric ordinance (effective). **Convention**: per-regulation-per-file (`US-NY-atbp.ndjson` vs `US-NY-nyc-biometric.ndjson`) — verifier catches illegal lifecycle transitions when multiple regs share a state.
-  - [`ftc-algorithmic-pricing-readiness-evidence-bundle`](https://github.com/mizcausevic-dev/ftc-algorithmic-pricing-readiness-evidence-bundle) — 12-section evidence bundle: AI system inventory + personalized-pricing disclosure artifacts + annual algorithmic-bias-audit reports + vendor AI due-diligence dossiers + ADM opt-out evidence + right-to-explanation logs + consumer notice exemplars + biometric consent + retention records + dark patterns review + incident response log + training data provenance + external audit results. Aligned with FTC §5 + 2023 algorithmic-pricing guidance + FTC Operation AI Comply (2024) + EU Omnibus 2019/2161 + state retail AI laws. Section 8 (biometric records) cross-binds to `shopper-pii-vault-contract-profile` via `consent_artifact_path_pattern`.
-  - [`consumer-pricing-bias-coverage-lab`](https://github.com/mizcausevic-dev/consumer-pricing-bias-coverage-lab) — 6 cohort dimensions × 4-band verdict bias-coverage profile. **RetailTech-unique cohort dimensions**: income-proxy (ZIP-median tertile), language-locale (Accept-Language header), device-class (premium/mid/budget phone + desktop), **time-of-day** (local-hour buckets — proxies customer-acquisition cohorts), **geographic** (state + urban/rural), **loyalty-tenure** (new <3mo / established 3-24mo / long-tenure >24mo). 4-band verdict: within-tolerance 0.95-1.05× / watchlist / investigate / remediate. FTC §5 disparate-impact framing — first Suite bias lab focused on **proxy-protected-class cohorts** rather than statutorily-listed protected classes.
-  - [`retail-ai-incident-card-profile`](https://github.com/mizcausevic-dev/retail-ai-incident-card-profile) — 12 RetailTech-specific event types (pricing-discrim complaint, recommendation-bias surface, loyalty-tier discrimination, fraud false-positive harm, biometric misidentification, BIPA consent-violation, refund-discrimination, ad-personalization harm, dark-patterns enforcement event, deceptive AI output, minor-targeting violation, data-broker exposure). 8 reason codes × 4-band severity (informational / monitor / escalate / crisis). Referral pathways: FTC §5 complaint, state AG inquiry, EU AI Act Art 73 serious-incident report. **RetailTech-unique**: BIPA per-scan-stacking remediation context post-IL SB 2979 (2024) — legal exposure bounded per-person-per-data-kind.
-  - [`shopper-pii-vault-contract-profile`](https://github.com/mizcausevic-dev/shopper-pii-vault-contract-profile) — 7 data classes × 4 tokenization methods × **6 retention envelopes** (transaction-only / short / medium / long / until-relationship-ends / **biometric-special**). **RetailTech-unique** biometric-special envelope: 365-day BIPA-aligned hard-delete on T+366. Location-data redacted-by-default with opt-in fine-geo as CCPA Sensitive Personal Information. Payment-data NEVER appears in audit-stream events (PCI DSS scope segregation). Under-18 tokenization tier. Data-broker-relationship disclosure obligation. CCPA Do-Not-Sell + Global Privacy Control honor.
-
-- **Polyglot Operator Reporting lane** — three new operator surfaces in three different runtimes, each picked because the language fits the problem (mobile briefings → Flutter, scientific optimization → Julia, warehouse-style mart → Python). All v1.0-prod, all subdomain-deployed:
-  - [`flutter-operator-console`](https://github.com/mizcausevic-dev/flutter-operator-console) → [flutter.kineticgain.com](https://flutter.kineticgain.com/) — Flutter web operator console: signal triage, briefings, dispatch posture
-  - [`capacity-optimizer-jl`](https://github.com/mizcausevic-dev/capacity-optimizer-jl) → [capacity.kineticgain.com](https://capacity.kineticgain.com/) — Julia + JuMP capacity planning, constraint optimization, scenario diffs
-  - [`regulatory-reporting-mart`](https://github.com/mizcausevic-dev/regulatory-reporting-mart) → [reporting.kineticgain.com](https://reporting.kineticgain.com/) — Python warehouse-style mart: docket readiness, evidence packets, deadline pressure, late-risk
-
-- **Buyer-facing operator surfaces lane — 5 net-new, all hardened same day (2026-06-02)** — single-file static HTML dashboards (no backend, no telemetry), each playing a specific founder-credibility lever. Same 4-tab pattern (overview · anomalies · external sync · audit chain), 30 entities of synthetic data baked in, ed25519-signed hash-chained audit-stream events, apex-aligned visual language (onyx + cream + emerald). Status: all five at `v1.0-prod` — CI matrix on Node 20+22, 15 structure + data-integrity tests, html-validate lint, GitHub Release per tag:
-  - [`cyberark-access-certification-mesh`](https://github.com/mizcausevic-dev/cyberark-access-certification-mesh) → [cert.kineticgain.com](https://cert.kineticgain.com/) — CyberArk PAM safe certifications + 6 anomaly patterns (self-review SoD, dormant credentials, break-glass spikes, MFA-bypass abuse, lateral movement) + ServiceNow sync. Founder lever: **CyberArk**.
-  - [`workforce-privilege-identity-flow`](https://github.com/mizcausevic-dev/workforce-privilege-identity-flow) → [jml.kineticgain.com](https://jml.kineticgain.com/) — HRIS-to-IdP joiner/mover/leaver pipeline + 6 pipeline anomalies (orphan AWS keys, SCIM lag, over-priv movers, Day-1 errors) + SCIM 2.0 connector health. Founder lever: **UKG + IAM stack** — bridges HR Tech vertical ↔ IAM lane.
-  - [`tenant-boundary-risk-command-center`](https://github.com/mizcausevic-dev/tenant-boundary-risk-command-center) → [mt.kineticgain.com](https://mt.kineticgain.com/) — multi-tenant B2B SaaS isolation posture across T1/T2/T3 tiers + 6 boundary anomalies (RLS gaps, JWT replay, cross-tenant queries, shared Redis namespacing, DR-drill cross-mounts). The buyer-diligence surface for SaaS vendors selling enterprise. Founder lever: **platform engineering**.
-  - [`pharmacovigilance-review-reporting-hub`](https://github.com/mizcausevic-dev/pharmacovigilance-review-reporting-hub) → [pv.kineticgain.com](https://pv.kineticgain.com/) — adverse-event queue + signal detection + 8 regulator routes (FDA MedWatch / 21 CFR 803 / EU MDR / PMDA / Health Canada / TGA). Extends HealthTech depth from 8 → 9 clinical operator surfaces. Founder lever: **HealthTech regulated depth**.
-  - [`microsoft-graph-permission-scope-auditor`](https://github.com/mizcausevic-dev/microsoft-graph-permission-scope-auditor) → [scopes.kineticgain.com](https://scopes.kineticgain.com/) — 30 synthetic Entra-registered apps (8 MS 1P + 10 ISV Tier 1 + 8 mid-market + 4 in-house) + 6 anomaly patterns (over-permissioned in-house, ISV without DLP, unused-90d, scope creep, secret-expiring, CA coverage gap) + Conditional Access policy × app coverage matrix. Founder lever: **IAM stack + Microsoft enterprise depth** — bridges existing entra + conditional-access + intune surfaces.
-
-Current state: **77 distinct public repos** (224 cluster-memberships across 12 named platforms) backing **107 HTTP-200 live properties** across 17 verticals. Operator-surface hardening backlog (squad doctrine v1.1): **201 repos at `v1.0-prod` cumulative (org-wide, measured via gh api 2026-06-04)** — the most recent additions: 56-repo squad-tag sweep on 06-04 + lease-obligation-risk-board unblocked same day (113 hPanel subdomains provisioned · 187-slot headroom on the 300 cap). The full grouped index is at [kineticgain.com/constellation](https://kineticgain.com/constellation/); the live estate snapshot at [kineticgain.com/state/](https://kineticgain.com/state/). Constellation security posture: **24+ buyer-facing surfaces at A/90** on the kg-header-audit rubric — HSTS preload-ready, CSP locked, fonts self-hosted, COEP `require-corp` enabled.
-
-> **2026-06-03/04 deploy chain + squad sweep (most recent milestone):** Fired 59-subdomain mass deploy after Cloud Professional plan upgrade, then in a single follow-up session swept the squad-tag backlog: **56 Codex-shipped `v0.1-shipped` repos hardened to `v1.0-prod`** in one pass with zero file additions (Codex v2-era scaffolds already include AGPL LICENSE + Dependabot + CHANGELOG). Net delta: **42 → 60 → 116 (post 56-sweep) → 201 (cumulative across all 2026 hardening waves)** — the 56-sweep took the 06-04 milestone count from 60 → 116; an org-wide re-measurement via `gh api` on 2026-06-04 evening showed cumulative `v1.0-prod` across the entire estate is now **201**, reflecting accumulation from prior waves (RetailTech 6-pack · board-*/portfolio-* batches · the 2026-05-31 Squad Triage Phase 2 waves · the 56-sweep itself). Sitemap-index 115 → 138 entries · GSC re-submitted (687 URLs / 0 errors / 0 warnings). Shipped 5 new apex docs: [`/state/`](https://kineticgain.com/state/) (live estate snapshot), [`/docs/subdomain-inventory.md`](https://kineticgain.com/docs/subdomain-inventory.md) (113-subdomain × CNAME × HTTP matrix), [`/docs/deploy-doctrine.md`](https://kineticgain.com/docs/deploy-doctrine.md) (Hostinger FTP cap behavior + reusable retry pattern), `/docs/session-retrospective-2026-06-04.md`, `/docs/subdomain-orphan-resolution.md`. Codified the `sleep 60` step between FTP attempts and rolled it across 45 KG repos' deploy.yml.
-
-### 🪝 Request-time governance bridge family
-
-Three sibling repos enforce a buyer's **AI Procurement Decision Card → PolicyBundle** at request time, one per upstream surface — the v2 strategy's IBM-credibility flagship lane. Same primitive (deny-trumps-allow eval, `x-kg-correlation-id` propagation, audit-stream emission), three platforms:
-
-- [`ibm-watsonx-governance-bridge`](https://github.com/mizcausevic-dev/ibm-watsonx-governance-bridge) → [watsonx.kineticgain.com](https://watsonx.kineticgain.com/) — IBM watsonx.ai (Python · IBM Cloud IAM · Code Engine deploy manifest · **v1.0-prod**)
-- [`azure-openai-governance-bridge`](https://github.com/mizcausevic-dev/azure-openai-governance-bridge) — Azure OpenAI (Python · Azure Functions v2 · Bicep IaC)
-- [`mcp-permission-broker`](https://github.com/mizcausevic-dev/mcp-permission-broker) — Model Context Protocol transport (the MCP-side sibling)
-
-### 🛡️ Decision Card → vault contract family
-
-Same buyer-published AI Procurement Decision Card (now at **v0.3**), a different enforcement axis: instead of gating *requests*, this family gates *field-level PII at the seam*. The Decision Card declares `data_vault_targets[]` (v0.2 — who can read) and `retention_envelope[]` (v0.3 — how long the data lives and how deletion is signed). Four sibling surfaces consume one contract:
-
-- [`ai-procurement-decision-spec`](https://github.com/mizcausevic-dev/ai-procurement-decision-spec) — the JSON Schema (v0.2 adds `data_vault_targets`, v0.3 adds `retention_envelope` with per-field TTL + ed25519-signed deletion-proof endpoints)
-- [`kg-skyyflow-klaviyo-bridge`](https://github.com/mizcausevic-dev/kg-skyyflow-klaviyo-bridge) — Node lib + CLI · `audit` · `tokenize` · `detokenize` · `transform` (webhook → Klaviyo) · per-field protection levels (`none` / `masked` / `tokenized`) · **v0.2.0** · AGPL-3.0
-- [`skyyflow-klaviyo-bridge-console`](https://github.com/mizcausevic-dev/skyyflow-klaviyo-bridge-console) — React + Vite operator console for the bridge engine: dashboard · live webhook simulator with a 3-stage animated pipeline · field mapper · sync log stream
-- [`rag-sentinel`](https://github.com/mizcausevic-dev/rag-sentinel) — tokenize-before-index for RAG pipelines (server-side enforcement of the same contract)
-- [`deal-desk-workspace`](https://github.com/mizcausevic-dev/deal-desk-workspace) — RBAC-aware reveal for the deal-desk surface (client-side enforcement of the same contract)
-
-One Decision Card, four enforcement points. Same `SkyyflowVault` interface across server-side (rag-sentinel), client-side (deal-desk-workspace, console), pipeline-side (bridge lib), and CLI.
-
-### 🧰 Developer Toolkit
-
-Fourteen new public repos now sit underneath the portfolio as a reusable **developer toolkit** layer:
-
-- `MCP governance` — [`mcp-registry-risk-scanner`](https://github.com/mizcausevic-dev/mcp-registry-risk-scanner) · [`mcp-tool-card-generator`](https://github.com/mizcausevic-dev/mcp-tool-card-generator) · [`mcp-tools-diff`](https://github.com/mizcausevic-dev/mcp-tools-diff)
-- `GenAI observability` — [`agent-trace-normalizer`](https://github.com/mizcausevic-dev/agent-trace-normalizer) · [`llm-cost-span-exporter`](https://github.com/mizcausevic-dev/llm-cost-span-exporter) · [`rag-evidence-trace-linker`](https://github.com/mizcausevic-dev/rag-evidence-trace-linker)
-- `K8s control planes` — [`governance-disclosure-operator`](https://github.com/mizcausevic-dev/governance-disclosure-operator) · [`llm-cost-budget-operator`](https://github.com/mizcausevic-dev/llm-cost-budget-operator) · [`scheduled-audit-operator`](https://github.com/mizcausevic-dev/scheduled-audit-operator)
-- `Agent-runtime adapters` — [`agent-tool-adapters`](https://github.com/mizcausevic-dev/agent-tool-adapters) · [`agent-card-runtime-adapters`](https://github.com/mizcausevic-dev/agent-card-runtime-adapters)
-- `Knowledge graph + evidence` — [`rag-evidence-graph`](https://github.com/mizcausevic-dev/rag-evidence-graph) · [`wellknown-index-aggregator`](https://github.com/mizcausevic-dev/wellknown-index-aggregator)
-
-These are not customer-facing protocol specs. They are the implementation toolkit underneath the protocol layer: manifest scanning, disclosure generation, tool drift detection, runtime adapters, evidence integrity, cost spans, and Kubernetes-native governance publishing.
-
----
-
-## 🧭 Next horizon — Vertical × Monetization matrix (v2 expansion)
-
-The next ~10 operator-surface repos are organized as **three sub-verticals × four-tier monetization ladder**, with SEO and security posture as first-class concerns on every repo. Each lane lands on a real enterprise platform; each repo carries the credible "from someone who lived in this stack" hook — **IBM** enterprise integration · **CyberArk** identity · **Alteryx** analytics.
-
-**Three sub-verticals:**
-
-| Sub-vertical | Platforms | Buyer | Placement |
-|---|---|---|---|
-| **Workflow / CX** | IBM watsonx Governance · Genesys Cloud · Camunda 8/Zeebe | CISO / CTO / Platform Eng / VP CX | Kinetic Gain Suite |
-| **Workforce / Internal Comm** | UKG Pro · employee-AUP cross-cut · FirstUp *(second-tier priority)* | CISO / Head of HR Tech / Compliance | Kinetic Gain Suite |
-| **Growth Ops** | Klaviyo EP · VWO REST · MarTech-stack cross-cut | CMO / RevOps / Growth Eng | Lane under Kinetic Gain (`growth.kineticgain.com`) — brand split deferred until demand proves it |
-
-**Four-tier monetization ladder per repo (honest tier wording):**
-
-| Tier | What ships | Pricing | README phrasing |
-|---|---|---|---|
-| **1 · Free operator surface** | Public README + static dashboard + CLI + synthetic fixtures at `<repo>.kineticgain.com` | $0 | "Free now" — only once deployed and CI-green |
-| **2 · Template / policy pack** | Governance YAMLs · dashboard configs · audit checklist templates · CSV starter datasets | $49–$199 | "Template pack available" OR "Template pack planned" — never imply available if not |
-| **3 · Hosted SaaS** | OAuth into tenant · multi-tenant scheduling · signed evidence packets | $99–$499 / mo | "Hosted preview" — only when a real OAuth + tenant path exists; otherwise omit |
-| **4 · KGE module** | Embedded in-app dashboard inside the customer's own product, per [kineticgain.com/embedded](https://kineticgain.com/embedded/) | $1.5K–$7.5K / mo | "Embedded available by engagement" — direct-contract phrasing, no signup form |
-
-> **Tier-4 runtime SDK shipped (2026-05-30):** [`kinetic-gain-embedded`](https://github.com/mizcausevic-dev/kinetic-gain-embedded) v0.1 — drop-in TypeScript SDK (Apache-2.0, zero runtime deps, dual ESM/CJS) for B2B SaaS embedders. Emits hash-chained audit events, enforces Decision Card vault contracts before AI tools touch sensitive data, signs with ed25519. 42 tests across 4 suites; CI matrix on Node 20+22. The runtime side of the Suite; hosted tiers stack on top.
-
-Default for a tier-1-only repo: list tiers 1 + 2-planned only. No SaaS-looking promises without an OAuth + billing + tenant + support motion behind them.
-
-**Cross-cutting (every repo, no exceptions):**
-- **SEO** — dark slate/blue theme · descriptive dofollow anchors · `/.well-known/` Suite docs · hub-and-spoke interlinking · GH topics + homepage set · sitemap entry
-- **Security** — read-only by default · minimal OAuth scopes · no tenant credentials in repo · synthetic fixtures only · evidence packets signed (ed25519 once `pulse-signing.json` ships)
-- **Compliance language (broad)** — across **HIPAA · FERPA · SOC 2 · GDPR · ISO 27001 · accessibility (WCAG/ADA) · AI governance (NIST AI RMF, EU AI Act, ISO 42001)**: always frame as `readiness · evidence · posture · controls · scaffolding`. Never "certified" / "compliant" unless truly audited and currently attested. No "BAA" / "DPA" / "PHI" / "PII" / "audit ready" promises without legal review.
-- **Anti-overlap discipline** — before opening any new repo, document core primitive · target buyer · target platform · monetization tier path · nearest existing repo · why distinct. Blocks the "same surface, different wrapper" drift.
-- **Pulse universe entry** — every deploy adds its CNAME to the [AI Procurement Pulse](https://pulse.kineticgain.com/) universe, additively · async if possible · non-fatal on failure. Pulse-entry never blocks a publish.
-
-**Phase 0 anchors (founder-credibility-ordered):**
-1. [`ibm-watsonx-governance-bridge`](https://github.com/mizcausevic-dev) — **founder-credibility flagship.** IBM is the most credible "lived in this stack" hook in the portfolio; watsonx Governance is the cleanest disclosure-shaped target.
-2. [`genesys-cx-disclosure-board`](https://github.com/mizcausevic-dev) — **enterprise workflow/CX flagship.** Warmest CISO/VP-CX buyer + highest tier-4 KGE fit.
-3. [`klaviyo-flow-consent-audit`](https://github.com/mizcausevic-dev) — **Growth Ops flagship.** Cleanest CMO/RevOps narrative; consent-state lineage is a timely angle.
-
-Three anchors prove the four-tier ladder in three distinct buyer contexts before the remaining 7 fill out at tier-1 + tier-2-planned. FirstUp deferred to second-tier priority — good fit, weaker instant recognition than IBM/Genesys/Camunda/UKG/Klaviyo/VWO.
-
----
-
-## 🚀 Live Now — 60+ properties + implementation stack
-
-The portfolio runs on **two parallel layers** that compose:
-
-1. **A growing network of productized open-source properties** live at `kineticgain.com` subdomains — front doors, per-spec landings, operator dashboards, vertical command surfaces, vendor directory, and prompt-injection bench. All push-to-deploy via GitHub Actions FTP CI/CD. Front door: **[suite.kineticgain.com](https://suite.kineticgain.com)** · Quickstart hub: **[docs.kineticgain.com](https://docs.kineticgain.com)** · **Live portfolio constellation across every public repo: [portfolio.kineticgain.com](https://portfolio.kineticgain.com)**.
-2. **Fifteen-repo Suite Implementation Stack** — the software that *consumes* the [Kinetic Gain Protocol Suite](#-kinetic-gain-protocol-suite) specs. Decision Intelligence engines · Platform Reliability primitives · MCP servers · data-contract enforcement · ed25519 attestation · drift detection · streaming validators. All CI-green, all semver-tagged at v0.1.0, all MIT-licensed. **Four cross-ecosystem hooks** chain them into one composable system. The catalog: [**Suite × Implementations**](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite#-suite--implementations). The compliance mapping: [**NIST AI RMF crosswalk**](https://suite.kineticgain.com/docs/nist-rmf-crosswalk.md) (v0.2 includes the implementation-tooling alignment).
-
-### 🕸️ How it composes
-
-```mermaid
-flowchart TB
-    classDef spec fill:#10b981,stroke:#065f46,color:#fff,stroke-width:2px
-    classDef hook fill:#3b82f6,stroke:#1e40af,color:#fff,stroke-width:2px
-    classDef sup fill:#f3f4f6,stroke:#6b7280,color:#1f2937
-    classDef stream fill:#f59e0b,stroke:#92400e,color:#fff
-    classDef mcp fill:#a855f7,stroke:#581c87,color:#fff,stroke-width:2px
-
-    SPECS["📐 11 Kinetic Gain Protocol Suite specs<br/>AEO · Agent · Tool · Tutor · AUP · Disclosure<br/>Evidence · Provenance · Clinical · Incident · Decision"]:::spec
-
-    SPECS -->|"#1 ingest Suite docs"| PDA["procurement-decision-api<br/>drafts Decision Cards"]:::hook
-    PDA -->|"#2 conditions → runtime gates"| PAC["policy-as-code-engine<br/>PolicyBundle enforcement"]:::hook
-    PDA -->|"#3 extract owners"| DCR["data-contract-registry<br/>schema + SLAs"]:::hook
-    DCR -->|"#4 streaming CSV check"| CDQ["csv-data-quality-rs<br/>row-by-row validation"]:::hook
-
-    SPECS -.->|sign + verify| HA["hash-attestation-rs<br/>ed25519 over canonical hash"]:::sup
-    SPECS -.->|drift detection| AVS["aeo-validator-service<br/>always-on validation"]:::sup
-    AVS -.->|JSONL feed| AGE["aeo-graph-explorer-rs<br/>graph-query layer #5"]:::sup
-    SPECS -.->|incident → plan| ICR["incident-correlation-rs<br/>Suite-graph BFS"]:::sup
-    ICR -.->|drives| PAC
-
-    PDA --> AS
-    PAC --> AS
-    DCR --> AS
-    AVS --> AS
-    ICR --> AS
-    HA --> AS
-    AS["📋 audit-stream-py<br/>hash-chained tamper-evident spine"]:::stream
-
-    SPECS ==>|spec tools| MCP
-    PDA ==>|preview tools| MCP
-    AS ==>|event tools| MCP
-    HA ==>|verify tools| MCP
-    MCP["🤖 mcp-kinetic-gain v0.8.0<br/>71 tools · one Claude Desktop config entry"]:::mcp
-```
-
-**Green** = spec layer (the foundation). **Blue** = the four cross-ecosystem hooks that make it a stack rather than a pile. **Grey** = supporting implementation tools that feed into either side. **Amber** = the tamper-evident audit spine every governance moment writes to. **Purple** = the unified MCP surface that exposes the whole thing to Claude through one config entry.
-
-### 📋 The audit-stream spine — seven producers, two ecosystems
-
-Zoom in on the amber spine: every governance moment in the stack writes to **one hash-chained, tamper-evident log** via `audit-stream-py`. Same opt-in env-var contract (`AUDIT_STREAM_URL`) across all seven producers; same best-effort semantics (a failed POST is logged, never raised). **17 event kinds, seven producers, four FastAPI services + three Rust crates**, all feeding one verifiable narrative an auditor can replay end-to-end.
-
-```mermaid
-flowchart LR
-    classDef pyprod fill:#3b82f6,stroke:#1e40af,color:#fff,stroke-width:2px
-    classDef rsprod fill:#dea584,stroke:#92400e,color:#1f2937,stroke-width:2px
-    classDef spine fill:#f59e0b,stroke:#92400e,color:#fff,stroke-width:3px
-    classDef sink fill:#f3f4f6,stroke:#6b7280,color:#1f2937
-
-    PDA["procurement-decision-api<br/>Python · FastAPI"]:::pyprod
-    AVS["aeo-validator-service<br/>Python · FastAPI"]:::pyprod
-    PCE["policy-as-code-engine<br/>Python · FastAPI"]:::pyprod
-    DCR["data-contract-registry<br/>Python · FastAPI"]:::pyprod
-    HA["hash-attestation<br/>Rust · crypto library"]:::rsprod
-    ICR["incident-correlation<br/>Rust · graph library"]:::rsprod
-    AGE["aeo-graph-explorer<br/>Rust · axum service"]:::rsprod
-
-    PDA -->|"decision_card_drafted"| AS
-    AVS -->|"watch_created<br/>watch_drifted<br/>watch_validity_flipped"| AS
-    PCE -->|"policy_bundle_registered<br/>request_allowed<br/>request_denied"| AS
-    DCR -->|"contract_promoted<br/>contract_deprecated<br/>contract_compatibility_failed"| AS
-    HA -->|"attestation_signed<br/>attestation_verified<br/>attestation_failed"| AS
-    ICR -->|"incident_correlated<br/>incident_correlation_failed"| AS
-    AGE -->|"graph_ingested<br/>graph_ingest_failed"| AS
-
-    AS{{"📋 audit-stream-py<br/>hash-chained · tamper-evident<br/>SSE live tail · REST query · GET /verify"}}:::spine
-
-    AS -->|GET /events/stream| LT["governance dashboards<br/>(live tail)"]:::sink
-    AS -->|GET /events| Q["compliance evidence<br/>(REST query)"]:::sink
-    AS -->|GET /verify| V["auditor replay<br/>(walk the chain)"]:::sink
-```
-
-**Blue** = Python FastAPI producers. **Tan** = Rust producers (two libraries gated behind `--features audit-stream` so library consumers can strip out the HTTP dep, one axum service with the feature on by default). **Amber** = the spine itself. **Grey** = the three downstream surfaces auditors and operators consume.
-
-### 🧮 Apex executive tools — kineticgain.com browser-only surfaces
-
-Shipped **2026-05-31** as a coherent apex layer for the buyers who can't easily map a Suite spec to a same-day decision. Vanilla JS, inline CSS, JS<30KB per page, strict CSP, no login, no telemetry. Aligned in vocabulary with NIST AI RMF, EU AI Act, ISO/IEC 42001, GDPR Art. 28, ISO/IEC 27018, SOC 2 CC9.2 — never "compliant" / "certified" without external attestation.
-
-| Path | What it does | Buyer |
-|---|---|---|
-| [**kineticgain.com/calculators/**](https://kineticgain.com/calculators/) | **Six math-rubric calculators** — AI build-vs-buy, cloud replatform ROI, compliance cost of delay, security breach exposure, AI use-case prioritizer, vendor renewal decision. Transparent formulas, dollar-impact ranges. | CFO · CIO · CTO · COO · Procurement |
-| [**kineticgain.com/trust/**](https://kineticgain.com/trust/) | **Trust Pack — 8 tools** — AI System Card Builder · Evidence Locker · Shadow AI Discovery · AI Vendor Intake · AI Incident Tabletop · Risk Register · Subprocessor Disclosure Template · Vendor AI Disclosure Review (Pulse compound). | Head of Trust · CISO · GC · DPO |
-| [**kineticgain.com/portfolio-triage/**](https://kineticgain.com/portfolio-triage/) | **9-dimension per-portco scoring** — verdict bands (help-now · operator-support · prepare-for-diligence · monitor · leave-alone), CSV/JSON/MD export. | PE operating partner · VC ops · Holdco |
-| [**kineticgain.com/kill-list/**](https://kineticgain.com/kill-list/) | **Complexity tax audit** — 8 drag categories × 3 prompts; ranked stop-doing list. | COO · Operations leader |
-| [**kineticgain.com/policies/**](https://kineticgain.com/policies/) | **10-vertical readiness spec aggregator** — index linking the HIPAA/FERPA/ECOA/NAIC/EEOC/CFPB/OMB/ABA/NERC CIP/DFARS readiness specs from the Suite. | All buyers · readiness research |
-
-Companion: **[kinetic-gain-embedded](https://github.com/mizcausevic-dev/kinetic-gain-embedded) SDK** ships a [`docs/sales/PROCUREMENT-PACKET.md`](https://github.com/mizcausevic-dev/kinetic-gain-embedded/blob/main/docs/sales/PROCUREMENT-PACKET.md) — KGE-enabled 17-section fill-in template for the inverse audience (the SaaS founder selling INTO an enterprise security review, leveraging KGE's hash-chained audit + vault-contract tokenization as verifiable claims).
-
-### 🏥 Squad triage 2026-05-31 — five new lanes (65 v1.0-prod + 21 LIVE on Marketplace + npm publish)
-
-A 115-repo Codex squad backlog triaged + classified + 92% drained in one continuous session. Three coherent product lanes emerged in the first pass. A 4th lane (Sales Enablement) crystallized later same day from Codex's evening ship-out. A 5th lane (Executive Intelligence) followed from a 9-repo product-judgment triage — 5 surfaces survived buyer-distinguishability, 4 archived with supersession notes.
-
-#### 📐 Operator Diagnostics — narrowly-scoped operator data tools
-Distinct from `/trust/` governance scaffolding and `/calculators/` rubric math. Net-new lane after 10 exec-family duplicates were archived publicly with supersession notes pointing at the apex executive-tools layer.
-
-| Live surface | Buyer | What it does |
-|---|---|---|
-| [**reality.kineticgain.com**](https://reality.kineticgain.com/) | CFO · Board · Vendor-claim review | Claims-vs-Reality Engine — vendor-claim/proof-gap scoring + board-ready diligence output |
-| [**revenue.kineticgain.com**](https://revenue.kineticgain.com/) | CRO · Growth Ops | Revenue Infrastructure Scorecard — pipeline integrity, attribution health, conversion-stack maturity |
-| [**replace.kineticgain.com**](https://replace.kineticgain.com/) | CFO · CIO · Procurement | Vendor Replacement Intelligence — narrower than the rubric Vendor Renewal calc; surfaces switching-cost data |
-| [**members.kineticgain.com**](https://members.kineticgain.com/) | Growth Ops · WordPress | WordPress Member Journey Consent Kit — lifecycle consent evidence across login/profile/upgrade/cancel |
-
-Pending Codex CI fixes (issues filed): identity.kineticgain.com · martech.kineticgain.com · experiments.kineticgain.com · margin.kineticgain.com.
-
-#### 🩺 HealthTech operator surfaces — clinical + GxP-territory depth
-Eight clinical / GxP-territory operator surfaces. Each explicitly states "no claim of HIPAA / GMP / GxP / FDA compliance" — readiness/posture/scaffolding only. Synthetic data, no patient/clinician/biotech secrets.
-
-[**gxp**](https://gxp.kineticgain.com/) (Change Control Board) · [**assay**](https://assay.kineticgain.com/) (Release Readiness) · [**capa**](https://capa.kineticgain.com/) (Deviation/CAPA Ledger) · [**narrative**](https://narrative.kineticgain.com/) (Clinical Event Review) · [**diagnostics**](https://diagnostics.kineticgain.com/) (QC Evidence Router) · [**instruments**](https://instruments.kineticgain.com/) (Instrument Change Audit) · [**safety**](https://safety.kineticgain.com/) (Pharmacovigilance Signal Router) · [**specimen**](https://specimen.kineticgain.com/) (Chain Of Custody Console)
-
-#### 📐 Polyglot proof expansion — Julia + R + Python operator surfaces
-Seven new entries to the Polyglot Platform Stack: **3 Julia** ([appeals](https://appeals.kineticgain.com/) Campaign Appeal Fatigue Monitor · [treasury](https://treasury.kineticgain.com/) Liquidity Signal Lab · [yield](https://yield.kineticgain.com/) Forecast Studio), **3 R** ([care](https://care.kineticgain.com/) Variation Analysis · [loss](https://loss.kineticgain.com/) Claims Trend Lab · [donors](https://donors.kineticgain.com/) Cohort Risk Lab), **1 Python** ([outcomes](https://outcomes.kineticgain.com/) Program Outcome Proof Ledger).
-
-#### 🤝 Sales Enablement Stack — buyer-diligence response (NEW lane)
-The seller-side counterpart to the buyer-trust tooling at `/trust/`. Four operator surfaces that compress the cycle time of vendor-diligence response — proof-gap monitoring, trust-center evidence packaging, security-questionnaire answering, RFP assembly. Same readiness/posture/scaffolding vocabulary discipline (no "compliant" / "certified" claims).
-
-| Live surface | Buyer | What it does |
-|---|---|---|
-| [**proofgap.kineticgain.com**](https://proofgap.kineticgain.com/) | Sales · Diligence response | Vendor Proof Gap Monitor — claim coverage, evidence freshness, benchmark confidence, reuse safety |
-| [**trust.kineticgain.com**](https://trust.kineticgain.com/) | Sales · Trust ops | Trust Center Evidence Room — evidence packaging, artifact freshness, review readiness, buyer-safe diligence posture |
-| [**questionnaire.kineticgain.com**](https://questionnaire.kineticgain.com/) | Sales · Security response | Security Questionnaire Answer Studio — answer library, response ownership, cycle-time reduction, trust-evidence reuse |
-| [**rfp.kineticgain.com**](https://rfp.kineticgain.com/) | Sales · Procurement response | RFP Response Assembler — RFP coverage, differentiation, evidence reuse, submission readiness |
-
-#### 🧠 Executive Intelligence Stack — board-prep + investor-facing (NEW lane)
-Survivors of the 9-repo exec-family product judgment triage. Each carries a buyer-distinguishable promise (rather than the "executive-intelligence template prose" word-salad that got the other 4 archived).
-
-| Live surface | Buyer | What it does |
-|---|---|---|
-| [**sparring.kineticgain.com**](https://sparring.kineticgain.com/) | Founder · CEO · Board prep | Boardroom Sparring Partner — board-prep Q&A rehearsal, pushback, memo posture, investor-facing readiness |
-| [**thesis.kineticgain.com**](https://thesis.kineticgain.com/) | Founder · Fundraising | Category Thesis Builder — investor-ready category framing, why-now clarity, thesis-defensible narrative |
-| [**exit.kineticgain.com**](https://exit.kineticgain.com/) | Founder · Pre-exit | Exit Room — exit-readiness intelligence, red flags, diligence gaps, investor-facing deal posture |
-| [**style.kineticgain.com**](https://style.kineticgain.com/) | Brand · Design system | Brand Governance Styleguide — approved tokens, pattern approvals, release-safe style posture |
-| [**release.kineticgain.com**](https://release.kineticgain.com/) | DevEx · Platform release | Release Readiness Shell Kit — bash-native launch blockers, rollback posture, freeze windows |
-
-(Subdomain HTTPS provisioning is first-time-on-Pages; full SSL lands within 24h. HTTP confirms content is live.)
-
-#### ⚙️ +21 GitHub Actions LIVE on GitHub Marketplace
-All 21 protocol PR-gate + governance Actions [LIVE on GitHub Marketplace](https://github.com/marketplace?type=actions&query=Kinetic+Gain) as of 2026-05-31. Each has `v0.1.0` exact-version + floating `v0.1` major-version tags for consumer pinning:
-
-```yaml
-uses: mizcausevic-dev/agent-card-diff-action@v0.1      # floating major (auto-update within 0.1.x)
-uses: mizcausevic-dev/agent-card-diff-action@v0.1.0    # exact pin
-```
-
-See full per-protocol breakdown under **🎯 PR-Gate GitHub Actions** below.
-
-#### 📦 Kinetic Gain Embedded LIVE on npm
-[`kinetic-gain-embedded@0.1.1`](https://www.npmjs.com/package/kinetic-gain-embedded) published to npm with provenance attestation (Apache-2.0, dual ESM/CJS, zero runtime deps, Node 20+). Drop-in audit-stream + Decision Card vault contract SDK for B2B SaaS embedders:
-
-```bash
-npm install kinetic-gain-embedded
-```
-
-[Pricing tiers](https://kineticgain.com/embedded/pricing/) · [ROI calculator](https://kineticgain.com/embedded/roi/) · [Procurement Packet template](https://github.com/mizcausevic-dev/kinetic-gain-embedded/blob/main/docs/sales/PROCUREMENT-PACKET.md) · [Synthetic case study](https://github.com/mizcausevic-dev/kinetic-gain-embedded/blob/main/docs/case-studies/healthtech-saas-rollout.md)
-
-### Hubs + tools
-
-| Property | What it does | Buyer |
-|---|---|---|
-| [**suite.kineticgain.com**](https://suite.kineticgain.com) | **Kinetic Gain Protocol Suite** — canonical front door for all 11 open AI governance specs + [NIST AI RMF crosswalk](https://suite.kineticgain.com/docs/nist-rmf-crosswalk.md) | Recruiters / investors / generalist |
-| [**docs.kineticgain.com**](https://docs.kineticgain.com) | **Quickstart hub** — per-role guides (CISO / district / healthcare vendor / answer engine) + canonical `/.well-known/` path map | New visitors / implementers |
-| [**directory.kineticgain.com**](https://directory.kineticgain.com) | **Vendor directory** — curated list of domains publishing Kinetic Gain documents | Procurement reviewers |
-| [**examples.kineticgain.com**](https://examples.kineticgain.com) | **Examples gallery** — pick a spec, see its canonical example with JSON highlight | Developers / spec authors |
-| [**walker.kineticgain.com**](https://walker.kineticgain.com) | **well-known-walker** — paste any domain, see every Kinetic Gain disclosure it publishes | Procurement / Risk reviewers |
-| [**bench.kineticgain.com**](https://bench.kineticgain.com) | **prompt-injection-bench** — visual harness, paste a JSONL transcript, see pass rates | CISO / Red-team / Trust & Safety |
-| [**pulse.kineticgain.com**](https://pulse.kineticgain.com) | **AI Procurement Pulse** — quarterly research index of vendor AI governance disclosure across the open internet | Journalists / Analysts / Buyers |
-
-### Per-spec landing pages (one per spec in the Suite)
-
-| Property | Spec | Buyer |
-|---|---|---|
-| [**aeo.kineticgain.com**](https://aeo.kineticgain.com) | AEO Protocol — interactive visualizer | Platform Eng / AEO |
-| [**prompts.kineticgain.com**](https://prompts.kineticgain.com) | Prompt Provenance | LLM Platform / SRE |
-| [**agents.kineticgain.com**](https://agents.kineticgain.com) | Agent Cards | Platform Eng / Procurement |
-| [**evidence.kineticgain.com**](https://evidence.kineticgain.com) | AI Evidence Format — WordPress reference impl: [`ai-evidence-block`](https://github.com/mizcausevic-dev/ai-evidence-block) | RAG / Search / Answer engines |
-| [**toolcards.kineticgain.com**](https://toolcards.kineticgain.com) | MCP Tool Cards | MCP authors / Platform Sec |
-| [**tutor.kineticgain.com**](https://tutor.kineticgain.com) | AI Tutor Cards | EdTech / District Procurement |
-| [**student.kineticgain.com**](https://student.kineticgain.com) | Student AI Disclosure | Academic integrity / LMS |
-| [**aup.kineticgain.com**](https://aup.kineticgain.com) | Classroom AI AUP | District / school / instructor |
-| [**clinical.kineticgain.com**](https://clinical.kineticgain.com) | Clinical AI Disclosure (HIPAA / FDA / SaMD) | Hospital CMIO / Compliance |
-| [**incidents.kineticgain.com**](https://incidents.kineticgain.com) | AI Incident Card — "CVE for AI agents" | CISO / Trust & Safety |
-| [**decisions.kineticgain.com**](https://decisions.kineticgain.com) | AI Procurement Decision Card — the buyer-side artifact (spec #11) | Procurement / District / Agency |
-
-### Earlier product surfaces
-
-| Property | What it does | Buyer |
-|---|---|---|
-| [**gv.kineticgain.com**](https://gv.kineticgain.com) | **GitVisualizer** — visual portfolio intelligence for any GitHub user | Engineering / Hiring |
-| [**mcp.kineticgain.com**](https://mcp.kineticgain.com) | **MCP Sentinel** — governance dashboard for Model Context Protocol servers | CISO / Platform Security |
-| [**rag.kineticgain.com**](https://rag.kineticgain.com) | **RAG Sentinel** — hallucination, drift, and citation quality monitoring | ML / AI Ops |
-| [**observe.kineticgain.com**](https://observe.kineticgain.com) | **AgentObserve** — operator console for AI agent fleets | SRE / Platform |
-
-Across the live property network: mix of AGPL-3.0 and Apache-2.0, CI green, push-to-deploy via FTP Action. The current mix includes React + TypeScript operator apps, hand-written static HTML landings, and newer vertical command surfaces.
-
----
-
-## 🏭 Industry Atlas — vertical operator control planes
-
-Fifteen standalone **vertical operator surfaces**, each a TypeScript control plane for a regulated/operations workflow — intake → risk & obligation mapping → posture → safe escalation. Codex ships at `v0.1-shipped`; I (Platform/SRE) harden each to **`v1.0-prod`**: CI on Node 20 + 22, ≥60% service-test coverage, AGPL-3.0, Dependabot, `npm audit`, `SECURITY.md`, static prerender → GitHub Pages. All live, all CI-green.
-
-| Live surface | Vertical | What it does |
-|---|---|---|
-| [**dockets** → live](https://mizcausevic-dev.github.io/regulatory-comment-intelligence-hub/) | GovTech / RegTech | Regulatory comment intake, obligation mapping, approval posture, evidence-packaged submission *(dockets.kineticgain.com provisioning)* |
-| [**clauses.kineticgain.com**](https://clauses.kineticgain.com) | LegalTech | Clause extraction, obligation graphs, review blockers, renewal-safe execution |
-| [**priorauth.kineticgain.com**](https://priorauth.kineticgain.com) | Digital Health | Prior-auth evidence routing, payer rules, approval-safe escalation |
-| [**consent.kineticgain.com**](https://consent.kineticgain.com) | Digital Health | Consent state, audit streams, revocation-safe escalation |
-| [**shipments.kineticgain.com**](https://shipments.kineticgain.com) | Supply Chain | Shipment exceptions, carrier rules, SLA-safe recovery |
-| [**downtime.kineticgain.com**](https://downtime.kineticgain.com) | Manufacturing | Downtime incidents, root-cause blockers, restart-safe escalation |
-| [**dispatch.kineticgain.com**](https://dispatch.kineticgain.com) | Mobility | Dispatch readiness, route adherence, SLA-safe intervention |
-| [**catalog.kineticgain.com**](https://catalog.kineticgain.com) | Commerce | Catalog schema governance, dependency blockers, release-safe field changes |
-| [**campaigns.kineticgain.com**](https://campaigns.kineticgain.com) | Growth / MarTech | Campaign taxonomy, audience blockers, launch-safe conventions |
-| [**creators.kineticgain.com**](https://creators.kineticgain.com) | Creator economy | Partnership deal desk, obligation blockers, launch-safe collaboration |
-| [**bookings.kineticgain.com**](https://bookings.kineticgain.com) | Travel / Hospitality | Booking disruptions, recovery blockers, guest-communication posture |
-| [**permits.kineticgain.com**](https://permits.kineticgain.com) | Construction / GovTech | Permit-package readiness, inspection posture, construction-safe submission |
-| [**crops.kineticgain.com**](https://crops.kineticgain.com) | AgriTech | Crop-compliance observations, field-review triage, buyer-safe packet posture |
-| [**menus.kineticgain.com**](https://menus.kineticgain.com) | Food / Restaurant Tech | Menu availability sync, channel posture, launch-safe conventions |
-| [**stores.kineticgain.com**](https://stores.kineticgain.com) | Retail / Store Ops | Store incident triage, SLA blockers, reopen-safe recovery posture |
-
-> HealthTech surfaces (`priorauth`, `consent`) are **HIPAA-readiness scaffolding only** — synthetic data, no PHI; see each repo's `SECURITY.md`.
-
----
-
-## 🎯 PR-Gate GitHub Actions — quintets across every protocol
-
-**Seventeen Action wrappers** that turn every Kinetic Gain protocol library into a per-PR governance gate. Composite Node 20 actions with `dist/index.js` committed for SHA/tag pinning, hermetic tests with injected `gitShow`, AGPL-3.0-or-later, Dependabot-managed.
-
-### Per-protocol diff Action quintet — PR breaking-change gates
-
-Each one retrieves the previous version of a single governance doc via `git show <base.sha>:<path>`, diffs against HEAD, posts the structured diff as a PR comment, and fails the build on breaking changes.
-
-| Protocol | Action | Headline breaking-change reasons |
-|---|---|---|
-| A2A AgentCard | [`agent-card-diff-action`](https://github.com/mizcausevic-dev/agent-card-diff-action) | `autonomy-level-elevated`, `tool-side-effects-elevated`, `incident-response-uri-removed`, `refusal-category-removed` |
-| MCP Tool Card | [`mcp-tool-card-diff-action`](https://github.com/mizcausevic-dev/mcp-tool-card-diff-action) | `side-effect-class-escalated`, `pii-exposure-escalated`, `human-approval-removed`, `external-system-added`, `input-schema-changed` |
-| Prompt Provenance | [`prompt-provenance-diff-action`](https://github.com/mizcausevic-dev/prompt-provenance-diff-action) | `prompt-hash-changed`, `approval-state-regressed`, `lineage-parent-changed`, `intent-out-of-scope-changed` |
-| Evidence Bundle | [`evidence-bundle-diff-action`](https://github.com/mizcausevic-dev/evidence-bundle-diff-action) | `item-hash-changed`, `item-removed`, `signature-removed`, `signature-signer-changed`, `bundle-expires-shortened` |
-| OTel GenAI rollup | [`otel-genai-diff-action`](https://github.com/mizcausevic-dev/otel-genai-diff-action) | `cost-increased`, `input-tokens-jumped`, `output-tokens-jumped`, `model-added`, `currency-changed` (configurable threshold) |
-
-### Per-protocol fleet-summary Action quintet — one-doc-vs-fleet checks
-
-Each one summarizes a single doc against the rest of a fleet (a directory of peer docs of the same protocol), surfacing the outliers and posting a structured PR summary.
-
-[`agent-card-fleet-summary-action`](https://github.com/mizcausevic-dev/agent-card-fleet-summary-action) · [`mcp-tool-card-fleet-summary-action`](https://github.com/mizcausevic-dev/mcp-tool-card-fleet-summary-action) · [`prompt-provenance-fleet-summary-action`](https://github.com/mizcausevic-dev/prompt-provenance-fleet-summary-action) · [`evidence-bundle-fleet-summary-action`](https://github.com/mizcausevic-dev/evidence-bundle-fleet-summary-action) · [`otel-genai-fleet-summary-action`](https://github.com/mizcausevic-dev/otel-genai-fleet-summary-action)
-
-### Cross-protocol Suite Actions
-
-The wiring that ties the per-protocol quintets together across mixed-content repos:
-
-| Action | What it does |
-|---|---|
-| [`kg-protocol-detect-action`](https://github.com/mizcausevic-dev/kg-protocol-detect-action) | Scans a directory of JSON docs and identifies which Suite protocol each belongs to. Routes mixed-content repos to the right per-protocol diff lane. |
-| [`kg-suite-canonicalize-action`](https://github.com/mizcausevic-dev/kg-suite-canonicalize-action) | Canonicalizes every Suite doc in a directory (stable key ordering, hash-ready output). PR-gates drift between canonical and authored forms. |
-| [`kg-suite-conformance-runner-action`](https://github.com/mizcausevic-dev/kg-suite-conformance-runner-action) | Runs spec-conformance checks across every Suite doc in a directory; reports per-spec compliance + per-finding evidence. |
-| [`kg-suite-fleet-overview-action`](https://github.com/mizcausevic-dev/kg-suite-fleet-overview-action) | Protocol-aware fleet overview across all 5 governance protocols in one repo — buckets, doc counts, unrouted-document gate. |
-| [`kg-suite-spec-version-tracker-action`](https://github.com/mizcausevic-dev/kg-suite-spec-version-tracker-action) | Tracks the `*_version` discriminator across every Suite doc in a repo, fails the PR on unsanctioned spec-version upgrades. |
-
-### Specialized PR gates
-
-| Action | What it does |
-|---|---|
-| [`llm-cost-rollup-action`](https://github.com/mizcausevic-dev/llm-cost-rollup-action) | Runs `otel-genai-rollup` across an OTLP trace export and gates the PR on cost budget breaches. |
-| [`k8s-pre-merge-action`](https://github.com/mizcausevic-dev/k8s-pre-merge-action) | Composite gate across the K8s scanner family — deprecated APIs, RBAC over-scope, pod security, Helm values coverage — one Action, one PR comment. |
-| [`procurement-pulse-action`](https://github.com/mizcausevic-dev/procurement-pulse-action) | Probes your own `/.well-known/` for all 11 Suite documents and reports a 0-100 self-score + tier. Three output modes (PR comment / pulse-receipt JSON / self-score SVG badge), two gate modes (`min-score` threshold / `min-tier` ladder). Same probe core as the [Pulse Issue crawler](https://pulse.kineticgain.com/) and the [browser-extension Vendor Inspector](https://github.com/mizcausevic-dev/kineticgain-vendor-inspector). |
-
-**Composition story**: `kg-protocol-detect-action` identifies what protocols live in the repo → the matching per-protocol `*-diff-action` gates breaking changes → the matching `*-fleet-summary-action` surfaces outliers across the fleet → `kg-suite-conformance-runner-action` checks spec conformance → `kg-suite-canonicalize-action` enforces stable serialization → `procurement-pulse-action` self-scores the deployed `/.well-known/` surface. End-to-end PR governance with zero hand-rolled glue.
-
-**Dogfooded on kineticgain.com itself.** [![kg pulse self-score](https://raw.githubusercontent.com/mizcausevic-dev/kineticgain-com-apex/main/docs/pulse-badge.svg)](https://kineticgain.com/.well-known/pulse-receipt.json) Weekly `procurement-pulse-action` run probes the apex and refreshes the badge + the public receipt at [kineticgain.com/.well-known/pulse-receipt.json](https://kineticgain.com/.well-known/pulse-receipt.json).
-
----
-
-## ✍️ Sveska — local-first notepad PWA
-
-A different discipline from the governance suite: a studio-grade, **offline-first** notepad at **[sveska.studio](https://sveska.studio)**. No account, no telemetry, no cloud dependency — every note lives in the browser's IndexedDB and the app works with the network unplugged.
-
-| | |
-|---|---|
-| **Editor** | CodeMirror 6 rich editor — inline screenshot paste, Markdown highlighting, slash commands, snippets, find/replace, typewriter; classic textarea opt-out |
-| **Depth** | Multi-note tabs · version history + diff · fuzzy search · per-note Excalidraw canvas · streaming AI via a secure edge proxy (zero keys in the client) · `.txt` / `.md` / `.html` / `.pdf` export |
-| **Engineering** | React 18 + TS strict · Zustand · Dexie · vite-plugin-pwa · 281 tests · &lt;180 KB initial JS · accessibility-audited · Cloudflare Pages + edge function |
-
-Repo: [`mizcausevic-dev/sveska`](https://github.com/mizcausevic-dev/sveska) · [v0.8.0](https://github.com/mizcausevic-dev/sveska/releases/tag/v0.8.0) · MIT
-
----
-
-## 🧬 Kinetic Gain Protocol Suite
-
-A family of **eleven open JSON specifications** for the answer-engine and agent era — five core (AEO, Prompt Provenance, Agent Cards, AI Evidence Format, MCP Tool Cards), a three-spec **EdTech trio** (vendor / district / student), a **HealthTech vertical extension** (Clinical AI Disclosure — HIPAA / FDA / SaMD posture), a cross-cutting **AI Incident Card** that ties everything together post-hoc, and an **AI Procurement Decision Card** that signs off on a vendor's posture across the rest of the Suite. **Two regulated verticals covered. NIST AI RMF crosswalk shipped alongside.** All AGPL-3.0, all v0.1 draft, all `kinetic-gain-protocol-suite` tagged. Single landing: [`kinetic-gain-protocol-suite`](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite).
-
-### 📐 Specifications
-
-| Spec | What it declares | Detect via |
-|---|---|---|
-| [`aeo-protocol-spec`](https://github.com/mizcausevic-dev/aeo-protocol-spec) | **AEO Protocol** — entity declaration at `/.well-known/aeo.json` | `aeo_version` |
-| [`prompt-provenance-spec`](https://github.com/mizcausevic-dev/prompt-provenance-spec) | **Prompt Provenance** — versioned, lineaged, reviewable LLM prompt records | `provenance_version` |
-| [`agent-cards-spec`](https://github.com/mizcausevic-dev/agent-cards-spec) | **Agent Cards** — declarative agent capability + refusal disclosure | `agent_card_version` |
-| [`ai-evidence-format-spec`](https://github.com/mizcausevic-dev/ai-evidence-format-spec) | **AI Evidence Format** — structured citations for LLM-generated claims | `evidence_version` |
-| [`mcp-tool-card-spec`](https://github.com/mizcausevic-dev/mcp-tool-card-spec) | **MCP Tool Cards** — per-tool disclosure for Model Context Protocol servers | `tool_card_version` |
-| [`ai-tutor-card-spec`](https://github.com/mizcausevic-dev/ai-tutor-card-spec) | **AI Tutor Cards** — EdTech vendor-side: pedagogy, FERPA/COPPA/GDPR posture | `tutor_card_version` |
-| [`student-ai-disclosure-spec`](https://github.com/mizcausevic-dev/student-ai-disclosure-spec) | **Student AI Disclosure** — student-side: roles, prompt evidence (full/hashed/omitted), artifact-hash binding | `disclosure_version` |
-| [`classroom-ai-aup-spec`](https://github.com/mizcausevic-dev/classroom-ai-aup-spec) | **Classroom AI AUP** — district / school / course-side policy (closes the EdTech trio) | `aup_version` |
-| [`clinical-ai-disclosure-spec`](https://github.com/mizcausevic-dev/clinical-ai-disclosure-spec) | **Clinical AI Disclosure** — HealthTech vendor-side: HIPAA / FDA / SaMD posture, bias audits, EHR (FHIR / CDS Hooks) | `clinical_ai_card_version` |
-| [`ai-incident-card-spec`](https://github.com/mizcausevic-dev/ai-incident-card-spec) | **AI Incident Card** — "CVE for AI agents," cross-references every other affected document in the Suite | `incident_card_version` |
-| [`ai-procurement-decision-spec`](https://github.com/mizcausevic-dev/ai-procurement-decision-spec) | **AI Procurement Decision Card** — buyer-side approval/rejection record that signs off on a vendor's posture across the rest of the Suite | `decision_card_version` |
-
-### 🛠️ AEO Reference Stack
-
-The canonical depth example — every layer needed to consume the spec, across five languages:
-
-| Layer | Repos |
-|---|---|
-| **SDKs** | [`aeo-sdk-python`](https://github.com/mizcausevic-dev/aeo-sdk-python) (live on [PyPI](https://pypi.org/project/aeo-protocol/)) · [`aeo-sdk-typescript`](https://github.com/mizcausevic-dev/aeo-sdk-typescript) · [`aeo-sdk-rust`](https://github.com/mizcausevic-dev/aeo-sdk-rust) · [`aeo-sdk-go`](https://github.com/mizcausevic-dev/aeo-sdk-go) · [`aeo-sdk-swift`](https://github.com/mizcausevic-dev/aeo-sdk-swift) |
-| **CLI** | [`aeo-cli`](https://github.com/mizcausevic-dev/aeo-cli) — `aeo validate / fetch / inspect / claim`, colored output, end-to-end against the live well-known URL |
-| **Crawler** | [`aeo-crawler`](https://github.com/mizcausevic-dev/aeo-crawler) — BFS over AEO graphs, JSON Lines output, configurable depth + concurrency |
-| **Validator service** | [`aeo-validator-service`](https://github.com/mizcausevic-dev/aeo-validator-service) — **always-on HTTP validator** for AEO + all 11 Suite docs. Auto-detects the spec via `*_version` sniffing, hashes canonically, tracks **drift** across re-checks (`POST /watches/{id}/recheck` returns a structured `DriftReport`). |
-| **Graph explorer** | [`aeo-graph-explorer-rs`](https://github.com/mizcausevic-dev/aeo-graph-explorer-rs) — **Rust + axum + petgraph** graph-query service over `aeo-crawler` JSONL output. Ingests atomically; exposes `/nodes` · `/neighbors` · `/shortest-path` · `/find-by-claim`. **The fifth layer of the AEO Reference Stack — 3→5 layers gap closed.** |
-
-#### Spec-ecosystem primitive
-
-[`hash-attestation-rs`](https://github.com/mizcausevic-dev/hash-attestation-rs) — **sign + verify Suite docs** with ed25519 over the same canonical-hash convention every other Suite repo uses. The missing "this AEO actually came from the vendor" layer. Vendors sign, publish a well-known public key URL, consumers verify. Composes with `aeo-validator-service` (tamper events surface as structured issues) and `procurement-decision-api` (Decision Cards can carry a signature).
-
-### 📈 AEO / GEO Infrastructure
-
-The spec is only one layer. The newer control-plane layer covers citation readiness, publication safety, visibility monitoring, and release posture:
-
-| Repo | What it does |
-|---|---|
-| [`aeo-citation-gap-finder`](https://github.com/mizcausevic-dev/aeo-citation-gap-finder) | Detects weakly sourced, stale, or unsupported claims before they leak into answer-engine surfaces |
-| [`llms-txt-governance-hub`](https://github.com/mizcausevic-dev/llms-txt-governance-hub) | Governs `llms.txt` manifests, exclusions, freshness windows, and release approvals |
-| [`geo-competitive-visibility-tracker`](https://github.com/mizcausevic-dev/geo-competitive-visibility-tracker) | Tracks answer-surface share, citation pressure, and competitor query ownership |
-| [`aeo-registry`](https://github.com/mizcausevic-dev/aeo-registry) | Governed inventory of manifests, claim readiness, freshness pressure, and publisher posture |
-| [`aeo-linter`](https://github.com/mizcausevic-dev/aeo-linter) | Rust CLI for manifest hygiene, source freshness, claim coverage, and answer-surface readiness |
-
-### 🔌 MCP Integration
-
-| Repo | What it does |
-|---|---|
-| [`mcp-aeo-server`](https://github.com/mizcausevic-dev/mcp-aeo-server) | AEO-only MCP server — 4 tools, one Claude Desktop config entry |
-| [`mcp-kinetic-gain`](https://github.com/mizcausevic-dev/mcp-kinetic-gain) | **Unified MCP server** — **71 tools across 11 specs + DefenseTech module** (8 tools, v0.8.0, git-tagged), one Claude Desktop config entry, 126 tests passing. Headline tools: `aup_check_compliance` joins an AUP + Student AI Disclosure into a single allow/deny call; `decision_card_validate` enforces the full procurement Decision Card conditional ruleset; `defensetech_vault_resolve_3axis` resolves a (CUI, ITAR, foreign-person) tuple to the most-restrictive vault policy. |
-| [`mcp-reliability-toolkit`](https://github.com/mizcausevic-dev/mcp-reliability-toolkit) | **Reliability MCP server** — 4 tools (`compute_slo_burn`, `design_rate_limiter`, `design_circuit_breaker`, `compose_reliability_pattern`). Same math as `slo-budget-tracker`; emits drop-in Python + Rust configs from a Claude conversation. |
-| [`mcp-decision-intelligence`](https://github.com/mizcausevic-dev/mcp-decision-intelligence) | **Decision Intelligence MCP server** — 4 tools (`validate_decision_card`, `preview_policy_bundle`, `plan_incident_remediation`, `check_contract_compatibility`). Read-only preview of what `procurement-decision-api` + `policy-as-code-engine` + `incident-correlation-rs` + `data-contract-registry` would do — deterministic, no LLM-in-the-loop reasoning. |
-| [`mcp-permission-broker`](https://github.com/mizcausevic-dev/mcp-permission-broker) | **Runtime permission gate** — the enforcement point between an AI Procurement Decision Card and an MCP tool call. Composes Decision Card conditions into PolicyBundles, applies deny-trumps-allow at request time, emits `tool_invocation_*` events to the audit-stream spine. The piece that turns "buyer signed off" into "this tool call is denied." |
-| [`azure-openai-governance-bridge`](https://github.com/mizcausevic-dev/azure-openai-governance-bridge) | **The Azure-native sibling of the broker.** An Azure Function in front of Azure OpenAI that enforces the same deny-trumps-allow PolicyBundle contract on every chat-completion call (deployment + each declared tool), forwards allowed calls, 403/409s denied ones, emits `tool_invocation_*` to audit-stream-py. Bicep IaC included. Puts the Suite's governance on the data path enterprises actually run AI on. |
-
-### 🖼️ Visualizers + galleries
-
-| Live | Repo | What it does |
-|---|---|---|
-| [`aeo.kineticgain.com`](https://aeo.kineticgain.com) | [`aeo-visualizer`](https://github.com/mizcausevic-dev/aeo-visualizer) | Dedicated AEO Protocol web visualizer |
-| [`kinetic-gain-visualizer`](https://mizcausevic-dev.github.io/kinetic-gain-visualizer/) | [`kinetic-gain-visualizer`](https://github.com/mizcausevic-dev/kinetic-gain-visualizer) | **Unified visualizer** — auto-detects the spec from the top-level `*_version` field and renders the appropriate view. **Eleven specs auto-detected**; five views: Visualize / Editor / Architecture / Tools / About |
-| [`examples.kineticgain.com`](https://examples.kineticgain.com) | [`kinetic-gain-examples-gallery`](https://github.com/mizcausevic-dev/kinetic-gain-examples-gallery) | **Examples gallery** — sidebar of 11 specs, click any to see its canonical example rendered with JSON syntax highlighting |
-| [`walker.kineticgain.com`](https://walker.kineticgain.com) | [`well-known-walker-web`](https://github.com/mizcausevic-dev/well-known-walker-web) | **well-known-walker** — paste any domain, see every Kinetic Gain disclosure document it publishes |
-| [`bench.kineticgain.com`](https://bench.kineticgain.com) | [`prompt-injection-bench-web`](https://github.com/mizcausevic-dev/prompt-injection-bench-web) | **prompt-injection-bench** visual harness |
-
-The unified visualizer + unified MCP server give the Suite a complete read-side (human) and tool-side (agent) entry point. **Eleven specs, two front doors, and a growing operator subdomain network.**
-
-### 📦 Client libraries
-
-| Repo | What it does |
-|---|---|
-| [`well-known-probe-js`](https://github.com/mizcausevic-dev/well-known-probe-js) | **Zero-dependency vanilla JavaScript** probe for all eleven Suite documents at any domain's `/.well-known/` paths. Runs in browser + Node 18+ + Deno + Bun. Returns a 0-100 disclosure score + tier + per-spec found/missing. Discriminator-aware (a 200 of the wrong JSON shape doesn't count). The shared core of the Vendor AI Disclosure Inspector. |
-| [`kineticgain-vendor-inspector`](https://github.com/mizcausevic-dev/kineticgain-vendor-inspector) | **Browser extension (MV3) + Greasemonkey userscript** that score what AI governance documents any vendor publishes at `/.well-known/`, right from the toolbar (extension) or as an on-page corner badge (userscript). One shared probe core, two distribution surfaces, a build step that keeps both in sync. The client half of the distribution lane — Procurement Pulse runs the same probe server-side. |
-
-### 🛡️ Testing companion
-
-| Repo | What it does |
-|---|---|
-| [`prompt-injection-bench`](https://github.com/mizcausevic-dev/prompt-injection-bench) | **30-attack prompt-injection corpus + Python harness.** Every record back-references the Agent Card `refusal_taxonomy[].category` it tests, so a vendor can mechanically verify declared refusals hold under attack. Failed runs feed AI Incident Cards. Not a 10th spec — the *testing-counterpart* to the disclosure layer. |
-
----
-
-## 🛡️ Platform Reliability Stack
-
-Reliability primitives. Each independent. All designed to compose:
-
-| Repo | Lang | Surface | Buyer |
-|---|---|---|---|
-| [`rate-limit-shield`](https://github.com/mizcausevic-dev/rate-limit-shield) | Python | Token bucket + circuit breaker + jittered retry, HTTP 429 / Retry-After awareness | **SRE** |
-| [`identity-mesh`](https://github.com/mizcausevic-dev/identity-mesh) | Python | SPIFFE-style JWT-SVID broker — short-lived tokens, audience binding, zero long-lived keys | **CISO** |
-| [`agent-canary`](https://github.com/mizcausevic-dev/agent-canary) | Python | Progressive rollout, shadow mode, sticky-percent routing, auto-rollback | **Platform / SRE** |
-| [`model-registry-pro`](https://github.com/mizcausevic-dev/model-registry-pro) | Python | Model lifecycle catalog: lineage, stage promotion, approval gates | **Platform / MLOps** |
-| [`slo-budget-tracker`](https://github.com/mizcausevic-dev/slo-budget-tracker) | Python | SLO + error-budget library, FastAPI middleware, Prometheus exporter, multi-window burn-rate alerts | **SRE** |
-| [`reliability-toolkit-rs`](https://github.com/mizcausevic-dev/reliability-toolkit-rs) | **Rust** | Async Tokio primitives: token-bucket rate limiter · 3-state circuit breaker · exponential-backoff retry with jitter · bulkhead | **SRE / Platform** |
-| [`feature-flag-rs`](https://github.com/mizcausevic-dev/feature-flag-rs) | **Rust** | Server-side feature flag eval — targeting rules, sticky percentage rollouts (SHA-256 bucketing, no RNG), hot reload | **Platform / SRE** |
-| [`request-shadow-rs`](https://github.com/mizcausevic-dev/request-shadow-rs) | **Rust** | Async request mirroring with sampling + divergence detection — fires both legs concurrently, returns the primary while collecting a structured diff. The SRE primitive for safe migrations | **SRE / Platform** |
-| [`audit-stream-py`](https://github.com/mizcausevic-dev/audit-stream-py) | Python | **Append-only governance event stream** for the whole portfolio. Hash-chained for tamper-evidence, SSE for live tailing, REST for queries. Every other portfolio repo is a producer. **Platform Reliability Stack #10 — the 10+ target is hit.** | **SRE / Compliance** |
-
-Identity at the edge → rate limits at the model → canary at deploy → registry as source of truth → SLO budget at the API surface → Rust primitives for hot paths → feature flags for rollout control → shadow traffic for migrations → tamper-evident audit log. **Defense-in-depth for the agent era.**
-
-The **17 defensive layers** actually running across the portfolio are inventoried and independently verifiable at **[kineticgain.com/trust/security-posture/](https://kineticgain.com/trust/security-posture/)** — published the same way I ask vendors to publish theirs. Plus ed25519-signed `/.well-known/` docs · npm provenance · CycloneDX SBOM.
+Those figures regenerate from `kinetic-gain-canonical.json` every six hours. They are cluster sizes,
+not a repo total, because one repo can belong to several platforms. The raw public-repo count is
+deliberately not a headline here: it drifts, and a wrong number costs more than a missing one.
+
+## Proof you can run
+
+Claims on this page are meant to be checkable in about a minute.
+
+- **The server works.** `npx -y mcp-kinetic-gain validate <file>` against any Suite document.
+- **The tests pass.** `git clone`, `npm ci`, `npm test`. 172 passing at v0.9.1.
+- **The specs are real.** Each is a public repo with a JSON Schema and test vectors.
+- **The disclosures are live.** Any Kinetic Gain domain serves its own `/.well-known/` documents.
+- **The numbers reconcile.** The estate block above is generated, not typed.
 
 <!-- BEGIN GENERATED security-stats-inline — content sourced from generated/security-stats-inline.md in kineticgain-com-apex; do not hand-edit between markers -->
 <!-- GENERATED from canonical.json — do not hand-edit -->
 Dependabot on **410 repos** · CodeQL on **98** · OpenSSF Scorecard on **52** (strict subset of CodeQL) · SHA-pinned actions across **558 `uses:` lines** (measured 2026-06-04).
 <!-- END GENERATED security-stats-inline -->
 
----
+## Background
 
-## 🌐 Polyglot Platform Stack
+Platform engineering, identity and privileged access, and analytics workflow, across IBM, CyberArk,
+Alteryx, Digital.ai and Gryphon.ai. That history is why the Kinetic Gain work sits where it does:
+governance, evidence and trust boundaries rather than features.
 
-Production-shaped backend services in the right language for the problem. **15+ languages across one coherent platform.**
+Two of the surfaces exist because I lived the problem.
+[cert.kineticgain.com](https://cert.kineticgain.com) and
+[jml.kineticgain.com](https://jml.kineticgain.com) are the CyberArk certification-review and the
+joiner-mover-leaver lines from that history turned into working software.
 
-| Language | Repo | What it does |
-|---|---|---|
-| **Go** | [`edge-policy-enforcer`](https://github.com/mizcausevic-dev/edge-policy-enforcer) | Edge request governance, bot handling, redirect control |
-| **Go** | [`latency-budget-enforcer`](https://github.com/mizcausevic-dev/latency-budget-enforcer) | Latency budget enforcement, dependency drag review |
-| **Rust** | [`crawl-anomaly-detector`](https://github.com/mizcausevic-dev/crawl-anomaly-detector) | Crawl log anomaly scoring, indexing risk review |
-| **Rust** | [`support-escalation-router`](https://github.com/mizcausevic-dev/support-escalation-router) | Support queue escalation, SLA pressure scoring |
-| **Java** | [`compliance-event-ledger`](https://github.com/mizcausevic-dev/compliance-event-ledger) | Spring Boot immutable compliance event history |
-| **C#** | [`tenant-isolation-guard`](https://github.com/mizcausevic-dev/tenant-isolation-guard) | ASP.NET Core tenant-boundary policy evaluation |
-| **C#** | [`approval-workflow-orchestrator`](https://github.com/mizcausevic-dev/approval-workflow-orchestrator) | ASP.NET Core approval routing, SLA-aware escalation |
-| **Kotlin** | [`release-readiness-gatekeeper`](https://github.com/mizcausevic-dev/release-readiness-gatekeeper) | Release gate evaluation, dependency readiness scoring |
-| **Kotlin** | [`reliability-policy-coordinator`](https://github.com/mizcausevic-dev/reliability-policy-coordinator) | Dependency drag review, error-budget policy |
-| **Scala** | [`policy-decision-simulator`](https://github.com/mizcausevic-dev/policy-decision-simulator) | Policy simulation for governance scenarios, launch gates |
-| **Elixir** | [`incident-handoff-broker`](https://github.com/mizcausevic-dev/incident-handoff-broker) | Incident routing, SLA-aware handoff scoring |
-| **Ruby** | [`message-retention-guardian`](https://github.com/mizcausevic-dev/message-retention-guardian) | Retention policy enforcement, legal hold protection |
-| **PHP** | [`entitlement-request-portal-api`](https://github.com/mizcausevic-dev/entitlement-request-portal-api) | Entitlement requests, approval routing, access review |
-| **Dart** | [`mobile-briefing-companion`](https://github.com/mizcausevic-dev/mobile-briefing-companion) | Flutter mobile app for executive briefings, signal summaries |
-| **Terraform** | [`platform-foundation-blueprint`](https://github.com/mizcausevic-dev/platform-foundation-blueprint) | Multi-environment networking, IAM blueprint |
-| **Go** | [`grpc-mesh-shadow`](https://github.com/mizcausevic-dev/grpc-mesh-shadow) | gRPC shadow traffic mirroring, divergence detection, sampling |
-| **Go** | [`miz-otel-pack`](https://github.com/mizcausevic-dev/miz-otel-pack) | OpenTelemetry SpanProcessor — GenAI spans → business cost/latency spans |
-| **Rust** | [`wasm-policy-gateway`](https://github.com/mizcausevic-dev/wasm-policy-gateway) | WASI policy engine — geo + rate-limit + A/B routing, ~128 KB module |
-| **Rust** | [`bls-attestation-broker`](https://github.com/mizcausevic-dev/bls-attestation-broker) | BLS12-381 aggregate signatures for multi-signer attestation |
-| **Zig** | [`zig-agent-graph-db`](https://github.com/mizcausevic-dev/zig-agent-graph-db) | In-memory directed graph for agent context, stdlib only |
-| **Haskell** | [`haskell-policy-engine`](https://github.com/mizcausevic-dev/haskell-policy-engine) | Type-safe policy DSL with Hspec + QuickCheck properties |
-| **Python** | [`embedding-drift-graph`](https://github.com/mizcausevic-dev/embedding-drift-graph) | Track cosine drift of entity embeddings across encoder versions, GraphQL API |
-| **Python** | [`audit-graph-explorer`](https://github.com/mizcausevic-dev/audit-graph-explorer) | Neo4j + Cypher relationship-driven audit analysis |
-| **Python** | [`secret-rotation-scheduler`](https://github.com/mizcausevic-dev/secret-rotation-scheduler) | Secret rotation windows, owner prompts, stale-secret detection |
-| **Python** | [`warehouse-reconciliation-engine`](https://github.com/mizcausevic-dev/warehouse-reconciliation-engine) | Source-to-warehouse drift detection, finance-grade reconciliation |
-| **Python** | [`data-quality-guardrail`](https://github.com/mizcausevic-dev/data-quality-guardrail) | Schema drift, freshness lag, null spike detection |
-| **dbt + DuckDB** | [`dbt-search-observatory`](https://github.com/mizcausevic-dev/dbt-search-observatory) | Search console, crawl, index coverage, freshness modeling |
-| **SQL Warehouse** | [`search-observability-warehouse`](https://github.com/mizcausevic-dev/search-observability-warehouse) | Crawl analytics, indexation, technical SEO observability |
+Polyglot by choice, and the language is picked for the problem rather than for the list. Rust for hot
+paths and cryptographic primitives, Python for the audit-stream services, TypeScript for the operator
+surfaces, Go and Elixir where the concurrency model earns it.
 
----
+## Working interest
 
-## 🧠 AI Governance & Platform Engines · TypeScript
+Open to **Director of Web Engineering**, **Principal Platform Engineering**, and **VP Platform
+Architecture** roles at enterprise B2B SaaS companies. East Coast US time zone. Remote friendly.
 
-Production-shaped governance and observability for AI / LLM workloads:
-
-- [`mcp-sentinel`](https://github.com/mizcausevic-dev/mcp-sentinel) — MCP server observability + security audit
-- [`rag-sentinel`](https://github.com/mizcausevic-dev/rag-sentinel) — RAG quality / drift / hallucination signals
-- [`agentobserve`](https://github.com/mizcausevic-dev/agentobserve) — Datadog-shaped operator surface for agent fleets
-- [`agent-codex`](https://github.com/mizcausevic-dev/agent-codex) — governance-as-code: SOC 2 / EU AI Act / ISO 27001 / NIST mappings
-- [`agent-eval-arena`](https://github.com/mizcausevic-dev/agent-eval-arena) — eval harness with regression detection + CI gates
-- [`agent-router`](https://github.com/mizcausevic-dev/agent-router) — LLM router with provider-aware routing and breakers
-- [`llm-redaction-gateway`](https://github.com/mizcausevic-dev/llm-redaction-gateway) — PII + secret redaction for LLM API calls
-- [`shadow-ai-detector`](https://github.com/mizcausevic-dev/shadow-ai-detector) — unauthorized LLM usage detection
-- [`ai-finops-radar`](https://github.com/mizcausevic-dev/ai-finops-radar) — token-level cost attribution + anomaly detection
-- [`kinetic-flightdeck`](https://github.com/mizcausevic-dev/kinetic-flightdeck) — unified AI Platform Engineering ops console
-
----
-
-## 🧪 Decision Intelligence Engines
-
-| Repo | Lang | What it does |
-|---|---|---|
-| [`procurement-decision-api`](https://github.com/mizcausevic-dev/procurement-decision-api) | Python | **First cross-ecosystem bridge in the portfolio.** Drafts AI Procurement Decision Cards from a buyer rubric and vendor Suite documents (AEO + agent-card + tool-card + ai-evidence + …). Connects [Kinetic Gain Protocol Suite](#-kinetic-gain-protocol-suite) (spec #11) with Decision Intelligence. Pydantic v2, FastAPI, httpx async, NIST AI RMF crosswalk linked from the OpenAPI spec. |
-| [`policy-as-code-engine`](https://github.com/mizcausevic-dev/policy-as-code-engine) | Python | **Companion to `procurement-decision-api`.** Declarative policy evaluator — JSON/YAML rules, first-match-wins, deny-trumps-allow. Headline: `POST /bundles/from-decision-card` turns a Decision Card's conditions into a runtime-enforceable PolicyBundle. Closes the loop from "buyer signed off" to "request gated." |
-| [`incident-correlation-rs`](https://github.com/mizcausevic-dev/incident-correlation-rs) | **Rust** | **Walks the Suite graph from an AI Incident Card** and emits a structured remediation plan. BFS over typed `SuiteEdge`s; `DecisionCard` → `RecheckPolicy`, `Vendor` → `RequestReview`, AEO/agent/tool → `Revalidate`. petgraph under the hood. The piece that turns "we had an incident" into "here's exactly what to touch next." |
-| [`briefing-intelligence-engine`](https://github.com/mizcausevic-dev/briefing-intelligence-engine) | Python | Executive briefing scoring, narrative generation, risk ranking |
-| [`signal-orchestration-lab`](https://github.com/mizcausevic-dev/signal-orchestration-lab) | Python | Dependency-aware signal routing, escalation sequencing |
-| [`decision-memory-engine`](https://github.com/mizcausevic-dev/decision-memory-engine) | Python | Decision history, rationale recovery, stale assumption tracking, and revisit posture |
-| [`evidence-ranking-engine`](https://github.com/mizcausevic-dev/evidence-ranking-engine) | Python | Evidence packet ranking by trust score, freshness, contradiction pressure, and citation density |
-
----
-
-## 📊 Operator Surfaces · React + TypeScript
-
-Executive dashboards, control planes, decision studios — organized by domain:
-
-**Executive & Portfolio**
-[`executive-briefing-studio`](https://github.com/mizcausevic-dev/executive-briefing-studio) · [`portfolio-command-center`](https://github.com/mizcausevic-dev/portfolio-command-center) · [`executive_operations_dashboard`](https://github.com/mizcausevic-dev/executive_operations_dashboard) · [`scenario-planning-atlas`](https://github.com/mizcausevic-dev/scenario-planning-atlas)
-
-**Revenue & Growth**
-[`customer-intelligence-graph`](https://github.com/mizcausevic-dev/customer-intelligence-graph) · [`growth-systems-control-room`](https://github.com/mizcausevic-dev/growth-systems-control-room) · [`revenue-forecasting-workbench`](https://github.com/mizcausevic-dev/revenue-forecasting-workbench) · [`attribution-intelligence-studio`](https://github.com/mizcausevic-dev/attribution-intelligence-studio) · [`pricing-experiment-studio`](https://github.com/mizcausevic-dev/pricing-experiment-studio) · [`conversion-funnel-intelligence-hub`](https://github.com/mizcausevic-dev/conversion-funnel-intelligence-hub) · [`deal-desk-workspace`](https://github.com/mizcausevic-dev/deal-desk-workspace)
-
-**AI Governance & Risk**
-[`ai-governance-review-studio`](https://github.com/mizcausevic-dev/ai-governance-review-studio) · [`model-risk-oversight-hub`](https://github.com/mizcausevic-dev/model-risk-oversight-hub) · [`vendor-risk-operations-center`](https://github.com/mizcausevic-dev/vendor-risk-operations-center) · [`compliance-workflow-hub`](https://github.com/mizcausevic-dev/compliance-workflow-hub) · [`ai-operations-console`](https://github.com/mizcausevic-dev/ai-operations-console)
-
-**Identity & Security**
-[`identity-command-center`](https://github.com/mizcausevic-dev/identity-command-center) · [`identity-lifecycle-workbench`](https://github.com/mizcausevic-dev/identity-lifecycle-workbench) · [`security-posture-control-room`](https://github.com/mizcausevic-dev/security-posture-control-room)
-
-**Workflow & Operations**
-[`workflow-orchestration-studio`](https://github.com/mizcausevic-dev/workflow-orchestration-studio) · [`feature-flag-rollout-studio`](https://github.com/mizcausevic-dev/feature-flag-rollout-studio) · [`ab-testing-command-center`](https://github.com/mizcausevic-dev/ab-testing-command-center) · [`customer-journey-control-plane`](https://github.com/mizcausevic-dev/customer-journey-control-plane)
-
----
-
-## 🔌 Backend APIs · TypeScript + Node
-
-Spec-first OpenAPI services:
-
-[`Identity-Access-Audit-API`](https://github.com/mizcausevic-dev/Identity-Access-Audit-API) · [`observability-incident-command-api`](https://github.com/mizcausevic-dev/observability-incident-command-api) · [`customer-health-churn-api`](https://github.com/mizcausevic-dev/customer-health-churn-api) · [`partner-lead-distribution-engine`](https://github.com/mizcausevic-dev/partner-lead-distribution-engine) · [`content-workflow-intelligence-platform`](https://github.com/mizcausevic-dev/content-workflow-intelligence-platform) · [`experimentation_insights_kpi`](https://github.com/mizcausevic-dev/experimentation_insights_kpi) · [`seo-governance-platform`](https://github.com/mizcausevic-dev/seo-governance-platform) · [`webhook-ingestion-pipeline`](https://github.com/mizcausevic-dev/webhook-ingestion-pipeline) · [`kinetic-api-gateway`](https://github.com/mizcausevic-dev/kinetic-api-gateway) · [`revenue-ops-ai-assistant`](https://github.com/mizcausevic-dev/revenue-ops-ai-assistant)
-
----
-
-## 🧩 WordPress / Headless Reliability
-
-The newer CMS lane is not brochure work. It is governance, preview trust, query discipline, cache freshness, schema safety, and contract protection for headless WordPress estates:
-
-[`wordpress-block-seo-governance-auditor`](https://github.com/mizcausevic-dev/wordpress-block-seo-governance-auditor) · [`wordpress-graphql-governance-gateway`](https://github.com/mizcausevic-dev/wordpress-graphql-governance-gateway) · [`headless-seo-fallback-engine`](https://github.com/mizcausevic-dev/headless-seo-fallback-engine) · [`headless-preview-recovery-kit`](https://github.com/mizcausevic-dev/headless-preview-recovery-kit) · [`wpgraphql-query-cost-inspector`](https://github.com/mizcausevic-dev/wpgraphql-query-cost-inspector) · [`frontend-contract-testing-for-wordpress`](https://github.com/mizcausevic-dev/frontend-contract-testing-for-wordpress) · [`headless-editorial-command-center`](https://github.com/mizcausevic-dev/headless-editorial-command-center) · [`headless-wp-vue-starter`](https://github.com/mizcausevic-dev/headless-wp-vue-starter) · [`wpgraphql-schema-diff-gate`](https://github.com/mizcausevic-dev/wpgraphql-schema-diff-gate) · [`wordpress-cache-invalidation-map`](https://github.com/mizcausevic-dev/wordpress-cache-invalidation-map) · [`wordpress-preview-trust-monitor`](https://github.com/mizcausevic-dev/wordpress-preview-trust-monitor) · [`wp-kinetic-gain-audit`](https://github.com/mizcausevic-dev/wp-kinetic-gain-audit)
-
-This cluster now covers answer-surface safety, preview recovery, metadata fallback, query cost, frontend payload contracts, editorial release readiness, schema-drift approval gates, cache invalidation mapping, preview trust monitoring, and — via **`wp-kinetic-gain-audit`** — a tamper-evident MySQL hash-chained governance audit log that plugs WordPress straight into the Suite's `audit-stream-py` spine.
-
----
-
-## 🔐 Enterprise Integration / IAM / Workflow
-
-Commercially legible systems work across access review, evidence plumbing, connector testing, workflow infrastructure, and HR-to-identity provisioning:
-
-[`cyberark-access-review-sync`](https://github.com/mizcausevic-dev/cyberark-access-review-sync) · [`cyberark-connector-observability-exporter`](https://github.com/mizcausevic-dev/cyberark-connector-observability-exporter) · [`servicenow-cyberark-evidence-pipeline`](https://github.com/mizcausevic-dev/servicenow-cyberark-evidence-pipeline) · [`ibm-custom-connector-starter`](https://github.com/mizcausevic-dev/ibm-custom-connector-starter) · [`ukg-to-scim-provisioner`](https://github.com/mizcausevic-dev/ukg-to-scim-provisioner) · [`camunda-connector-test-harness`](https://github.com/mizcausevic-dev/camunda-connector-test-harness)
-
----
-
-## 🗃️ Data & Analytics
-
-| Repo | What it does |
-|---|---|
-| [`data-contract-registry`](https://github.com/mizcausevic-dev/data-contract-registry) | **Schema registry for data contracts.** Semver versioning, compatibility checks (backward / forward / full), declared owners, freshness SLAs. Bridges to `procurement-decision-api` via `POST /contracts/owners/from-decision-card` — buyer + decision_maker from a Decision Card become the contract's paging targets. **Cross-ecosystem hook #3.** |
-| [`csv-data-quality-rs`](https://github.com/mizcausevic-dev/csv-data-quality-rs) | **Rust streaming CSV validator** against a `data-contract-registry` contract. Async, row-by-row, structured violation report (`required` / `bad_type` / `enum_mismatch` / `column_count_mismatch` / `invalid_json`). Memory cost is proportional to `max_samples`, not file size. **Cross-ecosystem hook #4.** |
-| [`sql-contract-enforcer`](https://github.com/mizcausevic-dev/sql-contract-enforcer) | **Cross-dialect DDL from a data contract** — CHECK / NOT NULL / UNIQUE / PK / FK for Postgres, MySQL, Snowflake, BigQuery (dialect-aware: BigQuery demotes CHECK/UNIQUE to comments + PK/FK to NOT ENFORCED; Snowflake informational; MySQL VARCHAR lengths). Plus a contract-vs-schema violation checker for CI. **Cross-ecosystem hook #5** — enforces at the table boundary what the registry declares and `csv-data-quality-rs` validates row-wise. |
-| [`revops-database-lab`](https://github.com/mizcausevic-dev/revops-database-lab) | PostgreSQL revenue modeling lab. |
-| [`revenue-intelligence-db`](https://github.com/mizcausevic-dev/revenue-intelligence-db) | Attribution + forecast + renewal-risk reporting. |
-| [`cloud-cost-intelligence-dashboard`](https://github.com/mizcausevic-dev/cloud-cost-intelligence-dashboard) | Cloud cost intelligence dashboards. |
-| [`semantic-metrics-catalog`](https://github.com/mizcausevic-dev/semantic-metrics-catalog) | Governed metric definitions, ownership lanes, semantic contracts, and freshness posture. |
-| [`attribution-warehouse-lab`](https://github.com/mizcausevic-dev/attribution-warehouse-lab) | Warehouse-first attribution modeling, path analysis, and governed revenue-credit logic. |
-| [`pg-audit-stream-extension`](https://github.com/mizcausevic-dev/pg-audit-stream-extension) | **Postgres extension** (PL/pgSQL) that emits `audit-stream-py`-compatible governance events on watched table CRUD via `pg_notify`, plus a Python LISTEN bridge daemon. Database-tier governance — the spine's 8th producer, catching DML the application path would miss. PG14-17, CI green. |
-| [`procurement-pulse-engine`](https://github.com/mizcausevic-dev/procurement-pulse-engine) | **The crawl + aggregate engine behind [pulse.kineticgain.com](https://pulse.kineticgain.com).** Probes a universe of vendor domains for all 11 Suite documents (vendored `well-known-probe` core), aggregates publication rate by vertical + per-spec + leaderboard. Issue #1 ran the first real baseline: 0.0% across 37 domains — the honest starting line. |
-
----
-
-## 🛠️ Stack
-
-| Layer | Tools |
-|---|---|
-| **Languages** | Python · TypeScript · Go · Rust · Java · C# · Kotlin · Scala · Elixir · Ruby · PHP · Dart · Swift · Zig · Haskell · SQL · HCL · dbt |
-| **Backend** | FastAPI · Express · Spring Boot · ASP.NET Core · Javalin · Cowboy/Plug · WEBrick |
-| **Frontend** | React 19 · Vue 3 · Flutter · TypeScript · Vite · Tailwind · Recharts · Motion |
-| **Data** | PostgreSQL · DuckDB · dbt · Neo4j · Pandas · Pydantic |
-| **AI / Platform** | SPIFFE zero-trust identity · governance-as-code · LLM routing · token-cost attribution · OpenAPI specs · MCP servers · OpenTelemetry GenAI · BLS aggregate signatures · WASI · spec authorship |
-| **CI/CD** | GitHub Actions · FTP auto-deploy · Hostinger · AGPL-3.0 licensing |
-
----
-
-## 🤝 Working Interest
-
-Open to **Director / Principal-level Platform Engineering, Web Engineering, or AI Platform** roles at enterprise B2B SaaS companies. East Coast time zone. Remote-friendly.
-
----
-
-<sub>[All active repositories](https://github.com/mizcausevic-dev?tab=repositories&type=public&sort=updated) · [Career one-pager](https://mizcausevic-dev.github.io/)</sub>
-
----
-
-**Connect:** [LinkedIn](https://www.linkedin.com/in/mirzacausevic/) · [Kinetic Gain](https://kineticgain.com) · [Medium](https://medium.com/@mizcausevic/) · [Skills](https://mizcausevic.com/skills/)
+[LinkedIn](https://www.linkedin.com/in/mirzacausevic/) ·
+[kineticgain.com](https://kineticgain.com) ·
+[Medium](https://medium.com/@mizcausevic) ·
+[All repositories](https://github.com/mizcausevic-dev?tab=repositories)
