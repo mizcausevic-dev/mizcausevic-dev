@@ -84,7 +84,7 @@ Every repo carries its own `SECURITY.md`. That is where the scoped, checkable ve
 <!-- GENERATED from canonical.json — do not hand-edit -->
 ### Kinetic Gain estate
 
-17 named platforms · 107 live properties · 17 open specs · 17 verticals
+16 named platforms · 107 live properties · 17 open specs · 17 verticals
 
 | Named platform | Repos |
 |---|---|
@@ -104,9 +104,8 @@ Every repo carries its own `SECURITY.md`. That is where the scoped, checkable ve
 | Cloud Cost & Resource Governance | 27 |
 | Data Lineage & Privacy Operations | 20 |
 | AI Safety & Adversarial Testing | 13 |
-| Developer Experience & Platform Engineering | 3 |
 
-> Counts are platform cluster sizes; a repo may belong to several platforms, so they sum to 321 membership-slots.
+> Counts are platform cluster sizes; a repo may belong to several platforms, so they sum to 318 membership-slots.
 <!-- END GENERATED estate-block -->
 
 Those figures regenerate from `kinetic-gain-canonical.json` every six hours. They are cluster sizes,
