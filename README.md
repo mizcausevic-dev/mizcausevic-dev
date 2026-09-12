@@ -3,8 +3,7 @@
 **Platform architecture and web engineering for enterprise B2B SaaS.** Boston, Massachusetts.
 Founder of **Kinetic Gain LLC**, where I build governance tooling for the answer-engine and agent era.
 
-Miz Causevic (Mirza Causevic). Background across IBM, CyberArk, Alteryx, Digital.ai and Gryphon.ai,
-in platform engineering, identity and privileged access, and analytics workflow.
+Background across IBM, CyberArk, Alteryx, Digital.ai and Gryphon.ai, in platform engineering, identity and privileged access, and analytics workflow.
 
 **Open to Director of Web Engineering, Principal Platform Engineering, and VP Platform Architecture
 roles.** East Coast US, remote friendly.
