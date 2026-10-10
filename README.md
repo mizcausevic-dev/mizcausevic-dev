@@ -33,11 +33,11 @@ roles.** East Coast US, remote friendly.
 
 ## mcp-kinetic-gain
 
-One MCP server exposing every Kinetic Gain Protocol Suite spec as a callable tool, over stdio.
-**v0.9.1, 75 tools, 12 specs, 172 tests passing, AGPL-3.0.**
+One stdio MCP server for all 12 Kinetic Gain Protocol Suite specs, with 75 callable validation,
+inspection and workflow tools. **Published v0.10.0 on npm and the official MCP Registry; AGPL-3.0.**
 
 ```bash
-npx -y mcp-kinetic-gain validate <files...>
+npx -y mcp-kinetic-gain@0.10.0 validate <files...>
 ```
 
 Claude Desktop, one entry:
@@ -47,7 +47,7 @@ Claude Desktop, one entry:
   "mcpServers": {
     "kinetic-gain": {
       "command": "npx",
-      "args": ["-y", "mcp-kinetic-gain"]
+      "args": ["-y", "mcp-kinetic-gain@0.10.0"]
     }
   }
 }
@@ -55,14 +55,19 @@ Claude Desktop, one entry:
 
 Three tools that show the shape of it:
 
-- `aup_check_compliance` joins a Classroom AI AUP and a Student AI Disclosure into one allow or deny call.
-- `decision_card_validate` enforces the full AI Procurement Decision Card conditional ruleset.
-- `defensetech_vault_resolve_3axis` resolves a CUI tier, export-control status and foreign-person
-  restriction tuple to the most restrictive policy that satisfies all three.
+- `aup_check_compliance` compares eight disclosed fields in a Classroom AI AUP and Student AI Disclosure;
+  its result is not a live authorization grant.
+- `decision_card_validate` checks an AI Procurement Decision Card's schema and conditional rules;
+  validation does not authorize a tool call.
+- `defensetech_vault_resolve_3axis` previews the most restrictive vault policy from supplied CUI,
+  export-control and foreign-person inputs; it does not verify those inputs.
 
-Published on [npm](https://www.npmjs.com/package/mcp-kinetic-gain) and the
-[MCP Registry](https://registry.modelcontextprotocol.io), both at 0.9.1. Also listed on Glama,
-PulseMCP, metatext and mcpmarket.
+Version 0.10.0 hardens the optional live audit tools: they require a configured bearer token,
+reject remote plaintext, and fail closed on malformed requests or responses. The default stdio
+server remains a local preview, not a buyer-authorized enforcement point. A signed Decision Card
+gate for one private HTTP tool is [under review](https://github.com/mizcausevic-dev/mcp-kinetic-gain/pull/48)
+and is **not** in the [published npm package](https://www.npmjs.com/package/mcp-kinetic-gain)
+or [MCP Registry record](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.mizcausevic-dev%2Fmcp-kinetic-gain/versions/latest).
 
 ## What this is, and what it is not
 
@@ -116,8 +121,10 @@ deliberately not a headline here: it drifts, and a wrong number costs more than 
 
 Claims on this page are meant to be checkable in about a minute.
 
-- **The server works.** `npx -y mcp-kinetic-gain validate <file>` against any Suite document.
-- **The tests pass.** `git clone`, `npm ci`, `npm test`. 172 passing at v0.9.1.
+- **The published version is checkable.** `npm view mcp-kinetic-gain version`; compare it with the
+  [official Registry record](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.mizcausevic-dev%2Fmcp-kinetic-gain/versions/latest).
+- **The tests are runnable.** Clone [mcp-kinetic-gain](https://github.com/mizcausevic-dev/mcp-kinetic-gain),
+  then run `npm ci` and `npm test`; check its current CI result before relying on a release.
 - **The specs are real.** Each is a public repo with a JSON Schema and test vectors.
 - **The disclosures are live.** Any Kinetic Gain domain serves its own `/.well-known/` documents.
 - **The numbers reconcile.** The estate block above is generated, not typed.
