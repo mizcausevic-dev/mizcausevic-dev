@@ -29,7 +29,19 @@ roles.** East Coast US, remote friendly.
 | Evaluating the governance specs | [suite.kineticgain.com](https://suite.kineticgain.com) |
 | A recruiter or hiring manager | [Background](#background) and the role note above |
 | Doing security or vendor diligence | [kineticgain.com/trust/](https://kineticgain.com/trust/) |
-| Looking for the full estate | [Portfolio atlas](https://portfolio.kineticgain.com) and [all public repository links](docs/REPOSITORIES.md) |
+| Looking for the full estate | [Direct repo links](#explore-the-repositories), [public A–Z index](docs/REPOSITORIES.md), and [Portfolio atlas](https://portfolio.kineticgain.com) |
+
+## Explore the repositories
+
+Selected public source repos, linked directly:
+
+- **Protocols and specs:** [Protocol Suite](https://github.com/mizcausevic-dev/kinetic-gain-protocol-suite) · [Docs Hub](https://github.com/mizcausevic-dev/kinetic-gain-docs-hub) · [AEO Protocol](https://github.com/mizcausevic-dev/aeo-protocol-spec) · [Agent Cards](https://github.com/mizcausevic-dev/agent-cards-spec) · [MCP Tool Card](https://github.com/mizcausevic-dev/mcp-tool-card-spec) · [AI Tutor Card](https://github.com/mizcausevic-dev/ai-tutor-card-spec)
+- **MCP and evidence:** [Unified MCP server](https://github.com/mizcausevic-dev/mcp-kinetic-gain) · [Permission Broker](https://github.com/mizcausevic-dev/mcp-permission-broker) · [Audit Stream](https://github.com/mizcausevic-dev/audit-stream-py) · [Embedded runtime](https://github.com/mizcausevic-dev/kinetic-gain-embedded) · [Reliability Toolkit](https://github.com/mizcausevic-dev/mcp-reliability-toolkit) · [Decision Intelligence](https://github.com/mizcausevic-dev/mcp-decision-intelligence)
+- **Integrations and operator tools:** [AEO TypeScript SDK](https://github.com/mizcausevic-dev/aeo-sdk-typescript) · [MCP AEO server](https://github.com/mizcausevic-dev/mcp-aeo-server) · [MCP AI Tutor](https://github.com/mizcausevic-dev/mcp-ai-tutor) · [Operator Console](https://github.com/mizcausevic-dev/kinetic-gain-operator-console) · [Governance Dashboard](https://github.com/mizcausevic-dev/kg-governance-dashboard) · [Flightdeck](https://github.com/mizcausevic-dev/kinetic-flightdeck)
+- **Applied systems:** [RAG Sentinel](https://github.com/mizcausevic-dev/rag-sentinel) · [Policy Lab](https://github.com/mizcausevic-dev/mcp-policy-lab) · [Redaction Gateway](https://github.com/mizcausevic-dev/llm-redaction-gateway) · [Compliance Ledger](https://github.com/mizcausevic-dev/compliance-event-ledger) · [Portfolio Command Center](https://github.com/mizcausevic-dev/portfolio-command-center)
+
+[Browse every public repository in the dated A–Z index](docs/REPOSITORIES.md), including archived work.
+That account-wide index is broader than the curated Kinetic Gain estate; private repos are excluded.
 
 ## mcp-kinetic-gain
 
