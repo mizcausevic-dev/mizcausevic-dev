@@ -29,7 +29,7 @@ roles.** East Coast US, remote friendly.
 | Evaluating the governance specs | [suite.kineticgain.com](https://suite.kineticgain.com) |
 | A recruiter or hiring manager | [Background](#background) and the role note above |
 | Doing security or vendor diligence | [kineticgain.com/trust/](https://kineticgain.com/trust/) |
-| Looking for the full estate | [portfolio.kineticgain.com](https://portfolio.kineticgain.com) |
+| Looking for the full estate | [Portfolio atlas](https://portfolio.kineticgain.com) and [all public repository links](docs/REPOSITORIES.md) |
 
 ## mcp-kinetic-gain
 
@@ -112,6 +112,10 @@ Every repo carries its own `SECURITY.md`. That is where the scoped, checkable ve
 
 > Counts are platform cluster sizes; a repo may belong to several platforms, so they sum to 321 membership-slots.
 <!-- END GENERATED estate-block -->
+
+Browse the [complete public repository index](docs/REPOSITORIES.md), including archived projects,
+or use GitHub's [live repository list](https://github.com/mizcausevic-dev?tab=repositories).
+The index is account-wide; the platform counts above are overlapping curated memberships.
 
 Those figures regenerate from `kinetic-gain-canonical.json` every six hours. They are cluster sizes,
 not a repo total, because one repo can belong to several platforms. The raw public-repo count is
