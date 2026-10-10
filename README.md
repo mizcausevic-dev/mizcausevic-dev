@@ -67,7 +67,7 @@ reject remote plaintext, and fail closed on malformed requests or responses. The
 server remains a local preview, not a buyer-authorized enforcement point. A signed Decision Card
 gate for one private HTTP tool is [under review](https://github.com/mizcausevic-dev/mcp-kinetic-gain/pull/48)
 and is **not** in the [published npm package](https://www.npmjs.com/package/mcp-kinetic-gain)
-or [MCP Registry record](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.mizcausevic-dev%2Fmcp-kinetic-gain/versions/latest).
+or [MCP Registry record](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.mizcausevic-dev%2Fmcp-kinetic-gain/versions/0.10.0).
 
 ## What this is, and what it is not
 
