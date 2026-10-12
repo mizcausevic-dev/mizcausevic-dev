@@ -39,6 +39,7 @@ Selected public source repos, linked directly:
 - **MCP and evidence:** [Unified MCP server](https://github.com/mizcausevic-dev/mcp-kinetic-gain) · [Permission Broker](https://github.com/mizcausevic-dev/mcp-permission-broker) · [Audit Stream](https://github.com/mizcausevic-dev/audit-stream-py) · [Embedded runtime](https://github.com/mizcausevic-dev/kinetic-gain-embedded) · [Reliability Toolkit](https://github.com/mizcausevic-dev/mcp-reliability-toolkit) · [Decision Intelligence](https://github.com/mizcausevic-dev/mcp-decision-intelligence)
 - **Integrations and operator tools:** [AEO TypeScript SDK](https://github.com/mizcausevic-dev/aeo-sdk-typescript) · [MCP AEO server](https://github.com/mizcausevic-dev/mcp-aeo-server) · [MCP AI Tutor](https://github.com/mizcausevic-dev/mcp-ai-tutor) · [Operator Console](https://github.com/mizcausevic-dev/kinetic-gain-operator-console) · [Governance Dashboard](https://github.com/mizcausevic-dev/kg-governance-dashboard) · [Flightdeck](https://github.com/mizcausevic-dev/kinetic-flightdeck)
 - **Applied systems:** [RAG Sentinel](https://github.com/mizcausevic-dev/rag-sentinel) · [Policy Lab](https://github.com/mizcausevic-dev/mcp-policy-lab) · [Redaction Gateway](https://github.com/mizcausevic-dev/llm-redaction-gateway) · [Compliance Ledger](https://github.com/mizcausevic-dev/compliance-event-ledger) · [Portfolio Command Center](https://github.com/mizcausevic-dev/portfolio-command-center)
+- **Aerospace Suite drafts:** [ML assurance card](https://github.com/mizcausevic-dev/aviation-ml-assurance-card-spec) · [MRO AI sign-off card](https://github.com/mizcausevic-dev/mro-ai-signoff-card-spec) · [Dataset provenance](https://github.com/mizcausevic-dev/aero-dataset-provenance-rs) · [Assurance crosswalk](https://github.com/mizcausevic-dev/aero-assurance-crosswalk) · [Fleet PR gate](https://github.com/mizcausevic-dev/aviation-ml-card-fleet-summary-action)
 
 [Browse every public repository in the dated A–Z index](docs/REPOSITORIES.md), including archived work.
 That account-wide index is broader than the curated Kinetic Gain estate; private repos are excluded.
@@ -80,6 +81,8 @@ server remains a local preview, not a buyer-authorized enforcement point. A sign
 gate for one private HTTP tool is [under review](https://github.com/mizcausevic-dev/mcp-kinetic-gain/pull/48)
 and is **not** in the [published npm package](https://www.npmjs.com/package/mcp-kinetic-gain)
 or [MCP Registry record](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.mizcausevic-dev%2Fmcp-kinetic-gain/versions/0.10.0).
+The aerospace tools are [under review in the same server](https://github.com/mizcausevic-dev/mcp-kinetic-gain/pull/51),
+not in the published package.
 
 ## What this is, and what it is not
 
@@ -172,6 +175,7 @@ Concrete, live, and checkable. Not a portfolio of screenshots.
 | Surface | What it is |
 |---|---|
 | [suite.kineticgain.com](https://suite.kineticgain.com) | The Protocol Suite front door. Twelve specs, the full spec table, the two-front-doors model |
+| [Aerospace Suite extension](https://suite.kineticgain.com/verticals/aerospace/) | Draft aviation disclosure, MRO sign-off, dataset provenance, crosswalk and PR gate; synthetic examples, not airworthiness approval or a maintenance release |
 | [cert.kineticgain.com](https://cert.kineticgain.com) | CyberArk access-certification review turned into working software |
 | [jml.kineticgain.com](https://jml.kineticgain.com) | Joiner-mover-leaver identity lifecycle, from the CyberArk years |
 | [pulse.kineticgain.com](https://pulse.kineticgain.com) | Weekly self-scored procurement telemetry, signed receipts published at `/.well-known/` |
