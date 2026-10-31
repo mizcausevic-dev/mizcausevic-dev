@@ -4,6 +4,8 @@ Snapshot: 2026-10-10. Source: GitHub public repository inventory for [mizcausevi
 
 **755 public repositories; 14 archived.** The profile estate table counts overlapping named-platform memberships, so its counts do not add up to this account-wide index.
 
+Status update (checked 2026-10-30 ET): the three MCP utilities marked **archived** below are read-only on GitHub. The inventory and totals above remain the October 10 snapshot; this note does not recount the current estate. Their source and prior links remain available.
+
 ## A
 
 - [a2a-mcp-bridge](https://github.com/mizcausevic-dev/a2a-mcp-bridge)
@@ -502,7 +504,7 @@ Snapshot: 2026-10-10. Source: GitHub public repository inventory for [mizcausevi
 - [mcp-reliability-toolkit](https://github.com/mizcausevic-dev/mcp-reliability-toolkit)
 - [mcp-sentinel](https://github.com/mizcausevic-dev/mcp-sentinel)
 - [mcp-sentinel-dashboard](https://github.com/mizcausevic-dev/mcp-sentinel-dashboard)
-- [mcp-server-readme-generator](https://github.com/mizcausevic-dev/mcp-server-readme-generator)
+- [mcp-server-readme-generator](https://github.com/mizcausevic-dev/mcp-server-readme-generator) — archived
 - [mcp-session-recorder](https://github.com/mizcausevic-dev/mcp-session-recorder)
 - [mcp-tool-card-diff](https://github.com/mizcausevic-dev/mcp-tool-card-diff)
 - [mcp-tool-card-diff-action](https://github.com/mizcausevic-dev/mcp-tool-card-diff-action)
@@ -514,12 +516,12 @@ Snapshot: 2026-10-10. Source: GitHub public repository inventory for [mizcausevi
 - [mcp-tool-card-readme-generator-action](https://github.com/mizcausevic-dev/mcp-tool-card-readme-generator-action)
 - [mcp-tool-card-spec](https://github.com/mizcausevic-dev/mcp-tool-card-spec)
 - [mcp-tool-card-stamp](https://github.com/mizcausevic-dev/mcp-tool-card-stamp)
-- [mcp-tool-card-summary](https://github.com/mizcausevic-dev/mcp-tool-card-summary)
+- [mcp-tool-card-summary](https://github.com/mizcausevic-dev/mcp-tool-card-summary) — archived
 - [mcp-tool-card-test-vectors](https://github.com/mizcausevic-dev/mcp-tool-card-test-vectors)
 - [mcp-tool-schema-fuzzer](https://github.com/mizcausevic-dev/mcp-tool-schema-fuzzer)
 - [mcp-tools-diff](https://github.com/mizcausevic-dev/mcp-tools-diff)
 - [mcp-tools-snapshot](https://github.com/mizcausevic-dev/mcp-tools-snapshot)
-- [mcp-tools-snapshot-stats](https://github.com/mizcausevic-dev/mcp-tools-snapshot-stats)
+- [mcp-tools-snapshot-stats](https://github.com/mizcausevic-dev/mcp-tools-snapshot-stats) — archived
 - [medical-adverse-event-incident-card](https://github.com/mizcausevic-dev/medical-adverse-event-incident-card)
 - [menu-availability-sync-engine](https://github.com/mizcausevic-dev/menu-availability-sync-engine)
 - [merchant-risk-review-console](https://github.com/mizcausevic-dev/merchant-risk-review-console)
