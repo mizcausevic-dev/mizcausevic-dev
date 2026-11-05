@@ -23,7 +23,7 @@ roles.** East Coast US, remote friendly.
 
 ## Start here
 
-| If you are | Go to |
+ | Go to |
 |---|---|
 | A developer who found `mcp-kinetic-gain` | [MCP server](#mcp-kinetic-gain) below. Install is one line |
 | Evaluating the governance specs | [suite.kineticgain.com](https://suite.kineticgain.com) |
