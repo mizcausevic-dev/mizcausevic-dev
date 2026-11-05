@@ -21,16 +21,6 @@ roles.** East Coast US, remote friendly.
         A screener who cross-checks distrusts every other number on the page once two disagree.
         Deliberately omitted here rather than guessed. Pick one and state it. -->
 
-## Start here
-
- | Go to |
-|---|---|
-| A developer who found `mcp-kinetic-gain` | [MCP server](#mcp-kinetic-gain) below. Install is one line |
-| Evaluating the governance specs | [suite.kineticgain.com](https://suite.kineticgain.com) |
-| A recruiter or hiring manager | [Background](#background) and the role note above |
-| Doing security or vendor diligence | [kineticgain.com/trust/](https://kineticgain.com/trust/) |
-| Looking for the full estate | [Direct repo links](#explore-the-repositories), [public A–Z index](docs/REPOSITORIES.md), and [Portfolio atlas](https://portfolio.kineticgain.com) |
-
 ## Explore the repositories
 
 Selected public source repos, linked directly:
